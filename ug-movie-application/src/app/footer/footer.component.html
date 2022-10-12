@@ -1,0 +1,164 @@
+<!-- Footer -->
+<footer class="page-footer font-small text-white pt-4 body">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left" style="font-size: 15px;">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 mx-auto text-center">
+
+        <!-- Content -->
+        <h3 class="font-weight-bold text-Capitalize mt-3 mb-4">CMJ Entertainment</h3>
+        <p class="text-center">At CMJ Entertainment and Phone accessories, we deal in movies of all types, music local and international, Phones and accessories. We also sell computer appliances depending on the customer desires.
+          <br/> We are ready to work with you, serve and entertain you with our services.
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 mx-auto">
+
+        <!-- Links -->
+        <h3 class="font-weight-bold text-uppercase mt-3 mb-4">contact us</h3>
+
+        <p class="text-center">
+          E-mail us: cmjentertainment@gmail.com<br> Number: 0700711932
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h3 class="font-weight-bold text-uppercase mt-3 mb-4">Location</h3>
+
+        <ul class="list-unstyled">
+          <li>
+            <p class="text-center">
+              Kampala Town, Near Jessico Building
+              <br/> Kyengera Town Council
+            </p>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <hr>
+
+  <!-- Call to action -->
+  <ul class="list-unstyled list-inline text-center py-2">
+    <li class="list-inline-item" style="font-size: 90px;">
+      <h3 class="mb-1" style="font-size: 20px;">Register for free</h3>
+    </li>
+    <li class="list-inline-item">
+      <button type="submit" class="btn btn-primary btn-rounded"  (click)="open(content)">Subscribe</button>
+    </li>
+  </ul>
+  <!-- Call to action -->
+
+  <hr>
+
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center" style="font-size: 25px;">
+    <li class="list-inline-item">
+      <a href="www.facebook.com/cmjentertainment" class="btn-floating btn-fb mx-1" aria-label="Facebook">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="www.twitter.com/cmjentertainment" class="btn-floating btn-tw mx-1" aria-label="Twitter">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="www.google.com/cmjentertainment" class="btn-floating btn-gplus mx-1" aria-label="Google">
+        <i class="fa fa-google-plus" style="color:red;"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="www.linkedin.com/cmjentertainment" class="btn-floating btn-li mx-1" aria-label="Linkedin">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="www.telegram.com/cmjentertainment" class="btn-floating btn-dribbble mx-1" aria-label="Telegram">
+        <i class="fa fa-telegram"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="www.whatsapp.com/000000000" class="btn-floating btn-dribbble mx-1" aria-label="WhatsApp">
+        <i class="fa fa-whatsapp" style="color:green;"></i>
+      </a>
+    </li>
+  </ul>
+  <!-- Social buttons -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">&copy; 2022 Copyright Cmj Entertainment
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+<!-- Button trigger modal -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Computer</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+
+    <body>
+    <div class="container">
+      <div class="input">
+        <form class="form-control">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Title</label>
+              <input type="text" class="form-control" placeholder="Enter Title">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Category</label>
+                <input type="text" class="form-control" placeholder="Enter Category">
+            </div>
+          </div>
+          <div class="form-row">
+            <label>Price</label>
+            <input class="form-control" type="text" placeholder="Enter Price">
+          </div>
+          <div class="form-row">
+            <label>File</label>
+            <input class="form-control" type="file">
+          </div>
+        </form>
+      </div>
+
+    </div>
+    </body>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" [ngStyle]="{'background-color': 'green', 'border-color': 'green'}">Save</button>
+    <button class="btn btn-secondary">Clear</button>
+    <button class="btn btn-primary" [ngStyle]=" { 'background-color': 'red', 'border-color': 'red'}">Cancel</button>
+  </div>
+</ng-template>

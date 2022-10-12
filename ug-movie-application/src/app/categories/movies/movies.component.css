@@ -1,0 +1,17 @@
+body {
+  width: 100%;
+  height: auto;
+  padding: 2%;
+  padding-top: 3.5%;
+}
+
+mat-card {
+  width: 30%;
+  height: 25%;
+  margin: 1%;
+}
+
+header {
+  padding: -2%;
+  margin: 0px;
+}

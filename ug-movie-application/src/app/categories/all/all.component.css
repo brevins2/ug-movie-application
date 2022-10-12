@@ -1,0 +1,44 @@
+body {
+  padding: 2%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  margin-right: 20%;
+  padding-right: 2%
+}
+
+nav a {
+  color: brown;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a:unvisited {
+  color: blue;
+}
+
+nav a:active {
+  color: red;
+}
+
+form {
+  width: 80%;
+  padding-top: 2%;
+}
+
+details {
+  margin-top: 3%;
+}
+
+details button:hover {
+  color: red;
+}

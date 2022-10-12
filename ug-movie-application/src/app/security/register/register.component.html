@@ -1,0 +1,26 @@
+<div class="container-fluid bg-dark">
+  <form class="bg-white">
+    <nav class="p-2">Create account</nav>
+
+    <div class="form-group">
+      <span>Username</span>
+      <input type="text" class="form-control" placeholder="enter username" required>
+    </div>
+
+    <div class="form-group">
+      <span>Email</span>
+      <input type="email" class="form-control" placeholder="enter email" required>
+    </div>
+
+    <div class="form-group passwords">
+      <span>Password</span>
+      <input type="password" class="form-control" placeholder="enter password" required>
+      <span>Confirm Password</span>
+      <input type="password" class="form-control" placeholder="confirm password" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="pay()">Register</button><br>
+
+    <a routerLink="/login">Already have an account? Login</a>
+  </form>
+</div>

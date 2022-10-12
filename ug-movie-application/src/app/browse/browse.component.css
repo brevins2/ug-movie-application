@@ -1,0 +1,84 @@
+body {
+  background-image: url("src/assets/style-images/Tech People.jpg");
+  background-size: cover;
+  background-repeat-y: repeat;
+  background-position-x: center;
+
+  opacity: 1;
+  width: 100%;
+  height: auto;
+}
+
+.body {
+  background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 40%));
+  height: auto;
+}
+
+.container-fluid {
+  padding: 0px;
+  height: 200px;
+  margin-bottom: 5%;
+}
+
+.info-div {
+   /*background-color: rgb(108 108 108 / 50%);
+   background-size: cover;*/
+   width: 700px;
+   height: 200px;
+   padding: 7%;
+}
+
+.main-body{
+  /*background-color: #343a40;
+  background-image: linear-gradient(to top, rgb(108 108 108 / 50%), rgb(169 169 169 / 100%));*/
+  background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 2%));
+  width: 100%;
+  height: 90%;
+  padding: 2%;
+}
+
+/*.main-body div {
+  background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 2%));
+}*/
+
+form {
+  width: 600px;
+}
+
+.btn {
+  margin-left: 1%;
+}
+
+input {
+  width: 400px;
+}
+
+mat-card, mat-card div, card, card-text {
+  background-color: unset;
+}
+
+mat-card {
+  margin: 1.5%;
+  width: 60%;
+  padding: 1px;
+}
+
+.cart {
+  width: 70%;
+}
+
+.card {
+  width: 100%;
+}
+
+.card-title {
+  text-transform: uppercase;
+}
+
+.card-body {
+  padding: 1%;
+}
+
+.span-movies {
+  width: 100%;
+}
