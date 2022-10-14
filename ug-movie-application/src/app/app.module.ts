@@ -27,6 +27,10 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { SubscriptionComponent } from './security/subscription/subscription.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MoviesComponent,
     SeriesComponent,
     AllComponent,
-    PayComponent
+    PayComponent,
+    SubscriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatProgressBarModule,
     MatSliderModule,
     MatGridListModule,
-    MatTableModule
+    MatTableModule,
+    MatStepperModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
