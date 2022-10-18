@@ -69,7 +69,7 @@
       <h3 class="mb-1" style="font-size: 20px;">Register for free</h3>
     </li>
     <li class="list-inline-item">
-      <button type="submit" class="btn btn-primary btn-rounded"  (click)="open(content)">Subscribe</button>
+      <button type="submit" class="btn btn-primary btn-rounded" (click)="signUp()">Subscribe</button>
     </li>
   </ul>
   <!-- Call to action -->
@@ -117,48 +117,4 @@
   <!-- Copyright -->
 
 </footer>
-<!-- Footer -->
-<!-- Button trigger modal -->
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Add Computer</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-  </div>
-  <div class="modal-body">
 
-    <body>
-    <div class="container">
-      <div class="input">
-        <form class="form-control">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>Title</label>
-              <input type="text" class="form-control" placeholder="Enter Title">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-                <label>Category</label>
-                <input type="text" class="form-control" placeholder="Enter Category">
-            </div>
-          </div>
-          <div class="form-row">
-            <label>Price</label>
-            <input class="form-control" type="text" placeholder="Enter Price">
-          </div>
-          <div class="form-row">
-            <label>File</label>
-            <input class="form-control" type="file">
-          </div>
-        </form>
-      </div>
-
-    </div>
-    </body>
-  </div>
-  <div class="modal-footer">
-    <button class="btn btn-primary" [ngStyle]="{'background-color': 'green', 'border-color': 'green'}">Save</button>
-    <button class="btn btn-secondary">Clear</button>
-    <button class="btn btn-primary" [ngStyle]=" { 'background-color': 'red', 'border-color': 'red'}">Cancel</button>
-  </div>
-</ng-template>

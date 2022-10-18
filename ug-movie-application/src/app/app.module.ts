@@ -30,8 +30,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule  } from '@angular/material/input';
 
 import { SubscriptionComponent } from './security/subscription/subscription.component';
+
+// import { FontAwesomeModule } from '@fortawesome/fontawesome';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,9 @@ import { SubscriptionComponent } from './security/subscription/subscription.comp
     MatStepperModule,
     MatFormFieldModule,
     FormsModule,
+    MatInputModule,
     ReactiveFormsModule
+    // FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

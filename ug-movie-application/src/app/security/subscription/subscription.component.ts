@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-subscription',
@@ -14,8 +14,7 @@ export class SubscriptionComponent implements OnInit {
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
-  isEditable = false;
-
+  isEditable = true;
 
   constructor(private _formBuilder: FormBuilder) { }
 

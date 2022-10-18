@@ -3,15 +3,14 @@ body {
   background-size: cover;
   background-repeat-y: repeat;
   background-position-x: center;
-
   opacity: 1;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .body {
   background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 40%));
-  height: auto;
+  height: 100%;
 }
 
 .container-fluid {
