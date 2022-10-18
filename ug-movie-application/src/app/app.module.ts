@@ -31,8 +31,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule  } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { SubscriptionComponent } from './security/subscription/subscription.component';
+import { MainComponent } from './developer/main/main.component';
 
 // import { FontAwesomeModule } from '@fortawesome/fontawesome';
 
@@ -48,7 +50,8 @@ import { SubscriptionComponent } from './security/subscription/subscription.comp
     SeriesComponent,
     AllComponent,
     PayComponent,
-    SubscriptionComponent
+    SubscriptionComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +72,7 @@ import { SubscriptionComponent } from './security/subscription/subscription.comp
     MatTableModule,
     MatStepperModule,
     MatFormFieldModule,
+    MatChipsModule,
     FormsModule,
     MatInputModule,
     ReactiveFormsModule
