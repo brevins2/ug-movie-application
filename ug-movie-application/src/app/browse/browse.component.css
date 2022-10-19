@@ -11,16 +11,17 @@ body {
 .body {
   background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 40%));
   height: 100%;
+  width: 100%;
 }
 
 .container-fluid {
   padding: 0px;
   height: 200px;
-  margin-bottom: 5%;
+  /*margin-bottom: 5%;*/
 }
 
 .info-div {
-   width: 700px;
+   /*width: 700px;*/
    height: 200px;
    padding: 7%;
 }
