@@ -1,12 +1,20 @@
+mat-stepper {
+	padding: 2%;
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+}
+
 .mat-stepper-horizontal {
   margin-top: 8px;
 }
 
 .mat-form-field {
   margin-top: 16px;
-  width: 95%;
+  width: 85%;
 }
 
-mat-step:active {
-  background-color: green;
+mat-step {
+  margin: 0 auto;
+  height: 90%;
 }

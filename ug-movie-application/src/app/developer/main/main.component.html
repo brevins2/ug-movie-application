@@ -1,6 +1,15 @@
-<mat-chip-list aria-label="Fish selection">
-  <mat-chip>One fish</mat-chip>
-  <mat-chip>Two fish</mat-chip>
-  <mat-chip color="primary" selected>Primary fish</mat-chip>
-  <mat-chip color="accent" selected>Accent fish</mat-chip>
-</mat-chip-list>
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light back-style position-sticky fixed-top">	</nav>
+</header>
+
+<body class="d-flex">
+	<nav class="d-flex flex-column float-left bg-black text-white text-center">
+		<button class="btn text-left" (click)="movies()">movies</button>
+		<button class="btn text-left" (click)="producers()">producers</button>
+		<button class="btn text-left" (click)="customers()">customers</button>
+		<button class="btn btn-danger text-left" (click)="logout()">logout</button>
+	</nav>
+	<div class="float-right bg-dark text-white">
+		<router-outlet></router-outlet>
+	</div>
+</body>

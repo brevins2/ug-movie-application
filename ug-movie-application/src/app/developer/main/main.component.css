@@ -1,0 +1,35 @@
+header {
+	height: 15%;
+	width: 100%;
+}
+
+/*body {
+	height: auto;
+}*/
+
+.float-left {
+	width: 18%;
+	padding: 1 auto;
+	opacity: .9;
+	color: white;
+}
+
+.float-left nav: {
+	border: 2px solid white;
+}
+
+.btn {
+	margin-left: 3%;
+	width: 60%;
+}
+
+div {
+	width: 82%;
+	padding: 2% auto;
+	opacity: .8;
+}
+
+/*.float-left:hover {
+	transform: scale(4,0);
+	color: black;
+}*/

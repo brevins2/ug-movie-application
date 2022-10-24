@@ -35,6 +35,9 @@ import { MatChipsModule } from '@angular/material/chips';
 
 import { SubscriptionComponent } from './security/subscription/subscription.component';
 import { MainComponent } from './developer/main/main.component';
+import { ProducersComponent } from './developer/producers/producers.component';
+import { CustomersComponent } from './developer/customers/customers.component';
+import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
 
 // import { FontAwesomeModule } from '@fortawesome/fontawesome';
 
@@ -51,7 +54,10 @@ import { MainComponent } from './developer/main/main.component';
     AllComponent,
     PayComponent,
     SubscriptionComponent,
-    MainComponent
+    MainComponent,
+    ProducersComponent,
+    CustomersComponent,
+    MoviesbackComponent
   ],
   imports: [
     BrowserModule,

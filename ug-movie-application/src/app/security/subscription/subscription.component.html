@@ -1,4 +1,4 @@
-<button mat-raised-button (click)="isEditable = !isEditable">
+<button mat-raised-button (click)="isEditable = !isEditable" class="btn btn-primary">
   {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
 </button>
 
@@ -10,32 +10,32 @@
       <div class="d-flex flex-column">
         <mat-form-field appearance="fill">
           <mat-label>Name</mat-label>
-          <input matInput class="form-control" type="text" formControlName="firstCtrl" placeholder="Last name, First name" required>
+          <input matInput type="text" formControlName="firstCtrl" placeholder="Last name, First name" required>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Username</mat-label>
-          <input matInput class="form-control" type="text" formControlName="firstCtrl" placeholder="Last name, First name" required>
+          <input matInput type="text" formControlName="firstCtrl" placeholder="Last name, First name" required>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input matInput class="form-control" type="email" formControlName="firstCtrl" placeholder="Last name, First name" required>
+          <input matInput type="email" formControlName="firstCtrl" placeholder="Last name, First name" required>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
-          <input matInput class="form-control" type="password" formControlName="firstCtrl" placeholder="Last name, First name" required>
+          <input matInput type="password" formControlName="firstCtrl" placeholder="Last name, First name" required>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Confirm Password</mat-label>
-          <input matInput class="form-control" type="password" formControlName="firstCtrl" placeholder="Last name, First name" required>
+          <input matInput type="password" formControlName="firstCtrl" placeholder="Last name, First name" required>
         </mat-form-field>
       </div>
-    <!-- <button type="submit" class="btn btn-primary" (click)="pay()">Register</button><br> -->
+    
       <div>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext  class="btn btn-primary float-right">Next</button>
       </div>
     </form>
   </mat-step>
