@@ -1,11 +1,28 @@
-header {
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+mat-toolbar {
 	height: 15%;
 	width: 100%;
 	padding: 1%;
-}
-
-header nav {
-	width: 60%;
 }
 
 h1 {
@@ -15,28 +32,28 @@ h1 {
 
 .float-left {
 	width: 18%;
-	padding: 1% auto;
+	padding: 1%;
 	opacity: .9;
 	color: white;
-	visibility: hidden;
+	visibility: visible;
 }
 
 span:hover>nav {
 	visibility: inherit;
 }
 
-.float-left nav {
-	border: 2px solid white;
-}
-
 a {
+	margin: 3%;
 	margin-left: 3%;
-	width: 70%;
+	margin-top: 2%;
+	width: 90%;
 	text-decoration: none;
 	height: 40px;
 	color: white;
-	padding: 1%;
-	background-color: black;
+	padding: 3%;
+	padding-top: 2%;
+	border: 1px;
+	border-radius: 10px;
 }
 
 a:active {
@@ -44,8 +61,41 @@ a:active {
 	color: black;
 }
 
-div {
-	width: 82%;
+a:hover {
+	background-color: white;
+	color: black;
+}
+
+.bg-black {
+	background-color: black;
+	width: 100%;
+	height: 2px;
+}
+
+.bg-yellow {
+	background-color: yellow;
+	width: 100%;
+	height: 2px;
+}
+
+.bg-red {
+	background-color: red;
+	width: 100%;
+	height: 2px;
+}
+
+body {
+	width: 100%;
+	height: auto;
+}
+
+body mat-drawer-container mat-drawer {
+	width: 20%;
+	background-color: rgb(0 0 0 / 85%) !important;
+}
+
+body mat-drawer-container {
+	width: 100%;
 	padding: 2%;
 	opacity: .8;
 }

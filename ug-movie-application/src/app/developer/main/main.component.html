@@ -1,22 +1,35 @@
 <html class="d-flex flex-column">
-	<header class="d-flex navbar navbar-expand-lg navbar-light back-style position-sticky fixed-top justify-content-between">
-		<nav class="float-left">
+	<mat-toolbar class="d-flex fixed-top justify-content-between position-sticky">
+	   	<nav class="float-left">
 			<h1>
-	             <code class="text-red">Lutimbe</code><code class="text-black">Filmz</code>
-	        </h1>
+		        <code class="text-red">Lutimbe</code><code class="text-black">Filmz</code>
+		    </h1>
 		</nav>
-		<span class="float-right">button</span>
-	</header>
+
+		<div class="float-right example-sidenav-content">
+		    <button type="button" mat-button (click)="drawer.toggle()">
+		      Toggle sidenav
+		    </button>
+  		</div>
+	</mat-toolbar>
+	<div class="bg-black"></div>
+	<div class="bg-yellow"></div>
+	<div class="bg-red"></div>
 
 	<body class="d-flex">
-		<nav class="d-flex flex-column float-left bg-black text-white text-center">
-			<a class="text-left" routerLink="moviesedits">movies</a>
-			<a class="text-left" routerLink="producers">producers</a>
-			<a class="text-left" routerLink="customers">customers</a>
-			<a class="btn btn-danger text-left" (click)="logout()">logout</a>
-		</nav>
-		<div class="float-right bg-dark text-white">
-			<router-outlet></router-outlet>
-		</div>
+		<mat-drawer-container class="example-container" autosize>
+		  <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" mode="side">
+		    <nav class="nav nav-link d-flex flex-column float-left bg-dark text-white">
+				<a class="text-left active" routerLink="moviesedits">movies</a>
+				<a class="text-left" routerLink="producers">producers</a>
+				<a class="text-left" routerLink="customers">customers</a>
+				<button class="btn btn-danger text-center" (click)="logout()">
+					logout
+				</button>
+			</nav>
+		  </mat-drawer>
+
+		  <router-outlet></router-outlet>
+		</mat-drawer-container>
 	</body>
 </html>

@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
+  showFiller = false;
+
   constructor(
   	private router: Router
   ) { }
