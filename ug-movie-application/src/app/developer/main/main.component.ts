@@ -15,20 +15,8 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  producers(){
-  	this.router.navigate(['producers']);
-  }
-
-  movies(){
-  	this.router.navigate(['producers']);
-  }
-
-  customers(){
-  	this.router.navigate(['producers']);
-  }
-
-  logout(){
-  	this.router.navigate(['producers']);
+  logout() {
+  	this.router.navigate(['login']);
   }
 
 }

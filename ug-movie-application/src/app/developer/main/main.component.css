@@ -1,35 +1,51 @@
 header {
 	height: 15%;
 	width: 100%;
+	padding: 1%;
 }
 
-/*body {
-	height: auto;
-}*/
+header nav {
+	width: 60%;
+}
+
+h1 {
+	padding-left: 2%;
+	font-size: 2.2rem;
+}
 
 .float-left {
 	width: 18%;
-	padding: 1 auto;
+	padding: 1% auto;
 	opacity: .9;
 	color: white;
+	visibility: hidden;
 }
 
-.float-left nav: {
+span:hover>nav {
+	visibility: inherit;
+}
+
+.float-left nav {
 	border: 2px solid white;
 }
 
-.btn {
+a {
 	margin-left: 3%;
-	width: 60%;
+	width: 70%;
+	text-decoration: none;
+	height: 40px;
+	color: white;
+	padding: 1%;
+	background-color: black;
+}
+
+a:active {
+	background-color: white;
+	color: black;
 }
 
 div {
 	width: 82%;
-	padding: 2% auto;
+	padding: 2%;
 	opacity: .8;
 }
-
-/*.float-left:hover {
-	transform: scale(4,0);
-	color: black;
-}*/

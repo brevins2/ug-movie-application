@@ -32,8 +32,8 @@ const routes: Routes = [
   ]},
 
   { path: 'developer/edits', component: MainComponent, children: [
-    { path: '', redirectTo: 'movies', pathMatch: 'full' },
-    { path: 'movies', component: MoviesbackComponent },
+    { path: '', redirectTo: 'moviesedits', pathMatch: 'full' },
+    { path: 'moviesedits', component: MoviesbackComponent },
     { path: 'customers', component: CustomersComponent },
     { path: 'producers', component: ProducersComponent }
   ]}
