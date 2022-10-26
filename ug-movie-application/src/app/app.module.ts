@@ -15,7 +15,6 @@ import { SeriesComponent } from './categories/series/series.component';
 import { AllComponent } from './categories/all/all.component';
 import { PayComponent } from './pay/pay.component';
 
-// import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -38,8 +37,9 @@ import { MainComponent } from './developer/main/main.component';
 import { ProducersComponent } from './developer/producers/producers.component';
 import { CustomersComponent } from './developer/customers/customers.component';
 import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-// import { FontAwesomeModule } from '@fortawesome/fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +64,6 @@ import { MoviesbackComponent } from './developer/moviesback/moviesback.component
     BrowserAnimationsModule,
     AppRoutingModule,
     MatCardModule,
-    // MatCarouselModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
@@ -82,7 +81,6 @@ import { MoviesbackComponent } from './developer/moviesback/moviesback.component
     FormsModule,
     MatInputModule,
     ReactiveFormsModule
-    // FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,24 +12,36 @@
 		    </button>
   		</div>
 	</mat-toolbar>
-	<div class="bg-black"></div>
-	<div class="bg-yellow"></div>
-	<div class="bg-red"></div>
 
-	<body class="d-flex">
+	<body class="d-flex flex-column">
+		<div class="bg-black"></div>
+		<div class="bg-yellow"></div>
+		<div class="bg-red"></div>
+
 		<mat-drawer-container class="example-container" autosize>
 		  <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" mode="side">
 		    <nav class="nav nav-link d-flex flex-column float-left bg-dark text-white">
-				<a class="text-left active" routerLink="moviesedits">movies</a>
-				<a class="text-left" routerLink="producers">producers</a>
-				<a class="text-left" routerLink="customers">customers</a>
+				<div class="d-flex">
+					<i class="fa-solid fa-camera-movie"></i>
+					<a class="text-left active" routerLink="moviesedits">movies</a>
+				</div>
+				<div class="d-flex">
+					<i class="fa-brands fa-product-hunt"></i>
+					<a class="text-left" routerLink="producers">producers</a>
+				</div>
+				<div class="d-flex">
+					<i class="fa-duotone fa-users"></i>
+					<a class="text-left" routerLink="customers">customers</a>
+				</div>
 				<button class="btn btn-danger text-center" (click)="logout()">
 					logout
 				</button>
 			</nav>
 		  </mat-drawer>
 
-		  <router-outlet></router-outlet>
+		  <div class="data">
+		  	<router-outlet></router-outlet>
+		  </div>
 		</mat-drawer-container>
 	</body>
 </html>
