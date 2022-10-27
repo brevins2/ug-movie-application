@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'cmj_entertainment_database',
+    database: 'ug_movie_application_db',
     port: 3306
 });
 
@@ -22,7 +22,7 @@ const db = mysql.createConnection({
 db.connect(err => {
     if (err) { console.log('err'); }
     console.log('database connected....');
-})
+});
 
 
 // for Accounts/registration

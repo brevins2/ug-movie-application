@@ -1,3 +1,22 @@
 footer {
   background-color: rgb(0 0 0 / 100%);
+  width: 100%;
+}
+
+.form-width {
+	width: 220px;
+}
+
+.div-email {
+	width: 200px;
+}
+
+form {
+	padding: 5px;
+	border: 1px;
+	border-radius: 10px;
+}
+
+form div {
+	margin-bottom: 5px;
 }
