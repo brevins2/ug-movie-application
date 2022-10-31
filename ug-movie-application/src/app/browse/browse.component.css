@@ -11,14 +11,14 @@ body {
 }
 
 .container-fluid {
-  background-image: url("src/assets/style-images/download (4).jfif");
+  background-image: url("src/assets/style-images/Tech People.jpg");
   background-size: cover;
   background-repeat-y: repeat;
   background-position-x: center;
   opacity: .6;
   padding: 0px;
   height: 550px;
-  /*margin-bottom: 5%;*/
+  /*margin-bottom: 5%; download (4).jfif*/
 }
 
 .info-div {

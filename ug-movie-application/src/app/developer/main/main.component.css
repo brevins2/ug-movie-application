@@ -39,6 +39,8 @@ mat-drawer-container {
 	opacity: .8;
 }
 
+/*mat-drawer nav{}*/
+
 .data {
 	padding: 1%;
 }
@@ -55,7 +57,11 @@ span:hover>nav {
 	visibility: inherit;
 }
 
-a {
+.home-link{
+	text-decoration: none;
+}
+
+.link {
 	margin: 3%;
 	margin-left: 3%;
 	margin-top: 2%;
@@ -67,6 +73,7 @@ a {
 	padding-top: 2%;
 	border: 1px;
 	border-radius: 10px;
+	color: yellow;
 }
 
 a:active {
