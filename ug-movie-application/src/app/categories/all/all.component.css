@@ -35,10 +35,20 @@ form {
   padding-top: 2%;
 }
 
-details {
+/*input {
+  visibility: hidden;
+}
+*/
+/*i:hover input {
+  visibility: visible;
+  font-size: .8rem;
+}*/
+
+/*details {
   margin-top: 3%;
 }
 
 details button:hover {
   color: red;
 }
+*/

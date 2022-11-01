@@ -3,7 +3,7 @@
   <span class="justify-content-start">
     <a routerLink="/cinema/browse">
       <h1>
-        <code class="text-red">Lutimbe</code><code class="text-black">Films</code>
+        <code class="text-red">Lutimbe</code><code class="text-black bg-white">Filmz</code>
       </h1>
     </a>
   </span>
@@ -14,7 +14,7 @@
       <a routerLink="series">series</a>
     </nav>
 
-    <details title="All" class="d-flex flex-column">
+    <!-- <details title="All" class="d-flex flex-column">
       <button class="btn">Actions</button>
       <button class="btn">Series</button>
       <button class="btn">Reality</button>
@@ -22,12 +22,15 @@
       <button class="btn">Kids</button>
       <button class="btn">Horrors</button>
       <button class="btn">Romance</button>
-    </details>
+    </details> -->
 
-    <form class="d-flex flex-row p-2">
+    <form class="d-flex flex-row">
       <input class="form-control" type="search" placeholder="search for movies, series">
+      <!-- <i class="fa fa-search">
+        <input class="form-control" type="search" placeholder="search for movies, series">
+      </i> -->
       &nbsp;
-      <button class="btn btn-primary">Submit</button>
+      <!-- <button class="btn btn-primary">Submit</button> -->
     </form>
   </div>
 </mat-toolbar>
@@ -35,7 +38,6 @@
 <body class="bg-black">
 
   <router-outlet></router-outlet>
-
 
   <mat-divider class="bg-white"></mat-divider>
   <footer class="bg-black text-center text-white p-2">
