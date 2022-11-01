@@ -4,19 +4,16 @@ footer {
 }
 
 .form-width {
-	width: 220px;
+	width: 25%;
+	padding-left: 5%;
 }
 
-.div-email {
-	width: 200px;
+ul li {
+	margin: 2%;
 }
 
-form {
-	padding: 5px;
-	border: 1px;
-	border-radius: 10px;
-}
-
-form div {
-	margin-bottom: 5px;
+ul li a {
+	text-decoration: none;
+	font-size: 1rem;
+	padding-bottom: 2%;
 }

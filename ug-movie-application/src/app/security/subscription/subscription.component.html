@@ -1,92 +1,92 @@
-<button mat-raised-button (click)="isEditable = !isEditable" class="btn btn-primary">
-  {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
-</button>
+<body class="bg-dark">
+  <button mat-raised-button (click)="isEditable = !isEditable" class="btn btn-primary">
+    {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+  </button>
 
-<mat-stepper linear #stepper>
-  <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
-    <form [formGroup]="firstFormGroup">
-      <nav class="p-2">Create account</nav>
-      <ng-template matStepLabel>Fill out your name</ng-template>
-      <div class="d-flex flex-column">
-        <mat-form-field appearance="fill">
-          <mat-label>Name</mat-label>
-          <input matInput type="text" formControlName="firstCtrl" placeholder="Last name, First name" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Username</mat-label>
-          <input matInput type="text" formControlName="firstCtrl" placeholder="Last name, First name" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" formControlName="firstCtrl" placeholder="Last name, First name" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="firstCtrl" placeholder="Last name, First name" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-          <mat-label>Confirm Password</mat-label>
-          <input matInput type="password" formControlName="firstCtrl" placeholder="Last name, First name" required>
-        </mat-form-field>
-      </div>
-    
-      <div>
-        <button mat-button matStepperNext  class="btn btn-primary float-right">Next</button>
-      </div>
-    </form>
-  </mat-step>
-
-  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-
-    <mat-tab-group>
-      <mat-tab label="First"> 
-        <form [formGroup]="secondFormGroup">
-          <nav class="p-2">Payment Methods</nav>
-          <ng-template matStepLabel>Fill out your address</ng-template>
-          <mat-form-field appearance="fill">
-            <mat-label>Address</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                   required>
+  <mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+      <form [formGroup]="firstFormGroup">
+        <nav class="p-2">Create account</nav>
+        <ng-template matStepLabel>Fill in user details</ng-template>
+        <div class="d-flex flex-column">
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="firstCtrl" placeholder="Enter Last name, First name" required>
           </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-tab>
 
-      <mat-tab label="Second">
-        <form [formGroup]="secondFormGroup">
-          <nav class="p-2">Payment Methods</nav>
-          <ng-template matStepLabel>Fill out your address</ng-template>
-          <mat-form-field appearance="fill">
-            <mat-label>Address</mat-label>
-            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                   required>
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="firstCtrl" placeholder="Enter Username" required>
           </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
-      </mat-tab>
 
-      <mat-tab label="Third"> Content 3 </mat-tab>
-    </mat-tab-group>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="firstCtrl" placeholder="Enter Email" required>
+          </mat-form-field>
 
-    
-  </mat-step>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="firstCtrl" placeholder="Enter Password" required>
+          </mat-form-field>
 
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p class="text-green">You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-stepper>
+          <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" formControlName="firstCtrl" placeholder="Enter Confirm Password" required>
+          </mat-form-field>
+        </div>
+      
+        <div>
+          <button mat-button matStepperNext  class="btn btn-primary float-right">Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+
+      <mat-tab-group>
+        <mat-tab label="First"> 
+          <form [formGroup]="secondFormGroup">
+            <nav class="p-2">Payment Methods</nav>
+            <ng-template matStepLabel>Fill in Payments</ng-template>
+            <mat-form-field appearance="fill">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                     required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-tab>
+
+        <mat-tab label="Second">
+          <form [formGroup]="secondFormGroup">
+            <nav class="p-2">Payment Methods</nav>
+            <ng-template matStepLabel>Fill out your address</ng-template>
+            <mat-form-field appearance="fill">
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                     required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-tab>
+
+        <mat-tab label="Third"> Content 3 </mat-tab>
+      </mat-tab-group>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p class="text-green">You are now done.</p>
+      <div class="bg-dark">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</body>

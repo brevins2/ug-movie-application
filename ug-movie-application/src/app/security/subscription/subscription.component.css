@@ -1,20 +1,32 @@
+body {
+	height: auto;
+	padding-bottom: 3%;
+	padding-top: 2%;
+}
+
 mat-stepper {
 	padding: 2%;
-	width: 90%;
+	width: 80%;
 	height: 100%;
 	margin: 0 auto;
+	border-radius: 8px;
+}
+
+ng-template {
+	width: 90%;
+	margin-left: 0px;
 }
 
 .mat-stepper-horizontal {
-  margin-top: 8px;
+	margin-top: 8px;
 }
 
 .mat-form-field {
-  margin-top: 16px;
-  width: 85%;
+ 	margin-top: 16px;
+	width: 85%;
 }
 
 mat-step {
-  margin: 0 auto;
-  height: 90%;
+	margin: 0 auto;
+	height: 90%;
 }
