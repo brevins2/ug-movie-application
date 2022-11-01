@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './security/login/login.component';
-import { RegisterComponent } from './security/register/register.component';
+import { MovieComponent } from './security/Movie/movie.component';
 import { BrowseComponent } from './browse/browse.component';
 import { ProducerComponent } from './security/producer/producer.component';
 import { MoviesComponent } from './categories/movies/movies.component';
@@ -46,7 +46,7 @@ import { MoviesbackComponent } from './developer/moviesback/moviesback.component
     AppComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent,
+    MovieComponent,
     BrowseComponent,
     ProducerComponent,
     MoviesComponent,

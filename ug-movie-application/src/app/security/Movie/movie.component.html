@@ -1,6 +1,6 @@
 <div class="container-fluid bg-dark">
   <form class="bg-white">
-    <nav class="p-2">Create account</nav>
+    <nav class="p-2">Add Movie</nav>
 
     <div class="form-group">
       <span>Username</span>
@@ -20,7 +20,12 @@
         <input type="password" class="form-control" placeholder="confirm password" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Register</button><br>
+    <div class="form-group">
+      <span>File</span>
+        <input type="file" class="form-control" placeholder="enter username" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="save()">Register</button><br>
 
     <a routerLink="/login">Already have an account? Login</a>
   </form>

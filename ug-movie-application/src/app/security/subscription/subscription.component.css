@@ -7,7 +7,7 @@ body {
 mat-stepper {
 	padding: 2%;
 	width: 80%;
-	height: 100%;
+	height: auto;
 	margin: 0 auto;
 	border-radius: 8px;
 }
@@ -28,5 +28,5 @@ ng-template {
 
 mat-step {
 	margin: 0 auto;
-	height: 90%;
+	height: auto;
 }
