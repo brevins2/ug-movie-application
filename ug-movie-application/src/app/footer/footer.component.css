@@ -3,17 +3,13 @@ footer {
   width: 100%;
 }
 
-.form-width {
-	width: 25%;
-	padding-left: 5%;
-}
-
-ul li {
-	margin: 2%;
+.list-unstyled {
+	justify-content: center;
 }
 
 ul li a {
 	text-decoration: none;
-	font-size: 1rem;
-	padding-bottom: 2%;
+	font-size: 1.7rem;
+	padding: 0 auto;
+	margin: 0 auto;
 }
