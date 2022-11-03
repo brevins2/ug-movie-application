@@ -1,8 +1,8 @@
 <body class="bg-dark">
-  <button mat-raised-button (click)="isEditable = !isEditable" class="btn btn-primary">
+  <!-- <button mat-raised-button (click)="isEditable = !isEditable" class="btn btn-primary">
     {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
   </button>
-
+ -->
   <mat-stepper linear #stepper>
     <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
       <form [formGroup]="firstFormGroup">

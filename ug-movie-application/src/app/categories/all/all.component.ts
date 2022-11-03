@@ -12,4 +12,5 @@ export class AllComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout() {}
 }

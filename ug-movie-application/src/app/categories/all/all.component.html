@@ -1,47 +1,68 @@
-<mat-toolbar class="d-flex justify-content-between text-white bg-dark fixed sticky-top">
+<html>
+  <body class="d-flex">
+    <div class="data bg-dark">
+      <nav class="nav nav-link d-flex flex-column float-left bg-dark">
+          <div class="d-flex">
+            <i class="fa-solid fa-camera-movie"></i>
+            <a class="text-left active link" routerLink="moviesedits">movies</a>
+          </div>
+          <div class="d-flex">
+            <i class="fa-brands fa-product-hunt"></i>
+            <a class="text-left link" routerLink="producers">producers</a>
+          </div>
+          <div class="d-flex">
+            <i class="fa-duotone fa-users"></i>
+            <a class="text-left link" routerLink="customers">customers</a>
+          </div>
+          
+          <button class="btn btn-danger text-center" (click)="logout()">
+            logout
+          </button>
+        </nav>
+    </div>
 
-  <span class="justify-content-start">
-    <a routerLink="/cinema/browse">
-      <h1>
-        <code class="text-red">Lutimbe</code><code class="text-black bg-white">Filmz</code>
-      </h1>
-    </a>
-  </span>
+    <mat-drawer-container class="example-container" autosize>
+      <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" mode="side">
+        <nav class="nav nav-link d-flex flex-column float-right bg-dark">
+          <div class="d-flex">
+            <i class="fa-solid fa-camera-movie"></i>
+            <a class="text-left active link" routerLink="moviesedits">movies</a>
+          </div>
+          <div class="d-flex">
+            <i class="fa-brands fa-product-hunt"></i>
+            <a class="text-left link" routerLink="producers">producers</a>
+          </div>
+          <div class="d-flex">
+            <i class="fa-duotone fa-users"></i>
+            <a class="text-left link" routerLink="customers">customers</a>
+          </div>
+          
+          <button class="btn btn-danger text-center" (click)="logout()">
+            logout
+          </button>
+        </nav>
+      </mat-drawer>
 
-  <div class="justify-content-end d-flex">
-    <nav class="d-flex">
-      <a routerLink="movies">movies</a>
-      <a routerLink="series">series</a>
-    </nav>
+       <mat-toolbar class="d-flex fixed-top justify-content-between position-sticky bg-black">
+            <nav class="float-left">
+              <a href="#" class="home-link">
+                <h1>
+                  <code class="text-red">Lutimbe</code><code class="text-white bg-black">Filmz</code>
+                </h1>
+              </a>
+            </nav>
 
-    <!-- <details title="All" class="d-flex flex-column">
-      <button class="btn">Actions</button>
-      <button class="btn">Series</button>
-      <button class="btn">Reality</button>
-      <button class="btn">Comedies</button>
-      <button class="btn">Kids</button>
-      <button class="btn">Horrors</button>
-      <button class="btn">Romance</button>
-    </details> -->
+          <div class="float-right example-sidenav-content">
+            <button type="button" mat-button (click)="drawer.toggle()">
+                menu
+            </button>
+          </div>
+        </mat-toolbar>
 
-    <form class="d-flex flex-row">
-      <input class="form-control" type="search" placeholder="search for movies, series">
-      <!-- <i class="fa fa-search">
-        <input class="form-control" type="search" placeholder="search for movies, series">
-      </i> -->
-      &nbsp;
-      <!-- <button class="btn btn-primary">Submit</button> -->
-    </form>
-  </div>
-</mat-toolbar>
+      <div class="data bg-black">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-container>
 
-<body class="bg-black">
-
-  <router-outlet></router-outlet>
-
-  <mat-divider class="bg-white"></mat-divider>
-  <footer class="bg-black text-center text-white p-2">
-    @copyrights reserved 2022
-  </footer>
-
-</body>
+  </body>
+</html>
