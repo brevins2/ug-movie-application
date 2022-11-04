@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './security/login/login.component';
 import { MovieComponent } from './security/Movie/movie.component';
 import { ProducerComponent } from './security/producer/producer.component';
+import { TestComponent } from './security/test/test.component';
+
 import { BrowseComponent } from './browse/browse.component';
 import { PayComponent } from './pay/pay.component';
 import { SubscriptionComponent } from './security/subscription/subscription.component';
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'register/movie', component: MovieComponent },
   { path:'register/producer', component: ProducerComponent },
+  { path: 'test', component: TestComponent },
   { path:'pay', component: PayComponent },
   { path:'subscribe', component: SubscriptionComponent },
 

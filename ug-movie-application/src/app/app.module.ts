@@ -37,6 +37,7 @@ import { MainComponent } from './developer/main/main.component';
 import { ProducersComponent } from './developer/producers/producers.component';
 import { CustomersComponent } from './developer/customers/customers.component';
 import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
+import { TestComponent } from './security/test/test.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
@@ -57,7 +58,8 @@ import { MoviesbackComponent } from './developer/moviesback/moviesback.component
     MainComponent,
     ProducersComponent,
     CustomersComponent,
-    MoviesbackComponent
+    MoviesbackComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
