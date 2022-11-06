@@ -1,3 +1,98 @@
+html {
+  width: 100%;
+  height: auto;
+}
+
+.horizontal-nav {
+  width: 150px;
+  height: auto;
+  padding: 0px;
+  padding-top: 5%;
+  padding-left: 2%;
+  position: fixed-left;
+}
+
+.horizontal-nav div {
+  font-size: .8rem;
+  margin-bottom: 15px;
+  color: whitesmoke;
+  margin-right: 0px;
+  width: 100px;
+}
+
+.horizontal-nav div a {
+  text-align: center;
+  color: whitesmoke;
+  width: 100px;
+}
+
+.horizontal-nav div a:hover {
+  color: yellow;
+  border-right: 2px solid yellow;
+}
+
+.horizontal-nav div a:focus {
+  color: white;
+}
+
+.horizontal-nav div a:active {
+  color: white;
+}
+
+.horizontal-nav div i {
+  padding-top: 5px;
+}
+
+.horizontal-nav div i:hover {
+  color: red;
+}
+
+.horizontal-nav div i:focus {
+  color: red;
+}
+
+.horizontal-nav div i:active {
+  color: red;
+}
+
+.btn {
+  width: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: auto%;
+  padding: 2%;
+}
+
+mat-toolbar {
+  width: 100%;
+}
+
+.main-div {
+  height: 100%;
+  width: 100%;
+}
+
+.router-outlet-div {
+  width: 100%;
+}
+
+mat-drawer-container {
+  width: 20%;
+  height: 100%;
+  margin-top: 0px;
+}
+
+mat-drawer {
+  width: 100%;
+}
+
+
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -13,7 +108,7 @@
   padding: 20px;
 }
 
-mat-toolbar {
+/*mat-toolbar {
   height: 10%;
   width: 100%;
   padding: 1%;
@@ -71,4 +166,4 @@ mat-drawer-container mat-drawer {
 .link:hover {
   background-color: white;
   color: black;
-}
+}*/

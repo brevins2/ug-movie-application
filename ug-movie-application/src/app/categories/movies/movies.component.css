@@ -15,3 +15,11 @@ header {
   padding: -2%;
   margin: 0px;
 }
+
+mat-drawer-container {
+	width: 10%;
+}
+
+video {
+	border-radius: 2%;
+}
