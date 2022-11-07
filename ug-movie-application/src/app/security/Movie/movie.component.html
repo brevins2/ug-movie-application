@@ -3,30 +3,34 @@
     <nav class="p-2">Add Movie</nav>
 
     <div class="form-group">
-      <span>Username</span>
-        <input type="text" class="form-control" placeholder="enter username" required>
-    </div>
-
-    <div class="form-group">
-      <span>Email</span>
-        <input type="email" class="form-control" placeholder="enter email" required>
-    </div>
-
-    <div class="form-group passwords">
-      <span>Password</span>
-        <input type="password" class="form-control" placeholder="enter password" required>
-
-      <span>Confirm Password</span>
-        <input type="password" class="form-control" placeholder="confirm password" required>
+      <span>Title</span>
+        <input type="text" class="form-control" placeholder="enter title" required>
     </div>
 
     <div class="form-group">
       <span>File</span>
-        <input type="file" class="form-control" placeholder="enter username" required>
+        <input type="file" class="form-control" placeholder="enter movie" required>
     </div>
 
-    <button type="submit" class="btn btn-primary" (click)="save()">Register</button><br>
+    <div class="form-group">
+      <span>Genre</span>
+        <input type="text" class="form-control" placeholder="enter movie genre" required>
+    </div>
 
-    <a routerLink="/login">Already have an account? Login</a>
+    <div class="form-group">
+      <span>Producer</span>
+        <input type="text" class="form-control" placeholder="enter producer name" required>
+    </div>
+
+    <div class="form-group passwords">
+      <span>Movie information</span>
+      <textarea class="form-control" placeholder="enter movie information" required cols="3" rows="5">
+      </textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="save()">
+      <i class="fa-solid fa-save"></i>
+      Save movie
+    </button><br>
   </form>
 </div>

@@ -6,52 +6,51 @@
       </h1>
     </a>
 
-    <h3 class="text-white">Menu</h3>
+    <div class="main-link">
+      <h3 class="text-white">Menu</h3>
 
-    <div>
-      <div class="menu-links d-flex text-left">
+      <div class="d-flex text-left">
         <i class="fa-solid fa-home"></i>&nbsp;
         <a class="text-left active link" routerLink="/cinema/browse">Home</a>
       </div>
 
-      <div class="menu-links d-flex text-left">
+      <div class="d-flex text-left">
         <i class="fa-brands fa-product-hunt"></i>&nbsp;
         <a class="text-left link" routerLink="producers">producers</a>
       </div>
 
-      <div class="menu-links d-flex text-left">
+      <div class="d-flex text-left">
         <i class="fa fa-users"></i>&nbsp;
         <a class="text-left link" routerLink="customers">customers</a>
       </div>
-      <hr>
     </div>
+    <!-- <hr class="text-white hr-first"> -->
 
-    <div>
+    <div class="profile-link">
       <h3>Profile</h3> 
 
-      <div class="menu-links d-flex text-left">
+      <div class="d-flex text-left">
         <i class="fa-solid fa-heart"></i>&nbsp;
         <a class="text-left link" routerLink="customers">Faviouret</a>
       </div>
 
-      <div class="menu-links d-flex text-left">
+      <div class="d-flex text-left">
         <i class="fa fa-circle-arrow-down"></i>&nbsp;
         <a class="text-left link" routerLink="customers">Download</a>
       </div>
 
-      <div class="menu-links d-flex text-left">
-        <i class="fa-solid fa-heart"></i>&nbsp;
+      <div class="d-flex text-left">
+        <i class="fa-solid fa-history"></i>&nbsp;
         <a class="text-left link" routerLink="customers">Recent</a>
       </div>
-      <hr>
     </div>
+    <!-- <hr class="text-white"> -->
       
-    <div> 
+    <div class="general-link"> 
       <h3 class="text-white">General</h3> 
 
-      <div class="menu-links d-flex text-left">
+      <div class="d-flex text-left">
         <i class="fa fa-cog"></i>
-        <!-- <mat-icon class="setting">settings</mat-icon> -->
         <a class="text-left link" routerLink="customers">Settings</a>
       </div>
 
@@ -60,7 +59,6 @@
       </button>
     </div>
   </nav>
-
 
   <body class="d-flex flex-column bg-black">
     <mat-toolbar class="d-flex fixed-top justify-content-between position-sticky bg-black">
@@ -89,19 +87,7 @@
           </a>
         </small>
       </nav>
-
-      <div class="float-right example-sidenav-content text-white">
-        <div class="text-white d-flex justify-content-between">
-          <i class="fa-solid fa-bell"></i>
-          <i class="fa-solid fa-search"></i>
-        </div>
-
-        <button type="button" mat-button (click)="drawer.toggle()">
-            <mat-icon class="menu">menu</mat-icon>
-        </button>
-      </div>
     </mat-toolbar>
-    <hr class="clearfix text-white"/>
 
     <div class="main-div">
       <div class="router-outlet-div bg-black text-white">
@@ -110,28 +96,27 @@
     </div>
 
     <mat-drawer-container class="example-container bg-black" autosize>
-        <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" mode="side">
-          <nav class="nav nav-link d-flex flex-column float-left bg-dark">
-            <div class="d-flex">
-              <i class="fa fa-home"></i>
-              <a class="text-left active link" routerLink="moviesedits">movies</a>
-            </div>
-            <div class="d-flex">
-              <i class="fa-brands fa-product-hunt"></i>
-              <a class="text-left link" routerLink="producers">producers</a>
-            </div>
-            <div class="d-flex">
-              <i class="fa-duotone fa-users"></i>
-              <a class="text-left link" routerLink="customers">customers</a>
-            </div>
+      <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" mode="side">
+        <nav class="nav nav-link d-flex flex-column float-left bg-dark">
+          <div class="d-flex">
+            <i class="fa fa-home"></i>
+            <a class="text-left active link" routerLink="moviesedits">movies</a>
+          </div>
+          <div class="d-flex">
+            <i class="fa-brands fa-product-hunt"></i>
+            <a class="text-left link" routerLink="producers">producers</a>
+          </div>
+          <div class="d-flex">
+            <i class="fa-duotone fa-users"></i>
+            <a class="text-left link" routerLink="customers">customers</a>
+          </div>
               
-            <button class="btn btn-danger text-center">
-              logout
-            </button>
-          </nav>
-        </mat-drawer>
-
-      </mat-drawer-container>
+          <button class="btn btn-danger text-center">
+            logout
+          </button>
+        </nav>
+      </mat-drawer>
+    </mat-drawer-container>
 
   <footer class="bg-black text-center">
     @ copyright reserved at
@@ -144,6 +129,9 @@
     <div class="input-group mb-4">
       <input type="search" class="form-control" placeholder="search" aria-label="search">
     </div>
-    
+
+    <h3 class="text-danger popular-movies">Popular Movies</h3>
+
+    <h3 class="text-danger favorites">Favorites</h3>
   </nav>
 </html>

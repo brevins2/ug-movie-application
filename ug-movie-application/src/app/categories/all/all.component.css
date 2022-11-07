@@ -13,11 +13,14 @@ html {
   padding-top: 5%;
   padding-left: 2%;
   position: fixed-left;
+  top: 4;
 }
 
 .horizontal-nav a h1 {
   width: 100px;
   font-size: 1.05rem;
+  position: fixed;
+  top: 3%;
 }
 
 .horizontal-nav div {
@@ -26,6 +29,44 @@ html {
   color: whitesmoke;
   margin-right: 0px;
   width: 100px;
+}
+
+.main-link div i,
+.main-link div a {
+  margin-top: 7%;
+  position: fixed;
+}
+
+.main-link h3 {
+  position: fixed;
+  margin-top: 3%;
+}
+
+.profile-link div i,
+.profile-link div a {
+  margin-top: 10%;
+  position: fixed;
+}
+
+.profile-link h3 {
+  margin-top: 6%;
+  position: fixed;
+}
+
+.general-link div i,
+.general-link div a{
+  margin-top: 14%;
+  position: fixed;
+}
+
+.general-link h3 {
+  margin-top: 10%;
+  position: fixed;
+}
+
+.general-link button {
+  margin-top: 17%;
+  position: fixed;
 }
 
 .horizontal-nav div div:hover {
@@ -78,7 +119,7 @@ a {
 
 /* body styles */
 body {
-  width: 74%;
+  width: 70%;
   height: auto%;
   padding: 2%;
 }
@@ -146,10 +187,12 @@ mat-drawer {
 
 /* right navigation-bar */
 .vertical-nav {
-  width: 13%;
+  width: 17%;
 }
 
 .input-group {
+  width: 100px;
+  position: fixed;
   margin-top: 20px;
 }
 
@@ -157,4 +200,14 @@ input {
   height: 30px;
   background-color: unset;
   border-color: grey;
+}
+
+.popular-movies {
+  position: fixed;
+  top: 12%;
+}
+
+.favorites {
+  position: fixed;
+  top: 58%;
 }

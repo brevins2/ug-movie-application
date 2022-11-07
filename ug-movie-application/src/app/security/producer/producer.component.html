@@ -1,15 +1,46 @@
 <div class="container-fluid bg-dark">
   <form class="bg-white">
-    <nav class="p-2">Create account</nav>
+    <nav class="p-2">Register Produer</nav>
 
     <div class="form-group">
-      <span>Username</span>
+      <span>Name</span>
         <input type="text" class="form-control" placeholder="enter username" required>
     </div>
 
     <div class="form-group">
       <span>Email</span>
         <input type="email" class="form-control" placeholder="enter email" required>
+    </div>
+
+    <div class="form-group">
+      <span>Type of Genre</span><br>
+      <div class="checkbox d-flex">
+        <div>
+          <input type="checkbox" name="thriller">&nbsp;Thriller <br>
+          <input type="checkbox" name="Romance">&nbsp;Romance <br>
+          <input type="checkbox" name="Inspirarional">&nbsp;Inspirarional <br>
+          <input type="checkbox" name="Horror">&nbsp;Horror<br>
+        </div>
+
+        <div>
+          <input type="checkbox" name="Action">&nbsp;Action <br>
+          <input type="checkbox" name="Animation">&nbsp;Animation <br>
+          <input type="checkbox" name="Documentaries">&nbsp;Documentaries <br>
+          <input type="checkbox" name="Reality">&nbsp;Reality <br>
+        </div>
+
+        <div>
+          <input type="checkbox" name="Series">&nbsp;Series <br>
+          <input type="checkbox" name="Sci-Fi">&nbsp;Sci-Fi <br>
+          <input type="checkbox" name="Super naturala">&nbsp;Super natural <br>
+          <input type="checkbox" name="Comedies">&nbsp;Comedies <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <span>Upload image</span>
+        <input type="File" class="form-control" placeholder="enter email" required>
     </div>
 
     <div class="form-group passwords">
@@ -20,8 +51,10 @@
         <input type="password" class="form-control" placeholder="confirm password" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Register</button><br>
+    <button type="submit" class="btn btn-primary">
+      <i class="fa-solid fa-save"></i>
+      Register
+    </button>
 
-    <a routerLink="/login">Already have an account? Login</a>
   </form>
 </div>

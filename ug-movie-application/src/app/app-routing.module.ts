@@ -19,6 +19,8 @@ import { MoviesbackComponent } from './developer/moviesback/moviesback.component
 import { CustomersComponent } from './developer/customers/customers.component';
 import { ProducersComponent } from './developer/producers/producers.component';
 
+import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
+
 const routes: Routes = [
   { path:'', redirectTo: 'cinema/browse', pathMatch: 'full' },
   { path:'cinema/browse', component: BrowseComponent },
@@ -40,7 +42,8 @@ const routes: Routes = [
     { path: 'moviesedits', component: MoviesbackComponent },
     { path: 'customers', component: CustomersComponent },
     { path: 'producers', component: ProducersComponent }
-  ]}
+  ]},
+  { path: 'play', component: PlayMovieComponent }
 ];
 
 @NgModule({
