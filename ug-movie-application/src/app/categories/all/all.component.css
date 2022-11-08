@@ -211,3 +211,99 @@ input {
   position: fixed;
   top: 58%;
 }
+
+.popular-movies-div {
+  position: fixed;
+  top: 17%;
+  width: 20%;
+  height: 90px;
+}
+
+.popular-movies-div .card-one {
+  position: fixed;
+  top: 18%;
+  width: 120px;
+  height: 50px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.popular-movies-div .card-two {
+  position: fixed;
+  top: 29%;
+  width: 120px;
+  height: 50px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.popular-movies-div .card-three {
+  position: fixed;
+  top: 40%;
+  width: 120px;
+  height: 50px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.popular-movies-div .card-one img,
+.popular-movies-div .card-two img,
+.popular-movies-div .card-three img {
+  width: 40px;
+  border-right: 2px solid grey; 
+}
+
+.card-details {
+  width: 80px;
+  border-left: 0px;
+}
+
+.favorite-movies-div {
+  position: fixed;
+  top: 63%;
+  width: 20%;
+  height: 90px;
+  padding: 0 auto;
+}
+
+.favorite-movies-div .one {
+  position: fixed;
+  top: 74%;
+  width: 120px;
+  height: 50px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.favorite-movies-div .two {
+  position: fixed;
+  top: 85%;
+  width: 120px;
+  height: 50px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.favorite-movies-div .three {
+  position: fixed;
+  margin-top: 1%;
+  width: 120px;
+  height: 50px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.favorite-movies-div .one img,
+.favorite-movies-div .two img,
+.favorite-movies-div .three img {
+  width: 40px;
+  border-right: 2px solid grey;
+}
+
+.card-details {
+  width: 80px;
+  border-left: 0px;
+}

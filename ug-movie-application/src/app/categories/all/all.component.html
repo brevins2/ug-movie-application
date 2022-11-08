@@ -11,7 +11,7 @@
 
       <div class="d-flex text-left">
         <i class="fa-solid fa-home"></i>&nbsp;
-        <a class="text-left active link" routerLink="/cinema/browse">Home</a>
+        <a class="text-left link" active routerLink="/cinema/browse">Home</a>
       </div>
 
       <div class="d-flex text-left">
@@ -130,8 +130,58 @@
       <input type="search" class="form-control" placeholder="search" aria-label="search">
     </div>
 
-    <h3 class="text-danger popular-movies">Popular Movies</h3>
+    <div class="d-flex flex-column">
+      <h3 class="text-danger popular-movies">Popular Movies</h3>
 
-    <h3 class="text-danger favorites">Favorites</h3>
+      <div class="popular-movies-div d-flex flex-column bg-dark">
+        <div class="card-one d-flex bg-dark">
+          <img src="..." class="card-img-top" alt="..." width="20px">
+          <div class="card-details">
+            <h5 class="card-title">Card title</h5>
+          </div>
+        </div>
+
+        <div class="card-two d-flex bg-dark">
+          <img src="..." class="card-img-top" alt="..." width="20px">
+          <div class="card-details">
+            <h5 class="card-title">Card title</h5>
+          </div>
+        </div>
+
+        <div class="card-three d-flex bg-dark">
+          <img src="..." class="card-img-top" alt="..." width="20px">
+          <div class="card-details">
+            <h5 class="card-title">Card title</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column">
+      <h3 class="text-danger favorites">Favorites</h3>
+
+      <div class="favorite-movies-div d-flex flex-column bg-dark">
+        <div class="d-flex bg-dark one">
+          <img src="..." class="card-img-top" alt="..." width="20px">
+          <div class="card-details">
+            <h5 class="card-title">Card title</h5>
+          </div>
+        </div>
+
+        <div class="d-flex bg-dark two">
+          <img src="..." class="card-img-top" alt="..." width="20px">
+          <div class="card-details">
+            <h5 class="card-title">Card title</h5>
+          </div>
+        </div>
+
+        <div class="d-flex bg-dark three">
+          <img src="..." class="card-img-top" alt="..." width="20px">
+          <div class="card-details">
+            <h5 class="card-title">Card title</h5>
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
 </html>
