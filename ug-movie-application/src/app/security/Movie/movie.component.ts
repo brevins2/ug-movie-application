@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-movie',
@@ -17,12 +18,15 @@ export class MovieComponent implements OnInit {
 		movieinfo: new FormControl('')
 	});
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
   save() {
-    alert('whooo!!!!');
+    this.http.post<any>('http://localhost:3000/Movies', this.RegisterForm.value).subscribe(res=>{
+      console.log(res);
+      this.RegisterForm.reset();
+    });
   }
 }

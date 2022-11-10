@@ -10,20 +10,36 @@ import { Router } from '@angular/router';
 })
 export class ProducerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   RegisterForm = new FormGroup({
+    name: new FormControl(''),
   	email: new FormControl(''),
+    thriller: new FormControl(''),
+    Romance: new FormControl(''),
+    Inspirarional: new FormControl(''),
+    Horror: new FormControl(''),
+    Action: new FormControl(''),
+    Animation: new FormControl(''),
+    Documentaries: new FormControl(''),
+    Reality: new FormControl(''),
+    Series: new FormControl(''),
+    SciFi: new FormControl(''),
+    Supernatural: new FormControl(''),
+    Comedies: new FormControl(''),
+    File: new FormControl(''),
     password: new FormControl(''),
     confirmPassword: new FormControl(''),
-    file: new FormControl(''),
-    check: new FormControl('')
+    file: new FormControl('')
   });
 
   ngOnInit(): void {
   }
 
   well (){
-  	alert(1224);
+  	this.http.post<any>('http://localhost:3000/Producer', this.RegisterForm.value).subscribe(res => {
+      console.log(res);
+      this.RegisterForm.reset();
+    });
   }
 }

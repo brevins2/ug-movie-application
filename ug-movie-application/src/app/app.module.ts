@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './security/login/login.component';
 import { MovieComponent } from './security/Movie/movie.component';
@@ -66,6 +68,7 @@ import { PlayMovieComponent } from './categories/play-movie/play-movie.component
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     // NgxCarouselModule,

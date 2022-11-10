@@ -1,6 +1,45 @@
 {
-	"Producer": [],
-	"Users": [],
-	"Movies": [],
-	"Subscription": []
+  "Producer": [
+    {
+      "name": "kiggundu",
+      "email": "brev@u.com",
+      "thriller": true,
+      "Romance": "",
+      "Inspirarional": "",
+      "Horror": "",
+      "Action": true,
+      "Animation": "",
+      "Documentaries": true,
+      "Reality": "",
+      "Series": "",
+      "SciFi": true,
+      "Supernatural": "",
+      "Comedies": "",
+      "File": "C:\\fakepath\\VID-20210612-WA0000.mp4",
+      "password": "done",
+      "confirmPassword": "done",
+      "file": "",
+      "id": 1
+    }
+  ],
+  "Users": [],
+  "Movies": [
+    {
+      "title": "goods",
+      "file": "C:\\fakepath\\VTS_02_1.mp4",
+      "genre": "horror",
+      "producer": "brevin",
+      "movieinfo": "a good movie",
+      "id": 1
+    },
+    {
+      "title": "home",
+      "file": "C:\\fakepath\\VID-20210612-WA0000.mp4",
+      "genre": "romance",
+      "producer": "kiggundu",
+      "movieinfo": "love like no other",
+      "id": 2
+    }
+  ],
+  "Subscription": []
 }
