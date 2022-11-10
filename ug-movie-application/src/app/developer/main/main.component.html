@@ -1,39 +1,48 @@
 <html class="d-flex flex-column">
 	<mat-toolbar class="d-flex fixed-top justify-content-between position-sticky">
-	   	<nav class="float-left">
-			<a href="#" class="home-link">
+	   	<nav class="home-link">
+			<a href="#">
 				<h1>
-		        	<code class="text-red">Lutimbe</code><code class="text-black">Filmz</code>
+		        	<code class="text-red">Lutimbe</code><code class="text-white bg-black">Filmz</code>
 		    	</h1>
 		    </a>
 		</nav>
 
 		<div class="float-right example-sidenav-content">
 		    <button type="button" mat-button (click)="drawer.toggle()">
-		      menu
+		      <mat-icon class="menu">menu</mat-icon>
 		    </button>
   		</div>
+
 	</mat-toolbar>
 
 	<body class="d-flex flex-column">
-		<div class="bg-black"></div>
-		<div class="bg-yellow"></div>
-		<div class="bg-red"></div>
+		<div class="fixed-top colors">
+			<div class="bg-black"></div>
+			<div class="bg-yellow"></div>
+			<div class="bg-red"></div>
+		</div>
 
 		<mat-drawer-container class="example-container" autosize>
 		  <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" mode="side">
 		    <nav class="nav nav-link d-flex flex-column float-left bg-dark">
 				<div class="d-flex">
-					<i class="fa-solid fa-camera-movie"></i>
-					<a class="text-left active link" routerLink="moviesedits">movies</a>
+					<a class="text-left active link" active routerLink="moviesedits">
+						<i class="fa-solid fa-camera"></i>
+						movies
+					</a>
 				</div>
 				<div class="d-flex">
-					<i class="fa-brands fa-product-hunt"></i>
-					<a class="text-left link" routerLink="producers">producers</a>
+					<a class="text-left link" routerLink="producers">
+						<i class="fa-brands fa-product-hunt"></i>
+						producers
+					</a>
 				</div>
 				<div class="d-flex">
-					<i class="fa-duotone fa-users"></i>
-					<a class="text-left link" routerLink="customers">customers</a>
+					<a class="text-left link" routerLink="customers">
+						<i class="fa-solid fa-users"></i>
+						customers
+					</a>
 				</div>
 				
 				<button class="btn btn-danger text-center" (click)="logout()">

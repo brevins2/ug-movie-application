@@ -24,10 +24,13 @@ import { PlayMovieComponent } from './categories/play-movie/play-movie.component
 const routes: Routes = [
   { path:'', redirectTo: 'cinema/browse', pathMatch: 'full' },
   { path:'cinema/browse', component: BrowseComponent },
+
   { path:'login', component: LoginComponent },
   { path:'register/movie', component: MovieComponent },
   { path:'register/producer', component: ProducerComponent },
+  
   { path: 'test', component: TestComponent },
+
   { path:'pay', component: PayComponent },
   { path:'subscribe', component: SubscriptionComponent },
 

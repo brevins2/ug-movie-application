@@ -1,57 +1,58 @@
 <div class="container-fluid bg-dark">
-  <form class="bg-white">
+  <form class="bg-white" [formGroup]="RegisterForm">
     <nav class="p-2">Register Produer</nav>
 
     <div class="form-group">
       <span>Name</span>
-        <input type="text" class="form-control" placeholder="enter username" required>
+        <input type="text" class="form-control" formControlName="name" placeholder="enter username" required>
     </div>
 
     <div class="form-group">
       <span>Email</span>
-        <input type="email" class="form-control" placeholder="enter email" required>
+        <input type="email" class="form-control" formControlName="email" placeholder="enter email" required>
     </div>
 
     <div class="form-group">
       <span>Type of Genre</span><br>
-      <div class="checkbox d-flex">
+      <div class="form-control form-control-ckeckbox checkbox d-flex">
         <div>
-          <input type="checkbox" name="thriller">&nbsp;Thriller <br>
+          <input type="checkbox" formControlName="thriller">&nbsp;Thriller <br>
           <input type="checkbox" name="Romance">&nbsp;Romance <br>
-          <input type="checkbox" name="Inspirarional">&nbsp;Inspirarional <br>
-          <input type="checkbox" name="Horror">&nbsp;Horror<br>
+
+          <input type="checkbox" formControlName="Inspirarional">&nbsp;Inspirarional <br>
+          <input type="checkbox" formControlName="Horror">&nbsp;Horror<br>
         </div>
 
         <div>
-          <input type="checkbox" name="Action">&nbsp;Action <br>
-          <input type="checkbox" name="Animation">&nbsp;Animation <br>
-          <input type="checkbox" name="Documentaries">&nbsp;Documentaries <br>
-          <input type="checkbox" name="Reality">&nbsp;Reality <br>
+          <input type="checkbox" formControlName="Action">&nbsp;Action <br>
+          <input type="checkbox" formControlName="Animation">&nbsp;Animation <br>
+          <input type="checkbox" formControlName="Documentaries">&nbsp;Documentaries <br>
+          <input type="checkbox" formControlName="Reality">&nbsp;Reality <br>
         </div>
 
         <div>
-          <input type="checkbox" name="Series">&nbsp;Series <br>
-          <input type="checkbox" name="Sci-Fi">&nbsp;Sci-Fi <br>
-          <input type="checkbox" name="Super naturala">&nbsp;Super natural <br>
-          <input type="checkbox" name="Comedies">&nbsp;Comedies <br>
+          <input type="checkbox" formControlName="Series">&nbsp;Series <br>
+          <input type="checkbox" formControlName="SciFi">&nbsp;Sci-Fi <br>
+          <input type="checkbox" formControlName="Super-natural">&nbsp;Super natural <br>
+          <input type="checkbox" formControlName="Comedies">&nbsp;Comedies <br>
         </div>
       </div>
     </div>
 
     <div class="form-group">
       <span>Upload image</span>
-        <input type="File" class="form-control" placeholder="enter email" required>
+        <input type="File" class="form-control" formControlName="File" placeholder="enter email" required>
     </div>
 
     <div class="form-group passwords">
       <span>Password</span>
-        <input type="password" class="form-control" placeholder="enter password" required>
+        <input type="password" class="form-control" formControlName="password" placeholder="enter password" required>
 
       <span>Confirm Password</span>
-        <input type="password" class="form-control" placeholder="confirm password" required>
+        <input type="password" class="form-control" formControlName="confirmPassword" placeholder="confirm password" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-primary" (click)="well()">
       <i class="fa-solid fa-save"></i>
       Register
     </button>

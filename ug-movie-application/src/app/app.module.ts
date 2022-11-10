@@ -41,8 +41,8 @@ import { TestComponent } from './security/test/test.component';
 import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { NgxCarouselModule } from 'ngx-carousel';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
+// import { NgxCarouselModule } from 'ngx-carousel';
+// import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -68,8 +68,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgxCarouselModule,
-    CarouselModule,
+    // NgxCarouselModule,
+    // CarouselModule,
     MatCardModule,
     MatToolbarModule,
     MatSidenavModule,

@@ -1,30 +1,30 @@
 <div class="container-fluid bg-dark">
-  <form class="bg-white">
+  <form class="bg-white" [formGroup]="RegisterForm">
     <nav class="p-2">Add Movie</nav>
 
     <div class="form-group">
       <span>Title</span>
-        <input type="text" class="form-control" placeholder="enter title" required>
+        <input type="text" class="form-control" formControlName="title" placeholder="enter title" required>
     </div>
 
     <div class="form-group">
       <span>File</span>
-        <input type="file" class="form-control" placeholder="enter movie" required>
+        <input type="file" class="form-control" formControlName="file" placeholder="enter movie" required>
     </div>
 
     <div class="form-group">
       <span>Genre</span>
-        <input type="text" class="form-control" placeholder="enter movie genre" required>
+        <input type="text" class="form-control" formControlName="genre" placeholder="enter movie genre" required>
     </div>
 
     <div class="form-group">
       <span>Producer</span>
-        <input type="text" class="form-control" placeholder="enter producer name" required>
+        <input type="text" class="form-control" formControlName="producer" placeholder="enter producer name" required>
     </div>
 
     <div class="form-group passwords">
       <span>Movie information</span>
-      <textarea class="form-control" placeholder="enter movie information" required cols="3" rows="5">
+      <textarea class="form-control" formControlName="movieinfo" placeholder="enter movie information" required cols="3" rows="5">
       </textarea>
     </div>
 
