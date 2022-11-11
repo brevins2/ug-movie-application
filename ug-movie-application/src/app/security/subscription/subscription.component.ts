@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-subscription',
@@ -9,17 +10,24 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 export class SubscriptionComponent implements OnInit {
 
-  firstFormGroup = this._formBuilder.group({
-    name: ['', Validators.required],
+  firstFormGroup = new FormGroup({
+    name: new FormControl(''),
+    Username: new FormControl(''),
+    email: new FormControl(''),
+    file: new FormControl(''),
+    password: new FormControl(''),
+    confrimpassword: new FormControl('')
   });
 
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
+  // firstFormGroup
+
+  secondFormGroup = new FormGroup({
+    payement: new FormControl('')
   });
 
   isEditable = true;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
   }

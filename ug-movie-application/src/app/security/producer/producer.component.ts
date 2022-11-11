@@ -38,7 +38,7 @@ export class ProducerComponent implements OnInit {
 
   well (){
   	this.http.post<any>('http://localhost:3000/Producer', this.RegisterForm.value).subscribe(res => {
-      console.log(res);
+      // console.log(res);
       this.RegisterForm.reset();
     });
   }

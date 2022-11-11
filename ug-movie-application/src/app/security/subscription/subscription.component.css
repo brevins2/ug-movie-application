@@ -18,25 +18,25 @@ mat-stepper {
 	border-radius: 8px;
 }
 
-ng-template {
-	width: 90%;
-	margin-left: 0px;
-}
-
 .mat-stepper-horizontal {
 	margin-top: 8px;
 }
 
 .mat-form-field {
  	margin-top: 16px;
-	width: 85%;
+	width: 95%;
 }
 
 mat-step {
 	margin: 0 auto;
 	height: 100%;
+	width: 100%;
 }
 
 nav {
   font-size: 1.2rem;
+}
+
+input {
+	width: 100%;
 }
