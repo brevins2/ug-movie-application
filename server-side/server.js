@@ -30,7 +30,7 @@ db.connect(err => {
 
 app.get('/Accounts', (req, res) => {
 
-    let qr = `select * from accounts`;
+    let qr = `select * from user`;
 
     db.query(qr, (err, result) => {
         if (err) {
@@ -53,7 +53,7 @@ app.get('/Account/:id', (req, res) => {
 
     let gID = req.params.id;
 
-    let qr = `select * from accounts where id = ${gID}`;
+    let qr = `select * from user where id = ${gID}`;
 
     db.query(qr, (err, results) => {
 
@@ -87,7 +87,7 @@ app.post('/add/Account', (req, res) => {
     let allow = req.body.Allow;
     //    let file = req.body.File;
 
-    let qr = `INSERT INTO accounts(email, password, confirmPassword, Allow)
+    let qr = `INSERT INTO user(email, password, confirmPassword, Allow)
                 VALUES('${email}', '${password}', '${confirmPassword}', '${allow}')`;
 
     db.query(qr, (err, result) => {
@@ -114,7 +114,7 @@ app.put('/update/Account/:id', (req, res) => {
     let allow = req.body.Allow;
     let file = req.body.File;
 
-    let qr = `update accounts set email = '${email}', password = '${password}',
+    let qr = `update user set email = '${email}', password = '${password}',
                confirm_password = '${confirmPassword}', file = '${file}', allow = '${Allow}', where id = ${gID}`;
 
     db.query(qr, (err, result) => {
@@ -132,7 +132,7 @@ app.delete('/delete/Accounts/:id', (req, res) => {
 
     let qID = req.params.id;
 
-    let qr = `delete from accounts where id = '${qID}'`;
+    let qr = `delete from user where id = '${qID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -259,9 +259,9 @@ app.delete('/delete/Message/:id', (req, res) => {
 // for phones
 //get all the data
 
-app.get('/Phones', (req, res) => {
+app.get('/Movies', (req, res) => {
 
-    let qr = `select * from phones`;
+    let qr = `select * from movie`;
 
     db.query(qr, (err, result) => {
         if (err) {
@@ -278,11 +278,11 @@ app.get('/Phones', (req, res) => {
 
 // get single data
 
-app.get('/Phones/:id', (req, res) => {
+app.get('/Movies/:id', (req, res) => {
 
     let gID = req.params.id;
 
-    let qr = `select * from phones where id = ${gID}`;
+    let qr = `select * from movie where id = ${gID}`;
 
     db.query(qr, (err, results) => {
 
@@ -304,19 +304,18 @@ app.get('/Phones/:id', (req, res) => {
 
 // adding data
 
-app.post('/add/Phone', (req, res) => {
+app.post('/add/Movie', (req, res) => {
 
     console.log(req.body, 'data added');
 
-    let title = req.body.Title;
-    let storage = req.body.Storage;
-    let battery = req.body.Battery;
-    let price = req.body.Price;
-    let file = req.body.File;
-    let brand = req.body.Brand;
+    let title = req.body.title;
+    let genre = req.body.genre;
+    let producer = req.body.producer;
+    let file = req.body.file;
+    let details = req.body.details;
 
-    let qr = `INSERT INTO phones(Title, Storage, Battery, Price, File, Brand)
-                VALUES('${title}','${storage}','${battery}', '${price}', '${file}', '${brand}')`;
+    let qr = `INSERT INTO movie(title, file, genre, producer, details)
+                VALUES('${title}', '${file}','${genre}','${producer}', '${details}')`;
 
     db.query(qr, (err, result) => {
 
@@ -331,7 +330,7 @@ app.post('/add/Phone', (req, res) => {
 
 // put data/ update data
 
-app.put('/update/Phones/:id', (req, res) => {
+app.put('/update/Movies/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
@@ -343,7 +342,7 @@ app.put('/update/Phones/:id', (req, res) => {
     let file = req.body.File;
     let brand = req.body.Brand;
 
-    let qr = `update phones set Title = '${title}', Storage = '${storage}', Battery = '${battery}',
+    let qr = `update movie set Title = '${title}', Storage = '${storage}', Battery = '${battery}',
                 Price = '${Price}', File = '${file}', Brand = '${brand}'  where id = ${gID}`;
 
     db.query(qr, (err, result) => {
@@ -357,7 +356,7 @@ app.put('/update/Phones/:id', (req, res) => {
 
 // delete single data
 
-app.delete('/delete/Phones/:id', (req, res) => {
+app.delete('/delete/Movies/:id', (req, res) => {
 
     let qID = req.params.id;
 
@@ -377,9 +376,9 @@ app.delete('/delete/Phones/:id', (req, res) => {
 // for computers
 //get all the data
 
-app.get('/Computers', (req, res) => {
+app.get('/Producers', (req, res) => {
 
-    let qr = `select * from computers`;
+    let qr = `select * from producer`;
 
     db.query(qr, (err, result) => {
         if (err) {
@@ -396,11 +395,11 @@ app.get('/Computers', (req, res) => {
 
 // get single data
 
-app.get('/Computers/:id', (req, res) => {
+app.get('/Producers/:id', (req, res) => {
 
     let gID = req.params.id;
 
-    let qr = `select * from computers where id = ${gID}`;
+    let qr = `select * from producer where id = ${gID}`;
 
     db.query(qr, (err, results) => {
 
@@ -422,7 +421,7 @@ app.get('/Computers/:id', (req, res) => {
 
 // adding data
 
-app.post('/add/Computer', (req, res) => {
+app.post('/add/Producer', (req, res) => {
 
     console.log(req.body, 'data added');
 
@@ -431,7 +430,7 @@ app.post('/add/Computer', (req, res) => {
     let price = req.body.Price;
     let file = req.body.File;
 
-    let qr = `INSERT INTO computers(Title, Category, Price, File)
+    let qr = `INSERT INTO producer(Title, Category, Price, File)
                 VALUES('${title}', '${category}', '${price}', '${file}')`;
 
     db.query(qr, (err, result) => {
@@ -447,7 +446,7 @@ app.post('/add/Computer', (req, res) => {
 
 // put data/ update data
 
-app.put('/update/Computer/:id', (req, res) => {
+app.put('/update/Producer/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
@@ -457,7 +456,7 @@ app.put('/update/Computer/:id', (req, res) => {
     let price = req.body.Price;
     let file = req.body.File;
 
-    let qr = `update phones set Title = '${title}', Category = '${category}',
+    let qr = `update producer set Title = '${title}', Category = '${category}',
                 Price = '${Price}', File = '${file}' where id = ${gID}`;
 
     db.query(qr, (err, result) => {
@@ -471,11 +470,11 @@ app.put('/update/Computer/:id', (req, res) => {
 
 // delete single data
 
-app.delete('/delete/Computers/:id', (req, res) => {
+app.delete('/delete/Producers/:id', (req, res) => {
 
     let qID = req.params.id;
 
-    let qr = `delete from computers where id = '${qID}'`;
+    let qr = `delete from producer where id = '${qID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -612,116 +611,6 @@ app.delete('/delete/Orders/:id', (req, res) => {
     });
 
 });
-
-
-// for Uploaded images
-//get all the data
-
-app.get('/Upload', (req, res) => {
-
-    let qr = `select * from uploads`;
-
-    db.query(qr, (err, result) => {
-        if (err) {
-            console.log(err, 'errs');
-        }
-        if (result.length > 0) {
-            res.send({
-                message: 'all data available',
-                data: result
-            });
-        }
-    });
-});
-
-// get single data
-
-app.get('/Upload/:id', (req, res) => {
-
-    let gID = req.params.id;
-
-    let qr = `select * from uploads where id = ${gID}`;
-
-    db.query(qr, (err, results) => {
-
-        if (err) {
-            console.log(err);
-        }
-        if (results.length > 0) {
-            res.send({
-                Message: 'getting single data',
-                data: results
-            });
-        } else {
-            res.send({
-                message: 'data not found'
-            });
-        }
-    });
-});
-
-// adding data
-
-app.post('/add/files', (req, res) => {
-
-    console.log(req.body, 'data added');
-
-    let title = req.body.Title;
-    let file = req.body.File;
-
-    let qr = `INSERT INTO uploads(Title, File)
-                VALUES('${title}', '${file}')`;
-
-    db.query(qr, (err, result) => {
-
-        if (err) { console.log(err); }
-
-        res.send({
-            message: 'data sent successfully'
-        });
-
-    });
-});
-
-// put data/ update data
-
-app.put('/update/Upload/:id', (req, res) => {
-
-    console.log(req.body, 'data updated');
-
-    let gID = req.params.id;
-    let title = req.body.Title;
-    let file = req.body.File;
-
-    let qr = `update phones set Title = '${title}', File = '${file}' where id = ${gID}`;
-
-    db.query(qr, (err, result) => {
-        if (err) { console.log(err); }
-
-        res.send({
-            message: 'data successfully updated'
-        });
-    });
-});
-
-// delete single data
-
-app.delete('/delete/Upload/:id', (req, res) => {
-
-    let qID = req.params.id;
-
-    let qr = `delete from uploads where id = '${qID}'`;
-
-    db.query(qr, (err, result) => {
-        if (err) { console.log(err); }
-
-        res.send({
-            message: 'data delete successful'
-        });
-    });
-
-});
-
 
 
 

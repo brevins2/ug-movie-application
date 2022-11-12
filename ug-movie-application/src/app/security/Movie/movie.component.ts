@@ -15,7 +15,7 @@ export class MovieComponent implements OnInit {
 		file: new FormControl(''),
 		genre: new FormControl(''),
 		producer: new FormControl(''),
-		movieinfo: new FormControl('')
+		details: new FormControl('')
 	});
 
   constructor(private http: HttpClient) { }
@@ -24,7 +24,7 @@ export class MovieComponent implements OnInit {
   }
 
   save() {
-    this.http.post<any>('http://localhost:3000/Movies', this.RegisterForm.value).subscribe(res=>{
+    this.http.post<any>('http://localhost:8080/add/Movie', this.RegisterForm.value).subscribe(res=>{
       // console.log(res);
       this.RegisterForm.reset();
     });
