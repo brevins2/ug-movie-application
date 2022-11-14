@@ -1,16 +1,16 @@
 <html class="d-flex flex-column">
-	<mat-toolbar class="d-flex fixed-top justify-content-between position-sticky">
+	<mat-toolbar class="d-flex fixed-top justify-content-between position-sticky bg-dark">
 	   	<nav class="home-link">
 			<a href="#">
 				<h1>
-		        	<code class="text-red">Lutimbe</code><code class="text-white bg-black">Filmz</code>
+		        	<code class="text-danger">Lutimbe</code><code class="bg-white text-black">Filmz</code>
 		    	</h1>
 		    </a>
 		</nav>
 
 		<div class="float-right example-sidenav-content">
 		    <button type="button" mat-button (click)="drawer.toggle()">
-		      <mat-icon class="menu">menu</mat-icon>
+		      <mat-icon class="menu text-white">menu</mat-icon>
 		    </button>
   		</div>
 
@@ -21,11 +21,15 @@
 			<div class="bg-black"></div>
 			<div class="bg-yellow"></div>
 			<div class="bg-red"></div>
+
+			<div class="bg-black"></div>
+			<div class="bg-yellow"></div>
+			<div class="bg-red"></div>
 		</div>
 
 		<mat-drawer-container class="example-container" autosize>
 		  <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" mode="side">
-		    <nav class="nav nav-link d-flex flex-column float-left bg-dark">
+		    <nav class="nav nav-link d-flex flex-column float-left">
 				<div class="d-flex">
 					<a class="text-left active link" active routerLink="moviesedits">
 						<i class="fa-solid fa-camera"></i>

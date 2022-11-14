@@ -31,8 +31,8 @@ db.connect(err => {
 
 
 // for Accounts/registration
-//get all the data
 
+//get all the data
 app.get('/Accounts', (req, res) => {
 
     let qr = `select * from user`;

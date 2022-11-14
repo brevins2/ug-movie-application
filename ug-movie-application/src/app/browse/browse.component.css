@@ -44,6 +44,10 @@ h1 {
   font-size: 2.8rem;
 }
 
+h3 {
+  margin-left: 10%;
+}
+
 mat-card, mat-card div, card-text {
   background-color: unset;
 }
@@ -54,4 +58,8 @@ mat-card {
   margin-left: 2%;
   width: 92%;
   padding: 3%;
+}
+
+details:hover {
+  cursor: pointer;
 }
