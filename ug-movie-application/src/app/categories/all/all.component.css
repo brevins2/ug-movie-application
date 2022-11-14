@@ -33,12 +33,17 @@ html {
 .main-link div i,
 .main-link div a {
   margin-top: 7%;
+  /*padding-right: -9%;*/
   position: fixed;
 }
 
 .main-link h3 {
   position: fixed;
   margin-top: 3%;
+}
+
+.main-link div {
+  margin-bottom: 15px;
 }
 
 .profile-link div i,

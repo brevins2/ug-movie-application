@@ -63,3 +63,7 @@ mat-card {
 details:hover {
   cursor: pointer;
 }
+
+details {
+  margin-bottom: 3%;
+}
