@@ -1,0 +1,61 @@
+<div class="container-fluid bg-dark">
+  <form class="bg-white" [formGroup]="RegisterForm">
+    <nav class="p-2">Register Produer</nav>
+
+    <div class="form-group">
+      <span>Name</span>
+        <input type="text" class="form-control" formControlName="name" name="name" value="name" placeholder="enter username" required>
+    </div>
+
+    <div class="form-group">
+      <span>Email</span>
+        <input type="email" class="form-control" formControlName="email" name="email" value="email" placeholder="enter email" required>
+    </div>
+
+    <div class="form-group">
+      <span>Type of Genre</span><br>
+      <div class="form-control form-control-ckeckbox checkbox d-flex flex-wrap">
+        <div>
+          <input type="checkbox" formControlName="thriller" name="thriller" value="thriller">&nbsp;Thriller <br>
+          <input type="checkbox" formControlName="Romance" name="Romance" value="Romance">&nbsp;Romance <br>
+
+          <input type="checkbox" formControlName="Inspirarional" name="Inspirarional" value="Inspirarional">&nbsp;Inspirarional <br>
+          <input type="checkbox" formControlName="Horror" name="Horror" value="Horror">&nbsp;Horror<br>
+        </div>
+
+        <div>
+          <input type="checkbox" formControlName="Action" name="Action" value="Action">&nbsp;Action <br>
+          <input type="checkbox" formControlName="Animation" name="Animation" value="Animation">&nbsp;Animation <br>
+          <input type="checkbox" formControlName="Documentaries" name="Documentaries" value="Documentaries">&nbsp;Documentaries <br>
+          <input type="checkbox" formControlName="Reality" name="Reality" value="Reality">&nbsp;Reality <br>
+        </div>
+
+        <div>
+          <input type="checkbox" formControlName="Series" name="Series" value="Series">&nbsp;Series <br>
+          <input type="checkbox" formControlName="SciFi" name="SciFi" value="SciFi">&nbsp;Sci-Fi <br>
+          <input type="checkbox" formControlName="Supernatural" name="Supernatural" value="Supernatural">&nbsp;Super natural <br>
+          <input type="checkbox" formControlName="Comedies" name="Comedies" value="Comedies">&nbsp;Comedies <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <span>Upload image</span>
+        <input type="File" class="form-control" formControlName="File" name="File" value="File" placeholder="enter email" required>
+    </div>
+
+    <div class="form-group passwords">
+      <span>Password</span>
+        <input type="password" class="form-control" formControlName="password" name="password" value="password" placeholder="enter password" required>
+
+      <span>Confirm Password</span>
+        <input type="password" class="form-control" formControlName="confirmPassword" name="confirmPassword" value="confirmPassword" placeholder="confirm password" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="well()">
+      <i class="fa-solid fa-save"></i>
+      Register
+    </button>
+
+  </form>
+</div>

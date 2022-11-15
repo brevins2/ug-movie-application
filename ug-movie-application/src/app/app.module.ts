@@ -11,10 +11,13 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './security/login/login.component';
 import { MovieComponent } from './security/Movie/movie.component';
 import { BrowseComponent } from './browse/browse.component';
-import { ProducerComponent } from './security/producer/producer.component';
+import { RegisterproducerComponent } from './security/registerproducer/registerproducer.component';
+
 import { MoviesComponent } from './categories/movies/movies.component';
-import { SeriesComponent } from './categories/series/series.component';
+import { ProducerComponent } from './categories/producer/producer.component';
 import { AllComponent } from './categories/all/all.component';
+import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
+
 import { PayComponent } from './pay/pay.component';
 
 import { MatCardModule } from '@angular/material/card';
@@ -33,15 +36,19 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule  } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { SubscriptionComponent } from './security/subscription/subscription.component';
+
 import { MainComponent } from './developer/main/main.component';
 import { ProducersComponent } from './developer/producers/producers.component';
 import { CustomersComponent } from './developer/customers/customers.component';
 import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
+
 import { TestComponent } from './security/test/test.component';
-import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 // import { NgxCarouselModule } from 'ngx-carousel';
 // import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -54,8 +61,8 @@ import { PlayMovieComponent } from './categories/play-movie/play-movie.component
     MovieComponent,
     BrowseComponent,
     ProducerComponent,
+    RegisterproducerComponent,
     MoviesComponent,
-    SeriesComponent,
     AllComponent,
     PayComponent,
     SubscriptionComponent,
@@ -72,7 +79,7 @@ import { PlayMovieComponent } from './categories/play-movie/play-movie.component
     BrowserAnimationsModule,
     AppRoutingModule,
     // NgxCarouselModule,
-    // CarouselModule,
+    CarouselModule,
     MatCardModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -88,6 +95,7 @@ import { PlayMovieComponent } from './categories/play-movie/play-movie.component
     MatStepperModule,
     MatFormFieldModule,
     MatChipsModule,
+    MatExpansionModule,
     FormsModule,
     MatInputModule,
     ReactiveFormsModule

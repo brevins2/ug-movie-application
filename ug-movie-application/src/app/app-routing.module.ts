@@ -3,23 +3,23 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './security/login/login.component';
 import { MovieComponent } from './security/Movie/movie.component';
-import { ProducerComponent } from './security/producer/producer.component';
+import { RegisterproducerComponent } from './security/registerproducer/registerproducer.component';
 import { TestComponent } from './security/test/test.component';
+import { SubscriptionComponent } from './security/subscription/subscription.component';
 
 import { BrowseComponent } from './browse/browse.component';
 import { PayComponent } from './pay/pay.component';
-import { SubscriptionComponent } from './security/subscription/subscription.component';
 
 import { AllComponent } from './categories/all/all.component';
 import { MoviesComponent } from './categories/movies/movies.component';
-import { SeriesComponent } from './categories/series/series.component';
+import { ProducerComponent } from './categories/producer/producer.component';
+import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
 
 import { MainComponent } from './developer/main/main.component';
 import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
 import { CustomersComponent } from './developer/customers/customers.component';
 import { ProducersComponent } from './developer/producers/producers.component';
 
-import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
 
 const routes: Routes = [
   { path:'', redirectTo: 'cinema/browse', pathMatch: 'full' },
@@ -27,7 +27,7 @@ const routes: Routes = [
 
   { path:'login', component: LoginComponent },
   { path:'register/movie', component: MovieComponent },
-  { path:'register/producer', component: ProducerComponent },
+  { path:'register/producer', component: RegisterproducerComponent },
   
   { path: 'test', component: TestComponent },
 
@@ -37,7 +37,7 @@ const routes: Routes = [
   { path:'cinema/all', component: AllComponent, children: [
     { path:'', redirectTo: 'movies', pathMatch: 'full' },
     { path:'movies', component: MoviesComponent },
-    { path:'series', component: SeriesComponent }
+    { path:'producers', component: ProducerComponent }
   ]},
 
   { path: 'developer/edits', component: MainComponent, children: [

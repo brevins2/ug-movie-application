@@ -30,25 +30,59 @@
     </div>
 
     <div class="bg-black text-left">
+      <mat-accordion>
+
         <h3 class="text-white">Frequently asked questions(FAQ)</h3>
 
-        <div class="container">
-           <details class="text-white p-2 bg-dark">
-            At LutimbeFilmz, we offer the best of Ugandan movies and series from all our local producers who are based both national and international.
-            <br/> We focus on bringing ugandan movies closer to our viewers with the help of the movie producers themselves.
-          </details>
+        <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-white">
+              Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
 
-           <details class="text-white p-2 bg-dark">
-            At LutimbeFilmz, we offer the best of Ugandan movies and series from all our local producers who are based both national and international.
-            <br/> We focus on bringing ugandan movies closer to our viewers with the help of the movie producers themselves.
-          </details>
+        <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-white">
+              Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
 
-           <details class="text-white p-2 bg-dark">
-            At LutimbeFilmz, we offer the best of Ugandan movies and series from all our local producers who are based both national and international.
-            <br/> We focus on bringing ugandan movies closer to our viewers with the help of the movie producers themselves.
-          </details>
-        </div>
-      </div>
+        <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-white">
+              Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-white">
+              Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
     
   </body>
 

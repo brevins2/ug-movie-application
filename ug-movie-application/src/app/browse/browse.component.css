@@ -60,10 +60,20 @@ mat-card {
   padding: 3%;
 }
 
-details:hover {
-  cursor: pointer;
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
 }
 
-details {
-  margin-bottom: 3%;
+mat-expansion-panel {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 1%;
+}
+
+mat-panel-title {
+  opacity: .5;
+}
+
+mat-panel-description {
+  display: none;
 }

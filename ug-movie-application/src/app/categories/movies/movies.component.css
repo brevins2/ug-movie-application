@@ -6,9 +6,12 @@ body {
 }
 
 mat-card {
-  width: 25%;
-  margin: 2%;
+  width: 23%;
+  height: 15%;
+  margin: 1%;
 }
+
+slide { width: 100% }
 
 mat-drawer-container {
 	width: 10%;
