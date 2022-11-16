@@ -11,6 +11,7 @@
 
 .example-sidenav {
   padding: 20px;
+  background-color: black;
 }
 
 mat-toolbar {
@@ -41,8 +42,7 @@ body {
 
 mat-drawer-container mat-drawer {
 	width: 141px;
-	/*background-color: rgb(0 0 0 / 85%) !important;*/
-	/*font-size: .8rem;*/
+	background-color: black;
 }
 
 mat-drawer-container {
