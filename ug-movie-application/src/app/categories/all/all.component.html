@@ -57,179 +57,98 @@
       <button class="btn btn-danger text-center">
         logout
       </button>
-
-      <button class="btn btn-lg btn-outline-primary popup" (click)="open(content)"> <i class="fa fa-user-plus" color="white"></i>&nbsp;
-          Add User
-      </button>
     </div>
   </nav>
 
   <body class="d-flex flex-column bg-black">
-    <mat-toolbar class="d-flex fixed-top justify-content-between position-sticky bg-black">
-      <nav class="float-left text-left">
-        <small>
-          <a class="active">
-            All
-          </a>
-        </small>
+      <mat-toolbar class="d-flex fixed-top justify-content-between position-sticky bg-black">
+        <nav class="float-left text-left">
+          <small>
+            <a class="active">
+              All
+            </a>
+          </small>
 
-        <small>
-          <a routerLink="movies">
-            Movies
-          </a>
-        </small>
+          <small>
+            <a routerLink="movies">
+              Movies
+            </a>
+          </small>
 
-        <small>
-          <a routerLink="series">
-            Tv Shows
-          </a>
-        </small>
+          <small>
+            <a routerLink="series">
+              Tv Shows
+            </a>
+          </small>
 
-        <small>
-          <a href="#">
-            Documentaries
-          </a>
-        </small>
-      </nav>
-    </mat-toolbar>
+          <small>
+            <a href="#">
+              Documentaries
+            </a>
+          </small>
+        </nav>
 
-    <div class="main-div">
-
-      <ng-template #content let-modal class="bg-dark popup-body">
-            <div class="modal-header bg-dark">
-                <h4 class="modal-title" id="modal-basic-title">Add Phone</h4>
-                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-            </div>
-            <div class="modal-body bg-dark">
-
-                <body class="bg-dark">
-                    <div id="contain">
-                       <!--  <form [formGroup]="signUpForm" id="Form" class="form-control">
-                            <h1>Add Phone</h1>
-                            <div class="form-row">
-                                <div class="form-group col-md-6" id="email">
-                                    <label for="inputEmail">Email</label>
-                                    <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6" id="ids">
-                                    <div>
-                                        <label for="inputPassword4">Password</label>
-                                        <input formControlName="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                                    </div>
-                                    <div>
-                                        <label for="inputPassword4">Confirm Password</label>
-                                        <input formControlName="confirmPassword" type="password" class="form-control" id="inputPassword4" placeholder="Confirm Password">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label for="inputPassword4">Upload Image</label>
-                                <input formControlName="file" class="form-control" type="file" id="inputFile">
-                            </div>
-                        </form>
- -->
-                    </div>
-                </body>
-            </div>
-            <!-- <div class="modal-footer">
-                <button type="submit" (click)="signUp()" class="btn btn-primary" id="btn">Sign up</button>&nbsp;
-                <button type="submit" (click)="cancel()" class="btn btn-danger" id="btn">Cancel</button>
-            </div> -->
-        </ng-template>
-      <div class="router-outlet-div bg-black text-white">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-
-    <mat-drawer-container class="example-container bg-black" autosize>
-      <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" mode="side">
-        <nav class="nav nav-link d-flex flex-column float-left bg-dark">
-          <div class="d-flex">
-            <i class="fa fa-home"></i>
-            <a class="text-left active link" routerLink="moviesedits">movies</a>
-          </div>
-          <div class="d-flex">
-            <i class="fa-brands fa-product-hunt"></i>
-            <a class="text-left link" routerLink="producers">producers</a>
-          </div>
-          <div class="d-flex">
-            <i class="fa-duotone fa-users"></i>
-            <a class="text-left link" routerLink="customers">customers</a>
-          </div>
-              
-          <button class="btn btn-danger text-center">
-            logout
+        <div class="example-sidenav-content">
+          <button type="button" class="text-light" mat-button (click)="drawer.toggle()">
+            <mat-icon class="menu">menu</mat-icon>
           </button>
+        </div>
+      </mat-toolbar>
+
+    <mat-drawer-container class="example-container bg-dark d-flex">
+
+      <div class="main-div float-left bg-black">
+        <div class="router-outlet-div bg-black text-white">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+      <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" position="end" mode="over">
+        <nav class="vertical-nav nav nav-link d-flex flex-column float-left bg-dark text-left">
+          <div class="input-group mb-4">
+            <input type="search" class="form-control" placeholder="search" aria-label="search">
+          </div>
+
+          <div class="d-flex flex-column chips">
+            <label class="text-white">Producers</label>
+            <mat-chip-list aria-label="Dog selection">
+              <mat-chip>
+                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+                Dog one
+              </mat-chip>
+              <mat-chip color="primary">
+                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+                Dog two
+              </mat-chip>
+              <mat-chip color="accent">
+                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+                Dog three
+              </mat-chip>
+            </mat-chip-list>
+            <mat-chip-list aria-label="pruducer selection">
+              <mat-chip>Actions</mat-chip>
+              <mat-chip>Sci-Fi</mat-chip>
+              <mat-chip>Romance</mat-chip>
+              <mat-chip>Animations</mat-chip>
+              <mat-chip>Documentaries</mat-chip>
+              <mat-chip>Adventures</mat-chip>
+              <mat-chip>Inspirational</mat-chip>
+              <mat-chip>Drama</mat-chip>
+              <mat-chip>Reality</mat-chip>
+              <!-- <mat-chip color="primary" selected>Primary fish</mat-chip>
+              <mat-chip color="accent" selected>Accent fish</mat-chip> -->
+            </mat-chip-list>
+
+          </div>
         </nav>
       </mat-drawer>
+
     </mat-drawer-container>
 
-  <footer class="bg-black text-center">
-    @ copyright reserved at
-      <code class="text-red">Lutimbe</code><code class="text-white bg-black">Filmz</code>
-  </footer>
+    <footer class="bg-black text-center">
+        @ copyright reserved at
+          <code class="text-red">Lutimbe</code><code class="text-white bg-black">Filmz</code>
+      </footer>
 
   </body>
-  
-  <nav class="vertical-nav nav nav-link d-flex flex-column float-left bg-dark text-left">
-    <div class="input-group mb-4">
-      <input type="search" class="form-control" placeholder="search" aria-label="search">
-    </div>
-
-    <div class="d-flex flex-column">
-      <h3 class="text-danger popular-movies">Popular Movies</h3>
-
-      <div class="popular-movies-div d-flex flex-column bg-dark">
-        <div class="card-one d-flex bg-dark">
-          <img src="src/assets/style-images/images (1).jfif" class="card-img-top" alt="images" width="100px">
-          <div class="card-details">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-
-        <div class="card-two d-flex bg-dark">
-          <img src="src/assets/style-images/images (2).jfif" class="card-img-top" alt="images" width="20px">
-          <div class="card-details">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-
-        <div class="card-three d-flex bg-dark">
-          <img src="src/assets/style-images/images.jfif" class="card-img-top" alt="images" width="20px">
-          <div class="card-details">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="d-flex flex-column">
-      <h3 class="text-danger favorites">Favorites</h3>
-
-      <div class="favorite-movies-div d-flex flex-column bg-dark">
-        <div class="d-flex bg-dark one">
-          <img src="..." class="card-img-top" alt="..." width="20px">
-          <div class="card-details">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-
-        <div class="d-flex bg-dark two">
-          <img src="..." class="card-img-top" alt="..." width="20px">
-          <div class="card-details">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-
-        <div class="d-flex bg-dark three">
-          <img src="..." class="card-img-top" alt="..." width="20px">
-          <div class="card-details">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
 </html>

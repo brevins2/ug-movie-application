@@ -7,11 +7,11 @@ html {
 
 /* left navigation-bar styles */
 .horizontal-nav {
-  width: 15%;
+  width: 18%;
   height: auto;
   padding: 0px;
   padding-top: 5%;
-  padding-left: .5%;
+  padding-left: 1%;
   position: fixed-left;
   top: 4;
 }
@@ -74,17 +74,17 @@ html {
 
 .horizontal-nav div div:hover {
   color: yellow;
-  border-right: 2px solid yellow;
+  /*border-right: 2px solid yellow;*/
 }
 
 .horizontal-nav div div:focus {
   color: yellow;
-  border-right: 2px solid yellow;
+  /*border-right: 2px solid yellow;*/
 }
 
 .horizntal-nav div div:activer{
   color: yellow;
-  border-right: 2px solid yellow;
+  /*border-right: 2px solid yellow;*/
 }
 
 .horizontal-nav div div a {
@@ -95,17 +95,17 @@ html {
 
 .horizontal-nav div div a:hover {
   color: yellow;
-  border-right: 2px solid yellow;
+  /*border-right: 2px solid yellow;*/
 }
 
 .horizontal-nav div div a:focus {
   color: yellow;
-  border-right: 2px solid yellow;
+  /*border-right: 2px solid yellow;*/
 }
 
 .horizontal-nav div div a:active {
   color: yellow;
-  border-right: 2px solid yellow;
+  /*border-right: 2px solid yellow;*/
 }
 
 .horizontal-nav div div i {
@@ -113,7 +113,7 @@ html {
 }
 
 .btn {
-  width: 10%;
+  width: 13%;
 }
 
 a {
@@ -123,9 +123,9 @@ a {
 
 /* body styles */
 body {
-  width: 70%;
+  width: 82%;
   height: auto%;
-  padding: 2%;
+  padding: 2% 0% 2% 2%;
 }
 
 mat-toolbar {
@@ -157,23 +157,14 @@ small a:focus {
 .main-div {
   height: 100%;
   width: 100%;
+  padding-right: 2%;
 }
 
 .router-outlet-div {
   width: 100%;
 }
 
-mat-drawer-container {
-  width: 20%;
-  height: 100%;
-  margin-top: 0px;
-}
-
-mat-drawer {
-  width: 100%;
-}
-
-
+/* right navigation-bar */
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -187,18 +178,30 @@ mat-drawer {
 
 .example-sidenav {
   padding: 20px;
+  background-color: black;
 }
 
-/* right navigation-bar */
+mat-drawer-container mat-drawer {
+  width: 40%;
+  background-color: black;
+  padding-top: 2%;
+}
+
+mat-drawer-container {
+  width: 100%;
+  opacity: .8;
+}
+
 .vertical-nav {
-  width: 17%;
+  width: 80%;
   padding-left: 1%;
 }
 
 .input-group {
   width: 100px;
   position: fixed;
-  margin-top: 20px;
+  margin-top: 10px;
+  position: fixed;
 }
 
 input {
@@ -207,117 +210,11 @@ input {
   border-color: grey;
 }
 
-.popular-movies {
+.chips {
   position: fixed;
-  top: 12%;
+  top: 27%;
 }
 
-.favorites {
-  position: fixed;
-  top: 58%;
-}
-
-.popular-movies-div {
-  position: fixed;
-  top: 17%;
-  width: 20%;
-  height: 90px;
-}
-
-.popular-movies-div .card-one {
-  position: fixed;
-  top: 18%;
-  width: 120px;
-  height: 50px;
-  border: 1px solid grey;
-  border-radius: 8px;
-}
-
-.popular-movies-div .card-two {
-  position: fixed;
-  top: 29%;
-  width: 120px;
-  height: 50px;
-  border: 1px solid grey;
-  border-radius: 8px;
-}
-
-.popular-movies-div .card-three {
-  position: fixed;
-  top: 40%;
-  width: 120px;
-  height: 50px;
-  border: 1px solid grey;
-  border-radius: 8px;
-}
-
-.popular-movies-div .card-one img,
-.popular-movies-div .card-two img,
-.popular-movies-div .card-three img {
-  width: 40px;
-  border-right: 2px solid grey; 
-}
-
-.card-details {
-  width: 80px;
-  border-left: 0px;
-}
-
-.favorite-movies-div {
-  position: fixed;
-  top: 63%;
-  width: 20%;
-  height: 90px;
-  padding: 0 auto;
-}
-
-.favorite-movies-div .one {
-  position: fixed;
-  top: 74%;
-  width: 120px;
-  height: 50px;
-  border: 1px solid grey;
-  border-radius: 8px;
-  margin: 0 auto;
-}
-
-.favorite-movies-div .two {
-  position: fixed;
-  top: 85%;
-  width: 120px;
-  height: 50px;
-  border: 1px solid grey;
-  border-radius: 8px;
-  margin: 0 auto;
-}
-
-.favorite-movies-div .three {
-  position: fixed;
-  margin-top: 1%;
-  width: 120px;
-  height: 50px;
-  border: 1px solid grey;
-  border-radius: 8px;
-  margin: 0 auto;
-}
-
-.favorite-movies-div .one img,
-.favorite-movies-div .two img,
-.favorite-movies-div .three img {
-  width: 40px;
-  border-right: 2px solid grey;
-}
-
-.card-details {
-  width: 80px;
-  border-left: 0px;
-}
-
-.popup {
-  top: 60%;
-  font-size: .6rem;
-}
-
-ng-template {
-  height: 600px;
+mat-chip-list {
+  margin-bottom: 2%;
 }
