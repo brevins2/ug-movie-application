@@ -182,7 +182,7 @@ small a:focus {
 }
 
 mat-drawer-container mat-drawer {
-  width: 40%;
+  width: 30%;
   background-color: black;
   padding-top: 2%;
 }
@@ -198,7 +198,7 @@ mat-drawer-container {
 }
 
 .input-group {
-  width: 100px;
+  width: 200px;
   position: fixed;
   margin-top: 10px;
   position: fixed;

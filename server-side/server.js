@@ -261,7 +261,7 @@ app.delete('/delete/Message/:id', (req, res) => {
 
 
 
-// for phones
+// for movies
 //get all the data
 
 app.get('/Movies', (req, res) => {
@@ -430,13 +430,15 @@ app.post('/add/Producer', (req, res) => {
 
     console.log(req.body, 'data added');
 
-    let title = req.body.Title;
-    let category = req.body.Category;
-    let price = req.body.Price;
+    let name = req.body.Name;
+    let email = req.body.Email;
+    let genre = req.body.Genre;
     let file = req.body.File;
+    let password = req.body.Password;
+    let confirmPassword = req.body.Confirm_Password;
 
-    let qr = `INSERT INTO producer(Title, Category, Price, File)
-                VALUES('${title}', '${category}', '${price}', '${file}')`;
+    let qr = `INSERT INTO producer(Name, Email, Genre, File, Password, Confirm Password)
+                VALUES('${name}', '${email}', '${genre}', '${file}', '${password}', '${confirmPassword}')`;
 
     db.query(qr, (err, result) => {
 
