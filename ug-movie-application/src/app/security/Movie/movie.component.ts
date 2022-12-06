@@ -11,11 +11,11 @@ import { HttpClient } from '@angular/common/http';
 export class MovieComponent implements OnInit {
 
 	RegisterForm = new FormGroup({
-		title: new FormControl(''),
-		file: new FormControl(''),
-		genre: new FormControl(''),
-		producer: new FormControl(''),
-		details: new FormControl('')
+		Title: new FormControl(''),
+		File: new FormControl(''),
+		Genre: new FormControl(''),
+		Producer: new FormControl(''),
+		Details: new FormControl('')
 	});
 
   constructor(private http: HttpClient) { }

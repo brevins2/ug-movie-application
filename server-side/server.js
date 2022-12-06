@@ -86,12 +86,12 @@ app.post('/add/Account', (req, res) => {
 
     let email = req.body.Email;
     let password = req.body.Password;
-    let confirmPassword = req.body.Confirmpassword;
+    let confirmPassword = req.body.CPassword;
     let name = req.body.Name;
     let file = req.body.File;
     let username = req.body.Username;
 
-    let qr = `INSERT INTO user(Name, Username, Email, File, Password, ConfirmPassword)
+    let qr = `INSERT INTO user(Name, Username, Email, File, Password, CPassword)
                 VALUES('${name}', '${username}', '${email}', '${file}', '${password}', '${confirmPassword}')`;
 
     db.query(qr, (err, result) => {
@@ -114,13 +114,13 @@ app.put('/update/Account/:id', (req, res) => {
     let gID = req.params.ID;
     let email = req.body.Email;
     let password = req.body.Password;
-    let confirmPassword = req.body.Confirmpassword;
+    let confirmPassword = req.body.CPassword;
     let name = req.body.Name;
     let file = req.body.File;
     let username = req.body.Username;
 
     let qr = `update user set Name = '${name}', Username = '${username}', Email = '${email}', File = '${file}',
-                Password = '${password}', Confirmpassword = '${confirmPassword}', File = '${file}' where ID = '${gID}'`;
+                Password = '${password}', CPassword = '${confirmPassword}' where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -344,7 +344,7 @@ app.put('/update/Producer/:id', (req, res) => {
     let genre = req.body.Genre;
     let file = req.body.File;
     let password = req.body.Password;
-    let confirmPassword = req.body.confirmPassword;
+    let confirmPassword = req.body.CPassword;
 
     let qr = `update producer set Name = '${name}', Email = '${email}',
                 Genre = '${genre}', File = '${file}', Password = '${password}', CPassword = '${confirmPassword}'
