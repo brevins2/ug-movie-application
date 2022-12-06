@@ -13,13 +13,12 @@ export class RegisterproducerComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   RegisterForm = new FormGroup({
-    name: new FormControl(''),
-  	email: new FormControl(''),
-    genre: new FormControl(''),
+    Name: new FormControl(''),
+  	Email: new FormControl(''),
+    Genre: new FormControl(''),
     File: new FormControl(''),
-    password: new FormControl(''),
-    confirmPassword: new FormControl(''),
-    file: new FormControl('')
+    Password: new FormControl(''),
+    CPassword: new FormControl('')
   });
 
   ngOnInit(): void {
