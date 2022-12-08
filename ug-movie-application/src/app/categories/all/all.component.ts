@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-all',
@@ -9,10 +11,12 @@ export class AllComponent implements OnInit {
 
   showFiller = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  logout() {}
+  logout() {
+  	this.router.navigate(['/subscribe']);
+  }
 }

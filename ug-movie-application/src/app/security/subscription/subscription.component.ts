@@ -10,17 +10,20 @@ import { HttpClient } from '@angular/common/http';
 
 export class SubscriptionComponent implements OnInit {
 
-  firstFormGroup = this._formBuilder.group({
-    name: ['', Validators.required],
+  firstFormGroup = this.formBuilder.group({
+    Email: ['', Validators.required],
+    Password: ['', Validators.required],
+    ConfirmPassword: ['', Validators.required],
+    Allow: ['', Validators.required],
   });
 
-  secondFormGroup = this._formBuilder.group({
+  secondFormGroup = this.formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
 
   isEditable = true;
 
-  constructor(private _formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
   }

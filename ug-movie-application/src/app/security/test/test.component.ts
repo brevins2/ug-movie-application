@@ -27,7 +27,7 @@ export class TestComponent implements OnInit {
       fd.append("file", file);
     
         // this.selectedFile = <File>events.target.files[0];
-        this.http.post('gs://lutimbefilmz.appspot.com/Movies', fd).subscribe(res =>{
+        this.http.post('https://lutimbefilmz22-default-rtdb.firebaseio.com/', fd).subscribe(res =>{
         debugger
           console.log(res);
         });
