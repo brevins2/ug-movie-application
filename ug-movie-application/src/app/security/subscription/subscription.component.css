@@ -27,6 +27,10 @@ mat-stepper {
 	width: 95%;
 }
 
+.form-control {
+	width: 94%;
+}
+
 mat-step {
 	margin: 0 auto;
 	height: 100%;

@@ -33,9 +33,6 @@ export class TestComponent implements OnInit {
         });
       }
     }
-
- 
-
 }
 
 // https://lutimbefilmz22-default-rtdb.firebaseio.com/ -> database

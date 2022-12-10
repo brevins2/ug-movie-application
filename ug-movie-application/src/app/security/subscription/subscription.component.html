@@ -1,44 +1,94 @@
 <html class="bg-black">
-  <body class="bg-black">
-    <!-- <button mat-raised-button (click)="isEditable = !isEditable" class="btn btn-primary">
-      {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
-    </button> -->
-  
-    <mat-stepper vertica #stepper class="bg-light">
+  <body class="bg-black">  
+    <mat-stepper linear #stepper class="bg-light">
       <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
         <form [formGroup]="firstFormGroup">
           <nav class="p-2">Create account</nav>
           <ng-template matStepLabel></ng-template>
           <div class="d-flex flex-column">
-            <mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput type="text" formControlName="Name" placeholder="Enter Name" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Username</mat-label>
+              <input matInput type="text" formControlName="Username" placeholder="Enter username" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
               <mat-label>Email</mat-label>
               <input matInput type="email" formControlName="Email" placeholder="Enter Email" required>
             </mat-form-field>
 
-            <mat-form-field>
+            <!-- <mat-form-field appearance="outline"> -->
+              <mat-label>File</mat-label>
+              <input type="file" formControlName="File" class="form-control" placeholder="Select File" required>
+            <!-- </mat-form-field> -->
+
+            <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput type="password" formControlName="Password" placeholder="Enter Password" required>
+              <input matInput formControlName="Password" placeholder="Enter Password" [type]="hide ? 'password' : 'text'" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
             </mat-form-field>
 
-            <mat-form-field>
+            <mat-form-field appearance="outline">
               <mat-label>Confirm Password</mat-label>
-              <input matInput type="password" class="form-control" formControlName="ConfirmPassword" placeholder="Confirm Password" required>
-            </mat-form-field>
-
-            <mat-form-field>
-              <mat-label>Allow</mat-label>
-              <input matInput type="check" formControlName="Allow"required>
+              <input matInput formControlName="CPassword" placeholder="Confirm Password" [type]="hide ? 'password' : 'text'" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
             </mat-form-field>
           </div>
         
           <div>
-            <button mat-button matStepperNext  class="btn btn-primary float-right">Next</button>
+            <button mat-button matStepperNext  class="btn btn-primary float-right" (click)="subscribe()">Next</button>
           </div>
         </form>
       </mat-step>
 
       <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-        <mat-tab-group>
+        <google-pay-button
+          environment="TEST"
+          buttonType="buy"
+          buttonColor="black"
+          [paymentRequest]="{
+            apiVersion: 2,
+            apiVersionMinor: 0,
+            allowedPaymentMethods: [
+              {
+                type: 'CARD',
+                parameters: {
+                  allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                  allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
+                },
+                tokenizationSpecification: {
+                  type: 'PAYMENT_GATEWAY',
+                  parameters: {
+                    gateway: 'example',
+                    gatewayMerchantId: 'exampleGatewayMerchantId'
+                  }
+                }
+              }
+            ],
+            merchantInfo: {
+              merchantId: '12345678901234567890',
+              merchantName: 'Demo Merchant'
+            },
+            transactionInfo: {
+              totalPriceStatus: 'FINAL',
+              totalPriceLabel: 'Total',
+              totalPrice: '100.00',
+              currencyCode: 'USD',
+              countryCode: 'US'
+            }
+          }"
+          (loadpaymentdata)="onLoadPaymentData($event)">      
+        </google-pay-button>
+
+<!--         <mat-tab-group>
           <mat-tab label="First"> 
             <form [formGroup]="secondFormGroup">
               <nav class="p-2">Payment Methods</nav>
@@ -60,7 +110,7 @@
               <ng-template matStepLabel>Fill out your address</ng-template>
               <mat-form-field>
                 <mat-label>Address</mat-label>
-                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+                <input matInput formControlName="Payment" placeholder="Ex. 1 Main St, New York, NY" required>
               </mat-form-field>
               <div>
                 <button mat-button matStepperPrevious>Back</button>
@@ -70,7 +120,7 @@
           </mat-tab>
 
           <mat-tab label="Third"> Content 3 </mat-tab>
-        </mat-tab-group>
+        </mat-tab-group> -->
       </mat-step>
 
       <mat-step>
