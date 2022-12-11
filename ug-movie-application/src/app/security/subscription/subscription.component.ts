@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class SubscriptionComponent implements OnInit {
 
-  paymentRequest={
+  const paymentRequest = {
       apiVersion: 2,
       apiVersionMinor: 0,
       allowedPaymentMethods: [
