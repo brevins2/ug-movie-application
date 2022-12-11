@@ -50,40 +50,27 @@
       </mat-step>
 
       <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+
+        <flutterwave-make-payment
+          [public_key]="publicKey"
+          amount="10"
+          currency="USH"
+          payment_options="card"
+          redirect_url=""
+          text="Pay Now"
+          [customer]="customerDetails"
+          [customizations]="customizations"
+          [meta]="meta"
+          [tx_ref]="generateReference()"
+          (callback)="makePaymentCallback($event)"
+          (close)="closedPaymentModal()">
+        </flutterwave-make-payment>
+
         <google-pay-button
           environment="TEST"
           buttonType="buy"
           buttonColor="black"
-          [paymentRequest]="{
-            apiVersion: 2,
-            apiVersionMinor: 0,
-            allowedPaymentMethods: [
-              {
-                type: 'CARD',
-                parameters: {
-                  allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-                  allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD']
-                },
-                tokenizationSpecification: {
-                  type: 'PAYMENT_GATEWAY',
-                  parameters: {
-                    gateway: 'example',
-                    gatewayMerchantId: 'exampleGatewayMerchantId'
-                  }
-                }
-              }
-            ],
-            merchantInfo: {
-              merchantId: '12345678901234567890',
-              merchantName: 'Demo Merchant'
-            },
-            transactionInfo: {
-              totalPriceStatus: 'FINAL',
-              totalPriceLabel: 'Total',
-              totalPrice: '100.00',
-              currencyCode: 'USD',
-              countryCode: 'US'
-            }
+          [paymentRequest]="
           }"
           (loadpaymentdata)="onLoadPaymentData($event)">      
         </google-pay-button>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Flutterwave, InlinePaymentOptions, PaymentSuccessResponse } from "flutterwave-angular-v3";
 
 @Component({
   selector: 'app-subscription',
@@ -10,7 +11,23 @@ import { HttpClient } from '@angular/common/http';
 
 export class SubscriptionComponent implements OnInit {
 
-  const paymentRequest = {
+  publicKey = "FLWPUBK_TEST-XXXXX-X";
+
+  customerDetails = {
+    name: "Demo Customer Name",
+    email: "customer@mail.com",
+    phone_number: "08100000000",
+  };
+
+  customizations = {
+    title: "Customization Title",
+    description: "Customization Description",
+    logo: "https://flutterwave.com/images/logo-colored.svg",
+  };
+
+  meta = { counsumer_id: "7898", consumer_mac: "kjs9s8ss7dd" };
+
+  paymentRequest = {
       apiVersion: 2,
       apiVersionMinor: 0,
       allowedPaymentMethods: [
@@ -18,19 +35,20 @@ export class SubscriptionComponent implements OnInit {
           type: 'CARD',
           parameters: {
             allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-            allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD', 'PAYPAL', 'AIRTELMONEY', 'MOMO']
+            allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD', 'PAYPAL', 'AIRTELMONEY', 'MOMO'],
           },
           tokenizationSpecification: {
             type: 'PAYMENT_GATEWAY',
             parameters: {
               gateway: 'example',
-              gatewayMerchantId: 'exampleGatewayMerchantId'
+              gatewayMerchantId: 'exampleGatewayMerchantId',
             }
           }
-        },
+        }
+      ],
         merchantInfo: {
           merchantId: '12345678901234567890',
-          merchantName: 'Demo Merchant'
+          merchantName: 'Demo Merchant',
         },
         transactionInfo: {
           totalPriceStatus: 'FINAL',
@@ -39,8 +57,7 @@ export class SubscriptionComponent implements OnInit {
           currencyCode: 'SHS',
           countryCode: 'Ug'
         }
-      ]
-  }
+  };
 
   firstFormGroup = this.formBuilder.group({
     Email: ['', Validators.required],
@@ -58,9 +75,21 @@ export class SubscriptionComponent implements OnInit {
   isEditable = false;
   hide = true;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private flutterwave: Flutterwave) { }
 
   ngOnInit(): void {
+  }
+
+   makePaymentCallback(response: PaymentSuccessResponse): void {
+    console.log("Pay", response);
+    this.flutterwave.closePaymentModal(5);
+  }
+  closedPaymentModal(): void {
+    console.log("payment is closed");
+  }
+  generateReference(): string {
+    let date = new Date();
+    return date.getTime().toString();
   }
 
   subscribe(){

@@ -53,6 +53,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 // import { NgxCarouselModule } from 'ngx-carousel';
 // import { CarouselModule } from 'ngx-bootstrap/carousel';
 
+import { FlutterwaveModule } from "flutterwave-angular-v3"
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,7 +100,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     MatExpansionModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlutterwaveModule
   ],
   providers: [],
   bootstrap: [AppComponent]
