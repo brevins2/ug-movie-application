@@ -77,3 +77,7 @@ mat-panel-title {
 mat-panel-description {
   display: none;
 }
+
+form {
+  width: 50%;
+}

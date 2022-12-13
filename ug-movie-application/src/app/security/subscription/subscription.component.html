@@ -51,7 +51,7 @@
 
       <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
 
-        <flutterwave-make-payment
+        <!-- <flutterwave-make-payment
           [public_key]="publicKey"
           amount="10"
           currency="USH"
@@ -64,16 +64,40 @@
           [tx_ref]="generateReference()"
           (callback)="makePaymentCallback($event)"
           (close)="closedPaymentModal()">
-        </flutterwave-make-payment>
+        </flutterwave-make-payment> -->
 
-        <google-pay-button
-          environment="TEST"
-          buttonType="buy"
-          buttonColor="black"
-          [paymentRequest]="
-          }"
-          (loadpaymentdata)="onLoadPaymentData($event)">      
-        </google-pay-button>
+        <!-- <google-pay-button
+          paymentRequest = "{
+              apiVersion: 2,
+              apiVersionMinor: 0,
+              allowedPaymentMethods: [
+                {
+                  type: 'CARD',
+                  parameters: {
+                    allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+                    allowedCardNetworks: ['AMEX', 'VISA', 'MASTERCARD', 'PAYPAL', 'AIRTELMONEY', 'MOMO'],
+                  },
+                  tokenizationSpecification: {
+                    type: 'PAYMENT_GATEWAY',
+                    parameters: {
+                      gateway: 'example',
+                      gatewayMerchantId: 'exampleGatewayMerchantId',
+                    }
+                  }
+                }
+              ],
+                merchantInfo: {
+                  merchantId: '12345678901234567890',
+                  merchantName: 'Demo Merchant',
+                },
+                transactionInfo: {
+                  totalPriceStatus: 'FINAL',
+                  totalPriceLabel: 'Total',
+                  totalPrice: '100.00',
+                  currencyCode: 'SHS',
+                  countryCode: 'Ug'
+                }
+          }"></google-pay-button> -->
 
 <!--         <mat-tab-group>
           <mat-tab label="First"> 

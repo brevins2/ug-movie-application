@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="bg-black text-left">
+    <div class="bg-black text-left d-flex">
       <mat-accordion>
 
         <h3 class="text-white">Frequently asked questions(FAQ)</h3>
@@ -37,13 +37,16 @@
         <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title class="text-white">
-              Self aware panel
+              Payment Methods for this site
             </mat-panel-title>
             <mat-panel-description>
               Currently I am {{panelOpenState ? 'open' : 'closed'}}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+          <p class="text-white">
+            We allow payments via the bank using our set 
+            system that is user friendly. Our charges are monthly and our services are available as long as the user subscription is operational.
+          </p>
         </mat-expansion-panel>
 
         <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -55,7 +58,9 @@
               Currently I am {{panelOpenState ? 'open' : 'closed'}}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+          <p class="text-white">
+            I'm visible because I am open
+          </p>
         </mat-expansion-panel>
 
         <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -67,7 +72,9 @@
               Currently I am {{panelOpenState ? 'open' : 'closed'}}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+          <p class="text-white">
+            I'm visible because I am open
+          </p>
         </mat-expansion-panel>
 
         <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -79,9 +86,36 @@
               Currently I am {{panelOpenState ? 'open' : 'closed'}}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+          <p class="text-white">
+            I'm visible because I am open
+          </p>
         </mat-expansion-panel>
       </mat-accordion>
+
+      <form [formGroup]="messageFormGroup" class="d-flex flex-column">
+          <nav class="p-2">Create account</nav>
+          <div class="d-flex flex-column">
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput type="text" formControlName="Name" placeholder="Enter Name" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="Email" placeholder="Enter email" required>
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Message</mat-label>
+              <input matInput type="tetarea" formControlName="Message" placeholder="Enter Message" required>
+            </mat-form-field> -->
+          </div>
+        
+          <div>
+            <button mat-button matStepperNext  class="btn btn-primary float-right" (click)="sendMessage()">Next</button>
+          </div>
+        </form>
+
     </div>
     
   </body>

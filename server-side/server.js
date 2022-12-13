@@ -377,6 +377,114 @@ app.delete('/delete/Producers/:id', (req, res) => {
 });
 
 
+// for messages/question
+//get all the data
+app.get('/Message', (req, res) => {
+
+    let qr = `select * from message`;
+
+    db.query(qr, (err, result) => {
+        if (err) {
+            console.log(err, 'errs');
+        }
+        if (result.length > 0) {
+            res.send({
+                message: 'all data available',
+                data: result
+            });
+        }
+    });
+});
+
+// get single data
+
+app.get('/Message/:id', (req, res) => {
+
+    let gID = req.params.ID;
+
+    let qr = `select * from message where ID = ${gID}`;
+
+    db.query(qr, (err, results) => {
+
+        if (err) {
+            console.log(err);
+        }
+        if (results.length > 0) {
+            res.send({
+                Message: 'getting single data',
+                data: results
+            });
+        } else {
+            res.send({
+                message: 'data not found'
+            });
+        }
+    });
+});
+
+// adding data
+app.post('/add/Message', (req, res) => {
+
+    console.log(req.body, 'data added');
+
+    let name = req.body.Name;
+    let email = req.body.Email;
+    let message = req.body.Message;
+
+    let qr = `INSERT INTO message(Name, Email, Message)
+                VALUES('${name}', '${email}', '${message}')`;
+
+    db.query(qr, (err, result) => {
+
+        if (err) { console.log(err); }
+
+        res.send({
+            message: 'data stored successfully'
+        });
+
+    });
+});
+
+// put data/ update data
+
+app.put('/update/Message/:id', (req, res) => {
+
+    console.log(req.body, 'data updated');
+
+    let gID = req.params.ID;
+    let name = req.body.Name;
+    let message = req.body.Message;
+
+    let qr = `update message set Name = '${name}', Email = '${email}',
+                Message = '${genre}'where ID = ${gID}`;
+
+    db.query(qr, (err, result) => {
+        if (err) { console.log(err); }
+
+        res.send({
+            message: 'data successfully updated'
+        });
+    });
+});
+
+// delete single data
+app.delete('/delete/Message/:id', (req, res) => {
+
+    let qID = req.params.ID;
+
+    let qr = `delete from message where ID = '${qID}'`;
+
+    db.query(qr, (err, result) => {
+        if (err) { console.log(err); }
+
+        res.send({
+            message: 'data delete successful'
+        });
+    });
+
+});
+
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

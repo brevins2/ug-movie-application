@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-browse',
@@ -10,7 +12,16 @@ export class BrowseComponent implements OnInit {
 
   panelOpenState = false;
 
-  constructor(private router: Router) { }
+  messageFormGroup = this.formBuilder.group({
+    Email: ['', Validators.required],
+    Password: ['', Validators.required],
+    CPassword: ['', Validators.required],
+    Name: ['', Validators.required],
+    Username: ['', Validators.required],
+    File: ['', Validators.required],
+  });
+
+  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +32,13 @@ export class BrowseComponent implements OnInit {
 
   login() {
   	this.router.navigate(['login']);
+  }
+
+  sendMessage() {
+    this.http.post<any>('http://localhost:8080/add/Message', this.messageFormGroup.value).subscribe(res=>{
+      // console.log(res);
+      this.messageFormGroup.reset();
+    });
   }
 
 }
