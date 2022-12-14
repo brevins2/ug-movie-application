@@ -17,6 +17,6 @@ export class AllComponent implements OnInit {
   }
 
   logout() {
-  	this.router.navigate(['/subscribe']);
+  	this.router.navigate(['/login']);
   }
 }
