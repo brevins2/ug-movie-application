@@ -31,17 +31,22 @@
 
     <div class="bg-black text-left d-flex flex-wrap">
 
-       <form [formGroup]="messageFormGroup" class="d-flex flex-column text-white">
-          <nav class="p-2 text-white">Send Message</nav>
-          <div class="d-flex flex-column text-white">
-            <mat-form-field appearance="outline" class="text-white">
-              <mat-label class="text-white">Name</mat-label>
-              <input matInput type="text" formControlName="Name" placeholder="Enter Name" required class="text-white">
+        <form [formGroup]="messageFormGroup" class="d-flex flex-column bg-white">
+          <nav class="p-2 text-black">Send Message</nav>
+          <div class="d-flex flex-column text-black">
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput type="text" formControlName="Name" placeholder="Enter Name" required>
             </mat-form-field>
 
-            <mat-form-field appearance="outline" class="text-white">
-              <mat-label class="text-white">Email</mat-label>
-              <input matInput type="email" formControlName="Email" placeholder="Enter email" required  class="text-white">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="Email" placeholder="Enter Email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Message/Question</mat-label>
+              <textarea matInput class="form-control" formControlName="Message" type="text-area" cols="80" rows="6" required></textarea>
             </mat-form-field>
           </div>
         

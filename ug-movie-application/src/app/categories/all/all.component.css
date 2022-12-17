@@ -213,6 +213,7 @@ input {
 .chips {
   position: fixed;
   top: 27%;
+  height: 100%;
 }
 
 mat-chip-list {

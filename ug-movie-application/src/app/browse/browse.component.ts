@@ -13,12 +13,9 @@ export class BrowseComponent implements OnInit {
   panelOpenState = false;
 
   messageFormGroup = this.formBuilder.group({
-    Email: ['', Validators.required],
-    Password: ['', Validators.required],
-    CPassword: ['', Validators.required],
     Name: ['', Validators.required],
-    Username: ['', Validators.required],
-    File: ['', Validators.required],
+    Email: ['', Validators.required],
+    Message: ['', Validators.required]
   });
 
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient) { }

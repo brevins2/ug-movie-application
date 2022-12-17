@@ -8,10 +8,10 @@ body {
 .container-fluid {
   background-image: url("src/assets/style-images/Tech People.jpg");
   background-size: cover;
-  background-repeat: none;
+  background-repeat: no-repeat;
   opacity: .7;
   padding: 0px;
-  height: 550px;
+  height: 900px;
 }
 
 .info-div {
@@ -32,7 +32,7 @@ body {
   background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 100%));
   opacity: 1;
   width: 100%;
-  height: 40%;
+  height: 25%;
   padding-top: 4%;
 }
 
@@ -80,12 +80,13 @@ mat-panel-description {
 
 form {
   width: 80%;
-  border: 2px solid white;
+  /*border: 2px solid white;*/
+  border-radius: 10px;
   margin: 0 auto;
   margin-bottom: 4%;
-  /*background-color: whitesmoke;*/
+  padding: 1%;
 }
 
-mat-form-field, input {
+mat-form-field {
   border-color: white;
 }

@@ -1,12 +1,12 @@
-body {
+/*body {
   height: auto;
 }
-
+*/
 .container-fluid {
   padding: 10%;
   padding-top: 5%;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 form {
@@ -49,4 +49,13 @@ nav {
 
 small {
   font-size: .9rem;
+}
+
+ .log-button button {
+  margin-right: 1%;
+ }
+
+.second-option{
+  margin-top: 1%;
+  padding-bottom: 0%;
 }
