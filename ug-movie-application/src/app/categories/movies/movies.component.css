@@ -1,3 +1,7 @@
+video {
+  border-radius: 2%;
+}
+
 body {
   width: 100%;
   height: auto;
@@ -5,18 +9,18 @@ body {
   padding-top: 3.5%;
 }
 
+.slide { width: 100% }
+
 mat-card {
   width: 23%;
   height: 15%;
   margin: 1%;
 }
 
-slide { width: 100% }
-
-mat-drawer-container {
-	width: 10%;
-}
-
-video {
-	border-radius: 2%;
+mat-card:hover,
+mat-card:hover mat-card-content p,
+mat-card:hover mat-card-actions {
+  background-color: rgb(108 117 125 /40%);
+  color: white;
+  cursor: pointer;
 }

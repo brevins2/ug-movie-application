@@ -15,6 +15,10 @@ import { MoviesComponent } from './categories/movies/movies.component';
 import { ProducerComponent } from './categories/producer/producer.component';
 import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
 
+import { DownloadsComponent } from './categories/views/downloads/downloads.component';
+import { FavouretsComponent } from './categories/views/favourets/favourets.component';
+import { RecentComponent } from './categories/views/recent/recent.component';
+
 import { MainComponent } from './developer/main/main.component';
 import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
 import { CustomersComponent } from './developer/customers/customers.component';
@@ -40,13 +44,19 @@ const routes: Routes = [
     { path:'producers', component: ProducerComponent }
   ]},
 
+  { path: 'views/downloads', component: DownloadsComponent },
+  { path: 'views/favourets', component: FavouretsComponent },
+  { path: 'views/recents', component: RecentComponent},
+
   { path: 'developer/edits', component: MainComponent, children: [
     { path: '', redirectTo: 'moviesedits', pathMatch: 'full' },
     { path: 'moviesedits', component: MoviesbackComponent },
     { path: 'customers', component: CustomersComponent },
     { path: 'producers', component: ProducersComponent }
   ]},
-  { path: 'play', component: PlayMovieComponent }
+
+  { path: 'play', component: PlayMovieComponent },
+  { path: 'play/:id', component: PlayMovieComponent }
 ];
 
 @NgModule({

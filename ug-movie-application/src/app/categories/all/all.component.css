@@ -1,221 +1,661 @@
 /* general styles */
-
 html {
   width: 100%;
   height: auto;
 }
 
-/* left navigation-bar styles */
-.horizontal-nav {
-  width: 18%;
-  height: auto;
-  padding: 0px;
-  padding-top: 5%;
-  padding-left: 1%;
-  position: fixed-left;
-  top: 4;
+@media only screen and (max-width: 599px) {
+  /* For mobile phones: */
+
+  /* left navigation-bar styles */
+  .horizontal-nav {
+    width: 19%;
+    height: auto;
+    padding: 0px;
+    padding-top: 5%;
+    padding-left: .5%;
+    position: fixed-left;
+    top: 4;
+  }
+
+  .horizontal-nav a h1 {
+    width: 50%;
+    font-size: .8rem;
+    position: fixed;
+    top: 3%;
+  }
+
+  .horizontal-nav div {
+    font-size: .72rem;
+    margin-bottom: 15px;
+    color: whitesmoke;
+    width: 80px;
+  }
+
+  .main-link div i,
+  .main-link div a {
+    margin-top: 7%;
+    position: fixed;
+  }
+
+  .main-link h3 {
+    position: fixed;
+    margin-top: 3%;
+  }
+
+  .main-link div {
+    margin-bottom: 15px;
+  }
+
+  .profile-link div i,
+  .profile-link div a {
+    margin-top: 10%;
+    position: fixed;
+  }
+
+  .profile-link h3 {
+    margin-top: 6%;
+    position: fixed;
+  }
+
+  .general-link div i,
+  .general-link div a{
+    margin-top: 14%;
+    position: fixed;
+  }
+
+  .general-link h3 {
+    margin-top: 10%;
+    position: fixed;
+  }
+
+  .general-link button {
+    margin-top: 17%;
+    position: fixed;
+  }
+
+  .horizontal-nav div div:hover {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div:focus {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizntal-nav div div:activer{
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div a {
+    text-align: center;
+    color: whitesmoke;
+    width: 100px;
+  }
+
+  .horizontal-nav div div a:hover {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div a:focus {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div a:active {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div i {
+    padding-top: 5px;
+  }
+
+  .btn {
+    width: 13%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* body styles */
+  body {
+    width: 82%;
+    height: auto%;
+    padding: 2% 0% 2% 2%;
+  }
+
+  mat-toolbar {
+    width: 100%;
+  }
+
+  small {
+    margin: 1%;
+  }
+
+  small a {
+    color: #c8c8c8cc;
+  }
+
+  small a:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  small a:active {
+    color: white;
+  }
+
+  small a:focus {
+    color: white;
+    cursor: pointer;
+  }
+
+  .main-div {
+    height: 100%;
+    width: 100%;
+    padding-right: 2%;
+  }
+
+  .router-outlet-div {
+    width: 100%;
+  }
+
+  /* right navigation-bar */
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .example-sidenav {
+    padding: 20px;
+    background-color: black;
+  }
+
+  mat-drawer-container mat-drawer {
+    width: 100%;
+    background-color: black;
+    padding-top: 2%;
+  }
+
+  mat-drawer-container {
+    width: 100%;
+    opacity: .8;
+  }
+
+  .vertical-nav {
+    width: 80%;
+    padding-left: 1%;
+  }
+
+  .input-group {
+    width: 200px;
+    position: fixed;
+    margin-top: 10px;
+    position: fixed;
+  }
+
+  input {
+    height: 30px;
+    background-color: unset;
+    border-color: grey;
+  }
+
+  .chips {
+    position: fixed;
+    top: 27%;
+    height: 100%;
+  }
+
+  mat-chip-list {
+    margin-bottom: 2%;
+  }  
+
 }
 
-.horizontal-nav a h1 {
-  width: 60%;
-  font-size: 1rem;
-  position: fixed;
-  top: 3%;
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+
+  /* left navigation-bar styles */
+  .horizontal-nav {
+    width: 16%;
+    height: auto;
+    padding: 0px;
+    padding-top: 5%;
+    padding-left: 1%;
+    position: fixed-left;
+    top: 4;
+  }
+
+  .horizontal-nav a h1 {
+    width: 60%;
+    font-size: 1rem;
+    position: fixed;
+    top: 3%;
+  }
+
+  .horizontal-nav div {
+    font-size: .9rem;
+    margin-bottom: 15px;
+    color: whitesmoke;
+    width: 80px;
+  }
+
+  .main-link div i,
+  .main-link div a {
+    margin-top: 7%;
+    position: fixed;
+  }
+
+  .main-link h3 {
+    position: fixed;
+    margin-top: 3%;
+  }
+
+  .main-link div {
+    margin-bottom: 15px;
+  }
+
+  .profile-link div i,
+  .profile-link div a {
+    margin-top: 10%;
+    position: fixed;
+  }
+
+  .profile-link h3 {
+    margin-top: 6%;
+    position: fixed;
+  }
+
+  .general-link div i,
+  .general-link div a{
+    margin-top: 14%;
+    position: fixed;
+  }
+
+  .general-link h3 {
+    margin-top: 10%;
+    position: fixed;
+  }
+
+  .general-link button {
+    margin-top: 17%;
+    position: fixed;
+  }
+
+  .horizontal-nav div div:hover {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div:focus {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizntal-nav div div:activer{
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div a {
+    text-align: center;
+    color: whitesmoke;
+    width: 100px;
+  }
+
+  .horizontal-nav div div a:hover {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div a:focus {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div a:active {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div i {
+    padding-top: 5px;
+  }
+
+  .btn {
+    width: 13%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* body styles */
+  body {
+    width: 84%;
+    height: auto%;
+    padding: 2% 0% 2% 2%;
+  }
+
+  mat-toolbar {
+    width: 100%;
+  }
+
+  small {
+    margin: 1%;
+  }
+
+  small a {
+    color: #c8c8c8cc;
+  }
+
+  small a:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  small a:active {
+    color: white;
+  }
+
+  small a:focus {
+    color: white;
+    cursor: pointer;
+  }
+
+  .main-div {
+    height: 100%;
+    width: 100%;
+    padding-right: 2%;
+  }
+
+  .router-outlet-div {
+    width: 100%;
+  }
+
+  /* right navigation-bar */
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .example-sidenav {
+    padding: 20px;
+    background-color: black;
+  }
+
+  mat-drawer-container mat-drawer {
+    width: 80%;
+    background-color: black;
+    padding-top: 2%;
+  }
+
+  mat-drawer-container {
+    width: 100%;
+    opacity: .8;
+  }
+
+  .vertical-nav {
+    width: 80%;
+    padding-left: 1%;
+  }
+
+  .input-group {
+    width: 200px;
+    position: fixed;
+    margin-top: 10px;
+    position: fixed;
+  }
+
+  input {
+    height: 30px;
+    background-color: unset;
+    border-color: grey;
+  }
+
+  .chips {
+    position: fixed;
+    top: 27%;
+    height: 100%;
+  }
+
+  mat-chip-list {
+    margin-bottom: 2%;
+  }  
 }
 
-.horizontal-nav div {
-  font-size: .9rem;
-  margin-bottom: 15px;
-  color: whitesmoke;
-  width: 80px;
-}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
 
-.main-link div i,
-.main-link div a {
-  margin-top: 7%;
-  position: fixed;
-}
+  /* left navigation-bar styles */
+  .horizontal-nav {
+    width: 15%;
+    height: auto;
+    padding: 0px;
+    padding-top: 5%;
+    padding-left: 1%;
+    position: fixed-left;
+    top: 4;
+  }
 
-.main-link h3 {
-  position: fixed;
-  margin-top: 3%;
-}
+  .horizontal-nav a h1 {
+    width: 60%;
+    font-size: 1rem;
+    position: fixed;
+    top: 3%;
+  }
 
-.main-link div {
-  margin-bottom: 15px;
-}
+  .horizontal-nav div {
+    font-size: .9rem;
+    margin-bottom: 15px;
+    color: whitesmoke;
+    width: 80px;
+  }
 
-.profile-link div i,
-.profile-link div a {
-  margin-top: 10%;
-  position: fixed;
-}
+  .main-link div i,
+  .main-link div a {
+    margin-top: 7%;
+    position: fixed;
+  }
 
-.profile-link h3 {
-  margin-top: 6%;
-  position: fixed;
-}
+  .main-link h3 {
+    position: fixed;
+    margin-top: 3%;
+  }
 
-.general-link div i,
-.general-link div a{
-  margin-top: 14%;
-  position: fixed;
-}
+  .main-link div {
+    margin-bottom: 15px;
+  }
 
-.general-link h3 {
-  margin-top: 10%;
-  position: fixed;
-}
+  .profile-link div i,
+  .profile-link div a {
+    margin-top: 10%;
+    position: fixed;
+  }
 
-.general-link button {
-  margin-top: 17%;
-  position: fixed;
-}
+  .profile-link h3 {
+    margin-top: 6%;
+    position: fixed;
+  }
 
-.horizontal-nav div div:hover {
-  color: yellow;
-  /*border-right: 2px solid yellow;*/
-}
+  .general-link div i,
+  .general-link div a{
+    margin-top: 14%;
+    position: fixed;
+  }
 
-.horizontal-nav div div:focus {
-  color: yellow;
-  /*border-right: 2px solid yellow;*/
-}
+  .general-link h3 {
+    margin-top: 10%;
+    position: fixed;
+  }
 
-.horizntal-nav div div:activer{
-  color: yellow;
-  /*border-right: 2px solid yellow;*/
-}
+  .general-link button {
+    margin-top: 17%;
+    position: fixed;
+  }
 
-.horizontal-nav div div a {
-  text-align: center;
-  color: whitesmoke;
-  width: 100px;
-}
+  .horizontal-nav div div:hover {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
 
-.horizontal-nav div div a:hover {
-  color: yellow;
-  /*border-right: 2px solid yellow;*/
-}
+  .horizontal-nav div div:focus {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
 
-.horizontal-nav div div a:focus {
-  color: yellow;
-  /*border-right: 2px solid yellow;*/
-}
+  .horizntal-nav div div:activer{
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
 
-.horizontal-nav div div a:active {
-  color: yellow;
-  /*border-right: 2px solid yellow;*/
-}
+  .horizontal-nav div div a {
+    text-align: center;
+    color: whitesmoke;
+    width: 100px;
+  }
 
-.horizontal-nav div div i {
-  padding-top: 5px;
-}
+  .horizontal-nav div div a:hover {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
 
-.btn {
-  width: 13%;
-}
+  .horizontal-nav div div a:focus {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
 
-a {
-  text-decoration: none;
-}
+  .horizontal-nav div div a:active {
+    color: yellow;
+    /*border-right: 2px solid yellow;*/
+  }
+
+  .horizontal-nav div div i {
+    padding-top: 5px;
+  }
+
+  .btn {
+    width: 13%;
+  }
+
+  a {
+    text-decoration: none;
+  }
 
 
-/* body styles */
-body {
-  width: 82%;
-  height: auto%;
-  padding: 2% 0% 2% 2%;
-}
+  /* body styles */
+  body {
+    width: 85%;
+    height: auto%;
+    padding: 2% 0% 2% 2%;
+  }
 
-mat-toolbar {
-  width: 100%;
-}
+  mat-toolbar {
+    width: 100%;
+  }
 
-small {
-  margin: 1%;
-}
+  small {
+    margin: 1%;
+  }
 
-small a {
-  color: #c8c8c8cc;
-}
+  small a {
+    color: #c8c8c8cc;
+  }
 
-small a:hover {
-  color: white;
-  cursor: pointer;
-}
+  small a:hover {
+    color: white;
+    cursor: pointer;
+  }
 
-small a:active {
-  color: white;
-}
+  small a:active {
+    color: white;
+  }
 
-small a:focus {
-  color: white;
-  cursor: pointer;
-}
+  small a:focus {
+    color: white;
+    cursor: pointer;
+  }
 
-.main-div {
-  height: 100%;
-  width: 100%;
-  padding-right: 2%;
-}
+  .main-div {
+    height: 100%;
+    width: 100%;
+    padding-right: 2%;
+  }
 
-.router-outlet-div {
-  width: 100%;
-}
+  .router-outlet-div {
+    width: 100%;
+  }
 
-/* right navigation-bar */
-.example-spacer {
-  flex: 1 1 auto;
-}
+  /* right navigation-bar */
+  .example-spacer {
+    flex: 1 1 auto;
+  }
 
-.example-sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
-.example-sidenav {
-  padding: 20px;
-  background-color: black;
-}
+  .example-sidenav {
+    padding: 20px;
+    background-color: black;
+  }
 
-mat-drawer-container mat-drawer {
-  width: 30%;
-  background-color: black;
-  padding-top: 2%;
-}
+  mat-drawer-container mat-drawer {
+    width: 30%;
+    background-color: black;
+    padding-top: 2%;
+  }
 
-mat-drawer-container {
-  width: 100%;
-  opacity: .8;
-}
+  mat-drawer-container {
+    width: 100%;
+    opacity: .8;
+  }
 
-.vertical-nav {
-  width: 80%;
-  padding-left: 1%;
-}
+  .vertical-nav {
+    width: 80%;
+    padding-left: 1%;
+  }
 
-.input-group {
-  width: 200px;
-  position: fixed;
-  margin-top: 10px;
-  position: fixed;
-}
+  .input-group {
+    width: 200px;
+    position: fixed;
+    margin-top: 10px;
+    position: fixed;
+  }
 
-input {
-  height: 30px;
-  background-color: unset;
-  border-color: grey;
-}
+  input {
+    height: 30px;
+    background-color: unset;
+    border-color: grey;
+  }
 
-.chips {
-  position: fixed;
-  top: 27%;
-  height: 100%;
-}
+  .chips {
+    position: fixed;
+    top: 27%;
+    height: 100%;
+  }
 
-mat-chip-list {
-  margin-bottom: 2%;
+  mat-chip-list {
+    margin-bottom: 2%;
+  }  
 }

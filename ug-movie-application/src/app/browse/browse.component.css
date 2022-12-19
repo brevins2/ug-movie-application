@@ -1,92 +1,273 @@
 body {
-  background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 40%));
+  /*background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 40%));*/
   opacity: 1;
   width: 100%;
   height: auto;
 }
 
-.container-fluid {
-  background-image: url("src/assets/style-images/Tech People.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: .7;
-  padding: 0px;
-  height: 900px;
+/* For mobile phones: */
+@media only screen and (max-width: 599px){
+  .container-fluid {
+    background-image: url("src/assets/style-images/Tech People.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .7;
+    padding: 0px;
+    height: 340px;
+    width: 100%;
+  }
+
+  .info-div {
+    background-color: rgb(0 0 0 / 60%);
+    background-size: cover;
+    opacity: 1;
+    height: 100%;
+    padding: 7%;
+  }
+
+  .main-body{
+    background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 100%));
+    opacity: 1;
+    width: 100%;
+    height: 25%;
+    padding-top: 4%;
+  }
+
+  .btn {
+    margin-left: 1%;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h3 {
+    margin-left: 10%;
+  }
+
+  mat-card, mat-card div, card-text {
+    background-color: unset;
+  }
+
+  mat-card {
+    margin: 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 92%;
+    padding: 3%;
+  }
+
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  mat-expansion-panel {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+  }
+
+  mat-panel-title {
+    opacity: .5;
+  }
+
+  mat-panel-description {
+    display: none;
+  }
+
+  form {
+    width: 80%;
+    /*border: 2px solid white;*/
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 4%;
+    padding: 1%;
+  }
+
+  mat-form-field {
+    border-color: white;
+  }
 }
 
-.info-div {
-  background-color: rgb(0 0 0 / 60%);
-  background-size: cover;
-  opacity: 1;
-  height: 100%;
-  padding: 7%;
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .container-fluid {
+    background-image: url("src/assets/style-images/Tech People.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .7;
+    padding: 0px;
+    height: 500px;
+    width: 100%;
+  }
+
+  .info-div {
+    background-color: rgb(0 0 0 / 60%);
+    background-size: cover;
+    opacity: 1;
+    height: 100%;
+    padding: 7%;
+  }
+
+  .main-body{
+    background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 100%));
+    opacity: 1;
+    width: 100%;
+    height: 25%;
+    padding-top: 4%;
+  }
+
+  .btn {
+    margin-left: 1%;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h3 {
+    margin-left: 10%;
+  }
+
+  mat-card, mat-card div, card-text {
+    background-color: unset;
+  }
+
+  mat-card {
+    margin: 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 92%;
+    padding: 3%;
+  }
+
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  .details {
+    width: 100%;
+    margin-top: 3%;
+  }
+
+  mat-accordion {
+    width: 53%;
+  }
+
+  mat-expansion-panel {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+  }
+
+  mat-panel-title {
+    opacity: .5;
+  }
+
+  mat-panel-description {
+    display: none;
+  }
+
+  form {
+    width: 40%;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 4%;
+    padding: 1%;
+  }
+
+  mat-form-field {
+    border-color: white;
+  }
 }
 
-.details {
-  width: 70%;
-  margin-top: 5%;
-  opacity: 1;
-}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .container-fluid {
+    background-image: url("src/assets/style-images/Tech People.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .7;
+    padding: 0px;
+    height: 740px;
+  }
 
-.main-body{
-  background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 100%));
-  opacity: 1;
-  width: 100%;
-  height: 25%;
-  padding-top: 4%;
-}
+  .info-div {
+    background-color: rgb(0 0 0 / 60%);
+    /*background-size: cover;*/
+    opacity: 1;
+    height: 100%;
+    padding: 7%;
+  }
 
-.btn {
-  margin-left: 1%;
-}
+  .main-body{
+    background-image: linear-gradient(to top, rgb(0 0 0 / 100%), rgb(0 0 0 / 100%));
+    opacity: 1;
+    width: 100%;
+    height: 25%;
+    padding-top: 4%;
+  }
 
-h1 {
-  font-size: 2.8rem;
-}
+  .btn {
+    margin-left: 1%;
+  }
 
-h3 {
-  margin-left: 10%;
-}
+  h1 {
+    font-size: 2.8rem;
+  }
 
-mat-card, mat-card div, card-text {
-  background-color: unset;
-}
+  h3 {
+    margin-left: 10%;
+  }
 
-mat-card {
-  margin: 2%;
-  margin-right: 2%;
-  margin-left: 2%;
-  width: 92%;
-  padding: 3%;
-}
+  mat-card, mat-card div, card-text {
+    background-color: unset;
+  }
 
-.mat-form-field + .mat-form-field {
-  margin-left: 8px;
-}
+  mat-card {
+    margin: 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 92%;
+    padding: 3%;
+  }
 
-mat-expansion-panel {
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 1%;
-}
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
 
-mat-panel-title {
-  opacity: .5;
-}
+  .details {
+    width: 100%;
+    margin-top: 3%;
+  }
 
-mat-panel-description {
-  display: none;
-}
+  mat-accordion {
+    width: 53%;
+  }
 
-form {
-  width: 80%;
-  /*border: 2px solid white;*/
-  border-radius: 10px;
-  margin: 0 auto;
-  margin-bottom: 4%;
-  padding: 1%;
-}
+  mat-expansion-panel {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+  }
 
-mat-form-field {
-  border-color: white;
+  mat-panel-title {
+    opacity: .5;
+  }
+
+  mat-panel-description {
+    display: none;
+  }
+
+  form {
+    width: 40%;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 4%;
+    padding: 1%;
+  }
+
+  mat-form-field {
+    border-color: white;
+  }
 }
