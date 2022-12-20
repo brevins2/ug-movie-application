@@ -14,8 +14,9 @@ body {
   color: white;
 }
 
-/* For mobile phones: */
-@media only screen and (max-width: 599px){
+@media only screen and (max-width: 599px) {
+  /* For mobile phones: */
+  
   .container-fluid {
     background-image: url("src/assets/style-images/Tech People.jpg");
     background-size: cover;

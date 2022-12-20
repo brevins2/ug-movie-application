@@ -53,6 +53,23 @@
 
       <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
 
+          <form stripe-form="CALLBACK"> 
+            <input type="text" ng-model="blah" payments-validate="VALIDATION_TYPE" />
+            <input type="text" ng-model="number" payments-validate="card" />
+            <input type="text" ng-model="number" payments-validate="card" payments-type-model="type"/>
+            <input type="text" ng-model="expiry" payments-validate="expiry" />
+            <input type="text" ng-model="cvc" payments-validate="cvc" />
+            <input type="text" ng-model="cvc" payments-validate="cvc" payments-type-model="type"/>
+            <input type="text" payments-format="card" />
+            <input type="text" payments-format="expiry" />
+            <input type="text" payments-format="cvc" />
+
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+
         <!-- <flutterwave-make-payment
           [public_key]="publicKey"
           amount="10"

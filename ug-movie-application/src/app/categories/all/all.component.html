@@ -45,6 +45,10 @@
       </div>
     </div>
     <!-- <hr class="text-white"> -->
+
+   <!--  <button class="btn btn-danger float-right" type="submit" (click)="logout()">
+        logout
+      </button> -->
       
     <div class="general-link"> 
       <h3 class="text-white">General</h3> 
@@ -95,10 +99,10 @@
         </div>
       </mat-toolbar>
 
-    <mat-drawer-container class="example-container bg-dark d-flex">
+    <mat-drawer-container class="example-container bg-black d-flex">
 
-      <div class="main-div float-left bg-black">
-        <div class="router-outlet-div bg-black text-white">
+      <div class="main-div float-left">
+        <div class="router-outlet-div text-white">
           <router-outlet></router-outlet>
         </div>
       </div>
@@ -143,12 +147,12 @@
         </nav>
       </mat-drawer>
 
-    </mat-drawer-container>
-
-    <footer class="bg-black text-center">
+      <footer class="bg-black text-center text-white">
         @ copyright reserved at
-          <code class="text-red">Lutimbe</code><code class="text-white bg-black">Filmz</code>
+        <code class="text-red">Lutimbe</code><code class="text-white bg-black">Filmz</code>
       </footer>
+
+    </mat-drawer-container>
 
   </body>
 </html>
