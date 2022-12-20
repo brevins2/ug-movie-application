@@ -5,6 +5,15 @@ body {
   height: auto;
 }
 
+.send {
+  color: blue;
+}
+
+.send:hover,
+.btn:hover {
+  color: white;
+}
+
 /* For mobile phones: */
 @media only screen and (max-width: 599px){
   .container-fluid {
