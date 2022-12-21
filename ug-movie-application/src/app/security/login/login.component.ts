@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.get<any>('http://localhost:8080/add/Account').subscribe(res=>{
+    this.http.get<any>('http://localhost:8080/Account').subscribe(res=>{
       console.log(res);
       this.loginForm.reset();
     });
