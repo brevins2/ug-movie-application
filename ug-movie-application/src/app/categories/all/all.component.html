@@ -1,5 +1,5 @@
 <html class="d-flex bg-black">
-  <nav class="horizontal-nav nav nav-link d-flex flex-column float-left bg-dark text-left">
+  <nav class="horizontal-nav nav nav-link d-flex float-left bg-dark text-left">
     <a href="#" class="home-link">
       <h1>
         <code class="text-danger">Lutimbe</code><code class="bg-white text-black">Filmz</code>
@@ -9,19 +9,22 @@
     <div class="main-link">
       <h3 class="text-white">Menu</h3>
 
-      <div class="d-flex text-left">
-        <i class="fa-solid fa-home"></i>&nbsp;
-        <a class="text-left link" active routerLink="/cinema/browse">Home</a>
+      <div>
+        <a class="text-left link" active routerLink="/cinema/browse">
+          <i class="fa-solid fa-home"></i>&nbsp;&nbsp;Home
+        </a>
       </div>
 
-      <div class="d-flex text-left">
-        <i class="fa-brands fa-product-hunt"></i>&nbsp;
-        <a class="text-left link" routerLink="producers">producers</a>
+      <div>
+        <a class="text-left link" routerLink="producers">
+          <i class="fa-solid fa-user"></i>&nbsp;&nbsp;producers
+        </a>
       </div>
 
-      <div class="d-flex text-left">
-        <i class="fa fa-users"></i>&nbsp;
-        <a class="text-left link" routerLink="customers">customers</a>
+      <div>
+        <a class="text-left link" routerLink="customers">
+          <i class="fa-solid fa-users"></i>&nbsp;&nbsp;customers
+        </a>
       </div>
     </div>
     <!-- <hr class="text-white hr-first"> -->
@@ -29,33 +32,33 @@
     <div class="profile-link">
       <h3>Profile</h3> 
 
-      <div class="d-flex text-left">
-        <i class="fa-solid fa-heart"></i>&nbsp;
-        <a class="text-left link" routerLink="/views/favourets">Faviouret</a>
+      <div>
+        <a class="text-left link" routerLink="views/favourets">
+          <i class="fa-solid fa-heart"></i>&nbsp;&nbsp;Faviouret
+        </a>
       </div>
 
-      <div class="d-flex text-left">
-        <i class="fa fa-circle-arrow-down"></i>&nbsp;
-        <a class="text-left link" routerLink="/views/download">Download</a>
+      <div>
+        <a class="text-left link" routerLink="views/download">
+          <i class="fa-solid fa-circle-arrow-down"></i>&nbsp;&nbsp;Download
+        </a>
       </div>
 
-      <div class="d-flex text-left">
-        <i class="fa-solid fa-history"></i>&nbsp;
-        <a class="text-left link" routerLink="/views/recent">Recent</a>
+      <div>
+        <a class="text-left link" routerLink="views/recent">
+          <i class="fa-solid fa-history"></i>&nbsp;&nbsp;Recent
+        </a>
       </div>
     </div>
     <!-- <hr class="text-white"> -->
-
-   <!--  <button class="btn btn-danger float-right" type="submit" (click)="logout()">
-        logout
-      </button> -->
       
     <div class="general-link"> 
       <h3 class="text-white">General</h3> 
 
-      <div class="d-flex text-left">
-        <i class="fa fa-cog"></i>
-        <a class="text-left link" routerLink="customers">Settings</a>
+      <div>
+        <a class="text-left link" routerLink="customers">
+          <i class="fa-solid fa-cog"></i>&nbsp;&nbsp;Settings
+        </a>
       </div>
 
       <button class="btn btn-danger text-center" type="submit" (click)="logout()">
@@ -66,30 +69,38 @@
 
   <body class="d-flex flex-column bg-black">
       <mat-toolbar class="d-flex fixed-top justify-content-between position-sticky bg-black">
-        <nav class="float-left text-left">
-          <small>
-            <a class="active">
-              All
-            </a>
-          </small>
+        <nav class="float-left text-left d-flex flex">
+          <a href="#" class="home2-link">
+            <h1>
+              <code class="text-danger">Lutimbe</code><code class="bg-white text-black">Filmz</code>
+            </h1>
+          </a>
 
-          <small>
-            <a routerLink="movies">
-              Movies
-            </a>
-          </small>
+          <div>
+            <small>
+              <a class="active">
+                All
+              </a>
+            </small>
 
-          <small>
-            <a routerLink="series">
-              Tv Shows
-            </a>
-          </small>
+            <small>
+              <a routerLink="movies">
+                Movies
+              </a>
+            </small>
 
-          <small>
-            <a href="#">
-              Documentaries
-            </a>
-          </small>
+            <small>
+              <a routerLink="series">
+                Tv Shows
+              </a>
+            </small>
+
+            <small>
+              <a href="#">
+                Documentaries
+              </a>
+            </small>
+          </div>
         </nav>
 
         <div class="example-sidenav-content">

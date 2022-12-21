@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +10,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  hide = true;
+
+  loginForm =  this.formBuilder.group({
+    Email: ['', Validators.required],
+    Password: ['', Validators.required]
+  });
+
+  constructor(private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
   BackHome(){
     this.router.navigate(['cinema/browse']);
+  }
+
+  login() {
+    this.http.get<any>('http://localhost:8080/add/Account').subscribe(res=>{
+      console.log(res);
+      this.loginForm.reset();
+    });
   }
 
 }

@@ -56,7 +56,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FlutterwaveModule } from "flutterwave-angular-v3";
 import { DownloadsComponent } from './categories/views/downloads/downloads.component';
 import { RecentComponent } from './categories/views/recent/recent.component';
-import { FavouretsComponent } from './categories/views/favourets/favourets.component'
+import { FavouretsComponent } from './categories/views/favourets/favourets.component';
+import { MainsComponent } from './categories/views/mains/mains.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { FavouretsComponent } from './categories/views/favourets/favourets.compo
     PlayMovieComponent,
     DownloadsComponent,
     RecentComponent,
-    FavouretsComponent
+    FavouretsComponent,
+    MainsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
-/*body {
+body {
   height: auto;
 }
-*/
+
 .container-fluid {
   padding: 10%;
   padding-top: 5%;
@@ -18,7 +18,7 @@ form {
   margin: 0 auto;
 }
 
-form div {
+mat-form-field {
   margin: 2%;
 }
 
@@ -51,11 +51,10 @@ small {
   font-size: .9rem;
 }
 
- .log-button button {
+.log-button button {
   margin-right: 1%;
- }
+}
 
-.second-option{
-  margin-top: 1%;
-  padding-bottom: 0%;
+.login {
+  width: 100px;
 }

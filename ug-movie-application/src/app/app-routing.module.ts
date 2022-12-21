@@ -18,6 +18,7 @@ import { PlayMovieComponent } from './categories/play-movie/play-movie.component
 import { DownloadsComponent } from './categories/views/downloads/downloads.component';
 import { FavouretsComponent } from './categories/views/favourets/favourets.component';
 import { RecentComponent } from './categories/views/recent/recent.component';
+import { MainsComponent } from './categories/views/mains/mains.component';
 
 import { MainComponent } from './developer/main/main.component';
 import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
@@ -44,9 +45,12 @@ const routes: Routes = [
     { path:'producers', component: ProducerComponent }
   ]},
 
-  { path: 'views/downloads', component: DownloadsComponent },
-  { path: 'views/favourets', component: FavouretsComponent },
-  { path: 'views/recents', component: RecentComponent},
+  { path:'cinema/all/views', component: MainsComponent, children: [
+    { path:'', redirectTo: 'downloads', pathMatch: 'full' },
+    { path: 'downloads', component: DownloadsComponent },
+    { path: 'favourets', component: FavouretsComponent },
+    { path: 'recents', component: RecentComponent}
+  ]},
 
   { path: 'developer/edits', component: MainComponent, children: [
     { path: '', redirectTo: 'moviesedits', pathMatch: 'full' },

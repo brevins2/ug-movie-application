@@ -6,21 +6,26 @@
       </button>
     </h2>
 
-    <form class="bg-white">
+    <form class="bg-white d-flex flex-column" [formGroup]="loginForm">
       <nav class="p-2">Login</nav>
-      <div class="form-group">
-        <span>Email</span>
-        <input type="email" class="form-control" placeholder="enter email" required>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="Email" placeholder="Enter email" required>
+      </mat-form-field>
         <small class="form-text text-muted">
           We'll never share your email with anyone else.
         </small>
-      </div>
-      <div class="form-group">
-        <span>Password</span>
-        <input type="password" class="form-control" placeholder="enter password" required>
-      </div>
 
-      <button type="submit" class="btn btn-primary float-right">Login</button><br>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="Password" placeholder="Enter Password" [type]="hide ? 'password' : 'text'" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button type="submit" class="btn btn-primary float-right login" (click)="login()">Login</button><br>
 
       <div class="d-flex flex-column text-center second-option">
         <small class="text-primary">Login via OTP</small>

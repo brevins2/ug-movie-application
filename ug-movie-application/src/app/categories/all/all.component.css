@@ -17,13 +17,10 @@ html {
   .horizontal-nav {
     width: 100%;
     height: 50px;
-    padding: 0px;
-    padding-top: 2.5%;
-    padding-left: 5%;
+    padding-left: 0px;
     display: flex !important;
     flex-direction: row !important;
     position: fixed !important;
-    text-align: center !important;
     bottom: 0;
     left: 0;
     z-index: 1030;
@@ -42,34 +39,9 @@ html {
   }
 
   .horizontal-nav div {
-    font-size: .72rem;
-    /*margin-bottom: 15px;*/
+    font-size: .5rem;
     color: whitesmoke;
-    width: 80px;
-    display: flex !important;
-    text-align: center !important;
   }
-
-  .main-link,
-  .profile-link,
-  .general-link {
-    display: flex !important;
-  }
-
-  /*.general-link button {
-    right: 1;
-    margin-left: 5% !important;
-    display: none;
-  }*/
-
-  .btn {
-    /*right: 0;*/
-    margin-left: 35%;
-  }
-
-  /*horizontal-nav div div a small {
-    display: none;
-  }*/
 
   .horizontal-nav div div:hover,
   .horizontal-nav div div:focus,
@@ -80,15 +52,19 @@ html {
   }
 
   .horizontal-nav div div a {
+    font-size: .75rem;
     text-align: center;
-    color: whitesmoke;
-    width: 80px;
+    color: whitesmoke !important;
+    width: 100px;
   }
 
-  .horizontal-nav div div i {
-    padding-top: 5px;
-    padding-right: 0px;
-    margin-right: 0px;
+  .main-link,
+  .profile-link,
+  .general-link {
+    width: 220px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-right: 1%;
   }
 
   a {
@@ -107,7 +83,16 @@ html {
     width: 100%;
   }
 
+  .home2-link {
+    margin-right: 2%;
+  }
+
+  h1 {
+    font-size: .8rem;
+  }
+
   small {
+    font-size: .9rem;
     margin: 1%;
   }
 
@@ -115,18 +100,14 @@ html {
     color: #c8c8c8cc;
   }
 
-  small a:hover {
+  small a:hover,
+  small a:focus {
     color: white;
     cursor: pointer;
   }
 
   small a:active {
     color: white;
-  }
-
-  small a:focus {
-    color: white;
-    cursor: pointer;
   }
 
   .main-div {
@@ -141,7 +122,7 @@ html {
   }
 
   footer {
-    padding-bottom: 12%;
+    margin-bottom: 12%;
   }
 
   /* right navigation-bar */
@@ -199,7 +180,6 @@ html {
   mat-chip-list {
     margin-bottom: 2%;
   }  
-
 }
 
 @media only screen and (max-width: 767px) {
@@ -215,13 +195,10 @@ html {
   .horizontal-nav {
     width: 100%;
     height: 50px;
-    padding: 0px;
-    padding-top: 2.5%;
-    padding-left: 5%;
+    padding-left: 2%;
     display: flex !important;
     position: fixed !important;
     text-align: center !important;
-    right: 0;
     bottom: 0;
     left: 0;
     z-index: 1030;
@@ -235,68 +212,20 @@ html {
     display: none;
   }
 
+  h3 {
+    display: none;
+  }
+
   .horizontal-nav div {
     font-size: .9rem;
     margin-bottom: 15px;
     color: whitesmoke;
-    width: 80px;
   }
 
-  .main-link div i,
-  .main-link div a {
-    margin-top: 7%;
-    position: fixed;
-  }
-
-  .main-link h3 {
-    position: fixed;
-    margin-top: 3%;
-  }
-
-  .main-link div {
-    margin-bottom: 15px;
-  }
-
-  .profile-link div i,
-  .profile-link div a {
-    margin-top: 10%;
-    position: fixed;
-  }
-
-  .profile-link h3 {
-    margin-top: 6%;
-    position: fixed;
-  }
-
-  .general-link div i,
-  .general-link div a{
-    margin-top: 14%;
-    position: fixed;
-  }
-
-  .general-link h3 {
-    margin-top: 10%;
-    position: fixed;
-  }
-
-  .general-link button {
-    margin-top: 17%;
-    position: fixed;
-  }
-
-  .horizontal-nav div div:hover {
+  .horizontal-nav div div:hover,
+  .horizontal-nav div div:focus,
+  .horizontal-nav div div:active {
     color: yellow;
-    /*border-right: 2px solid yellow;*/
-  }
-
-  .horizontal-nav div div:focus {
-    color: yellow;
-    /*border-right: 2px solid yellow;*/
-  }
-
-  .horizntal-nav div div:activer{
-    color: yellow;
-    /*border-right: 2px solid yellow;*/
   }
 
   .horizontal-nav div div a {
@@ -305,23 +234,19 @@ html {
     width: 100px;
   }
 
-  .horizontal-nav div div a:hover {
-    color: yellow;
-    /*border-right: 2px solid yellow;*/
-  }
-
+  .horizontal-nav div div a:hover,
+  .horizontal-nav div div a:active,
   .horizontal-nav div div a:focus {
     color: yellow;
-    /*border-right: 2px solid yellow;*/
   }
 
-  .horizontal-nav div div a:active {
-    color: yellow;
-    /*border-right: 2px solid yellow;*/
-  }
-
-  .horizontal-nav div div i {
-    padding-top: 5px;
+  .main-link,
+  .profile-link,
+  .general-link {
+    width: 220px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-right: 2%;
   }
 
   .btn {
@@ -341,6 +266,14 @@ html {
 
   mat-toolbar {
     width: 100%;
+  }
+
+  .home2-link {
+    margin-right: 4%;
+  }
+
+  h1 {
+    font-size: .95rem;
   }
 
   small {
@@ -373,6 +306,10 @@ html {
 
   .router-outlet-div {
     width: 100%;
+  }
+
+  footer {
+    margin-bottom: 60px;
   }
 
   /* right navigation-bar */
@@ -437,12 +374,14 @@ html {
 
   /* left navigation-bar styles */
   .horizontal-nav {
-    width: 15%;
+    width: 12%;
     height: auto;
     padding: 0px;
     padding-top: 5%;
     padding-left: 1%;
     position: fixed-left;
+    display: block !important;
+    flex-direction: column !important;
     top: 4;
   }
 
@@ -460,10 +399,10 @@ html {
     width: 80px;
   }
 
-  .main-link div i,
-  .main-link div a {
-    margin-top: 7%;
-    position: fixed;
+  .main-link,
+  .profile-link,
+  .general-link {
+    height: 120px;
   }
 
   .main-link h3 {
@@ -472,13 +411,15 @@ html {
   }
 
   .main-link div {
-    margin-bottom: 15px;
+    height: 20px;
+    margin-bottom: 10px;
+    text-align: left;
   }
 
-  .profile-link div i,
-  .profile-link div a {
-    margin-top: 10%;
+  .main-link div a {
+    margin-top: 7%;
     position: fixed;
+    text-align: left !important;
   }
 
   .profile-link h3 {
@@ -486,60 +427,48 @@ html {
     position: fixed;
   }
 
-  .general-link div i,
-  .general-link div a{
-    margin-top: 14%;
+  .profile-link div {
+    height: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .profile-link div a {
+    margin-top: 10%;
     position: fixed;
+    text-align: left !important;
   }
 
   .general-link h3 {
-    margin-top: 10%;
+    margin-top: 9%;
     position: fixed;
+  }
+
+  .general-link div a{
+    margin-top: 13%;
+    position: fixed;
+    text-align: left !important;
   }
 
   .general-link button {
-    margin-top: 17%;
+    margin-top: 16%;
+    width: 10%;
     position: fixed;
-  }
-
-  .horizontal-nav div div:hover {
-    color: yellow;
-    /*border-right: 2px solid yellow;*/
-  }
-
-  .horizontal-nav div div:focus {
-    color: yellow;
-    /*border-right: 2px solid yellow;*/
-  }
-
-  .horizntal-nav div div:activer{
-    color: yellow;
-    /*border-right: 2px solid yellow;*/
   }
 
   .horizontal-nav div div a {
     text-align: center;
     color: whitesmoke;
     width: 100px;
+    border-radius: 2px;
   }
 
-  .horizontal-nav div div a:hover {
-    color: yellow;
-    /*border-right: 2px solid yellow;*/
-  }
-
-  .horizontal-nav div div a:focus {
-    color: yellow;
-    /*border-right: 2px solid yellow;*/
-  }
-
+  .horizontal-nav div div a:hover,
+  .horizontal-nav div div a:focus,
   .horizontal-nav div div a:active {
     color: yellow;
-    /*border-right: 2px solid yellow;*/
-  }
-
-  .horizontal-nav div div i {
-    padding-top: 5px;
+    background-color: #f5f5f533;
+    padding-left: 6px;
   }
 
   .btn {
@@ -550,16 +479,19 @@ html {
     text-decoration: none;
   }
 
-
   /* body styles */
   body {
-    width: 85%;
+    width: 88%;
     height: auto%;
     padding: 2% 0% 0% 2%;
   }
 
   mat-toolbar {
     width: 100%;
+  }
+
+  .home2-link {
+    display: none;
   }
 
   small {
