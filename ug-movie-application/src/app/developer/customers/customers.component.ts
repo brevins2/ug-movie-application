@@ -1,38 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  delete: string;
-  edit: string;
+export class customers{
+  constructor(
+  public ID: number,
+  public Name: string,
+  public Username: string,
+  public Email: string,
+  public File: string,
+  public Password: string,
+  public CPassword: string
+  ){}
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', delete: 'delete', edit: 'edit'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', delete: 'delete', edit: 'edit'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', delete: 'delete', edit: 'edit'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be', delete: 'delete', edit: 'edit'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B', delete: 'delete', edit: 'edit'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C', delete: 'delete', edit: 'edit'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N', delete: 'delete', edit: 'edit'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O', delete: 'delete', edit: 'edit'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F', delete: 'delete', edit: 'edit'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne', delete: 'delete', edit: 'edit'},
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H', delete: 'delete', edit: 'edit'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He', delete: 'delete', edit: 'edit'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li', delete: 'delete', edit: 'edit'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be', delete: 'delete', edit: 'edit'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B', delete: 'delete', edit: 'edit'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C', delete: 'delete', edit: 'edit'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N', delete: 'delete', edit: 'edit'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O', delete: 'delete', edit: 'edit'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F', delete: 'delete', edit: 'edit'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne', delete: 'delete', edit: 'edit'},
-];
 
 @Component({
   selector: 'app-customers',
@@ -41,12 +22,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class CustomersComponent implements OnInit {
 
-	displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'delete', 'edit'];
-  	dataSource = ELEMENT_DATA;
-
-  constructor() { }
+  customer: customers[] = [];
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get<any>('http://localhost:8080/Accounts').subscribe(result =>{
+      this.customer = result;
+      console.log(result);
+    });
   }
 
 }

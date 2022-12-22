@@ -1,5 +1,6 @@
 body {
   height: auto;
+  width: 100%;
 }
 
 .container-fluid {
@@ -10,11 +11,12 @@ body {
 }
 
 form {
-  width: 370px;
-  height: 510px;
+  width: 90%;
+  height: 70%;
   border: 1px solid rgb(201 201 201);
   border-radius: 2%;
   padding: 2%;
+  padding-bottom: 3.5%;
   margin: 0 auto;
 }
 
@@ -56,5 +58,6 @@ small {
 }
 
 .login {
+  margin-left: 2%;
   width: 100px;
 }
