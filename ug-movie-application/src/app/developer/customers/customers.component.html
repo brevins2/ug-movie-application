@@ -1,49 +1,80 @@
-<table mat-table *ngFor="let cust of customer" class="mat-elevation-z8">
+<!-- <table mat-table *ngFor="let cust of customer" class="mat-elevation-z8"> -->
 
   <!-- ID Column -->
-  <ng-container matColumnDef="position">
+  <!-- <ng-container matColumnDef="position">
     <th mat-header-cell> No. </th>
     <td mat-cell> {{cust.ID}} </td>
   </ng-container>
-
+ -->
   <!-- Name Column -->
-  <ng-container matColumnDef="name">
+  <!-- <ng-container matColumnDef="name">
     <th mat-header-cell> Name </th>
     <td mat-cell> {{cust.Name}} </td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- Username Column -->
-  <ng-container matColumnDef="weight">
+  <!-- <ng-container matColumnDef="weight">
     <th mat-header-cell> Username </th>
     <td mat-cell> {{cust.Username}} </td>
   </ng-container>
-
+ -->
   <!-- Email Column -->
-  <ng-container matColumnDef="Email">
+  <!-- <ng-container matColumnDef="Email">
     <th mat-header-cell> Email </th>
     <td mat-cell> {{cust.Email}} </td>
-  </ng-container>
+  </ng-container> -->
 
   <!-- File Column -->
-  <ng-container matColumnDef="File">
+  <!-- <ng-container matColumnDef="File">
     <th mat-header-cell> File </th>
     <td mat-cell> {{cust.File}} </td>
   </ng-container>
-
+ -->
   <!-- Password Column -->
-  <ng-container matColumnDef="Password">
+<!--   <ng-container matColumnDef="Password">
     <th mat-header-cell> Password </th>
     <td mat-cell> {{cust.Password}} </td>
   </ng-container>
-
+ -->
   <!-- CPassword Column -->
-  <ng-container matColumnDef="CPassword">
+  <!-- <ng-container matColumnDef="CPassword">
     <th mat-header-cell> CPassword </th>
     <td mat-cell> {{cust.CPassword}} </td>
   </ng-container>
-
-<!--   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+ -->
+  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+<!-- </table> -->
+
+<!-- <span>&copy; copy rights reserved 2022</span> -->
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>File</th>
+      <th>Password</th>
+      <th>CPassword</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cust of customer">
+      <td>{{cust.ID}}</td>
+      <td>{{cust.Name}}</td>
+      <td>{{cust.Username}}</td>
+      <td>{{cust.Email}}</td>
+      <td>{{cust.File}}</td>
+      <td>{{cust.Password}}</td>
+      <td>{{cust.CPassword}}</td>
+      <td><i class="fa-solid fa-edit"></i></td>
+      <td><i class="fa-solid fa-trash"></i></td>
+    </tr>
+  </tbody>
 </table>
 
 <span>&copy; copy rights reserved 2022</span>

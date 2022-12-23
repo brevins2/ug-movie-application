@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.get<any>("http://localhost:8080/Account/:id").subscribe(res=>{
+    this.http.get<any>('http://localhost:8080/Account/:id').subscribe(res=>{
       console.log(res);
       if(this.loginForm.value.Email && this.loginForm.value.Password) {
         this.loginForm.reset();

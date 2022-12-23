@@ -23,13 +23,17 @@ export class customers{
 export class CustomersComponent implements OnInit {
 
   customer: customers[] = [];
+  displayedColumns: string[] = ['ID', 'Name', 'Username', 'Email', 'File', 'Password', 'CPassword'];
+    dataSource = customers;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.http.get<any>('http://localhost:8080/Accounts').subscribe(result =>{
-      this.customer = result;
-      console.log(result);
+      this.customer = result.shows;
+      console.log(this.customer);
+      // this.customer = JSON.parse(result);
+      console.log('result => ', result);
     });
   }
-
 }

@@ -46,7 +46,7 @@ app.get('/Accounts', (req, res) => {
                 data: result
             });
 
-            //            res.json(qr);
+            res.json(result);
         }
     });
 });
