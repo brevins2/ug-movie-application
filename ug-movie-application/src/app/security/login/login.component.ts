@@ -27,14 +27,42 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.get<any>('http://localhost:8080/Account/:id').subscribe(res=>{
+    this.http.get<any>('http://localhost:8080/Accounts').subscribe(res=>{
       console.log(res);
       if(this.loginForm.value.Email && this.loginForm.value.Password) {
         this.loginForm.reset();
+        console.log(this.loginForm.value.Email, this.loginForm.value.Password);
       }
       else{
         alert("wrong input!!");
       }
+
+    //   const user = res.find((a:any)=>{
+    //     return a.Email === this.loginForm.value.Email &&
+    //       a.Password === this.loginForm.value.Password
+    //   });
+    //   const admin = res.find(()=>{
+    //     return 'admin@ug.com' === this.loginForm.value.Email &&
+    //     'i83admin' === this.loginForm.value.Password
+    //   });
+
+    //   if(admin){
+    //     // this.alert = true;
+    //     this.loginForm.reset();
+    //     this.router.navigate(['admin']);
+    //   }
+    //   else if (user) {
+    //     // this.alert = true;
+    //     // this.profile = user.email;
+    //     this.loginForm.reset();
+    //     this.router.navigate(['users']);
+    //   }
+    //   else{
+    //     // this.alerts = true;
+    //   }
+    //   },
+    //   error=>{
+    //     // this.alerts = true;
     });
   }
 

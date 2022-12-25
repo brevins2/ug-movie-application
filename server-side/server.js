@@ -46,7 +46,7 @@ app.get('/Accounts', (req, res) => {
                 data: result
             });
 
-            res.json(result);
+            // res.json(result);
         }
     });
 });
@@ -58,16 +58,16 @@ app.get('/Account/:id', (req, res) => {
 
     let qr = `select * from user where ID = ${gID}`;
 
-    db.query(qr, (err, results) => {
+    db.query(qr, (err, result) => {
 
         if (err) {
             console.log(err);
         }
-        if (results.length > 0) {
-            //            res.send({
-            //                Message: 'getting single data',
-            //                data: results
-            //            });
+        if (result.length > 0) {
+            res.send({
+                Message: 'getting single data',
+                data: result
+            });
 
             res.json(qr);
         } else {
