@@ -1,1 +1,33 @@
-<p>main works!</p>
+<mat-toolbar class="d-flex fixed-top justify-content-between position-sticky bg-black">
+    <nav class="float-left text-left d-flex flex">
+        <a href="#" class="home2-link">
+            <h1>
+              <code class="text-danger">Lutimbe</code><code class="bg-white text-black">Filmz</code>
+            </h1>
+        </a>
+    </nav>
+
+    <div class="text-white">
+        <a routerLink="/cinema/all/" class="btn btn-outline-primary rounded-pill text-white">
+        	<i class="fa-solid fa-return"></i>
+    	</a>
+    </div>
+</mat-toolbar>
+
+<body class="container-fluid">
+	<div class="d-flex links align-content-center">
+		<div>
+			<a routerLink="downloads" class="btn btn-outline-primary rounded-pill">Downloads</a>
+		</div>
+		<div>
+			<a routerLink="favourets" class="btn btn-outline-primary rounded-pill">Favouret</a>
+		</div>
+		<div>
+			<a routerLink="recents" class="btn btn-outline-primary rounded-pill">Recent</a>
+		</div>
+	</div>
+
+	<div>
+		<router-outlet></router-outlet>
+	</div>
+</body>

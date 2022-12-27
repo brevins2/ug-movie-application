@@ -1,0 +1,22 @@
+mat-toolbar {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.links {
+	margin: 0 auto;
+	/*margin-left: 18%;*/
+}
+
+.links div {
+	margin: 2%;
+	width: 120px;
+	padding: 2%;
+}
+
+.btn-outline-primary {
+	border-radius: 10px !important;
+}
