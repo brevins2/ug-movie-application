@@ -30,7 +30,7 @@ export class MoviesbackComponent implements OnInit {
   getMovies(){
     this.http.get<any>('http://localhost:8080/Movies').subscribe(
       response=>{
-        this.movies = response;
+        this.movies = response.show;
         console.log(response);
       });
   }
