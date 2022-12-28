@@ -1,82 +1,58 @@
-<!-- <table mat-table class="mat-elevation-z8" *ngFor="let movie of movies">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  - Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" 
+  <!-- - Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition"  -->
 
-  Position Column
+  <!-- Position Column -->
   <ng-container matColumnDef="ID">
     <th mat-header-cell *matHeaderCellDef> ID </th>
-    <td mat-cell> {{movie.ID}} </td>
+    <td mat-cell *matCellDef="let movies"> {{movies.ID}} </td>
   </ng-container>
 
-  Name Column
+  <!-- Name Column -->
   <ng-container matColumnDef="Title">
     <th mat-header-cell *matHeaderCellDef> Title </th>
-    <td mat-cell> {{movie.Title}} </td>
+    <td mat-cell *matCellDef="let movies"> {{movies.Title}} </td>
   </ng-container>
 
-  Weight Column
+  <!-- Weight Column -->
   <ng-container matColumnDef="File">
     <th mat-header-cell *matHeaderCellDef> File </th>
-    <td mat-cell> {{movie.File}} </td>
+    <td mat-cell *matCellDef="let movies"> {{movies.File}} </td>
   </ng-container>
 
-  Symbol Column
+  <!-- Symbol Column -->
   <ng-container matColumnDef="Genre">
     <th mat-header-cell *matHeaderCellDef> Genre </th>
-    <td mat-cell> {{movie.Genre}} </td>
+    <td mat-cell *matCellDef="let movies"> {{movies.Genre}} </td>
   </ng-container>
 
-  Symbol Column
+  <!-- Symbol Column -->
   <ng-container matColumnDef="Producer">
     <th mat-header-cell *matHeaderCellDef> Producer </th>
-    <td mat-cell> {{movie.Producer}} </td>
+    <td mat-cell *matCellDef="let movies"> {{movies.Producer}} </td>
   </ng-container>
 
-  Symbol Column
+  <!-- Symbol Column -->
   <ng-container matColumnDef="Details">
     <th mat-header-cell *matHeaderCellDef> Details </th>
-    <td mat-cell> {{movie.Details}} </td>
+    <td mat-cell *matCellDef="let movies"> {{movies.Details}} </td>
+  </ng-container>
+
+  <!-- Edit Column -->
+  <ng-container matColumnDef="Edit">
+    <th mat-header-cell *matHeaderCellDef> Edit </th>
+    <td mat-cell *matCellDef="let customer"> <i class="fa fa-edit btn btn-outline-primary"></i> </td>
+  </ng-container>
+
+  <!-- Delete Column -->
+  <ng-container matColumnDef="Delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let customer"> <i class="fa fa-trash btn btn-outline-danger"></i> </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
-<span class="text-center">&copy; copy rights reserved 2022</span> -->
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>File</th>
-      <th>Genre</th>
-      <th>Producer</th>
-      <th>Details</th>
-      <th>Edit</th>
-      <th>Remove</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let movie of movies">
-      <td>{{movie.ID}}</td>
-      <td>
-        <img [src]="'../../../assets/image/computers/'+movie.File" width="80">
-      </td>
-      <td>{{movie.File}}</td>
-      <td>{{movie.Producer}}</td>
-      <td>{{movie.Details}}</td>
-      <td>
-        <a type="button" class="btn btn-primary" id="edit" routerLink="/edit-computer/{{movie.ID}}">
-          <i class="fa fa-edit"></i>
-        </a>
-      </td>
-      <td>
-        <a type="button" id="del" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-      </td>
-    </tr>
-  </tbody>
 </table>
 
 <span class="text-center">&copy; copy rights reserved 2022</span>

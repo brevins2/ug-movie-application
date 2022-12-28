@@ -3,6 +3,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
+export interface Customers{
+  ID: number,
+  Name: string,
+  Username: string,
+  Email: string,
+  File: string,
+  Password: string,
+  CPassword: string
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +21,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent implements OnInit {
 
   hide = true;
-
+  customer: Customers[] = [];
   loginForm =  this.formBuilder.group({
     Email: ['', Validators.required],
     Password: ['', Validators.required]
@@ -27,7 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.get<any>('http://localhost:8080/Accounts').subscribe(res=>{
+    this.http.get<{data: Customers[]}>('http://localhost:8080/Accounts').subscribe(res=>{
       console.log(res);
       if(this.loginForm.value.Email && this.loginForm.value.Password) {
         this.loginForm.reset();

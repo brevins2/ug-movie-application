@@ -16,7 +16,7 @@ html {
   /* left navigation-bar styles */
   .horizontal-nav {
     width: 100%;
-    height: 50px;
+    height: 58px !important;
     padding-left: 0px;
     display: flex !important;
     flex-direction: row !important;
@@ -39,8 +39,37 @@ html {
   }
 
   .horizontal-nav div {
-    font-size: .5rem;
     color: whitesmoke;
+    display: flex !important;
+    padding-left: 0px;
+    width: 140px !important;
+  }
+
+  .main-link,
+  .profile-link,
+  .general-link {
+    display: flex !important;
+    font-size: 1.5rem !important;
+  }
+
+  .horizontal-nav div div {
+    width: 42px !important;
+    padding-top: 10px;
+  }
+
+  .main-link,
+  .profile-link {
+    font-size: 1rem !important;
+  }
+
+  .general-link {
+    padding-left: 5px !important;
+    width: 172px !important;
+  }
+
+  .general-link button {
+    margin-left: 15px !important;
+    width: 100px !important;
   }
 
   .horizontal-nav div div:hover,
@@ -52,23 +81,18 @@ html {
   }
 
   .horizontal-nav div div a {
-    font-size: .75rem;
+    font-size: 1rem;
     text-align: center;
     color: whitesmoke !important;
-    width: 100px;
-  }
-
-  .main-link,
-  .profile-link,
-  .general-link {
-    width: 220px;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    margin-right: 1%;
+    margin-left: 8px;
   }
 
   a {
     text-decoration: none;
+  }
+
+  label {
+    display: none;
   }
 
   /* body styles */
@@ -194,7 +218,7 @@ html {
   /* left navigation-bar styles */
   .horizontal-nav {
     width: 100%;
-    height: 50px;
+    height: 60px;
     padding-left: 2%;
     display: flex !important;
     position: fixed !important;
@@ -217,44 +241,65 @@ html {
   }
 
   .horizontal-nav div {
-    font-size: .9rem;
-    margin-bottom: 15px;
     color: whitesmoke;
+    display: flex !important;
+    padding-left: 0px;
+    width: 230px;
+    
   }
 
-  .horizontal-nav div div:hover,
-  .horizontal-nav div div:focus,
-  .horizontal-nav div div:active {
-    color: yellow;
-  }
-
-  .horizontal-nav div div a {
-    text-align: center;
-    color: whitesmoke;
-    width: 100px;
-  }
-
-  .horizontal-nav div div a:hover,
-  .horizontal-nav div div a:active,
-  .horizontal-nav div div a:focus {
-    color: yellow;
+  .main-link,
+  .profile-link {
+    margin-right: 25px;
   }
 
   .main-link,
   .profile-link,
   .general-link {
-    width: 220px;
     display: flex !important;
-    flex-wrap: wrap !important;
-    margin-right: 2%;
   }
 
-  .btn {
-    width: 13%;
+  .horizontal-nav div div {
+    width: 80px !important;
+    padding-top: 10px;
+  }
+
+  .main-link,
+  .profile-link {
+    font-size: 1rem !important;
+  }
+
+  .general-link {
+    padding-left: 5px !important;
+    width: 172px !important;
+  }
+
+  .general-link button {
+    margin-left: 15px !important;
+    width: 100px !important;
+  }
+
+  .horizontal-nav div div:hover,
+  .horizontal-nav div div:focus,
+  .horizontal-nav div div:active,
+  .horizontal-nav div div a:hover,
+  .horizontal-nav div div a:active {
+    color: yellow;
+  }
+
+  .horizontal-nav div div a {
+    font-size: 1.2rem;
+    text-align: center;
+    color: whitesmoke !important;
+    margin: 0 auto;
   }
 
   a {
     text-decoration: none;
+  }
+
+  label {
+    display: none;
   }
 
   /* body styles */

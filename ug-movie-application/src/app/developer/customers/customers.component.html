@@ -1,80 +1,64 @@
-<!-- <table mat-table *ngFor="let cust of customer" class="mat-elevation-z8"> -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
 
   <!-- ID Column -->
-  <!-- <ng-container matColumnDef="position">
-    <th mat-header-cell> No. </th>
-    <td mat-cell> {{cust.ID}} </td>
+  <ng-container matColumnDef="ID">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let customer"> {{customer.ID}} </td>
   </ng-container>
- -->
+
   <!-- Name Column -->
-  <!-- <ng-container matColumnDef="name">
-    <th mat-header-cell> Name </th>
-    <td mat-cell> {{cust.Name}} </td>
-  </ng-container> -->
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let customer"> {{customer.Name}} </td>
+  </ng-container>
 
   <!-- Username Column -->
-  <!-- <ng-container matColumnDef="weight">
-    <th mat-header-cell> Username </th>
-    <td mat-cell> {{cust.Username}} </td>
+  <ng-container matColumnDef="Username">
+    <th mat-header-cell *matHeaderCellDef> Username </th>
+    <td mat-cell *matCellDef="let customer"> {{customer.Username}} </td>
   </ng-container>
- -->
+
   <!-- Email Column -->
-  <!-- <ng-container matColumnDef="Email">
-    <th mat-header-cell> Email </th>
-    <td mat-cell> {{cust.Email}} </td>
-  </ng-container> -->
+  <ng-container matColumnDef="Email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let customer"> {{customer.Email}} </td>
+  </ng-container>
 
   <!-- File Column -->
-  <!-- <ng-container matColumnDef="File">
-    <th mat-header-cell> File </th>
-    <td mat-cell> {{cust.File}} </td>
+  <ng-container matColumnDef="File">
+    <th mat-header-cell *matHeaderCellDef> File </th>
+    <td mat-cell *matCellDef="let customer"> {{customer.File}} </td>
   </ng-container>
- -->
+
   <!-- Password Column -->
-<!--   <ng-container matColumnDef="Password">
-    <th mat-header-cell> Password </th>
-    <td mat-cell> {{cust.Password}} </td>
+  <ng-container matColumnDef="Password">
+    <th mat-header-cell *matHeaderCellDef> Password </th>
+    <td mat-cell *matCellDef="let customer"> {{customer.Password}} </td>
   </ng-container>
- -->
+
   <!-- CPassword Column -->
-  <!-- <ng-container matColumnDef="CPassword">
-    <th mat-header-cell> CPassword </th>
-    <td mat-cell> {{cust.CPassword}} </td>
+  <ng-container matColumnDef="CPassword">
+    <th mat-header-cell *matHeaderCellDef> Confirm Password </th>
+    <td mat-cell *matCellDef="let customer"> {{customer.CPassword}} </td>
   </ng-container>
- -->
-  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
-<!-- </table> -->
 
-<!-- <span>&copy; copy rights reserved 2022</span> -->
+  <!-- Edit Column -->
+  <ng-container matColumnDef="Edit">
+    <th mat-header-cell *matHeaderCellDef> Edit </th>
+    <td mat-cell *matCellDef="let customer"> <i class="fa fa-edit btn btn-outline-primary"></i> </td>
+  </ng-container>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>File</th>
-      <th>Password</th>
-      <th>CPassword</th>
-      <th>Edit</th>
-      <th>Remove</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let cust of customer">
-      <td>{{cust.ID}}</td>
-      <td>{{cust.Name}}</td>
-      <td>{{cust.Username}}</td>
-      <td>{{cust.Email}}</td>
-      <td>{{cust.File}}</td>
-      <td>{{cust.Password}}</td>
-      <td>{{cust.CPassword}}</td>
-      <td><i class="fa fa-edit"></i></td>
-      <td><i class="fa fa-trash"></i></td>
-    </tr>
-  </tbody>
+  <!-- Delete Column -->
+  <ng-container matColumnDef="Delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let customer"> <i class="fa fa-trash btn btn-outline-danger"></i> </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
 <span>&copy; copy rights reserved 2022</span>
