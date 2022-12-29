@@ -51,6 +51,26 @@ app.get('/Accounts', (req, res) => {
     });
 });
 
+//get all the data
+app.get('/Accounts/login', (req, res) => {
+
+    let qr = `select Email, Password from user`;
+
+    db.query(qr, (err, result) => {
+        if (err) {
+            console.log(err, 'errs');
+        }
+        if (result.length > 0) {
+            res.send({
+                message: 'all data available',
+                data: result
+            });
+
+            // res.json(result);
+        }
+    });
+});
+
 // get single data
 app.get('/Account/:id', (req, res) => {
 
