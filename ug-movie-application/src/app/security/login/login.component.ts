@@ -38,47 +38,24 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.http.get<{data: Customers[]}>('http://localhost:8080/Accounts/login').subscribe(res=>{
-      console.log(res);
-      if (this.loginForm.value.Email && this.loginForm.value.Password){
-        alert("well");
+
+      // this.customer.forEach((value) =>{
+      //   if (this.loginForm.value.Email == res.data[value].Email && this.loginForm.value.Password == res.data[value].Password){
+      //     console.log(this.loginForm.value.Email +", "+ this.loginForm.value.Password);
+      //     console.log("well done");
+      //   }else {
+      //     console.log("error occured");
+      //   }
+      //   console.log(value);
+      // });
+      for(var i = 0; i <= this.customer.length; i++){
+        if (this.loginForm.value.Email == res.data[i].Email && this.loginForm.value.Password == res.data[i].Password){
+          console.log(this.loginForm.value.Email +", "+ this.loginForm.value.Password);
+          console.log("well done");
+        }else {
+          console.log("error occured");
+        }
       }
-      else alert("fail");
-
-      // if(this.loginForm.value.Email && this.loginForm.value.Password) {
-      //   this.loginForm.reset();
-      //   console.log(this.loginForm.value.Email, this.loginForm.value.Password);
-      //   this.router.navigate(['cinema/all']);
-      // }
-      // else{
-      //   alert("wrong input!!");
-      // }
-
-      // const user = res.find((a:any)=>{
-      //   return a.Email === this.loginForm.value.Email &&
-      //     a.Password === this.loginForm.value.Password
-      // });
-      // const admin = res.find(()=>{
-      //   return 'admin@ug.com' === this.loginForm.value.Email &&
-      //   'i83admin' === this.loginForm.value.Password
-      // });
-
-      // if(admin){
-      //   // this.alert = true;
-      //   this.loginForm.reset();
-      //   this.router.navigate(['admin']);
-      // }
-      // else if (user) {
-      //   // this.alert = true;
-      //   // this.profile = user.email;
-      //   this.loginForm.reset();
-      //   this.router.navigate(['users']);
-      // }
-      // else{
-      //   // this.alerts = true;
-      // }
-      // },
-      // error=>{
-      //   // this.alerts = true;
     });
   }
 

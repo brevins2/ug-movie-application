@@ -48,13 +48,13 @@
   <!-- Edit Column -->
   <ng-container matColumnDef="Edit">
     <th mat-header-cell *matHeaderCellDef> Edit </th>
-    <td mat-cell *matCellDef="let customer"> <i class="fa fa-edit btn btn-outline-primary"></i> </td>
+    <td mat-cell *matCellDef="let customer"> <button class="btn btn-outline-primary" (click)="open(update)"><i class="fa fa-edit"></i></button> </td>
   </ng-container>
 
   <!-- Delete Column -->
   <ng-container matColumnDef="Delete">
     <th mat-header-cell *matHeaderCellDef> Delete </th>
-    <td mat-cell *matCellDef="let customer"> <i class="fa fa-trash btn btn-outline-danger"></i> </td>
+    <td mat-cell *matCellDef="let customer"> <button class="btn btn-outline-danger" (click)="open(delete)"><i class="fa fa-trash"></i></button> </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -62,3 +62,87 @@
 </table>
 
 <span>&copy; copy rights reserved 2022</span>
+
+<!-- pop-up form for updateing -->
+<ng-template #update let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Update Customr</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <body>
+      <div class="container">
+        <form [formGroup]="UpdateCustomer" class="form-control d-flex flex-column">
+          <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="Email" placeholder="Update Title" required>
+          </mat-form-field>
+
+          <mat-label>File</mat-label>
+              <input type="file" formControlName="File" class="form-control" placeholder="Select File" required>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Genre</mat-label>
+            <input matInput type="text" formControlName="Email" placeholder="Update Genre" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Producer</mat-label>
+            <input matInput type="text" formControlName="Producer" placeholder="Update Producer" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Details</mat-label>
+            <textarea matInput class="form-control" formControlName="Details" type="text-area" cols="80" rows="6" required></textarea>
+          </mat-form-field>
+        </form>
+      </div>
+    </body>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="Update()">Update</button>
+    <button class="btn btn-secondary" (click)="Clear()">Clear</button>
+  </div>
+</ng-template>
+
+<!-- pop-up form for deleting -->
+<ng-template #delete let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Delete Customer</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <body>
+      <div class="container">
+        <form [formGroup]="DeleteCustomer"class="form-control d-flex flex-column">
+          <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="Email" placeholder="Update Title" required>
+          </mat-form-field>
+
+          <mat-label>File</mat-label>
+              <input type="file" formControlName="File" class="form-control" placeholder="Select File" required>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Genre</mat-label>
+            <input matInput type="text" formControlName="Email" placeholder="Update Genre" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Producer</mat-label>
+            <input matInput type="text" formControlName="Producer" placeholder="Update Producer" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Details</mat-label>
+            <textarea matInput class="form-control" formControlName="Details" type="text-area" cols="80" rows="6" required></textarea>
+          </mat-form-field>
+        </form>
+      </div>
+    </body>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" (click)="Clear()">Clear</button>
+    <button class="btn btn-danger" (click)="Delete()">Delete</button>
+  </div>
+</ng-template>

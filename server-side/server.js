@@ -51,7 +51,7 @@ app.get('/Accounts', (req, res) => {
     });
 });
 
-//get all the data
+//login data
 app.get('/Accounts/login', (req, res) => {
 
     let qr = `select Email, Password from user`;

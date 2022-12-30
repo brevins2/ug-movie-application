@@ -1,18 +1,23 @@
 video {
   border-radius: 2%;
+  width: 100%;
 }
 
 body {
   width: 100%;
   height: auto;
   padding: 2%;
-  /*padding-left: 2.5%;*/
   padding-top: 3.5%;
   background-color: #ffffff00;
 }
 
 .slide {
   width: 100%;
+}
+
+header {
+  width: 100%;
+  border: 1px solid white;
 }
 
 @media only screen and (max-width: 599px) {
@@ -70,4 +75,13 @@ body {
     color: white;
     cursor: pointer;
   }
+
+  /*mat-card-content,
+  mat-card-actions {
+    display: none;
+  }
+
+  .mat-button {
+    width: 45%;
+  }*/
 }

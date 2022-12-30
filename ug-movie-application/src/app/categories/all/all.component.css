@@ -244,13 +244,12 @@ html {
     color: whitesmoke;
     display: flex !important;
     padding-left: 0px;
-    width: 230px;
-    
+    width: 32%;
   }
 
   .main-link,
   .profile-link {
-    margin-right: 25px;
+    margin-right: 25px !important;
   }
 
   .main-link,
@@ -270,7 +269,7 @@ html {
   }
 
   .general-link {
-    padding-left: 5px !important;
+    padding-left: 0px !important;
     width: 172px !important;
   }
 
@@ -513,7 +512,8 @@ html {
   .horizontal-nav div div a:active {
     color: yellow;
     background-color: #f5f5f533;
-    padding-left: 6px;
+    padding-left: 4px;
+    cursor: pointer;
   }
 
   .btn {
