@@ -17,7 +17,6 @@ body {
 
 header {
   width: 100%;
-  border: 1px solid white;
 }
 
 @media only screen and (max-width: 599px) {
@@ -76,12 +75,20 @@ header {
     cursor: pointer;
   }
 
-  /*mat-card-content,
+  mat-card-content:hover {
+    transition-timing-function: ease-in;
+  }
+
+  mat-card-content,
   mat-card-actions {
     display: none;
+  }
+  mat-card-content:hover mat-card-actions,
+  mat-card-content:hover mat-card-content {
+    display: visible;
   }
 
   .mat-button {
     width: 45%;
-  }*/
+  }
 }

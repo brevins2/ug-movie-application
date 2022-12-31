@@ -8,3 +8,20 @@ span {
 	display: inline-block;
 	width: 100%;
 }
+
+.btn-outline-primary,
+.btn-outline-danger {
+	width: 40px;
+	margin-right: 3px;
+	/*font-size: .7rem;*/
+}
+
+.Details {
+	font-size: .9rem;
+	margin-right: 5px;
+	margin-left: 10px;
+}
+
+td {
+	font-size: .7rem;
+}
