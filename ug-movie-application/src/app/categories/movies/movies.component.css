@@ -19,6 +19,10 @@ header {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 599px) {
   /* For mobile phones: */
 

@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-export class Accounts {
-  ID?: any;
-  Name?: string;
-  Username?: string;
-  Email?: string;
-  File?: string;
-  Password?: string;
-  CPassword?: string;
+export interface Movies {
+  ID: number,
+  Title: string,
+  File: string,
+  Genre: string,
+  Producer: string,
+  Details: string
 }
 
 
@@ -20,32 +20,32 @@ export class ServeService {
 
   constructor(private http: HttpClient) { }
 
-  // for genre
-  getAll(): Observable<Accounts[]> {
-    return this.http.get<Genre[]>('http://localhost:8080/Accounts');
+  // for movies
+  getAll(): Observable<Movies[]> {
+    return this.http.get<Movies[]>('http://localhost:8080/Movies');
   }
 
-  get(id: any): Observable<Genre> {
-    return this.http.get<Genre>(`http://localhost:8080/Accounts/${id}`);
+  get(id: any): Observable<Movies> {
+    return this.http.get<Movies>(`http://localhost:8080/Movies/:id${id}`);
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+    return this.http.post('http://localhost:8080/add/Movie', data);
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+    return this.http.put(`${'http://localhost:8080/update/Movies/:id'}/${id}`, data);
   }
 
   delete(id: any): Observable<any> {
-    return this.http.delete(`${baseUrl}/${id}`);
+    return this.http.delete(`${'http://localhost:8080/delete/Movies/:id'}/${id}`);
   }
 
-  deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
-  }
+  // deleteAll(): Observable<any> {
+  //   return this.http.delete('http://localhost:8080/Movies');
+  // }
 
-  findByTitle(title: any): Observable<Tutorial[]> {
-    return this.http.get<Tutorial[]>(`${baseUrl}?title=${title}`);
-  }
+  // findByTitle(title: any): Observable<Movies[]> {
+  //   return this.http.get<Movies[]>(`${'http://localhost:8080/Movies'}?title=${title}`);
+  // }
 }

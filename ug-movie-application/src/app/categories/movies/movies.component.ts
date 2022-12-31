@@ -3,12 +3,12 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 export interface Movies {
-    ID: number,
-    Title: string,
-    File: string,
-    Genre: string,
-    Producer: string,
-    Details: string
+  ID: number,
+  Title: string,
+  File: string,
+  Genre: string,
+  Producer: string,
+  Details: string
 }
 
 @Component({

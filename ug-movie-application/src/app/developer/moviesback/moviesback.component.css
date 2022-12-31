@@ -13,15 +13,19 @@ span {
 .btn-outline-danger {
 	width: 40px;
 	margin-right: 3px;
-	/*font-size: .7rem;*/
+	font-size: .7rem;
 }
 
 .Details {
-	font-size: .9rem;
+	font-size: .8rem;
 	margin-right: 5px;
 	margin-left: 10px;
 }
 
 td {
 	font-size: .7rem;
+}
+
+.file {
+	width: 70px;
 }
