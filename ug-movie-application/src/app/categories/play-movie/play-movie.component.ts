@@ -24,12 +24,12 @@ export class PlayMovieComponent implements OnInit {
   constructor(private router: ActivatedRoute, private route: Router, private http: HttpClient, private service: ServeService) { }
 
   ngOnInit(): void {
-    this.getMovieByID(this.router.snapshot.params["ID"]);
+    this.getMovieByID(this.router.snapshot.params['id']);
   }
 
-  getMovieByID(ID: number){
-    this.service.getWithID(ID).subscribe((data) =>{
-        this.movies = data;
+  getMovieByID(ID: number) {
+    this.http.get<{data: Movies[]}>(`http://localhost:8080/Movies/:id/${ID}`).subscribe(data =>{
+        this.movies = data.data;
         console.log(this.movies);
     });
   }
