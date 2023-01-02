@@ -11,6 +11,7 @@ export interface Movies {
   Details: string
 }
 
+  const baseurl = 'http://localhost:8080/Movie/:id';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,8 @@ export class ServeService {
     return this.http.get<Movies[]>('http://localhost:8080/Movies');
   }
 
-  get(id: any): Observable<Movies> {
-    return this.http.get<Movies>(`http://localhost:8080/Movies/:id${id}`);
+  getWithID(ID: number): Observable<Movies[]> {
+    return this.http.get<Movies[]>(`${baseurl}/${ID}`);
   }
 
   create(data: any): Observable<any> {

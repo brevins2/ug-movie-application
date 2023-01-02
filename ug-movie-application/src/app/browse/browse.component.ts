@@ -3,6 +3,13 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
+export interface Messages {
+  ID: number,
+  Name: string,
+  Email: string,
+  Message: string
+}
+
 @Component({
   selector: 'app-browse',
   templateUrl: './browse.component.html',
@@ -11,6 +18,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 export class BrowseComponent implements OnInit {
 
   panelOpenState = false;
+  messages: Messages[] = [];
 
   messageFormGroup = this.formBuilder.group({
     Name: ['', Validators.required],
@@ -21,6 +29,7 @@ export class BrowseComponent implements OnInit {
   constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.readMessage();
   }
 
   register() {
@@ -35,6 +44,14 @@ export class BrowseComponent implements OnInit {
     this.http.post<any>('http://localhost:8080/add/Message', this.messageFormGroup.value).subscribe(res=>{
       // console.log(res);
       this.messageFormGroup.reset();
+    });
+  }
+
+  readMessage() {
+    this.http.get<{data: Messages[]}>('http://localhost:8080/Message').subscribe(res => {
+      this.messages = res.data;
+      console.log(this.messages);
+      console.log(res);
     });
   }
 

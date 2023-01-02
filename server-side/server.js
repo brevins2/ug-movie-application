@@ -196,15 +196,15 @@ app.get('/Movies/:id', (req, res) => {
 
     let qr = `select * from movies where ID = ${gID}`;
 
-    db.query(qr, (err, results) => {
+    db.query(qr, (err, result) => {
 
         if (err) {
             console.log(err);
         }
-        if (results.length > 0) {
+        if (result.length > 0) {
             res.send({
-                Message: 'getting single data',
-                data: results
+                // Message: 'getting single data',
+                data: result
             });
         } else {
             res.send({

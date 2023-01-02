@@ -20,12 +20,16 @@ export interface Movies {
 })
 export class PlayMovieComponent implements OnInit {
 
-  constructor(private router: ActivatedRoute, private route: Router, private http: HttpClient, private service: ServeService,) { }
+  movies: Movies[] = [];
+  constructor(private router: ActivatedRoute, private route: Router, private http: HttpClient, private service: ServeService) { }
 
   ngOnInit(): void {
-    this.http.get<{data: Movies[]}>('http://localhost:8080/Movies', this.router.snapshot.params['id']).subscribe(
-      data => {
-        // this.movies = data.data;
+    this.getMovieByID(this.router.snapshot.params["ID"]);
+  }
+
+  getMovieByID(ID: number){
+    this.service.getWithID(ID).subscribe((data) =>{
+        this.movies = data;
         console.log(this.movies);
     });
   }
