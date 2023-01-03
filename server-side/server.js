@@ -192,9 +192,9 @@ app.get('/Movies', (req, res) => {
 // get single data
 app.get('/Movies/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    const gID = req.params.ID;
 
-    let qr = `select * from movies where ID = ${gID}`;
+    let qr = `select * from movies where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
 
@@ -203,7 +203,7 @@ app.get('/Movies/:id', (req, res) => {
         }
         if (result.length > 0) {
             res.send({
-                // Message: 'getting single data',
+                message: 'getting single data',
                 data: result
             });
         } else {

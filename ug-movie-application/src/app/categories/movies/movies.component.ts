@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ServeService } from 'src/app/Services/serve.service';
 
 export interface Movies {
   ID: number,
@@ -18,7 +19,7 @@ export interface Movies {
 })
 export class MoviesComponent implements OnInit {
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private route: Router, private router: ActivatedRoute, private http: HttpClient, private service: ServeService) { }
 
   movies: Movies[] = [];
   ngOnInit(): void {
@@ -30,7 +31,7 @@ export class MoviesComponent implements OnInit {
   }
 
   pay() {
-    // this.router.navigate(['/pay']);
+    // this.route.navigate(['/pay']);
   }
 
 }

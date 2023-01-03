@@ -59,7 +59,7 @@ const routes: Routes = [
     { path: 'producers', component: ProducersComponent }
   ]},
 
-  { path: 'play', component: PlayMovieComponent },
+  // { path: 'play', component: PlayMovieComponent },
   { path: 'play/:id', component: PlayMovieComponent }
 ];
 
