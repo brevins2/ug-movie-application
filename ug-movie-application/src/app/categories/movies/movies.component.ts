@@ -29,9 +29,4 @@ export class MoviesComponent implements OnInit {
           console.log(this.movies);
       });
   }
-
-  pay() {
-    // this.route.navigate(['/pay']);
-  }
-
 }

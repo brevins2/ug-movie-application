@@ -127,33 +127,11 @@
           <div class="d-flex flex-column chips">
             <label class="text-white">Producers</label>
             <mat-chip-list aria-label="Dog selection">
-              <mat-chip>
-                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
-                Dog one
-              </mat-chip>
-              <mat-chip color="primary">
-                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
-                Dog two
-              </mat-chip>
-              <mat-chip color="accent">
-                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
-                Dog three
+              <mat-chip *ngFor="let producer of producers">
+                <img matChipAvatar [src]="'../../../../../assets/films/'+ producer.File" alt="Photo of a Shiba Inu"/>
+                {{producer.Name}}
               </mat-chip>
             </mat-chip-list>
-            <mat-chip-list aria-label="pruducer selection">
-              <mat-chip>Actions</mat-chip>
-              <mat-chip>Sci-Fi</mat-chip>
-              <mat-chip>Romance</mat-chip>
-              <mat-chip>Animations</mat-chip>
-              <mat-chip>Documentaries</mat-chip>
-              <mat-chip>Adventures</mat-chip>
-              <mat-chip>Inspirational</mat-chip>
-              <mat-chip>Drama</mat-chip>
-              <mat-chip>Reality</mat-chip>
-              <!-- <mat-chip color="primary" selected>Primary fish</mat-chip>
-              <mat-chip color="accent" selected>Accent fish</mat-chip> -->
-            </mat-chip-list>
-
           </div>
         </nav>
       </mat-drawer>

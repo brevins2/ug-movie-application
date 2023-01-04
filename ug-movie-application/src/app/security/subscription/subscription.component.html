@@ -51,8 +51,15 @@
         </form>
       </mat-step>
 
-      <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-        
+      <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+        <ng-template matStepLabel></ng-template>
+          <div>
+            <!-- <ngx-paypal [config]="payPalConfig"></ngx-paypal> -->
+          </div>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
       </mat-step>
 
       <mat-step>

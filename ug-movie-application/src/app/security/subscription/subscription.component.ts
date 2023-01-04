@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Flutterwave, InlinePaymentOptions, PaymentSuccessResponse } from "flutterwave-angular-v3";
+// import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 
 @Component({
   selector: 'app-subscription',
@@ -10,6 +10,8 @@ import { Flutterwave, InlinePaymentOptions, PaymentSuccessResponse } from "flutt
 })
 
 export class SubscriptionComponent implements OnInit {
+
+  // public payPalConfig ? : IPayPalConfig;
 
   firstFormGroup = this.formBuilder.group({
     Email: ['', Validators.required],
@@ -27,9 +29,10 @@ export class SubscriptionComponent implements OnInit {
   isEditable = false;
   hide = true;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private flutterwave: Flutterwave) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
+    // this.initConfig();
   }
 
   subscribe(){

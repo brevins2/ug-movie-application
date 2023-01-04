@@ -192,7 +192,7 @@ app.get('/Movies', (req, res) => {
 // get single data
 app.get('/Movies/:id', (req, res) => {
 
-    const gID = req.params.ID;
+    const gID = req.params.id;
 
     let qr = `select * from movies where ID = '${gID}'`;
 
@@ -304,9 +304,9 @@ app.get('/Producers', (req, res) => {
 
 app.get('/Producers/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
 
-    let qr = `select * from producer where ID = ${gID}`;
+    let qr = `select * from producer where ID = '${gID}'`;
 
     db.query(qr, (err, results) => {
 

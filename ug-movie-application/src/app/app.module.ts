@@ -46,14 +46,9 @@ import { CustomersComponent } from './developer/customers/customers.component';
 import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
 
 import { TestComponent } from './security/test/test.component';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+// import { NgxPayPalModule } from 'ngx-paypal';
 
-// import { NgxCarouselModule } from 'ngx-carousel';
-// import { CarouselModule } from 'ngx-bootstrap/carousel';
-
-import { FlutterwaveModule } from "flutterwave-angular-v3";
 import { DownloadsComponent } from './categories/views/downloads/downloads.component';
 import { RecentComponent } from './categories/views/recent/recent.component';
 import { FavouretsComponent } from './categories/views/favourets/favourets.component';
@@ -88,8 +83,8 @@ import { MainsComponent } from './categories/views/mains/mains.component';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    // NgxCarouselModule,
     CarouselModule,
+    // NgxPayPalModule,
     MatCardModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -108,8 +103,7 @@ import { MainsComponent } from './categories/views/mains/mains.component';
     MatExpansionModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule,
-    FlutterwaveModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

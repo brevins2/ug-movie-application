@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { ServeService } from 'src/app/Services/serve.service';
 
 export interface Movies {
     ID: number,
@@ -24,6 +25,7 @@ export class MoviesbackComponent implements OnInit {
   displayedColumns: string[] = ['ID', 'Title', 'File', 'Genre', 'Producer', 'Details', 'Edit', 'Delete'];
     dataSource = this.movies;
   closeResult = '';
+
   UpdateMovie = new FormGroup({
     ID: new FormControl(''),
     Title: new FormControl(''),
@@ -40,15 +42,18 @@ export class MoviesbackComponent implements OnInit {
     File: new FormControl('')
   });
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private modalService: NgbModal) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private modalService: NgbModal, private serve: ServeService) { }
 
   ngOnInit(): void {
     this.http.get<{data: Movies[]}>('http://localhost:8080/Movies').subscribe(
         data => {
           this.movies = data.data;
           this.dataSource = this.movies;
-          console.log(this.movies);
       });
+
+    this.serve.getWithID(this.route.snapshot.params['id']).subscribe((result: any) => {
+      console.log(result);
+    });
   }
 
   open(content: any) {

@@ -29,8 +29,7 @@ export class PlayMovieComponent implements OnInit {
 
   getMovieByID(ID: number) {
     this.service.getWithID(ID).subscribe(data =>{
-        this.movies = data;
-        console.log(this.movies);
+        this.movies = data.data;
     });
   }
 }
