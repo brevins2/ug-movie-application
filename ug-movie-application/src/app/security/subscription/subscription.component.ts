@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-// import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 
 @Component({
   selector: 'app-subscription',
@@ -10,8 +9,6 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class SubscriptionComponent implements OnInit {
-
-  // public payPalConfig ? : IPayPalConfig;
 
   firstFormGroup = this.formBuilder.group({
     Email: ['', Validators.required],
@@ -32,7 +29,6 @@ export class SubscriptionComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
-    // this.initConfig();
   }
 
   subscribe(){

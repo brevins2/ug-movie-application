@@ -8,3 +8,7 @@ span {
 	display: inline-block;
 	width: 100%;
 }
+
+td {
+	font-size: .7rem;
+}

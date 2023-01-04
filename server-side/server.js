@@ -74,9 +74,9 @@ app.get('/Accounts/login', (req, res) => {
 // get single data
 app.get('/Account/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
 
-    let qr = `select * from user where ID = ${gID}`;
+    let qr = `select * from user where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
 
@@ -131,7 +131,7 @@ app.put('/update/Account/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let email = req.body.Email;
     let password = req.body.Password;
     let confirmPassword = req.body.CPassword;
@@ -155,7 +155,7 @@ app.put('/update/Account/:id', (req, res) => {
 
 app.delete('/delete/Accounts/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
 
     let qr = `delete from user where ID = '${gID}'`
 
@@ -190,7 +190,7 @@ app.get('/Movies', (req, res) => {
 });
 
 // get single data
-app.get('/Movies/:id', (req, res) => {
+app.get('/Movies/:id/', (req, res) => {
 
     const gID = req.params.id;
 
@@ -244,7 +244,7 @@ app.put('/update/Movies/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let title = req.body.Title;
     let genre = req.body.Genre;
     let producer = req.body.Producer;
@@ -252,7 +252,7 @@ app.put('/update/Movies/:id', (req, res) => {
     let details = req.body.Details;
 
     let qr = `update movies set Title = '${title}', File = '${file}', Genre = '${genre}',
-                Producer = '${producer}', Details = '${details}'  where ID = ${gID}`;
+                Producer = '${producer}', Details = '${details}'  where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -266,7 +266,7 @@ app.put('/update/Movies/:id', (req, res) => {
 // delete single data
 app.delete('/delete/Movies/:id', (req, res) => {
 
-    let qID = req.params.ID;
+    let qID = req.params.id;
 
     let qr = `delete from movies where ID = '${qID}'`;
 
@@ -358,7 +358,7 @@ app.put('/update/Producer/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let name = req.body.Name;
     let email = req.body.Email;
     let genre = req.body.Genre;
@@ -368,7 +368,7 @@ app.put('/update/Producer/:id', (req, res) => {
 
     let qr = `update producer set Name = '${name}', Email = '${email}',
                 Genre = '${genre}', File = '${file}', Password = '${password}', CPassword = '${confirmPassword}'
-                where ID = ${gID}`;
+                where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -382,7 +382,7 @@ app.put('/update/Producer/:id', (req, res) => {
 // delete single data
 app.delete('/delete/Producers/:id', (req, res) => {
 
-    let qID = req.params.ID;
+    let qID = req.params.id;
 
     let qr = `delete from producer where ID = '${qID}'`;
 
@@ -420,9 +420,9 @@ app.get('/Message', (req, res) => {
 
 app.get('/Message/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
 
-    let qr = `select * from message where ID = ${gID}`;
+    let qr = `select * from message where ID = '${gID}'`;
 
     db.query(qr, (err, results) => {
 
@@ -471,12 +471,12 @@ app.put('/update/Message/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let name = req.body.Name;
     let message = req.body.Message;
 
     let qr = `update message set Name = '${name}', Email = '${email}',
-                Message = '${genre}'where ID = ${gID}`;
+                Message = '${genre}'where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -490,7 +490,7 @@ app.put('/update/Message/:id', (req, res) => {
 // delete single data
 app.delete('/delete/Message/:id', (req, res) => {
 
-    let qID = req.params.ID;
+    let qID = req.params.id;
 
     let qr = `delete from message where ID = '${qID}'`;
 
