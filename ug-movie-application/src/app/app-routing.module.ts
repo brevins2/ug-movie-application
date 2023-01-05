@@ -25,6 +25,12 @@ import { MoviesbackComponent } from './developer/moviesback/moviesback.component
 import { CustomersComponent } from './developer/customers/customers.component';
 import { ProducersComponent } from './developer/producers/producers.component';
 
+import { EditMovieComponent } from './developer/edit-movie/edit-movie.component';
+import { EditCustomerComponent } from './developer/edit-customer/edit-customer.component';
+import { EditProducerComponent } from './developer/edit-producer/edit-producer.component';
+import { DeleteCustomerComponent } from './developer/delete-customer/delete-customer.component';
+import { DeleteMovieComponent } from './developer/delete-movie/delete-movie.component';
+import { DeleteProducerComponent } from './developer/delete-producer/delete-producer.component';
 
 const routes: Routes = [
   { path:'', redirectTo: 'cinema/browse', pathMatch: 'full' },
@@ -59,7 +65,13 @@ const routes: Routes = [
     { path: 'producers', component: ProducersComponent }
   ]},
 
-  // { path: 'play', component: PlayMovieComponent },
+  { path: 'edit/movie', component: EditMovieComponent },
+  { path: 'edit/producer', component: EditProducerComponent },
+  { path: 'edit/customer', component: EditCustomerComponent },
+  { path: 'delete/movie', component: DeleteMovieComponent },
+  { path: 'delete/customer', component: DeleteCustomerComponent },
+  { path: 'delete/producer', component: DeleteProducerComponent },
+
   { path: 'play/:id', component: PlayMovieComponent }
 ];
 

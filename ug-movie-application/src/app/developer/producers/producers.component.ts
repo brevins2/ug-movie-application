@@ -45,7 +45,7 @@ export class ProducersComponent implements OnInit {
     CPassword: new FormControl('')
   });
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private modalService: NgbModal) { }
+  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.http.get<{data: Producer[]}>('http://localhost:8080/Producers').subscribe(data =>{
@@ -73,9 +73,11 @@ export class ProducersComponent implements OnInit {
     }
   }
 
-  Update(){}
+  update() {
+    this.route.navigate(['/edit/producer']);
+  }
 
-  Clear(){}
-
-  Delete(){}
+  delete() {
+    this.route.navigate(['/delete/producer']);
+  }
 }

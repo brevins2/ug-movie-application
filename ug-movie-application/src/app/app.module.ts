@@ -53,6 +53,12 @@ import { DownloadsComponent } from './categories/views/downloads/downloads.compo
 import { RecentComponent } from './categories/views/recent/recent.component';
 import { FavouretsComponent } from './categories/views/favourets/favourets.component';
 import { MainsComponent } from './categories/views/mains/mains.component';
+import { EditMovieComponent } from './developer/edit-movie/edit-movie.component';
+import { DeleteMovieComponent } from './developer/delete-movie/delete-movie.component';
+import { EditCustomerComponent } from './developer/edit-customer/edit-customer.component';
+import { DeleteCustomerComponent } from './developer/delete-customer/delete-customer.component';
+import { EditProducerComponent } from './developer/edit-producer/edit-producer.component';
+import { DeleteProducerComponent } from './developer/delete-producer/delete-producer.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +82,13 @@ import { MainsComponent } from './categories/views/mains/mains.component';
     DownloadsComponent,
     RecentComponent,
     FavouretsComponent,
-    MainsComponent
+    MainsComponent,
+    EditMovieComponent,
+    DeleteMovieComponent,
+    EditCustomerComponent,
+    DeleteCustomerComponent,
+    EditProducerComponent,
+    DeleteProducerComponent
   ],
   imports: [
     BrowserModule,

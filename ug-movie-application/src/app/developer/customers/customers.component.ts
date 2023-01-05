@@ -45,7 +45,7 @@ export class CustomersComponent implements OnInit {
     CPassword: new FormControl('')
   });
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private modalService: NgbModal) { }
+  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.http.get<{data: Customers[]}>('http://localhost:8080/Accounts').subscribe(data =>{
@@ -73,9 +73,11 @@ export class CustomersComponent implements OnInit {
     }
   }
 
-  Update(){}
+  update() {
+    this.route.navigate(['/edit/customer']);
+  }
 
-  Clear(){}
-
-  Delete(){}
+  delete() {
+    this.route.navigate(['/delete/customer']);
+  }
 }

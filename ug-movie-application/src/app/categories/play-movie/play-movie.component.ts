@@ -34,6 +34,6 @@ export class PlayMovieComponent implements OnInit {
   }
 
   back() {
-    this.route.navigate(['/cinema/all']);
+    this.route.navigate(['/cinema/all/movies']);
   }
 }

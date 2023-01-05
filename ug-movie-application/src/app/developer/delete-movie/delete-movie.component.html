@@ -1,0 +1,33 @@
+<body class="container-fluid bg-dark">
+  <form [formGroup]="DeleteMovie"class="form-control d-flex flex-column">
+    <h4 class="modal-title" id="modal-basic-title">Add Computer</h4>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" formControlName="Email" placeholder="Update Title" required>
+    </mat-form-field>
+
+    <mat-label>File</mat-label>
+      <input type="file" formControlName="File" class="form-control" placeholder="Select File" required>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Genre</mat-label>
+      <input matInput type="text" formControlName="Email" placeholder="Update Genre" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Producer</mat-label>
+      <input matInput type="text" formControlName="Producer" placeholder="Update Producer" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Details</mat-label>
+      <textarea matInput class="form-control" formControlName="Details" type="text-area" cols="80" rows="6" required></textarea>
+    </mat-form-field>
+
+    <div class="d-flex buttons">
+      <button class="btn btn-secondary" (click)="Clear()"><i class="fa-solid fa-history"></i>&nbsp;Clear</button>
+      <button class="btn btn-danger" (click)="Delete()"><i class="fa-solid fa-trash"></i>&nbsp;Delete</button>
+    </div>
+  </form>
+</body>

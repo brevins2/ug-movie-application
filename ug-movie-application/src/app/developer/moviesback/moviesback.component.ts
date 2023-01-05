@@ -42,7 +42,7 @@ export class MoviesbackComponent implements OnInit {
     File: new FormControl('')
   });
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private modalService: NgbModal, private serve: ServeService) { }
+  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private modalService: NgbModal, private serve: ServeService) { }
 
   ngOnInit(): void {
     this.http.get<{data: Movies[]}>('http://localhost:8080/Movies').subscribe(
@@ -51,7 +51,7 @@ export class MoviesbackComponent implements OnInit {
           this.dataSource = this.movies;
       });
 
-    this.serve.getWithID(this.route.snapshot.params['id']).subscribe((result: any) => {
+    this.serve.getWithID(this.router.snapshot.params['id']).subscribe((result: any) => {
       console.log(result);
     });
   }
@@ -74,10 +74,12 @@ export class MoviesbackComponent implements OnInit {
     }
   }
 
-  Update(){}
+  update() {
+    this.route.navigate(['/edit/movie']);
+  }
 
-  Clear(){}
-
-  Delete(){}
+  delete() {
+    this.route.navigate(['/delete/movie']);
+  }
 
 }
