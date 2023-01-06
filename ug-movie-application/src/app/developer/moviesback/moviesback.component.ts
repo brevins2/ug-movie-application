@@ -50,10 +50,6 @@ export class MoviesbackComponent implements OnInit {
           this.movies = data.data;
           this.dataSource = this.movies;
       });
-
-    this.serve.getWithID(this.router.snapshot.params['id']).subscribe((result: any) => {
-      console.log(result);
-    });
   }
 
   open(content: any) {
@@ -74,11 +70,11 @@ export class MoviesbackComponent implements OnInit {
     }
   }
 
-  update() {
+  Clear() {
     this.route.navigate(['/edit/movie']);
   }
 
-  delete() {
+  Delete() {
     this.route.navigate(['/delete/movie']);
   }
 

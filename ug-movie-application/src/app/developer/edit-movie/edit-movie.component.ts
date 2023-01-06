@@ -2,6 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ServeService } from 'src/app/Services/serve.service';
+
+export interface Movies {
+  ID: number,
+  Title: string,
+  File: string,
+  Genre: string,
+  Producer: string,
+  Details: string
+}
 
 @Component({
   selector: 'app-edit-movie',
@@ -10,21 +20,44 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class EditMovieComponent implements OnInit {
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
-
   UpdateMovie = new FormGroup({
-    ID: new FormControl(''),
     Title: new FormControl(''),
+    File: new FormControl(''),
     Genre: new FormControl(''),
     Producer: new FormControl(''),
-    File: new FormControl('')
+    Details: new FormControl('')
   });
+  movies: Movies[] = [];
+
+  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) { }
 
   ngOnInit(): void {
+    this.getCurrentMovie();
   }
 
-  Update(){}
+  getCurrentMovie() {
+    this.serve.getWithID(this.router.snapshot.params['id']).subscribe((result: any) => {
+      this.movies = result.data;
+      this.UpdateMovie = new FormGroup({
+        Title: new FormControl(result['Title']),
+        Genre: new FormControl(result['Genre']),
+        Producer: new FormControl(result['Producer']),
+        File: new FormControl(result['File']),
+        Details: new FormControl(result['Details'])
+      });
+    });
+  }
 
-  Clear(){}
-  
+  close() {
+    this.route.navigate(['/developer/edits/moviesedits']);
+  }
+
+  Update() {
+    this.serve.update(this.router.snapshot.params['id'], this.UpdateMovie.value).subscribe((result) => {
+      this.UpdateMovie.reset();
+      return result;
+    });
+  }
+
+  Clear() {}
 }

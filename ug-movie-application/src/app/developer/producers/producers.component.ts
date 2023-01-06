@@ -1,18 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute, Router } from '@angular/router';
-
-export interface Producer {
-  ID: number,
-  Name: string,
-  Email: string,
-  Genre: string,
-  File: string,
-  Password: string,
-  CPassword: string,
-}
+import { ServeService } from 'src/app/Services/serve.service';
+import { Producer } from 'src/app/interface';
 
 @Component({
   selector: 'app-producers',
@@ -22,9 +14,11 @@ export interface Producer {
 export class ProducersComponent implements OnInit {
 
   producer: Producer[] = [];
+  producers: Producer[] = []
 	displayedColumns: string[] = ['ID', 'Name', 'Email', 'Genre', 'File', 'Password', 'CPassword', 'Edit', 'Delete'];
   	dataSource = this.producer;
   closeResult = '';
+
   UpdateProducer = new FormGroup({
     ID: new FormControl(''),
     Name: new FormControl(''),
@@ -36,7 +30,6 @@ export class ProducersComponent implements OnInit {
   });
 
   DeleteProducer = new FormGroup({
-    ID: new FormControl(''),
     Name: new FormControl(''),
     Username: new FormControl(''),
     Email: new FormControl(''),
@@ -45,7 +38,7 @@ export class ProducersComponent implements OnInit {
     CPassword: new FormControl('')
   });
 
-  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private modalService: NgbModal) { }
+  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private modalService: NgbModal, private serve: ServeService) { }
 
   ngOnInit(): void {
     this.http.get<{data: Producer[]}>('http://localhost:8080/Producers').subscribe(data =>{
@@ -73,11 +66,11 @@ export class ProducersComponent implements OnInit {
     }
   }
 
-  update() {
+  cancel() {
     this.route.navigate(['/edit/producer']);
   }
 
-  delete() {
+  Delete() {
     this.route.navigate(['/delete/producer']);
   }
 }

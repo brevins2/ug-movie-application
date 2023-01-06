@@ -73,11 +73,11 @@ export class CustomersComponent implements OnInit {
     }
   }
 
-  update() {
+  cancel() {
     this.route.navigate(['/edit/customer']);
   }
 
-  delete() {
+  Delete() {
     this.route.navigate(['/delete/customer']);
   }
 }

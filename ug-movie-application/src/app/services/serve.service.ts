@@ -5,6 +5,7 @@ import { User, Message, Movies, Producer } from 'src/app/interface';
 
   const baseurl = "http://localhost:8080/Movies";
   const baseurlProducer = "http://localhost:8080/Producers";
+  const updateurl = "http://localhost:8080/update/Movies/:id";
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +59,7 @@ export class ServeService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${'http://localhost:8080/update/Movies/:id'}/${id}`, data);
+    return this.http.put(`http://localhost:8080/Movies/${id}`, data);
   }
 
   delete(id: any): Observable<any> {
@@ -88,7 +89,7 @@ export class ServeService {
   }
 
   updateProducer(id: any, data: any): Observable<any> {
-    return this.http.put(`${'http://localhost:8080/update/Producers/:id'}/${id}`, data);
+    return this.http.put(`${baseurl}/${id}`, data);
   }
 
   deleteProducer(id: any): Observable<any> {

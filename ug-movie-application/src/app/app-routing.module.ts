@@ -65,12 +65,12 @@ const routes: Routes = [
     { path: 'producers', component: ProducersComponent }
   ]},
 
-  { path: 'edit/movie', component: EditMovieComponent },
-  { path: 'edit/producer', component: EditProducerComponent },
-  { path: 'edit/customer', component: EditCustomerComponent },
-  { path: 'delete/movie', component: DeleteMovieComponent },
-  { path: 'delete/customer', component: DeleteCustomerComponent },
-  { path: 'delete/producer', component: DeleteProducerComponent },
+  { path: 'edit/movie/:id', component: EditMovieComponent },
+  { path: 'edit/producer/:id', component: EditProducerComponent },
+  { path: 'edit/customer/:id', component: EditCustomerComponent },
+  { path: 'delete/movie/:id', component: DeleteMovieComponent },
+  { path: 'delete/customer/:id', component: DeleteCustomerComponent },
+  { path: 'delete/producer/:id', component: DeleteProducerComponent },
 
   { path: 'play/:id', component: PlayMovieComponent }
 ];

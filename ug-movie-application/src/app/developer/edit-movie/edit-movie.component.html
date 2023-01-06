@@ -1,10 +1,15 @@
 <body class="container-fluid bg-dark">
   <form [formGroup]="UpdateMovie" class="form-control d-flex flex-column">
-    <h4 class="modal-title" id="modal-basic-title">Update Movie</h4>
+    <div class="d-flex justify-content-between">
+      <h4 class="modal-title" id="modal-basic-title">Update Movie</h4>
+      <button class="btn close text-center" (click)="close()">
+        <i class="fa-solid fa-times"></i>
+      </button>
+    </div>
 
     <mat-form-field appearance="outline">
       <mat-label>Title</mat-label>
-      <input matInput type="text" formControlName="Email" placeholder="Update Title" required>
+      <input matInput type="text" formControlName="Title" placeholder="Update Title" required>
     </mat-form-field>
 
     <mat-label>File</mat-label>
@@ -12,7 +17,7 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Genre</mat-label>
-      <input matInput type="text" formControlName="Email" placeholder="Update Genre" required>
+      <input matInput type="text" formControlName="Genre" placeholder="Update Genre" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">

@@ -240,7 +240,7 @@ app.post('/add/Movie', (req, res) => {
 });
 
 // put data/ update data
-app.put('/update/Movies/:id', (req, res) => {
+app.put('/Movies', (req, res) => {
 
     console.log(req.body, 'data updated');
 
@@ -255,7 +255,7 @@ app.put('/update/Movies/:id', (req, res) => {
                 Producer = '${producer}', Details = '${details}'  where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
-        if (err) { console.log(err); }
+        if (err) { console.log('error occured: ', err); }
 
         res.send({
             message: 'data successfully updated'
@@ -476,7 +476,7 @@ app.put('/update/Message/:id', (req, res) => {
     let message = req.body.Message;
 
     let qr = `update message set Name = '${name}', Email = '${email}',
-                Message = '${genre}'where ID = '${gID}'`;
+                Message = '${genre}' where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
