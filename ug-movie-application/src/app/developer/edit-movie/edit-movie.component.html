@@ -1,4 +1,4 @@
-<body class="container-fluid bg-dark">
+<body class="container-fluid d-flex bg-dark">
   <form [formGroup]="UpdateMovie" class="form-control d-flex flex-column">
     <div class="d-flex justify-content-between">
       <h4 class="modal-title" id="modal-basic-title">Update Movie</h4>
@@ -34,5 +34,40 @@
         <button class="btn btn-primary" (click)="Update()"><i class="fa-solid fa-save"></i>&nbsp;Update</button>
         <button class="btn btn-secondary" (click)="Clear()"><i class="fa-solid fa-history"></i>&nbsp;Clear</button>
     </div>
-  </form>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Name Column -->
+      <ng-container matColumnDef="Title">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Title </th>
+        <td mat-cell *matCellDef="let movies"> {{movies.Title}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="File">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> File </th>
+        <td mat-cell *matCellDef="let movies"> <a href="u">{{movies.File}}</a> </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Genre">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Genre </th>
+        <td mat-cell *matCellDef="let movies"> {{movies.Genre}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Producer">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Producer </th>
+        <td mat-cell *matCellDef="let movies"> {{movies.Producer}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Details">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Details </th>
+        <td mat-cell *matCellDef="let movies" class="d-flex flex-wrap Details"> {{movies.Details}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+ </form>
 </body>

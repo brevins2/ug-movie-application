@@ -19,16 +19,6 @@ export class ProducersComponent implements OnInit {
   	dataSource = this.producer;
   closeResult = '';
 
-  UpdateProducer = new FormGroup({
-    ID: new FormControl(''),
-    Name: new FormControl(''),
-    Username: new FormControl(''),
-    Email: new FormControl(''),
-    File: new FormControl(''),
-    Password: new FormControl(''),
-    CPassword: new FormControl('')
-  });
-
   DeleteProducer = new FormGroup({
     Name: new FormControl(''),
     Username: new FormControl(''),

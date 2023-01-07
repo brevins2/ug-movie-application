@@ -3,9 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User, Message, Movies, Producer } from 'src/app/interface';
 
-  const baseurl = "http://localhost:8080/Movies";
+  const baseurlMovies = "http://localhost:8080/Movies";
   const baseurlProducer = "http://localhost:8080/Producers";
-  const updateurl = "http://localhost:8080/update/Movies/:id";
+  const baseurlCustomer = "http://localhost:8080/Accounts";
+  const baseurlMessages = "http://localhost:8080/Message";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class ServeService {
   }
 
   getUserWithID(id: number): Observable<{data: User[]}> {
-    return this.http.get<{data: User[]}>(`http://localhost:8080/Accounts/${id}`);
+    return this.http.get<{data: User[]}>(`${baseurlCustomer}/${id}`);
   }
 
   createUser(data: any): Observable<any> {
@@ -29,11 +30,11 @@ export class ServeService {
   }
 
   updateUser(id: any, data: any): Observable<any> {
-    return this.http.put(`${'http://localhost:8080/update/Account/:id'}/${id}`, data);
+    return this.http.put(`${baseurlCustomer}/${id}`, data);
   }
 
   deleteUser(id: any): Observable<any> {
-    return this.http.delete(`${'http://localhost:8080/delete/Account/:id'}/${id}`);
+    return this.http.delete(`${baseurlCustomer}/${id}`);
   }
 
   deleteAllUsers(): Observable<any> {
@@ -41,7 +42,7 @@ export class ServeService {
   }
 
   findByUserName(title: any): Observable<User[]> {
-    return this.http.get<User[]>(`${'http://localhost:8080/Accounts'}?title=${title}`);
+    return this.http.get<User[]>(`${baseurlCustomer}?title=${title}`);
   }
 
 
@@ -51,7 +52,7 @@ export class ServeService {
   }
 
   getWithID(id: number): Observable<{data: Movies[]}> {
-    return this.http.get<{data: Movies[]}>(`${baseurl}/${id}`);
+    return this.http.get<{data: Movies[]}>(`${baseurlMovies}/${id}`);
   }
 
   create(data: any): Observable<any> {
@@ -59,11 +60,11 @@ export class ServeService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`http://localhost:8080/Movies/${id}`, data);
+    return this.http.put(`${baseurlMovies}/${id}`, data);
   }
 
-  delete(id: any): Observable<any> {
-    return this.http.delete(`${'http://localhost:8080/delete/Movies/:id'}/${id}`);
+  deleteMovie(id: any): Observable<Movies[]> {
+    return this.http.delete<Movies[]>(`${baseurlMovies}/${id}`);
   }
 
   deleteAll(): Observable<any> {
@@ -71,7 +72,7 @@ export class ServeService {
   }
 
   findByTitle(title: any): Observable<Movies[]> {
-    return this.http.get<Movies[]>(`${'http://localhost:8080/Movies'}?title=${title}`);
+    return this.http.get<Movies[]>(`${baseurlMovies}?title=${title}`);
   }
 
 
@@ -89,11 +90,11 @@ export class ServeService {
   }
 
   updateProducer(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseurl}/${id}`, data);
+    return this.http.put(`${baseurlProducer}/${id}`, data);
   }
 
   deleteProducer(id: any): Observable<any> {
-    return this.http.delete(`${'http://localhost:8080/delete/Producers/:id'}/${id}`);
+    return this.http.delete(`${baseurlProducer}/${id}`);
   }
 
   deleteAllProducers(): Observable<any> {
@@ -101,7 +102,7 @@ export class ServeService {
   }
 
   findByTitleProducers(title: any): Observable<Movies[]> {
-    return this.http.get<Movies[]>(`${'http://localhost:8080/Producers'}?title=${title}`);
+    return this.http.get<Movies[]>(`${baseurlProducer}?title=${title}`);
   }
 
 
@@ -111,7 +112,7 @@ export class ServeService {
   }
 
   getMessageWithID(id: number): Observable<{data: Message[]}> {
-    return this.http.get<{data: Message[]}>(`${baseurlProducer}/${id}`);
+    return this.http.get<{data: Message[]}>(`${baseurlMessages}/${id}`);
   }
 
   createMessage(data: any): Observable<any> {
@@ -119,11 +120,11 @@ export class ServeService {
   }
 
   updateMessage(id: any, data: any): Observable<any> {
-    return this.http.put(`${'http://localhost:8080/update/Message/:id'}/${id}`, data);
+    return this.http.put(`${baseurlMessages}/${id}`, data);
   }
 
   deleteMessage(id: any): Observable<any> {
-    return this.http.delete(`${'http://localhost:8080/delete/Messages/:id'}/${id}`);
+    return this.http.delete(`${baseurlMessages}/${id}`);
   }
 
   deleteAllMessages(): Observable<any> {
@@ -131,6 +132,6 @@ export class ServeService {
   }
 
   findByTitleMessage(title: any): Observable<Message[]> {
-    return this.http.get<Message[]>(`${'http://localhost:8080/Messages'}?title=${title}`);
+    return this.http.get<Message[]>(`${baseurlMessages}?title=${title}`);
   }
 }

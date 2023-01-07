@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { render } from 'creditcardpayments/creditCardPayments';
 
 @Component({
   selector: 'app-subscription',
@@ -26,7 +27,16 @@ export class SubscriptionComponent implements OnInit {
   isEditable = false;
   hide = true;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+    render ({
+      id: "#myPaypalButtons",
+      currency: "USH",
+      value: "100.00",
+      onApprove: (details) => {
+        alert("Transaction successful");
+      }
+    });
+  }
 
   ngOnInit(): void {
   }

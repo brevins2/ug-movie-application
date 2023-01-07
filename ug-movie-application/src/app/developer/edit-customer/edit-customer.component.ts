@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { User } from 'src/app/interface';
+import { ServeService } from 'src/app/Services/serve.service';
 
 @Component({
   selector: 'app-edit-customer',
@@ -10,10 +12,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EditCustomerComponent implements OnInit {
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
+  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) { }
+
+  customer: User[] = [];
+  displayedColumns: string[] = ['Name', 'Username', 'Email', 'File', 'Password', 'CPassword'];
+    dataSource = this.customer;
 
   UpdateCustomer = new FormGroup({
-    ID: new FormControl(''),
     Name: new FormControl(''),
     Username: new FormControl(''),
     Email: new FormControl(''),
@@ -23,10 +28,29 @@ export class EditCustomerComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.getCurrentCustomer();
   }
 
-  Update(){}
+  getCurrentCustomer() {
+    this.serve.getUserWithID(this.router.snapshot.params['id']).subscribe((result: any) => {
+      this.customer = result.data;
+      this.dataSource = this.customer;
+    });
+  }
 
-  Clear(){}
+  close() {
+    this.route.navigate(['/developer/edits/customers']);
+  }
 
+  Update(){
+    this.serve.updateProducer(this.router.snapshot.params['id'], this.UpdateCustomer.value).subscribe((result) => {
+      this.UpdateCustomer.reset();
+      return result;
+      this.getCurrentCustomer();
+    });
+  }
+
+  Clear(){
+    this.UpdateCustomer.reset();
+  }
 }

@@ -32,6 +32,7 @@
     "@popperjs/core": "^2.10.2",
     "angularx-social-login": "^4.1.0",
     "bootstrap": "^5.2.1",
+    "creditcardpayments": "^1.0.3",
     "fedapay": "^1.1.10",
     "firebase": "^9.15.0",
     "font-awesome": "^4.7.0",
@@ -39,7 +40,6 @@
     "json-server": "^0.17.1",
     "mdb-ui-kit": "^6.0.1",
     "ngx-bootstrap": "^9.0.0",
-    "ngx-paypal": "^11.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

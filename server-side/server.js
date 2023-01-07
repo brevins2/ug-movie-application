@@ -45,8 +45,6 @@ app.get('/Accounts', (req, res) => {
                 message: 'all data available',
                 data: result
             });
-
-            // res.json(result);
         }
     });
 });
@@ -72,7 +70,7 @@ app.get('/Accounts/login', (req, res) => {
 });
 
 // get single data
-app.get('/Account/:id', (req, res) => {
+app.get('/Accounts/:id', (req, res) => {
 
     let gID = req.params.id;
 
@@ -88,8 +86,6 @@ app.get('/Account/:id', (req, res) => {
                 Message: 'getting single data',
                 data: result
             });
-
-            res.json(qr);
         } else {
             res.send({
                 message: 'data not found'
@@ -127,7 +123,7 @@ app.post('/add/Account', (req, res) => {
 
 // put data/ update data
 
-app.put('/update/Account/:id', (req, res) => {
+app.put('/Accounts/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
@@ -153,7 +149,7 @@ app.put('/update/Account/:id', (req, res) => {
 
 // delete single data
 
-app.delete('/delete/Accounts/:id', (req, res) => {
+app.delete('/Accounts/:id', (req, res) => {
 
     let gID = req.params.id;
 
@@ -190,7 +186,7 @@ app.get('/Movies', (req, res) => {
 });
 
 // get single data
-app.get('/Movies/:id/', (req, res) => {
+app.get('/Movies/:id', (req, res) => {
 
     const gID = req.params.id;
 
@@ -240,7 +236,7 @@ app.post('/add/Movie', (req, res) => {
 });
 
 // put data/ update data
-app.put('/Movies', (req, res) => {
+app.put('/Movies/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
@@ -264,7 +260,7 @@ app.put('/Movies', (req, res) => {
 });
 
 // delete single data
-app.delete('/delete/Movies/:id', (req, res) => {
+app.delete('/Movies/:id', (req, res) => {
 
     let qID = req.params.id;
 
@@ -354,7 +350,7 @@ app.post('/add/Producer', (req, res) => {
 
 // put data/ update data
 
-app.put('/update/Producer/:id', (req, res) => {
+app.put('/Producers/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
@@ -380,7 +376,7 @@ app.put('/update/Producer/:id', (req, res) => {
 });
 
 // delete single data
-app.delete('/delete/Producers/:id', (req, res) => {
+app.delete('/Producers/:id', (req, res) => {
 
     let qID = req.params.id;
 
@@ -467,7 +463,7 @@ app.post('/add/Message', (req, res) => {
 
 // put data/ update data
 
-app.put('/update/Message/:id', (req, res) => {
+app.put('/Message/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
 
@@ -488,7 +484,7 @@ app.put('/update/Message/:id', (req, res) => {
 });
 
 // delete single data
-app.delete('/delete/Message/:id', (req, res) => {
+app.delete('/Message/:id', (req, res) => {
 
     let qID = req.params.id;
 

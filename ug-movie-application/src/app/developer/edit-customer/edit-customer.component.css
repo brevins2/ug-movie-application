@@ -1,9 +1,10 @@
 .container-fluid {
   width: 100%;
   height: auto;
-  padding: 23%;
+  padding: 15%;
+  padding-right: 5%;
   padding-top: 8%;
-  padding-left: 20%;
+  padding-left: 5%;
 }
 
 form {
@@ -21,12 +22,12 @@ form div {
 
 .btn {
 	margin-right: 4px;
-	width: 100px;
+  width: 100px;
 }
 
 .buttons {
   margin-bottom: 3%;
-  padding-left: 55%;
+  padding-left: 70%;
   width: 100%;
 }
 
@@ -37,4 +38,17 @@ mat-form-field {
 
 .form-control {
 	margin-bottom: 2%;
+}
+
+.close {
+  width: 15px;
+}
+
+table {
+  padding: 1px;
+  margin: 0px !important;
+}
+
+ng-container {
+  padding: 2px;
 }

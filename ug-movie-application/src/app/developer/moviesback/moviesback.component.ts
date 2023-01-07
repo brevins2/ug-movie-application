@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { ServeService } from 'src/app/Services/serve.service';
 
 export interface Movies {
@@ -25,22 +25,6 @@ export class MoviesbackComponent implements OnInit {
   displayedColumns: string[] = ['ID', 'Title', 'File', 'Genre', 'Producer', 'Details', 'Edit', 'Delete'];
     dataSource = this.movies;
   closeResult = '';
-
-  UpdateMovie = new FormGroup({
-    ID: new FormControl(''),
-    Title: new FormControl(''),
-    Genre: new FormControl(''),
-    Producer: new FormControl(''),
-    File: new FormControl('')
-  });
-
-  DeleteMovie = new FormGroup({
-    ID: new FormControl(''),
-    Title: new FormControl(''),
-    Genre: new FormControl(''),
-    Producer: new FormControl(''),
-    File: new FormControl('')
-  });
 
   constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private modalService: NgbModal, private serve: ServeService) { }
 
@@ -74,8 +58,10 @@ export class MoviesbackComponent implements OnInit {
     this.route.navigate(['/edit/movie']);
   }
 
-  Delete() {
-    this.route.navigate(['/delete/movie']);
+  Delete(movie: Movies) {
+    this.serve.deleteMovie(movie).subscribe((response)=> {
+      this.movies = this.movies.filter((t) => t.ID == movie.ID);
+      console.log(this.movies);
+    });
   }
-
 }
