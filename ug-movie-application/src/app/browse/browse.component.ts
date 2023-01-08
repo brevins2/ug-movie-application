@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { ServeService } from 'src/app/Services/serve.service';
 
 export interface Messages {
   ID: number,
@@ -26,7 +27,7 @@ export class BrowseComponent implements OnInit {
     Message: ['', Validators.required]
   });
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClient, private serve: ServeService) { }
 
   ngOnInit(): void {
     this.readMessage();
@@ -41,17 +42,14 @@ export class BrowseComponent implements OnInit {
   }
 
   sendMessage() {
-    this.http.post<any>('http://localhost:8080/add/Message', this.messageFormGroup.value).subscribe(res=>{
-      // console.log(res);
+    this.serve.createMessage(this.messageFormGroup.value).subscribe(res=>{
       this.messageFormGroup.reset();
     });
   }
 
   readMessage() {
-    this.http.get<{data: Messages[]}>('http://localhost:8080/Message').subscribe(res => {
+    this.serve.getAllMessages().subscribe(res => {
       this.messages = res.data;
-      console.log(this.messages);
-      console.log(res);
     });
   }
 

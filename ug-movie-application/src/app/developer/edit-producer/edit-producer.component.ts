@@ -14,7 +14,7 @@ export class EditProducerComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) { }
   producers: Producer[] = [];
-  displayedColumns: string[] = ['Name', 'Email', 'Genre', 'File', 'Password', 'CPassword'];
+  displayedColumns: string[] = ['Name', 'Email', 'Genre', 'File', 'Delete'];
     dataSource = this.producers;
 
   UpdateProducer = new FormGroup({
@@ -45,12 +45,16 @@ export class EditProducerComponent implements OnInit {
     this.serve.updateProducer(this.router.snapshot.params['id'], this.UpdateProducer.value).subscribe((result) => {
       this.UpdateProducer.reset();
       return result;
-      this.getCurrentProducer();
     });
   }
 
   Clear(){
     this.UpdateProducer.reset();
   }
-  
+
+  Delete() {
+    this.serve.deleteProducer(this.router.snapshot.params['id']).subscribe((response)=> {
+      this.producers = response.data;
+    });
+  } 
 }

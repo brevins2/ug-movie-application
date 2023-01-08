@@ -12,3 +12,11 @@ span {
 td {
 	font-size: .7rem;
 }
+
+.form-group {
+	margin-bottom: 1%;
+}
+
+.form-group input {
+	width: 90%;
+}

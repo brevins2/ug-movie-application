@@ -55,6 +55,8 @@ import { MainsComponent } from './categories/views/mains/mains.component';
 import { EditMovieComponent } from './developer/edit-movie/edit-movie.component';
 import { EditCustomerComponent } from './developer/edit-customer/edit-customer.component';
 import { EditProducerComponent } from './developer/edit-producer/edit-producer.component';
+import { MessageComponent } from './developer/message/message.component';
+import { DeleteMessageComponent } from './developer/delete-message/delete-message.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +83,9 @@ import { EditProducerComponent } from './developer/edit-producer/edit-producer.c
     MainsComponent,
     EditMovieComponent,
     EditCustomerComponent,
-    EditProducerComponent
+    EditProducerComponent,
+    MessageComponent,
+    DeleteMessageComponent
   ],
   imports: [
     BrowserModule,

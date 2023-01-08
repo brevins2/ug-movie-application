@@ -21,41 +21,58 @@ export interface Customers{
 export class LoginComponent implements OnInit {
 
   hide = true;
+  alert = false;
+  alerts = false;
   customer: Customers[] = [];
   loginForm =  this.formBuilder.group({
     Email: ['', Validators.required],
     Password: ['', Validators.required]
   });
 
-  constructor(private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private route: Router, private router: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.loginForm;
+  }
+
+  closeAlert(){
+    this.alert = false;
+  }
+
+  closeDangerAlert() {
+    this.alerts = false;
   }
 
   BackHome(){
-    this.router.navigate(['cinema/browse']);
+    this.route.navigate(['cinema/browse']);
   }
 
   login() {
-    this.http.get<{data: Customers[]}>('http://localhost:8080/Accounts/login').subscribe(res=>{
+    this.http.get<{data: Customers[]}>('http://localhost:8080/Accounts').subscribe(res=>{
+      this.customer = res.data
+      const user = this.customer.findIndex((a: any)=>{
+        return a.Email === this.loginForm.value.Email &&
+          a.Password === this.loginForm.value.Password;
+      });
 
-      // this.customer.forEach((value) =>{
-      //   if (this.loginForm.value.Email == res.data[value].Email && this.loginForm.value.Password == res.data[value].Password){
-      //     console.log(this.loginForm.value.Email +", "+ this.loginForm.value.Password);
-      //     console.log("well done");
-      //   }else {
-      //     console.log("error occured");
-      //   }
-      //   console.log(value);
-      // });
-      for(var i = 0; i <= this.customer.length; i++){
-        if (this.loginForm.value.Email == res.data[i].Email && this.loginForm.value.Password == res.data[i].Password){
-          console.log(this.loginForm.value.Email +", "+ this.loginForm.value.Password);
-          console.log("well done");
-        }else {
-          console.log("error occured");
-        }
+      if ('admin@gmail.com' === this.loginForm.value.Email &&
+        'i83admin' === this.loginForm.value.Password) {
+        this.alert = true;
+        this.loginForm.reset();
+        this.route.navigate(['/developer/edits']);
       }
+
+      else if(user){
+        this.alert = true;
+        this.loginForm.reset();
+        this.route.navigate(['/cinema/all']);
+      }
+      else{
+        this.alerts = true;
+      }
+    },
+    error=>{
+      this.alerts = true;
     });
   }
 

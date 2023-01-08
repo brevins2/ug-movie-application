@@ -28,7 +28,7 @@ export class EditMovieComponent implements OnInit {
     Details: new FormControl('')
   });
   movies: Movies[] = [];
-  displayedColumns: string[] = ['Title', 'File', 'Genre', 'Producer', 'Details'];
+  displayedColumns: string[] = ['Title', 'File', 'Genre', 'Producer', 'Details', 'Delete'];
     dataSource = this.movies;
 
   constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) { }
@@ -52,11 +52,17 @@ export class EditMovieComponent implements OnInit {
     this.serve.update(this.router.snapshot.params['id'], this.UpdateMovie.value).subscribe((result) => {
       this.UpdateMovie.reset();
       return result;
-      this.getCurrentMovie();
     });
   }
 
   Clear() {
     this.UpdateMovie.reset();
+  }
+
+  Delete() {
+    this.serve.deleteUser(this.router.snapshot.params['id']).subscribe((response)=> {
+      this.movies = response.data;
+      console.log(response); 
+    });
   }
 }

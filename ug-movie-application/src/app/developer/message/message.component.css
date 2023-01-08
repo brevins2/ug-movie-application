@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+span {
+	text-align: center !important;
+	display: inline-block;
+	width: 100%;
+}
+
+.btn-outline-primary,
+.btn-outline-danger {
+	width: 40px;
+	margin-right: 3px;
+	font-size: .7rem;
+}
+
+.Details {
+	font-size: .8rem;
+	margin-right: 5px;
+	margin-left: 10px;
+}
+
+td {
+	font-size: .7rem;
+}

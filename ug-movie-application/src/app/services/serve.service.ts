@@ -41,14 +41,14 @@ export class ServeService {
     return this.http.delete('http://localhost:8080/delete/Account');
   }
 
-  findByUserName(title: any): Observable<User[]> {
-    return this.http.get<User[]>(`${baseurlCustomer}?title=${title}`);
+  findByUserName(name: string): Observable<{data: User[]}> {
+    return this.http.get<{data: User[]}>(`${baseurlCustomer}?Name=${name}`);
   }
 
 
   // for movies
-  getAll(): Observable<Movies[]> {
-    return this.http.get<Movies[]>('http://localhost:8080/Movies');
+  getAll(): Observable<{data: Movies[]}> {
+    return this.http.get<{data: Movies[]}>('http://localhost:8080/Movies');
   }
 
   getWithID(id: number): Observable<{data: Movies[]}> {
@@ -71,8 +71,8 @@ export class ServeService {
     return this.http.delete('http://localhost:8080/Movies');
   }
 
-  findByTitle(title: any): Observable<Movies[]> {
-    return this.http.get<Movies[]>(`${baseurlMovies}?title=${title}`);
+  findByTitle(title: any): Observable<{data: Movies[]}> {
+    return this.http.get<{data: Movies[]}>(`${baseurlMovies}?title=${title}`);
   }
 
 
@@ -101,14 +101,14 @@ export class ServeService {
     return this.http.delete('http://localhost:8080/Producers');
   }
 
-  findByTitleProducers(title: any): Observable<Movies[]> {
-    return this.http.get<Movies[]>(`${baseurlProducer}?title=${title}`);
+  findByNameProducers(name: any): Observable<{data: Producer[]}> {
+    return this.http.get<{data: Producer[]}>(`${baseurlProducer}?Name=${name}`);
   }
 
 
   // for Messages
   getAllMessages(): Observable<{data: Message[]}> {
-    return this.http.get<{data: Message[]}>('http://localhost:8080/Messages');
+    return this.http.get<{data: Message[]}>('http://localhost:8080/Message');
   }
 
   getMessageWithID(id: number): Observable<{data: Message[]}> {
@@ -131,7 +131,7 @@ export class ServeService {
     return this.http.delete('http://localhost:8080/Messages');
   }
 
-  findByTitleMessage(title: any): Observable<Message[]> {
-    return this.http.get<Message[]>(`${baseurlMessages}?title=${title}`);
+  findByTitleMessage(email: any): Observable<{data: Message[]}> {
+    return this.http.get<{data: Message[]}>(`${baseurlMessages}?Email=${email}`);
   }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { render } from 'creditcardpayments/creditCardPayments';
 
 @Component({
   selector: 'app-pay',
@@ -9,16 +8,7 @@ import { render } from 'creditcardpayments/creditCardPayments';
 })
 export class PayComponent implements OnInit {
 
-  constructor() {
-    render ({
-      id: "#myPaypalButtons",
-      currency: "USD",
-      value: "100.00",
-      onApprove: (details) => {
-        alert("Transaction successful");
-      }
-    });
-  }
+  constructor() {}
 
   ngOnInit(): void {
   }

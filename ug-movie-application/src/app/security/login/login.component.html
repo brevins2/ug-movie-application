@@ -27,21 +27,21 @@
 
       <button type="submit" class="btn btn-primary float-right login" (click)="login()">Login</button><br>
 
-      <div class="d-flex flex-column text-center second-option">
-        <small class="text-primary">Login via OTP</small>
-
-        <div class="d-flex text-center justify-content-center log-button">
-          <button class="btn rounded-circle btn-primary">
-            <i class="fa-brands fa-facebook"></i>
-          </button>
-          <button class="btn rounded-circle btn-danger">
-            <i class="fa-brands fa-google"></i>
-          </button>
-        </div>
-      
-      </div>
-
       <a routerLink="/subscribe">Don't have an account yet? Register</a>
     </form>
+
+    <div *ngIf="alerts" class="alert alert-danger alert-dismissible fade show fixed-bottom" role="alert">
+      <strong>Oops!!</strong> Something went wrong, check your password
+      <button type="button" (click)="closeDangerAlert()" class="btn-close" data-dismiss="alerts" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show fixed-bottom" role="alert">
+      <strong>Success !</strong> Log in successful !.
+      <button (click)="closeAlert()" type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
   </div>
 </body>

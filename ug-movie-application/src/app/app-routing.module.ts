@@ -24,10 +24,12 @@ import { MainComponent } from './developer/main/main.component';
 import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
 import { CustomersComponent } from './developer/customers/customers.component';
 import { ProducersComponent } from './developer/producers/producers.component';
+import { MessageComponent } from './developer/message/message.component';
 
 import { EditMovieComponent } from './developer/edit-movie/edit-movie.component';
 import { EditCustomerComponent } from './developer/edit-customer/edit-customer.component';
 import { EditProducerComponent } from './developer/edit-producer/edit-producer.component';
+import { DeleteMessageComponent } from './developer/delete-message/delete-message.component';
 
 const routes: Routes = [
   { path:'', redirectTo: 'cinema/browse', pathMatch: 'full' },
@@ -59,12 +61,14 @@ const routes: Routes = [
     { path: '', redirectTo: 'moviesedits', pathMatch: 'full' },
     { path: 'moviesedits', component: MoviesbackComponent },
     { path: 'customers', component: CustomersComponent },
-    { path: 'producers', component: ProducersComponent }
+    { path: 'producers', component: ProducersComponent },
+    { path: 'messages', component: MessageComponent }
   ]},
 
   { path: 'edit/movie/:id', component: EditMovieComponent },
   { path: 'edit/producer/:id', component: EditProducerComponent },
   { path: 'edit/customer/:id', component: EditCustomerComponent },
+  { path: 'delete/message/:id', component: DeleteMessageComponent },
 
   { path: 'play/:id', component: PlayMovieComponent }
 ];

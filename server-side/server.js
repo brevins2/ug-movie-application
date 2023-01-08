@@ -500,6 +500,45 @@ app.delete('/Message/:id', (req, res) => {
 
 });
 
+// adding image
+app.post('/add/Image', (req, res) => {
+
+    console.log(req.body, 'data added');
+
+    let name = req.body.Name;
+
+    let qr = `INSERT INTO images(Name)
+                VALUES('${name}')`;
+
+    db.query(qr, (err, result) => {
+
+        if (err) { console.log(err); }
+
+        res.send({
+            message: 'data stored successfully'
+        });
+
+    });
+});
+
+//get all the Image
+app.get('/files', (req, res) => {
+
+    let qr = `select * from images`;
+
+    db.query(qr, (err, result) => {
+        if (err) {
+            console.log(err, 'errs');
+        }
+        if (result.length > 0) {
+            res.send({
+                message: 'all data available',
+                data: result
+            });
+        }
+    });
+});
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
