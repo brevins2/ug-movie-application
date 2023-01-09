@@ -46,15 +46,14 @@ const routes: Routes = [
 
   { path:'cinema/all', component: AllComponent, children: [
     { path:'', redirectTo: 'movies', pathMatch: 'full' },
-    { path:'movies', component: MoviesComponent },
-    { path:'producers', component: ProducerComponent }
+    { path:'movies', component: MoviesComponent }
   ]},
 
   { path:'cinema/all/views', component: MainsComponent, children: [
     { path:'', redirectTo: 'downloads', pathMatch: 'full' },
     { path: 'downloads', component: DownloadsComponent },
-    { path: 'favourets', component: FavouretsComponent },
-    { path: 'recents', component: RecentComponent}
+    { path: 'recents', component: RecentComponent},
+    { path:'producers', component: ProducerComponent }
   ]},
 
   { path: 'developer/edits', component: MainComponent, children: [
@@ -70,7 +69,8 @@ const routes: Routes = [
   { path: 'edit/customer/:id', component: EditCustomerComponent },
   { path: 'delete/message/:id', component: DeleteMessageComponent },
 
-  { path: 'play/:id', component: PlayMovieComponent }
+  { path: 'play/:id', component: PlayMovieComponent },
+    { path: 'search/movies', component: FavouretsComponent }
 ];
 
 @NgModule({

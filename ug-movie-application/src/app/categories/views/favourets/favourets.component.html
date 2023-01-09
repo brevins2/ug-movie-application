@@ -1,5 +1,8 @@
 <body class="container-fluid d-flex flex-column">
-	<input type="search" class="form-control" placeholder="search for recent movies, series">
+	<div class="d-flex">
+		<input type="search" class="form-control" placeholder="search for recent movies, series" (onChange)="search()" [(ngModel)]="searched">
+		<button (click)="cancel()" class="btn btn-primary">cancel</button>
+	</div>
 
 	<nav class="d-flex justify-content-between text-center">
 		<div class="justify-content-start d-flex">

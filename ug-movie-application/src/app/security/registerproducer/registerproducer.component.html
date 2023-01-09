@@ -15,50 +15,9 @@
     <div class="form-group">
       <span>Type of Genre</span><br>
       <div class="form-control form-control-ckeckbox checkbox d-flex flex-wrap">
-        <div>
+        <div *ngFor="let genre of genres" class="checking">
           <label>
-            <input type="checkbox" formControlName="Genre" value="thriller">&nbsp;Thriller <br>
-          </label>
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Romance">&nbsp;Romance <br>
-          </label>
-
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Inspirarional">&nbsp;Inspirarional <br>
-          </label>
-
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Horror">&nbsp;Horror<br>
-          </label>
-        </div>
-
-        <div>
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Action">&nbsp;Action <br>
-          </label>
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Animation">&nbsp;Animation <br>
-          </label>
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Documentaries">&nbsp;Documentaries <br>
-          </label>
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Reality">&nbsp;Reality <br>
-          </label>
-        </div>
-
-        <div>
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Series">&nbsp;Series <br>
-          </label>
-          <label>
-            <input type="checkbox" formControlName="Genre" value="SciFi">&nbsp;Sci-Fi <br>
-          </label>
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Supernatural">&nbsp;Super natural <br>
-          </label>
-          <label>
-            <input type="checkbox" formControlName="Genre" value="Comedies">&nbsp;Comedies <br>
+            <input type="checkbox" formControlName="Genre" [value]="genre.Genre">&nbsp;{{genre.Genre}} <br>
           </label>
         </div>
       </div>
@@ -69,15 +28,7 @@
         <input type="File" class="form-control" formControlName="File" name="File" value="File" placeholder="enter email" required>
     </div>
 
-    <div class="form-group passwords">
-      <span>Password</span>
-        <input type="password" class="form-control" formControlName="Password" name="password" value="password" placeholder="enter password" required>
-
-      <span>Confirm Password</span>
-        <input type="password" class="form-control" formControlName="CPassword" name="confirmPassword" value="confirmPassword" placeholder="confirm password" required>
-    </div>
-
-    <button type="submit" class="btn btn-primary" (click)="well()">
+    <button type="submit" class="btn btn-primary" (click)="register()">
       <i class="fa-solid fa-save"></i>
       Register
     </button>

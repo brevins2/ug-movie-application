@@ -4,6 +4,15 @@ html {
   height: auto;
 }
 
+.fa-search {
+  font-size: .9rem;
+}
+
+.fa-search:hover,
+.fa-search:focus {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 599px) {
   /* For mobile phones: */
 

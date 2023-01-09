@@ -8,9 +8,7 @@ export interface Producers {
   Name: string,
   Email: string,
   Genre: string,
-  File: string,
-  Password: string,
-  CPassword: string,
+  File: string
 }
 
 @Component({

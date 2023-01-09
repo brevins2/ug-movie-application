@@ -12,9 +12,7 @@ export interface Producer {
   Name: string,
   Email: string,
   Genre: string,
-  File: string,
-  Password: string,
-  CPassword: string,
+  File: string
 }
 
 export interface User {
@@ -32,4 +30,9 @@ export interface Message {
   Name: string,
   Email: string,
   Message: string
+}
+
+export interface Genre {
+  ID: number,
+  Genre: string
 }

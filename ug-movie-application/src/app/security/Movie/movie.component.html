@@ -14,12 +14,18 @@
 
     <div class="form-group">
       <span>Genre</span>
-        <input type="text" class="form-control" formControlName="Genre" placeholder="enter movie genre" required>
+      <select class="form-control" formControlName="Genre" required>
+        <option></option>
+        <option *ngFor="let genre of genres">{{genre.Genre}}</option>
+      </select>
     </div>
 
     <div class="form-group">
       <span>Producer</span>
-        <input type="text" class="form-control" formControlName="Producer" placeholder="enter producer name" required>
+      <select class="form-control" formControlName="Producer" required>
+        <option></option>
+        <option *ngFor="let producer of producers">{{producer.Name}}</option>
+      </select>
     </div>
 
     <div class="form-group passwords">

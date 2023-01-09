@@ -30,6 +30,26 @@ db.connect(err => {
 });
 
 
+// for genre
+// get data
+app.get('/Genre', (req, res) => {
+
+    let qr = `select * from genre`;
+
+    db.query(qr, (err, result) => {
+        if (err) {
+            console.log(err, 'errs');
+        }
+        if (result.length > 0) {
+            res.send({
+                message: 'all data available',
+                data: result
+            });
+        }
+    });
+});
+
+
 // for Accounts/registration
 //get all the data
 app.get('/Accounts', (req, res) => {
@@ -331,11 +351,9 @@ app.post('/add/Producer', (req, res) => {
     let email = req.body.Email;
     let genre = req.body.Genre;
     let file = req.body.File;
-    let password = req.body.Password;
-    let confirmPassword = req.body.CPassword;
 
-    let qr = `INSERT INTO producer(Name, Email, Genre, File, Password, CPassword)
-                VALUES('${name}', '${email}', '${genre}', '${file}', '${password}', '${confirmPassword}')`;
+    let qr = `INSERT INTO producer(Name, Email, Genre, File)
+                VALUES('${name}', '${email}', '${genre}', '${file}')`;
 
     db.query(qr, (err, result) => {
 

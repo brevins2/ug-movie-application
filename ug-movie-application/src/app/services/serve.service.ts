@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User, Message, Movies, Producer } from 'src/app/interface';
+import { User, Message, Movies, Producer, Genre } from 'src/app/interface';
 
   const baseurlMovies = "http://localhost:8080/Movies";
   const baseurlProducer = "http://localhost:8080/Producers";
   const baseurlCustomer = "http://localhost:8080/Accounts";
   const baseurlMessages = "http://localhost:8080/Message";
+  const Genres = "http://localhost:8080/Genre";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,11 @@ import { User, Message, Movies, Producer } from 'src/app/interface';
 export class ServeService {
 
   constructor(private http: HttpClient) { }
+
+  // for genre
+  getAllGenres(): Observable<{data: Genre[]}> {
+    return this.http.get<{data: Genre[]}>('http://localhost:8080/Genre');
+  }
 
   // for accounts
   getAllUsers(): Observable<{data: User[]}> {

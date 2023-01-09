@@ -16,7 +16,7 @@
       </div>
 
       <div>
-        <a class="text-left link" routerLink="producers">
+        <a class="text-left link" (click)="drawer.toggle()">
           <i class="fa-solid fa-user"></i>&nbsp;&nbsp;<label>Producers</label>
         </a>
       </div>
@@ -103,10 +103,8 @@
           </div>
         </nav>
 
-        <div class="example-sidenav-content">
-          <button type="button" class="text-light" mat-button (click)="drawer.toggle()">
-            <mat-icon class="menu">menu</mat-icon>
-          </button>
+        <div class="justify-content-centre">
+          <i class="fa-solid fa-search text-white" routerLink="/search/movies"></i>
         </div>
       </mat-toolbar>
 
@@ -127,7 +125,7 @@
           <div class="d-flex flex-column chips">
             <label class="text-white">Producers</label>
             <mat-chip-list aria-label="Dog selection">
-              <mat-chip *ngFor="let producer of producers">
+              <mat-chip *ngFor="let producer of producers" routerLink="views/producers">
                 <img matChipAvatar [src]="'../../../../../assets/films/'+ producer.File" alt="Photo of a Shiba Inu"/>
                 {{producer.Name}}
               </mat-chip>

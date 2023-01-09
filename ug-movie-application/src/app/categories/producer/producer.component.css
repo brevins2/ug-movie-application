@@ -5,8 +5,14 @@ body {
   padding-top: 3.5%;
 }
 
+.card-producer {
+  width: 100%;
+  margin: 1%;
+  padding: 3%;
+}
+
 mat-card {
   width: 23%;
   height: 15%;
-  margin: 1%;
+  padding: 2%;
 }
