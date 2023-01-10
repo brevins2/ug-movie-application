@@ -12,7 +12,21 @@ body {
 }
 
 .card-movies {
-  width: 200px;
-  height: 200px;
+  width: 210px;
+  height: 250px;
+  font-size: .8rem;
   margin: 1%;
+}
+
+.card-details {
+  font-size: .8rem;
+}
+
+.card-definition button {
+  font-size: .8rem;
+  bottom: 0;
+}
+
+mat-card-actions {
+  margin-bottom: 0px;
 }

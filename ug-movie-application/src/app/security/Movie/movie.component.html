@@ -9,7 +9,7 @@
 
     <div class="form-group">
       <span>File</span>
-        <input type="file" class="form-control" formControlName="File" placeholder="enter movie" required>
+        <input type="file" class="form-control" formControlName="File" (change)="onFileUpload($event)" placeholder="enter movie" required>
     </div>
 
     <div class="form-group">
