@@ -37,6 +37,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule  } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from "@angular/material/menu";
 
 import { SubscriptionComponent } from './security/subscription/subscription.component';
 
@@ -96,6 +97,7 @@ import { DeleteMessageComponent } from './developer/delete-message/delete-messag
     MatCardModule,
     MatToolbarModule,
     MatSidenavModule,
+    MatMenuModule,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,

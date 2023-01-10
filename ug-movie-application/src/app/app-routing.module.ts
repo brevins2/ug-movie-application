@@ -53,7 +53,7 @@ const routes: Routes = [
     { path:'', redirectTo: 'downloads', pathMatch: 'full' },
     { path: 'downloads', component: DownloadsComponent },
     { path: 'recents', component: RecentComponent},
-    { path:'producers', component: ProducerComponent }
+    { path:'producers/:id', component: ProducerComponent }
   ]},
 
   { path: 'developer/edits', component: MainComponent, children: [

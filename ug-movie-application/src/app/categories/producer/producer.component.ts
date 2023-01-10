@@ -16,7 +16,7 @@ export class ProducerComponent implements OnInit {
   movies: Movies[] = [];
 
   ngOnInit(): void {
-    this.serve.getAllProducers().subscribe(data =>{
+    this.serve.getProducerWithID(this.router.snapshot.params['id']).subscribe(data =>{
       this.producers = data.data;
     });
     this.serve.getAll().subscribe(data => {

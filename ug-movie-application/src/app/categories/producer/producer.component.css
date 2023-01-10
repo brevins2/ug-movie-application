@@ -11,8 +11,8 @@ body {
   padding: 3%;
 }
 
-mat-card {
-  width: 23%;
-  height: 15%;
-  padding: 2%;
+.card-movies {
+  width: 200px;
+  height: 200px;
+  margin: 1%;
 }

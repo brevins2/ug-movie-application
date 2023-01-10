@@ -27,16 +27,15 @@
         </a>
       </div>
     </div>
-    <!-- <hr class="text-white hr-first"> -->
 
     <div class="profile-link">
       <h3>Profile</h3> 
 
-      <div>
+      <!-- <div>
         <a class="text-left link" routerLink="views/favourets">
           <i class="fa-solid fa-heart"></i>&nbsp;&nbsp;<label>Faviouret</label>
         </a>
-      </div>
+      </div> -->
 
       <div>
         <a class="text-left link" routerLink="views/downloads">
@@ -53,17 +52,20 @@
     <!-- <hr class="text-white"> -->
       
     <div class="general-link"> 
-      <h3 class="text-white">General</h3> 
+      <h3 class="text-white">Account</h3> 
 
-      <div>
+      <!-- <div>
         <a class="text-left link" routerLink="customers">
           <i class="fa-solid fa-cog"></i>&nbsp;&nbsp;<label>Settings</label>
         </a>
-      </div>
+      </div> -->
 
-      <button class="btn btn-danger text-center" type="submit" (click)="logout()">
-        logout
-      </button>
+      <img src="../../../../../assets/icon/download.png" width="30" class="power" mat-button [matMenuTriggerFor]="menu3">
+      <mat-menu #menu3="matMenu" class="bg-black text-white">
+        <button mat-menu-item class="text-danger" (click)="logout()">
+          <i class="fa fa-power-off power"></i>Logout
+        </button>
+      </mat-menu>
     </div>
   </nav>
 
@@ -94,12 +96,6 @@
                 Tv Shows
               </a>
             </small>
-
-            <small>
-              <a href="#">
-                Documentaries
-              </a>
-            </small>
           </div>
         </nav>
 
@@ -125,7 +121,7 @@
           <div class="d-flex flex-column chips">
             <label class="text-white">Producers</label>
             <mat-chip-list aria-label="Dog selection">
-              <mat-chip *ngFor="let producer of producers" routerLink="views/producers">
+              <mat-chip *ngFor="let producer of producers" routerLink="views/producers/{{producer.ID}}">
                 <img matChipAvatar [src]="'../../../../../assets/films/'+ producer.File" alt="Photo of a Shiba Inu"/>
                 {{producer.Name}}
               </mat-chip>

@@ -13,6 +13,10 @@ html {
   cursor: pointer;
 }
 
+a {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 599px) {
   /* For mobile phones: */
 
@@ -493,22 +497,33 @@ html {
   }
 
   .general-link h3 {
-    margin-top: 9%;
+    margin-top: 5%;
     position: fixed;
   }
-
+/*
   .general-link div a{
-    margin-top: 13%;
+    margin-top: 8%;
     position: fixed;
     text-align: left !important;
-  }
+  }*/
 
-  .general-link button {
-    margin-top: 16%;
-    width: 10%;
+  .general-link img {
+    margin-top: 9%;
+    margin-left: 1%;
+    width: 43px;
+    border-radius: 18px;
     position: fixed;
   }
 
+  .general-link img:hover {
+    cursor: pointer;
+  }
+
+  mat-menu button {
+    width: 100%;
+  }
+
+  /* style horizontal-nav */
   .horizontal-nav div div a {
     text-align: center;
     color: whitesmoke;

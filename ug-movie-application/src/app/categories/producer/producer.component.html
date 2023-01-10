@@ -11,21 +11,23 @@
       </mat-card-actions>
     </mat-card-content>
 
-    <mat-card class="example-card bg-black text-white d-flex flex-column" *ngFor="let movie of movies">
-      <div *ngIf="producer.Name === movie.Producer">
-        <video [src]="'../../../../../assets/films/'+ movie.File" width="100%" controls></video>
+    <div class="d-flex flex-wrap flex-div">
+      <mat-card class="example-card bg-dark card-movies" *ngFor="let movie of movies" routerLink="/play/{{movie.ID}}">
+        <div *ngIf="producer.Name == movie.Producer" class="bg-white text-white">
+          <video [src]="'../../../../../assets/films/'+ movie.File" width="100" controls></video>
 
-        <nav class="text-left">{{movie.Title}}</nav>
-        <mat-card-content class="text-left">
-            <p>
-              {{movie.Details}}
-            </p>
-            <mat-card-actions>
-              <button mat-button>{{movie.Genre}}</button>
-              <button mat-button>{{movie.Producer}}</button>
-          </mat-card-actions>
-        </mat-card-content>
-      </div>
-    </mat-card>
+          <nav class="text-white">{{movie.Title}}</nav>
+          <mat-card-content class="text-left">
+              <p class="text-white">
+                {{movie.Details}}
+              </p>
+              <mat-card-actions>
+                <button mat-button class="text-white">{{movie.Genre}}</button>
+                <button mat-button>{{movie.Producer}}</button>
+            </mat-card-actions>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
   </mat-card>
 </body>

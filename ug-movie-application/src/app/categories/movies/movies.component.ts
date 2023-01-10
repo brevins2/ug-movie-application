@@ -23,10 +23,8 @@ export class MoviesComponent implements OnInit {
 
   movies: Movies[] = [];
   ngOnInit(): void {
-    this.http.get<{data: Movies[]}>('http://localhost:8080/Movies').subscribe(
-        data => {
-          this.movies = data.data;
-          console.log(this.movies);
-      });
+    this.http.get<{data: Movies[]}>('http://localhost:8080/Movies').subscribe(data => {
+      this.movies = data.data;
+    });
   }
 }

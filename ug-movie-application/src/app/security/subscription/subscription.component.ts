@@ -28,14 +28,14 @@ export class SubscriptionComponent implements OnInit {
   hide = true;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
-    // render ({
-    //   id: "#myPaypalButtons",
-    //   currency: "USH",
-    //   value: "100.00",
-    //   onApprove: (details) => {
-    //     alert("Transaction successful");
-    //   }
-    // });
+    render ({
+      id: "#myPaypalButtons",
+      currency: "USH",
+      value: "100.00",
+      onApprove: (details) => {
+        alert("Transaction successful");
+      }
+    });
   }
 
   ngOnInit(): void {

@@ -13,6 +13,7 @@ body {
 
 .slide {
   width: 100%;
+  height: 400px;
 }
 
 header {
@@ -26,12 +27,15 @@ a {
 @media only screen and (max-width: 599px) {
   /* For mobile phones: */
 
-  mat-card {
-    width: 32%;
-    height: 12%;
+  .movie-card {
+    width: 100px;
+    height: 200px;
     margin: .65%;
-    padding: 2%;
-    font-size: 1.2rem;
+    font-size: .7rem;
+  }
+
+  .movie-card mat-card-actions {
+    font-size: .6rem;
   }
 
   mat-card:hover,
@@ -68,10 +72,8 @@ a {
   /* For desktop: */
   
   mat-card {
-    width: 23%;
-    height: 15%;
-    margin: 1%;
-    padding: 2%;
+    width: 200px;
+    height: 200px;
   }
 
   mat-card:hover,
@@ -97,5 +99,9 @@ a {
 
   .mat-button {
     width: 45%;
+  }
+
+  .movie-card a {
+    padding: 2%;
   }
 }

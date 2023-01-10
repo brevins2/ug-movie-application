@@ -78,7 +78,7 @@ export class ServeService {
   }
 
   findByTitle(title: any): Observable<{data: Movies[]}> {
-    return this.http.get<{data: Movies[]}>(`${baseurlMovies}?title=${title}`);
+    return this.http.get<{data: Movies[]}>(`${baseurlMovies}?Title=${title}`);
   }
 
 
