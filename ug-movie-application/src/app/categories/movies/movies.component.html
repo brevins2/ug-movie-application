@@ -2,7 +2,7 @@
   <carousel id="carousel-slider">
     <slide class="slide">
       <div class="example-card">
-         <video src="./assets/videoz/7f466166ae584100829f9f37cc81fa24.mp4"></video>
+         <video src="./assets/videoz/VID-20210621-WA0013.mp4"></video>
       </div>
       <div class="carousel-caption d-none d-md-block">
         <h3>CMJ Entertainment</h3>
@@ -54,9 +54,9 @@
 
 <body class="text-white d-flex flex-wrap">
 
-  <mat-card class="example-card p-2 movie-card" *ngFor="let movie of movies">
+  <mat-card class="example-card movie-card" *ngFor="let movie of movies">
     <a routerLink="/play/{{movie.ID}}">
-      <img mat-card-image [src]="'../../../../../assets/films/'+ movie.File" [alt]="movie.Title" width="30">
+      <img mat-card-image [src]="'../../../../../assets/films/movies/'+ movie.File" [alt]="movie.Title" width="200">
       {{movie.Title}}
       <mat-card-content>
         <p>

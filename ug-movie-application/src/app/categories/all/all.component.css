@@ -500,12 +500,6 @@ a {
     margin-top: 5%;
     position: fixed;
   }
-/*
-  .general-link div a{
-    margin-top: 8%;
-    position: fixed;
-    text-align: left !important;
-  }*/
 
   .general-link img {
     margin-top: 9%;
@@ -613,7 +607,6 @@ a {
 
   .example-sidenav {
     padding: 20px;
-    /*padding-bottom: 0px;*/
     background-color: black;
   }
 
@@ -626,7 +619,7 @@ a {
 
   mat-drawer-container {
     width: 100%;
-    opacity: .8;
+    /*opacity: .8;*/
   }
 
   .vertical-nav {

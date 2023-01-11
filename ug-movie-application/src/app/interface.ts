@@ -36,3 +36,8 @@ export interface Genre {
   ID: number,
   Genre: string
 }
+
+export interface Images {
+  ID: number,
+  Genre: string
+}

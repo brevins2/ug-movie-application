@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User, Message, Movies, Producer, Genre } from 'src/app/interface';
+import { User, Message, Movies, Producer, Genre, Images } from 'src/app/interface';
 
   const baseurlMovies = "http://localhost:8080/Movies";
   const baseurlProducer = "http://localhost:8080/Producers";
   const baseurlCustomer = "http://localhost:8080/Accounts";
   const baseurlMessages = "http://localhost:8080/Message";
   const Genres = "http://localhost:8080/Genre";
+  const uploadURL = "http://localhost:8080/add/Image";
 
 @Injectable({
   providedIn: 'root'
@@ -139,5 +140,24 @@ export class ServeService {
 
   findByTitleMessage(email: any): Observable<{data: Message[]}> {
     return this.http.get<{data: Message[]}>(`${baseurlMessages}?Email=${email}`);
+  }
+
+
+  // for images
+  upload(file: File): Observable<HttpEvent<any>>{
+    const formData: FormData = new FormData();
+
+    formData.append('file', file);
+
+    const req = new HttpRequest('Post', 'http://localhost:8080/add/Image', formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+
+    return this.http.request(req);
+  }
+
+  getFiles(): Observable<{data: Images[]}>{
+    return this.http.get<{data: Images[]}>('http://localhost:8080/files');
   }
 }

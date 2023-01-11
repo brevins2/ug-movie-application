@@ -518,6 +518,7 @@ app.delete('/Message/:id', (req, res) => {
 
 });
 
+// for images
 // adding image
 app.post('/add/Image', (req, res) => {
 
