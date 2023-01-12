@@ -1,33 +1,41 @@
-<body class="text-white d-flex flex-wrap">
+<body>
   <mat-card class="example-card card-producer" *ngFor="let producer of producers">
+    <div class="text-white justify-content-center name">
+        {{producer.Name}}
+    </div>
+    <mat-card-content class="d-flex">
       <img mat-card-image [src]="'../../../../../assets/films/'+ producer.File" [alt]="producer.Name">
-    <mat-card-content>
-      <p>
-       {{producer.Name}} <br>
-       {{producer.Email}} <br>
-      </p>
-      <mat-card-actions>
-        <button mat-button>{{producer.Genre}}</button>
-      </mat-card-actions>
+      <div class="d-flex flex-column producer-details">
+        <p class="big-name">
+          {{producer.Name}}
+        </p>
+        <div class="p-2">
+           Email: {{producer.Email}} <br>
+          <!-- <div class="mat-card-actions"> -->
+            No. of Movies: 24 <br>
+            Genre: <button class="btn btn-success">{{producer.Genre}}</button>
+          <!-- </div> -->
+        </div>
+      </div>
     </mat-card-content>
 
-    <div class="d-flex flex-wrap flex-div">
-      <mat-card class="example-card bg-dark card-movies" *ngFor="let movie of movies" routerLink="/play/{{movie.ID}}">
-        <div class="text-white">
-          <video [src]="'../../../../../assets/films/'+ movie.File" width="100" controls></video>
+    <!-- <div class="d-flex flex-wrap flex-div"> -->
+      <mat-card class="d-flex bg-dark card-movies" *ngFor="let movie of movies">
+        <div class="text-white d-flex flex-column" routerLink="/play/{{movie.ID}}" *ngIf="movie.Producer == producer.Name">
+          <video [src]="'../../../../../assets/films/'+ movie.File" width="210" height="140" controls></video>
 
           <nav class="text-white">{{movie.Title}}</nav>
           <mat-card-content class="text-left card-details">
               <p class="text-white">
                 {{movie.Details}}
               </p>
-              <mat-card-actions class="card-definition">
-                <button mat-button>{{movie.Genre}}</button>
-                <button mat-button>{{movie.Producer}}</button>
-            </mat-card-actions>
           </mat-card-content>
+          <mat-card-actions class="card-definition">
+            <button mat-button>{{movie.Genre}}</button>
+            <button mat-button>{{movie.Producer}}</button>
+          </mat-card-actions>
         </div>
       </mat-card>
-    </div>
+    <!-- </div> -->
   </mat-card>
 </body>

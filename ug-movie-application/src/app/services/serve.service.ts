@@ -62,6 +62,10 @@ export class ServeService {
     return this.http.get<{data: Movies[]}>(`${baseurlMovies}/${id}`);
   }
 
+  getWithName(name: string): Observable<{data: Movies[]}> {
+    return this.http.get<{data: Movies[]}>('http://localhost:8080/Movies/name');
+  }
+
   create(data: any): Observable<any> {
     return this.http.post('http://localhost:8080/add/Movie', data);
   }
@@ -78,7 +82,7 @@ export class ServeService {
     return this.http.delete('http://localhost:8080/Movies');
   }
 
-  findByTitle(title: any): Observable<{data: Movies[]}> {
+  findByTitle(title: string): Observable<{data: Movies[]}> {
     return this.http.get<{data: Movies[]}>(`${baseurlMovies}?Title=${title}`);
   }
 
@@ -144,7 +148,7 @@ export class ServeService {
 
 
   // for images
-  upload(file: File): Observable<HttpEvent<any>>{
+  upload(file: File): Observable<HttpEvent<{data: Images[]}>>{
     const formData: FormData = new FormData();
 
     formData.append('file', file);
@@ -161,3 +165,5 @@ export class ServeService {
     return this.http.get<{data: Images[]}>('http://localhost:8080/files');
   }
 }
+
+// https://console.firebase.google.com/project/lutimbefilmz-6878c/storage/lutimbefilmz-6878c.appspot.com/files

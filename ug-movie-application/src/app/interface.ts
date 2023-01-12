@@ -39,5 +39,6 @@ export interface Genre {
 
 export interface Images {
   ID: number,
-  Genre: string
+  Name: string,
+  URL: string
 }

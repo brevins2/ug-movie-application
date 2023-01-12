@@ -34,7 +34,7 @@ export class MoviesbackComponent implements OnInit {
   search() {
     this.serve.findByTitle(this.searched).subscribe(data => {
       this.movies = data.data;
-      console.log(this.searched);
+      console.log(this.movies);
     });
   }
 }

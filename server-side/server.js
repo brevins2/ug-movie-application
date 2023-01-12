@@ -230,6 +230,31 @@ app.get('/Movies/:id', (req, res) => {
     });
 });
 
+// get movue data
+app.get('/Movies/name', (req, res) => {
+
+    const gname = req.Name;
+
+    let qr = `select * from movies where Producer = '${gname}'`;
+
+    db.query(qr, (err, result) => {
+
+        if (err) {
+            console.log(err);
+        }
+        if (result.length > 0) {
+            res.send({
+                message: 'getting single data',
+                data: result
+            });
+        } else {
+            res.send({
+                message: 'data not found'
+            });
+        }
+    });
+});
+
 // adding data
 app.post('/add/Movie', (req, res) => {
 
@@ -317,7 +342,6 @@ app.get('/Producers', (req, res) => {
 });
 
 // get single data
-
 app.get('/Producers/:id', (req, res) => {
 
     let gID = req.params.id;
@@ -525,16 +549,18 @@ app.post('/add/Image', (req, res) => {
     console.log(req.body, 'data added');
 
     let name = req.body.Name;
+    let url = req.body.URL;
 
-    let qr = `INSERT INTO images(Name)
-                VALUES('${name}')`;
+    let qr = `INSERT INTO images(Name, URL)
+                VALUES('${name}', '${url}')`;
 
     db.query(qr, (err, result) => {
 
         if (err) { console.log(err); }
 
         res.send({
-            message: 'data stored successfully'
+            message: 'data stored successfully',
+            data: result
         });
 
     });

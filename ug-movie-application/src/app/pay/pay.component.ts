@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ServeService } from 'src/app/Services/serve.service';
 import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 import { HttpResponse, HttpEventType, HttpClient } from '@angular/common/http';
+import { Images } from 'src/app/interface';
 
 @Component({
   selector: 'app-pay',
@@ -14,15 +17,19 @@ export class PayComponent implements OnInit {
   currentFile?: File;
   progress = 0;
   message = '';
+  images: Images[] = [];
 
   fileInfos?: Observable<any>;
-  constructor(private serve: ServeService) {}
+  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) {}
 
   selectFile(event: any): void {
     this.selectedFiles = event.target.files;
   }
 
   ngOnInit(): void {
+    this.serve.getFiles().subscribe(data => {
+      this.images = data.data;
+    });
   }
 
   upload(): void {
@@ -39,8 +46,11 @@ export class PayComponent implements OnInit {
             if(event.type === HttpEventType.UploadProgress) {
               this.progress = Math.round(100 * event.loaded / event.total);
             } else if(event instanceof HttpResponse) {
-              this.message = event.body.message;
-              this.fileInfos = this.serve.getFiles();
+              this.message = event.body.currentFile;
+              console.log(this.selectedFiles);
+              this.serve.getFiles().subscribe(data => {
+                this.images = data.data;
+              });
             }
           },
           error: (err: any) => {
@@ -58,7 +68,10 @@ export class PayComponent implements OnInit {
         });
       }
 
-      this.selectedFiles = undefined;
+      this.selectedFiles;
     }
+
+    console.log(this.selectedFiles);
+
   }
 }

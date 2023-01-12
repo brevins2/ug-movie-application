@@ -25,3 +25,8 @@ span {
 td {
 	font-size: .7rem;
 }
+
+input {
+	margin-bottom: 1%;
+	width: 90%;
+}
