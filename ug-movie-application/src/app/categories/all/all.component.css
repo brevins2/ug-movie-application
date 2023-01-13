@@ -581,8 +581,7 @@ a {
 
   .main-div {
     height: 100%;
-    width: 100%;
-    padding-right: 2%;
+    width: 850px;
   }
 
   .router-outlet-div {
@@ -619,6 +618,7 @@ a {
 
   mat-drawer-container {
     width: 100%;
+    /*border: 2px solid white;*/
     /*opacity: .8;*/
   }
 

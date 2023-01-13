@@ -1,72 +1,27 @@
-<header>
-  <carousel id="carousel-slider">
-    <slide class="slide">
+<html class="d-flex flex-column">
+  <header>
+    <div class="slide">
       <div class="example-card">
-         <video src="./assets/videoz/VID-20210621-WA0013.mp4"></video>
+       <video src="./assets/videoz/VID-20210621-WA0013.mp4"></video>
       </div>
-      <div class="carousel-caption d-none d-md-block">
-        <h3>CMJ Entertainment</h3>
-          <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-      </div>
-    </slide>
+    </div>
+  </header>
 
-    <slide class="slide">
-      <div class="example-card">
-        <video src="./assets/videoz/I built a chat app in 7 minutes with React & Firebase.mp4"></video>
-      </div>
-      <div class="carousel-caption d-none d-md-block">
-        <h3>CMJ Entertainment</h3>
-          <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-      </div>
-    </slide>
-
-    <slide class="slide">
-        <div class="example-card">
-          <video src="./assets/videoz/VID-20210621-WA0013.mp4"></video>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h3>CMJ Entertainment</h3>
-            <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-        </div>
-    </slide>
-
-    <slide class="slide">
-        <div class="example-card">
-          <video src="./assets/videoz/VID-20210628-WA0002.mp4"></video>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h3>CMJ Entertainment</h3>
-            <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-        </div>
-    </slide>
-
-    <slide class="slide">
-        <div class="example-card">
-          <video src="./assets/videoz/VID-20210623-WA0000.mp4"></video>
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h3>CMJ Entertainment</h3>
-            <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-        </div>
-    </slide>
-  </carousel>
-</header>
-
-<body class="text-white d-flex flex-wrap">
-
-  <mat-card class="example-card movie-card" *ngFor="let movie of movies">
-    <a routerLink="/play/{{movie.ID}}">
-      <img mat-card-image [src]="'../../../../../assets/films/movies/'+ movie.File" [alt]="movie.Title" width="200">
-      {{movie.Title}}
-      <mat-card-content>
-        <p>
-          {{movie.Details}}
-        </p>
-      </mat-card-content>
-      <mat-card-actions class="d-flex flex-wrap">
-        <button mat-button class="mat-button">{{movie.Producer}}</button>
-        <button mat-button class="mat-button">{{movie.Genre}}</button>
-      </mat-card-actions>
-    </a>
-  </mat-card>
-</body>
+  <body class="text-white d-flex flex-wrap">
+    <mat-card class="example-card movie-card" *ngFor="let movie of movies">
+      <a routerLink="/play/{{movie.ID}}">
+        <img mat-card-image [src]="'../../../../../assets/films/movies/'+ movie.File" [alt]="movie.Title">
+        {{movie.Title}}
+        <mat-card-content>
+          <p>
+            {{movie.Details}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="d-flex flex-wrap">
+          <button mat-button class="mat-button">{{movie.Producer}}</button>
+          <button mat-button class="mat-button">{{movie.Genre}}</button>
+        </mat-card-actions>
+      </a>
+    </mat-card>
+  </body>
+</html>

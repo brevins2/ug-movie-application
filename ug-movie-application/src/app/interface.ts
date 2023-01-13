@@ -4,7 +4,8 @@ export interface Movies {
   File: string,
   Genre: string,
   Producer: string,
-  Details: string
+  Details: string,
+  Category: string
 }
 
 export interface Producer {

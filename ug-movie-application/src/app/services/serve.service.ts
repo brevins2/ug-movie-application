@@ -82,8 +82,8 @@ export class ServeService {
     return this.http.delete('http://localhost:8080/Movies');
   }
 
-  findByTitle(title: string): Observable<{data: Movies[]}> {
-    return this.http.get<{data: Movies[]}>(`${baseurlMovies}?Title=${title}`);
+  findByTitle(title: string): Observable<any> {
+    return this.http.get<any>(`${baseurlMovies}?Title=${title}`);
   }
 
 
@@ -148,12 +148,8 @@ export class ServeService {
 
 
   // for images
-  upload(file: File): Observable<HttpEvent<{data: Images[]}>>{
-    const formData: FormData = new FormData();
-
-    formData.append('file', file);
-
-    const req = new HttpRequest('Post', 'http://localhost:8080/add/Image', formData, {
+  upload(data: {URL: string, Name: string}): Observable<HttpEvent<any>>{
+    const req = new HttpRequest('Post', 'http://localhost:8080/add/Image', data , {
       reportProgress: true,
       responseType: 'json'
     });

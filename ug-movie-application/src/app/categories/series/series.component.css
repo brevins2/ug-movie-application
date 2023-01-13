@@ -1,0 +1,95 @@
+div {
+  display: flex;
+  background-color: #ffffff00;
+}
+
+header {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 599px) {
+  /* For mobile phones: */
+
+  .movie-card {
+    width: 100px;
+    height: 200px;
+    margin: .65%;
+    font-size: .7rem;
+  }
+
+  .movie-card mat-card-actions {
+    font-size: .6rem;
+  }
+
+  mat-card:hover,
+  mat-card:hover mat-card-content p,
+  mat-card:hover mat-card-actions {
+    background-color: rgb(108 117 125 /40%);
+    color: white;
+    cursor: pointer;
+    transition-duration: 100ms;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+
+  mat-card {
+    width: 23%;
+    height: 10%;
+    margin: .5%;
+    padding: 2%;
+  }
+
+  mat-card:hover,
+  mat-card:hover mat-card-content p,
+  mat-card:hover mat-card-actions {
+    background-color: rgb(108 117 125 /40%);
+    color: white;
+    cursor: pointer;
+    transition-duration: 2s;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  
+  mat-card {
+    width: 200px;
+    height: 200px;
+    margin: 1%;
+  }
+
+  mat-card:hover,
+  mat-card:hover mat-card-content p,
+  mat-card:hover mat-card-actions {
+    background-color: rgb(108 117 125 /40%);
+    color: white;
+    cursor: pointer;
+  }
+
+  mat-card-content:hover {
+    transition-timing-function: ease-in;
+  }
+
+  mat-card-content,
+  mat-card-actions {
+    display: none;
+  }
+  mat-card-content:hover mat-card-actions,
+  mat-card-content:hover mat-card-content {
+    display: visible;
+  }
+
+  .mat-button {
+    width: 45%;
+  }
+
+  img {
+    width: 200px;
+  }
+}

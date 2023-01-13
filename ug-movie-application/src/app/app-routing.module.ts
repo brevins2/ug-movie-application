@@ -31,6 +31,10 @@ import { EditCustomerComponent } from './developer/edit-customer/edit-customer.c
 import { EditProducerComponent } from './developer/edit-producer/edit-producer.component';
 import { DeleteMessageComponent } from './developer/delete-message/delete-message.component';
 
+import { SeriesComponent } from './categories/series/series.component';
+import { MovieOnlyComponent } from './categories/movie-only/movie-only.component';
+import { PlaySerieComponent } from './categories/play-serie/play-serie.component';
+
 const routes: Routes = [
   { path:'', redirectTo: 'cinema/browse', pathMatch: 'full' },
   { path:'cinema/browse', component: BrowseComponent },
@@ -45,8 +49,10 @@ const routes: Routes = [
   { path:'subscribe', component: SubscriptionComponent },
 
   { path:'cinema/all', component: AllComponent, children: [
-    { path:'', redirectTo: 'movies', pathMatch: 'full' },
-    { path:'movies', component: MoviesComponent }
+    { path:'', redirectTo: 'all', pathMatch: 'full' },
+    { path:'all', component: MoviesComponent },
+    { path:'series', component: SeriesComponent },
+    { path:'movies', component: MovieOnlyComponent }
   ]},
 
   { path:'cinema/all/views', component: MainsComponent, children: [
@@ -70,7 +76,9 @@ const routes: Routes = [
   { path: 'delete/message/:id', component: DeleteMessageComponent },
 
   { path: 'play/:id', component: PlayMovieComponent },
-    { path: 'search/movies', component: FavouretsComponent }
+  { path: 'play/:id', component: PlaySerieComponent },
+  
+  { path: 'search/movies', component: FavouretsComponent }
 ];
 
 @NgModule({

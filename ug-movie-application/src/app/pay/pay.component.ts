@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ServeService } from 'src/app/Services/serve.service';
-import { Observable } from 'rxjs';
+import { Observable, finalize, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpResponse, HttpEventType, HttpClient } from '@angular/common/http';
 import { Images } from 'src/app/interface';
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-pay',
@@ -18,9 +19,13 @@ export class PayComponent implements OnInit {
   progress = 0;
   message = '';
   images: Images[] = [];
+  ref?: AngularFireStorageReference;
+  task?: AngularFireUploadTask;
+  downloadURL?: Observable<string>;
+  uploadProgress?: Observable<number>;
 
   fileInfos?: Observable<any>;
-  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) {}
+  constructor(private afStorage: AngularFireStorage, private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) {}
 
   selectFile(event: any): void {
     this.selectedFiles = event.target.files;
@@ -33,21 +38,20 @@ export class PayComponent implements OnInit {
   }
 
   upload(): void {
-    this.progress = 0;
-
     if(this.selectedFiles) {
-      const file: File | null = this.selectedFiles.item(0);
-
-      if(file) {
-        this.currentFile = file;
-
-        this.serve.upload(this.currentFile).subscribe({
+      const file = this.selectedFiles[0]
+      const path = file.type.indexOf('image') === -1 ? 'movies' : 'images';
+      const fileId = Math.random().toString(36).substring(2);
+      this.ref = this.afStorage.ref(`${path}/${fileId}`);
+      this.task = this.ref.put(file);
+      this.uploadProgress = this.task.percentageChanges() as Observable<number>;
+      this.task.snapshotChanges().pipe(
+        finalize(() => {
+            this.ref?.getDownloadURL().subscribe((url: string) => {
+                    this.serve.upload({ URL: url, Name: file.name }).subscribe({
           next: (event: any) => {
-            if(event.type === HttpEventType.UploadProgress) {
-              this.progress = Math.round(100 * event.loaded / event.total);
-            } else if(event instanceof HttpResponse) {
-              this.message = event.body.currentFile;
-              console.log(this.selectedFiles);
+            if(event instanceof HttpResponse) {
+              this.message = "file uplaod successful";
               this.serve.getFiles().subscribe(data => {
                 this.images = data.data;
               });
@@ -55,23 +59,20 @@ export class PayComponent implements OnInit {
           },
           error: (err: any) => {
             console.log(err);
-            this.progress = 0;
-
+            this.uploadProgress = of(0)
             if(err.error && err.error.message) {
               this.message = err.error.message;
             } else {
               this.message = 'Could not upload the file!';
             }
-
-            this.currentFile = undefined;
+            this.selectedFiles = undefined
           }
         });
-      }
+      });
 
-      this.selectedFiles;
-    }
-
-    console.log(this.selectedFiles);
+            })
+        ).subscribe()
+    } 
 
   }
 }

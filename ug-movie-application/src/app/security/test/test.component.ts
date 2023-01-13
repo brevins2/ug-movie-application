@@ -27,7 +27,7 @@ export class TestComponent implements OnInit {
       fd.append("file", file);
     
         // this.selectedFile = <File>events.target.files[0];
-        this.http.post('gs://lutimbefilmz22.appspot.com', fd).subscribe(res =>{
+        this.http.post('http://localhost:8080/add/Image', fd).subscribe(res =>{
         debugger
           console.log(res);
         });

@@ -19,23 +19,25 @@
       </div>
     </mat-card-content>
 
-    <!-- <div class="d-flex flex-wrap flex-div"> -->
-      <mat-card class="d-flex bg-dark card-movies" *ngFor="let movie of movies">
-        <div class="text-white d-flex flex-column" routerLink="/play/{{movie.ID}}" *ngIf="movie.Producer == producer.Name">
-          <video [src]="'../../../../../assets/films/'+ movie.File" width="210" height="140" controls></video>
+    <div class="d-flex">
+      <div class="movie-main" *ngFor="let movie of movies">
+        <mat-card class="d-flex bg-dark card-movies" *ngIf="movie.Producer == producer.Name">
+          <div class="text-white d-flex flex-column" routerLink="/play/{{movie.ID}}">
+            <video [src]="'../../../../../assets/films/'+ movie.File" width="210" height="140" controls></video>
 
-          <nav class="text-white">{{movie.Title}}</nav>
-          <mat-card-content class="text-left card-details">
-              <p class="text-white">
-                {{movie.Details}}
-              </p>
-          </mat-card-content>
-          <mat-card-actions class="card-definition">
-            <button mat-button>{{movie.Genre}}</button>
-            <button mat-button>{{movie.Producer}}</button>
-          </mat-card-actions>
-        </div>
-      </mat-card>
-    <!-- </div> -->
+            <nav class="text-white">{{movie.Title}}</nav>
+            <mat-card-content class="text-left card-details">
+                <p class="text-white">
+                  {{movie.Details}}
+                </p>
+            </mat-card-content>
+            <mat-card-actions class="card-definition">
+              <button mat-button>{{movie.Genre}}</button>
+              <button mat-button>{{movie.Producer}}</button>
+            </mat-card-actions>
+          </div>
+        </mat-card>
+      </div>
+    </div>
   </mat-card>
 </body>

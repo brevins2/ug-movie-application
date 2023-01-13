@@ -22,20 +22,26 @@
       </div>
 
       <div>
-        <a class="text-left link" routerLink="customers">
-          <i class="fa-solid fa-users"></i>&nbsp;&nbsp;<label>Customers</label>
+        <a class="text-left link" routerLink="movies">
+          <i class="fa-solid fa-video"></i>&nbsp;&nbsp;<label>Movies</label>
+        </a>
+      </div>
+
+      <div>
+        <a class="text-left link" routerLink="series">
+          <i class="fa-solid fa-video"></i>&nbsp;&nbsp;<label>Series</label>
         </a>
       </div>
     </div>
 
-    <div class="profile-link">
+    <!-- <div class="profile-link">
       <h3>Profile</h3> 
 
-      <!-- <div>
+      <div>
         <a class="text-left link" routerLink="views/favourets">
           <i class="fa-solid fa-heart"></i>&nbsp;&nbsp;<label>Faviouret</label>
         </a>
-      </div> -->
+      </div>
 
       <div>
         <a class="text-left link" routerLink="views/downloads">
@@ -48,7 +54,7 @@
           <i class="fa-solid fa-history"></i>&nbsp;&nbsp;<label>Recent</label>
         </a>
       </div>
-    </div>
+    </div> -->
     <!-- <hr class="text-white"> -->
       
     <div class="general-link"> 
@@ -80,7 +86,7 @@
 
           <div>
             <small>
-              <a class="active">
+              <a class="active" routerLink="all">
                 All
               </a>
             </small>
@@ -93,7 +99,7 @@
 
             <small>
               <a routerLink="series">
-                Tv Shows
+                Series
               </a>
             </small>
           </div>
@@ -107,21 +113,28 @@
     <mat-drawer-container class="bg-black d-flex">
 
       <div class="main-div float-left">
-        <div class="router-outlet-div text-white">
+        <!-- <div class="router-outlet-div text-white"> -->
           <router-outlet></router-outlet>
-        </div>
+        <!-- </div> -->
       </div>
 
       <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" position="end" mode="over">
         <nav class="vertical-nav nav nav-link d-flex flex-column float-left bg-dark text-left">
           <div class="input-group mb-4">
-            <input type="search" class="form-control" placeholder="search producers" aria-label="search">
+            <input type="search" class="form-control" placeholder="search producers" [(ngModel)]="Title" (onchange)="search()" (click)="closeDangerAlert()" data-dismiss="alerts">
           </div>
 
           <div class="d-flex flex-column chips">
             <label class="text-white">Producers</label>
-            <mat-chip-list aria-label="Dog selection">
+            <mat-chip-list aria-label="Dog selection" *ngIf="alerts" class="alert-dismissible fade show">
               <mat-chip *ngFor="let producer of producers" routerLink="views/producers/{{producer.ID}}">
+                <img matChipAvatar [src]="'../../../../../assets/films/'+ producer.File" alt="Photo of a Shiba Inu"/>
+                {{producer.Name}}
+              </mat-chip>
+            </mat-chip-list>
+
+            <mat-chip-list *ngFor="let producer of producers">
+              <mat-chip *ngIf="producer.Name == Title" routerLink="views/producers/{{producer.ID}}">
                 <img matChipAvatar [src]="'../../../../../assets/films/'+ producer.File" alt="Photo of a Shiba Inu"/>
                 {{producer.Name}}
               </mat-chip>

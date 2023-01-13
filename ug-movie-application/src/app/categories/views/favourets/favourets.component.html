@@ -1,19 +1,30 @@
 <body class="container-fluid d-flex flex-column">
 	<div class="d-flex">
-		<input type="search" class="form-control" placeholder="search for recent movies, series" (onChange)="search()" [(ngModel)]="searched">
-		<button (click)="cancel()" class="btn btn-primary">cancel</button>
+		<input type="search" class="form-control " placeholder="search for recent movies, series" [(ngModel)]="Title" (onchange)="search()" (click)="closeDangerAlert()" data-dismiss="alerts">
+		<button type="button" (click)="cancel()" class="btn btn-primary">cancel</button>
 	</div>
 
-	<nav class="d-flex justify-content-between text-center">
-		<div class="justify-content-start d-flex">
-			<img src="../../../assets/style-images/Tech People.jpg" alt="movie image" width="140">
-			<div class="description text-white text-left">
-				well done
+	<div *ngFor="let movie of movies" class="alert-dismissible fade show">
+		<nav class="d-flex justify-content-between" *ngIf="alerts">
+			<div class="justify-content-start d-flex">
+				<img [src]="'../../../../../assets/films/'+ movie.File" [alt]="movie.Title" width="140">
+				<div class="description text-white text-left">
+					{{movie.Details}} <br>
+					{{movie.Producer}}
+				</div>
 			</div>
-		</div>
-		
-		<div class="justify-content-end">
-			<i class="fa-solid fa-times text-center text-white"></i>
-		</div>
-	</nav>
+		</nav>
+	</div>
+
+	<div *ngFor="let movie of movies">
+		<nav class="d-flex justify-content-between" *ngIf="movie.Title == Title">
+			<div class="justify-content-start d-flex">
+				<img [src]="'../../../../../assets/films/'+ movie.File" [alt]="movie.Title" width="140">
+				<div class="description text-white text-left">
+					{{movie.Details}} <br>
+					{{movie.Producer}}
+				</div>
+			</div>
+		</nav>
+	</div>
 </body>

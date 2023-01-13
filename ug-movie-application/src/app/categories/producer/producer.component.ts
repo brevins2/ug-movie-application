@@ -19,7 +19,6 @@ export class ProducerComponent implements OnInit {
   ngOnInit(): void {
     this.serve.getProducerWithID(this.router.snapshot.params['id']).subscribe(data =>{
       this.producers = data.data;
-      // this.producerName = this.producers.Name;
       console.log(this.producerName);
     });
 

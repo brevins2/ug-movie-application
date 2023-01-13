@@ -31,6 +31,10 @@ body {
   padding-top: 0px;
 }
 
+.movie-main {
+  margin: 1%;
+}
+
 .card-movies {
   width: 210px;
   height: 260px;

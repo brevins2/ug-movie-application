@@ -3,15 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
-
-export interface Movies {
-  ID: number,
-  Title: string,
-  File: string,
-  Genre: string,
-  Producer: string,
-  Details: string
-}
+import { Movies } from 'src/app/interface';
 
 @Component({
   selector: 'app-play-movie',

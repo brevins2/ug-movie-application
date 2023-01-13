@@ -3,15 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ServeService } from 'src/app/Services/serve.service';
-
-export interface Movies {
-  ID: number,
-  Title: string,
-  File: string,
-  Genre: string,
-  Producer: string,
-  Details: string
-}
+import { Movies } from 'src/app/interface';
 
 @Component({
   selector: 'app-edit-movie',
@@ -25,10 +17,11 @@ export class EditMovieComponent implements OnInit {
     File: new FormControl(''),
     Genre: new FormControl(''),
     Producer: new FormControl(''),
-    Details: new FormControl('')
+    Details: new FormControl(''),
+    Category: new FormControl('')
   });
   movies: Movies[] = [];
-  displayedColumns: string[] = ['Title', 'File', 'Genre', 'Producer', 'Details', 'Delete'];
+  displayedColumns: string[] = ['Title', 'File', 'Genre', 'Producer', 'Details', 'Category', 'Delete'];
     dataSource = this.movies;
 
   constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) { }

@@ -1,3 +1,29 @@
-<h2>Upload images</h2>
 
-<input type="file" placeholder="choose file" class="form-control" (onchange)="fileChanged($event)">
+<div class="row">
+	<div class="col-md-4">
+		<h2>Upload images</h2>
+
+		<input type="file" placeholder="choose file" class="form-control" id="addPhotosInput" accept="image/png, image/jpeg/ image/gif" (onchange)="fileChanged($event)">
+		<button class="btn btn-secondary" id="addPhotosBtn">Add Photos<i class="fa fa-camera"></i></button>
+	</div>
+	<div class="col-md-12">
+		<div class="photos-list">
+			<ul>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#addPhotosBtn').click(function () {
+		$(this).parents().find('#addPhotosInput').click();
+	});
+
+	document.getElementById('addPhotosInput').onchange = e => {
+		const file = e.target.files[0];
+		const url = URL.createObjectURL(file);
+		const li = `<li> <img src="${url}"> <span><i class="fa fa-trash"></i></span></li>`
+		$('.photos-list ul').append(li);
+		alert("well done");
+	}
+</script>

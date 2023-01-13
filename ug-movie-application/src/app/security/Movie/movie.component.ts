@@ -17,7 +17,8 @@ export class MovieComponent implements OnInit {
 		File: new FormControl(''),
 		Genre: new FormControl(''),
 		Producer: new FormControl(''),
-		Details: new FormControl('')
+		Details: new FormControl(''),
+    Category: new FormControl('')
 	});
   genres: Genre[] = [];
   producers: Producer[] = [];
@@ -45,30 +46,6 @@ export class MovieComponent implements OnInit {
 
   get f(){
     return this.RegisterForm.controls;
-  }
-
-  onUpload(){
-    // const formData = new FormData();
-    // formData.append('image', this.RegisterForm.get('fileSource').value);
-   
-    // this.http.post('http://localhost:3000/Phones', formData)
-    //   .subscribe(res => {
-    //     console.log(res);
-    //     alert('Uploaded Successfully.');
-    //   })
-    if(this.selectedFile != null){
-      const fd = new FormData();
-      fd.append('image', this.selectedFile, this.selectedFile.name);
-      this.serve.upload(this.selectedFile).subscribe(event => {
-        if(event.type === HttpEventType.UploadProgress){
-          // console.log('Upload Progress: '+ Math.round(event.loaded / event.total * 100));
-          console.log('done');
-        }
-        else if(event.type === HttpEventType.Response){
-          console.log(event);
-        }
-    });
-  }
 }
 
   save() {

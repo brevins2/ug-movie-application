@@ -2,15 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ServeService } from 'src/app/Services/serve.service';
-
-export interface Movies {
-  ID: number,
-  Title: string,
-  File: string,
-  Genre: string,
-  Producer: string,
-  Details: string
-}
+import { Movies } from 'src/app/interface';
 
 @Component({
   selector: 'app-movies',

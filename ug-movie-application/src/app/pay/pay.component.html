@@ -12,10 +12,8 @@
 	</div>
 </div>
 
-<div *ngIf="currentFile" class="progress my-3">
-	<div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: progress + '%'}">
-		{{ progress }}%
-	</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-info" role="progressbar" [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
 <div class="card mt-3">

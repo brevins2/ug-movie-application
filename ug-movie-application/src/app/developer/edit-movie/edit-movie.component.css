@@ -52,3 +52,7 @@ table {
 ng-container {
   padding: 2px;
 }
+
+.btn-outline-danger {
+  width: 50px;
+}

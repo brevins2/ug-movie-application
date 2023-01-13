@@ -1,1 +1,22 @@
-<p>play-serie works!</p>
+<html class="bg-black d-flex flex-column text-center">
+	<button class="bg-black times float-right" (click)="back()">
+		<i class="fa-solid fa-times text-white"></i>
+	</button>
+
+	<body class="bg-black text-white text-center" *ngFor="let movie of movies">
+		<mat-card class="example-card bg-black text-white d-flex flex-column">
+			<video [src]="'../../../../../assets/films/'+ movie.File" width="100%" controls></video>
+
+			<nav class="text-left">{{movie.Title}}</nav>
+			<mat-card-content class="text-left">
+			    <p>
+			      {{movie.Details}}
+			    </p>
+			    <mat-card-actions>
+				    <button mat-button>{{movie.Genre}}</button>
+				    <button mat-button>{{movie.Producer}}</button>
+				</mat-card-actions>
+			</mat-card-content>
+		</mat-card>
+	</body>
+</html>

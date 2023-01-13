@@ -61,6 +61,8 @@ import { DeleteMessageComponent } from './developer/delete-message/delete-messag
 import { SeriesComponent } from './categories/series/series.component';
 import { MovieOnlyComponent } from './categories/movie-only/movie-only.component';
 import { PlaySerieComponent } from './categories/play-serie/play-serie.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
@@ -96,6 +98,17 @@ import { PlaySerieComponent } from './categories/play-serie/play-serie.component
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCmuc2M1cwtQD23cfMjTfPjheTEA0g-ljY",
+      authDomain: "lutimbefilmz-6878c.firebaseapp.com",
+      databaseURL: "https://lutimbefilmz-6878c-default-rtdb.firebaseio.com",
+      projectId: "lutimbefilmz-6878c",
+      storageBucket: "lutimbefilmz-6878c.appspot.com",
+      messagingSenderId: "387520150986",
+      appId: "1:387520150986:web:6a67c15c7e16662790a333"
+
+    }),
+    AngularFireStorageModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,

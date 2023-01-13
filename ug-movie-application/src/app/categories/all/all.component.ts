@@ -20,13 +20,26 @@ export class AllComponent implements OnInit {
 
   showFiller = false;
   producers: Producers[] = [];
+  Title = "";
+  alerts = true;
 
   constructor(private route: Router, private router: ActivatedRoute, private service: ServeService) { }
 
   ngOnInit(): void {
     this.service.getAllProducers().subscribe(data =>{
-        this.producers = data.data;
-      });
+      this.producers = data.data;
+    });
+  }
+
+  closeDangerAlert() {
+    this.alerts = false;
+  }
+
+  search() {
+    this.service.findByTitle(this.Title).subscribe(data => {
+      this.producers = data.data;
+      // this.closeDangerAlert();
+    });
   }
 
   logout() {
