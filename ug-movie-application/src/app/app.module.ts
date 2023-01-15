@@ -18,7 +18,7 @@ import { ProducerComponent } from './categories/producer/producer.component';
 import { AllComponent } from './categories/all/all.component';
 import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
 
-import { PayComponent } from './pay/pay.component';
+import { AddLibraryComponent } from './Add-library/Add-library.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -46,7 +46,7 @@ import { ProducersComponent } from './developer/producers/producers.component';
 import { CustomersComponent } from './developer/customers/customers.component';
 import { MoviesbackComponent } from './developer/moviesback/moviesback.component';
 
-import { TestComponent } from './security/test/test.component';
+import { HomeComponent } from './developer/home/home.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { DownloadsComponent } from './categories/views/downloads/downloads.component';
@@ -61,8 +61,10 @@ import { DeleteMessageComponent } from './developer/delete-message/delete-messag
 import { SeriesComponent } from './categories/series/series.component';
 import { MovieOnlyComponent } from './categories/movie-only/movie-only.component';
 import { PlaySerieComponent } from './categories/play-serie/play-serie.component';
+
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -75,13 +77,13 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     RegisterproducerComponent,
     MoviesComponent,
     AllComponent,
-    PayComponent,
+    AddLibraryComponent,
     SubscriptionComponent,
     MainComponent,
     ProducersComponent,
     CustomersComponent,
     MoviesbackComponent,
-    TestComponent,
+    HomeComponent,
     PlayMovieComponent,
     DownloadsComponent,
     RecentComponent,
@@ -109,6 +111,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
     }),
     AngularFireStorageModule,
+    AngularFireAuthModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,

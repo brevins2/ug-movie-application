@@ -47,7 +47,7 @@
 
             <mat-form-field appearance="outline">
               <mat-label>Message/Question</mat-label>
-              <textarea matInput class="form-control" formControlName="Message" type="text-area" cols="80" rows="6" required></textarea>
+              <textarea matInput formControlName="Message" type="text-area" cols="80" rows="6" required></textarea>
             </mat-form-field>
           </div>
         
@@ -61,18 +61,62 @@
       <mat-accordion>
         <h3 class="text-white">Frequently asked questions(FAQ)</h3>
 
-        <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let message of messages">
+        <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title class="text-white">
-              {{message.Email}}
+              Customer service help line
             </mat-panel-title>
             <mat-panel-description>
               Currently I am {{panelOpenState ? 'open' : 'closed'}}
             </mat-panel-description>
           </mat-expansion-panel-header>
           <p class="text-white">
-            {{message.Name}}<br/>
-            {{message.Message}}
+            Our first page/ home page provides a better way of how our customers can ask questions or pass any kind of information to our customer service help line.
+            If this seems hard, our customers can still use our email accounts to talk to the customer service help line
+          </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-white">
+              How to sign a movie to this site
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p class="text-white">
+            Movies on this application are accessed directly from the producers. Our movies are all legally accesed and in case a producer wants to sell a movie through us, then they can contact us using our social media handels.
+          </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-white">
+              Payment Method
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p class="text-white">
+            LutimbeFilmz provides a safe and reliable method of how our users subscribe.
+            Once a user hits the subscribe button, they are able to pay for the services using 
+            methods like paypal or any credit card of their choice.
+          </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="bg-dark" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="text-white">
+              Length of service availability
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p class="text-white">
+            Our services are monthly for all viewers. Once a viewer subscribes to LutimbeFilmz, the access to our movies and series are monthly and when the subscription is over, then the service is cut off till renewal is done.
           </p>
         </mat-expansion-panel>
       </mat-accordion>

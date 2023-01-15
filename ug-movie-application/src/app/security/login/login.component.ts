@@ -53,6 +53,8 @@ export class LoginComponent implements OnInit {
       const user = this.customer.findIndex((a: any)=>{
         return a.Email === this.loginForm.value.Email &&
           a.Password === this.loginForm.value.Password;
+
+        return a.Email +' and '+ a.Password;
       });
 
       if ('admin@gmail.com' === this.loginForm.value.Email &&

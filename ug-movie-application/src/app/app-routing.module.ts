@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './security/login/login.component';
 import { MovieComponent } from './security/Movie/movie.component';
 import { RegisterproducerComponent } from './security/registerproducer/registerproducer.component';
-import { TestComponent } from './security/test/test.component';
+import { HomeComponent } from './developer/home/home.component';
 import { SubscriptionComponent } from './security/subscription/subscription.component';
 
 import { BrowseComponent } from './browse/browse.component';
-import { PayComponent } from './pay/pay.component';
+import { AddLibraryComponent } from './Add-library/Add-library.component';
 
 import { AllComponent } from './categories/all/all.component';
 import { MoviesComponent } from './categories/movies/movies.component';
@@ -42,10 +42,7 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'register/movie', component: MovieComponent },
   { path:'register/producer', component: RegisterproducerComponent },
-  
-  { path: 'test', component: TestComponent },
 
-  { path:'pay', component: PayComponent },
   { path:'subscribe', component: SubscriptionComponent },
 
   { path:'cinema/all', component: AllComponent, children: [
@@ -63,11 +60,13 @@ const routes: Routes = [
   ]},
 
   { path: 'developer/edits', component: MainComponent, children: [
-    { path: '', redirectTo: 'moviesedits', pathMatch: 'full' },
+    { path: '', redirectTo: 'admin', pathMatch: 'full' },
     { path: 'moviesedits', component: MoviesbackComponent },
     { path: 'customers', component: CustomersComponent },
     { path: 'producers', component: ProducersComponent },
-    { path: 'messages', component: MessageComponent }
+    { path: 'messages', component: MessageComponent },
+    { path: 'add-library', component: AddLibraryComponent },
+    { path: 'admin', component: HomeComponent }
   ]},
 
   { path: 'edit/movie/:id', component: EditMovieComponent },

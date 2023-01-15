@@ -8,15 +8,18 @@
     </div>
 
     <div class="form-group">
-      <span>File</span>
-        <input type="file" class="form-control" formControlName="File" (change)="onFileUpload($event)" placeholder="enter movie" required>
+      <span>Genre</span>
+        <select class="form-control" formControlName="Genre" required>
+          <option></option>
+          <option *ngFor="let genre of genres">{{genre.Genre}}</option>
+        </select>
     </div>
 
     <div class="form-group">
-      <span>Genre</span>
-      <select class="form-control" formControlName="Genre" required>
+      <span>Video</span>
+      <select class="form-control" formControlName="File" required>
         <option></option>
-        <option *ngFor="let genre of genres">{{genre.Genre}}</option>
+        <option *ngFor="let movie of images">{{movie.Name}}</option>
       </select>
     </div>
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User, Message, Movies, Producer, Genre, Images } from 'src/app/interface';
+import { AngularFireAuth } from "@angular/fire/compat/auth";
 
   const baseurlMovies = "http://localhost:8080/Movies";
   const baseurlProducer = "http://localhost:8080/Producers";
@@ -15,8 +16,34 @@ import { User, Message, Movies, Producer, Genre, Images } from 'src/app/interfac
 })
 
 export class ServeService {
+ // userData: Observable<firebase>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private angularFireAuth: AngularFireAuth) {
+    // this.userData = angularFireAuth.authState;
+  }
+
+  /* Sign up */
+ SignUp(Email: string, Password: string) {
+   this.angularFireAuth.createUserWithEmailAndPassword(Email, Password).then((res: any) => {
+   console.log('You are Successfully signed up!', res);
+   }).catch((error: any) => {
+   console.log('Something is wrong:', error.message);
+   });
+ }
+ 
+ /* Sign in */
+ SignIn(Email: string, Password: string) {
+   this.angularFireAuth.signInWithEmailAndPassword(Email, Password).then((res: any) => {
+    console.log("You're in!");
+   }).catch((err: any) => {
+   console.log('Something went wrong:',err.message);
+   });
+ }
+ 
+ /* Sign out */
+ SignOut() {
+   this.angularFireAuth.signOut();
+ }
 
   // for genre
   getAllGenres(): Observable<{data: Genre[]}> {
@@ -159,6 +186,10 @@ export class ServeService {
 
   getFiles(): Observable<{data: Images[]}>{
     return this.http.get<{data: Images[]}>('http://localhost:8080/files');
+  }
+
+  findByFileName(name: any): Observable<{data: Images[]}> {
+    return this.http.get<{data: Images[]}>(`${'http://localhost:8080/files'}?Name=${name}`);
   }
 }
 

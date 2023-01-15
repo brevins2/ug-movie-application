@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { ServeService } from 'src/app/Services/serve.service';
-import { Genre, Producer } from 'src/app/interface';
+import { Genre, Producer, Images } from 'src/app/interface';
 
 @Component({
   selector: 'app-movie',
@@ -22,6 +22,7 @@ export class MovieComponent implements OnInit {
 	});
   genres: Genre[] = [];
   producers: Producer[] = [];
+  images: Images[] = [];
   selectedFile!: File; 
 
   constructor(private http: HttpClient, private serve: ServeService) {
@@ -35,18 +36,11 @@ export class MovieComponent implements OnInit {
     this.serve.getAllProducers().subscribe(data => {
       this.producers = data.data;
     });
-  }
 
-  onFileUpload(event: any){
-    this.selectedFile = <File>event.target.files[0];
-    this.RegisterForm.patchValue({
-      // fileSource : File
+    this.serve.getFiles().subscribe(data => {
+      this.images = data.data;
     });
   }
-
-  get f(){
-    return this.RegisterForm.controls;
-}
 
   save() {
     this.http.post<any>('http://localhost:8080/add/Movie', this.RegisterForm.value).subscribe(res=>{

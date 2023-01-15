@@ -268,7 +268,7 @@ app.post('/add/Movie', (req, res) => {
     let category = req.body.Category;
 
     let qr = `INSERT INTO movies(Title, File, Genre, Producer, Details, Category)
-                VALUES('${title}', '${file}','${genre}','${producer}', '${details}'), '${category}'`;
+                VALUES('${title}', '${file}','${genre}','${producer}', '${details}', '${category}')`;
 
     db.query(qr, (err, result) => {
 

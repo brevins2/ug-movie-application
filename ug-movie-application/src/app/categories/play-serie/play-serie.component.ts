@@ -26,7 +26,7 @@ export class PlaySerieComponent implements OnInit {
   }
 
   back() {
-    this.route.navigate(['/cinema/all/seris']);
+    this.route.navigate(['/cinema/all/series']);
   }
 
 }

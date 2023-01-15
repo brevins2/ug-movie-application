@@ -1,52 +1,32 @@
-<html class="d-flex flex-column">
-	<mat-toolbar class="d-flex fixed-top justify-content-between position-sticky bg-dark">
-	   	<nav class="home-link">
-			<a href="#">
-				<h1>
-		        	<code class="text-danger">Lutimbe</code><code class="bg-white text-black">Filmz</code>
-		    	</h1>
-		    </a>
-		</nav>
+<body class="d-flex">
+	<mat-card class="d-flex flex-column side-nav">
+		<a href="#" class="home-link">
+	      <h1>
+	        <code class="text-danger">Lutimbe</code><code class="bg-white text-black">Filmz</code>
+	      </h1>
+    	</a>
 
-		<div class="float-right example-sidenav-content">
-		    <nav class="nav nav-link d-flex float-left">
-				<div class="btn btn-outline-primary">
-					<a class="text-left active link" active routerLink="moviesedits">
-						<i class="fa-solid fa-camera"></i>&nbsp;&nbsp;
-						Movies
-					</a>
-				</div>
-				<div class="btn btn-outline-primary">
-					<a class="text-left link" routerLink="producers">
-						<i class="fa-solid fa-user"></i>&nbsp;&nbsp;
-						Producers
-					</a>
-				</div>
-				<div class="btn btn-outline-primary">
-					<a class="text-left link" routerLink="customers">
-						<i class="fa-solid fa-users"></i>&nbsp;&nbsp;
-						Customers
-					</a>
-				</div>
-				<div class="btn btn-outline-primary">
-					<a class="text-left link" routerLink="messages">
-						<i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;
-						Messages
-					</a>
-				</div>
-				
-				<button class="btn btn-danger text-center" (click)="logout()">
-					logout
-				</button>
-			</nav>
-  		</div>
-	</mat-toolbar>
-
-	<body class="d-flex flex-column">
-		<mat-drawer-container class="example-container" autosize>
-		  <div class="data">
-		  	<router-outlet></router-outlet>
-		  </div>
-		</mat-drawer-container>
-	</body>
-</html>
+    	<div class="vertical-buttons">
+    		<button class="btn" routerLink="admin"><i class="fa fa-home"></i>&nbsp;&nbsp;Dashboard</button>
+    		<button class="btn" routerLink="moviesedits"><i class="fa fa-video"></i>&nbsp;&nbsp;Movies</button>
+    		<button class="btn" routerLink="producers"><i class="fa fa-user"></i>&nbsp;&nbsp;Producer</button>
+    		<button class="btn" routerLink="customers"><i class="fa fa-users"></i>&nbsp;&nbsp;Customer</button>
+    		<button class="btn" routerLink="add-library"><i class="fa fa-store"></i>&nbsp;&nbsp;Add library</button>
+    		<button class="btn" routerLink="messages"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Messages</button>
+    	</div>
+	</mat-card>
+	<div class="d-flex flex-column bg-white main-body">
+		<mat-toolbar class="d-flex fixed-top position-sticky bg-white justify-content-between navigation">
+			<div class="justify-content-start">
+				<h2>Administrator</h2>
+			</div>
+			<div class="justify-content-end">
+				<button class="btn btn-outline-primary"><i class="fa fa-pen"></i>Edit</button>
+				<button class="btn btn-primary"><i class="fa fa-add"></i>Create</button>
+			</div>
+		</mat-toolbar>
+		<div class="d-flex body">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</body>
