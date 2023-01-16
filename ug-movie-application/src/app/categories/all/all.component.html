@@ -23,18 +23,18 @@
 
       <div>
         <a class="text-left link" routerLink="movies">
-          <i class="fa-solid fa-video"></i>&nbsp;&nbsp;<label>Movies</label>
+          <!-- <i class="fa-solid fa-video"></i>&nbsp;&nbsp;<label>Movies</label> -->
         </a>
       </div>
 
       <div>
         <a class="text-left link" routerLink="series">
-          <i class="fa-solid fa-video"></i>&nbsp;&nbsp;<label>Series</label>
+          <!-- <i class="fa-solid fa-video"></i>&nbsp;&nbsp;<label>Series</label> -->
         </a>
       </div>
     </div>
 
-    <!-- <div class="profile-link">
+    <div class="profile-link">
       <h3>Profile</h3> 
 
       <div>
@@ -54,17 +54,11 @@
           <i class="fa-solid fa-history"></i>&nbsp;&nbsp;<label>Recent</label>
         </a>
       </div>
-    </div> -->
+    </div>
     <!-- <hr class="text-white"> -->
       
     <div class="general-link"> 
-      <h3 class="text-white">Account</h3> 
-
-      <!-- <div>
-        <a class="text-left link" routerLink="customers">
-          <i class="fa-solid fa-cog"></i>&nbsp;&nbsp;<label>Settings</label>
-        </a>
-      </div> -->
+      <h3 class="text-white">Account</h3>
 
       <img src="../../../../../assets/icon/download.png" width="30" class="power" mat-button [matMenuTriggerFor]="menu3">
       <mat-menu #menu3="matMenu" class="bg-black text-white">
@@ -113,9 +107,7 @@
     <mat-drawer-container class="bg-black d-flex">
 
       <div class="main-div float-left">
-        <!-- <div class="router-outlet-div text-white"> -->
-          <router-outlet></router-outlet>
-        <!-- </div> -->
+        <router-outlet></router-outlet>
       </div>
 
       <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" position="end" mode="over">
@@ -126,12 +118,14 @@
 
           <div class="d-flex flex-column chips">
             <label class="text-white">Producers</label>
-            <mat-chip-list aria-label="Dog selection" *ngIf="alerts" class="alert-dismissible fade show">
-              <mat-chip *ngFor="let producer of producers" routerLink="views/producers/{{producer.ID}}">
-                <img matChipAvatar [src]="'../../../../../assets/films/'+ producer.File" alt="Photo of a Shiba Inu"/>
-                {{producer.Name}}
-              </mat-chip>
-            </mat-chip-list>
+            <div class="d-flex flex-wrap">
+              <mat-chip-list *ngFor="let producer of producers" aria-label="Dog selection" class="alert-dismissible fade show">
+                <mat-chip routerLink="views/producers/{{producer.ID}}" *ngIf="alerts">
+                  <img matChipAvatar [src]="'../../../../../assets/films/'+ producer.File" [alt]="producer.Name"/>
+                  {{producer.Name}}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
 
             <mat-chip-list *ngFor="let producer of producers">
               <mat-chip *ngIf="producer.Name == Title" routerLink="views/producers/{{producer.ID}}">

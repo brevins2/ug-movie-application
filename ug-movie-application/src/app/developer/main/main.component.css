@@ -1,6 +1,6 @@
 body {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
 a {
@@ -12,7 +12,7 @@ a {
 }
 
 .side-nav {
-	width: 14%;
+	width: 16%;
 }
 
 .side-nav a {
@@ -25,7 +25,7 @@ a {
 }
 
 .main-body {
-	width: 84%;
+	width: 100%;
 }
 
 .navigation {
@@ -55,5 +55,5 @@ a {
 	width: 100%;
 	height: auto;
 	padding: 1%;
-	background-color: #0093ff0a;
+	background-color: #0093ff2b;
 }

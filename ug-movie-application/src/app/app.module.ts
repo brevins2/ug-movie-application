@@ -18,7 +18,7 @@ import { ProducerComponent } from './categories/producer/producer.component';
 import { AllComponent } from './categories/all/all.component';
 import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
 
-import { AddLibraryComponent } from './Add-library/Add-library.component';
+import { AddLibraryComponent } from './developer/Add-library/Add-library.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';

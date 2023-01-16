@@ -10,15 +10,13 @@ export class MainComponent implements OnInit {
 
   showFiller = false;
 
-  constructor(
-  	private router: Router
-  ) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   logout() {
-  	this.router.navigate(['login']);
+  	this.router.navigate(['/login']);
   }
 
 }

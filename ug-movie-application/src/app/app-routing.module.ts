@@ -8,7 +8,7 @@ import { HomeComponent } from './developer/home/home.component';
 import { SubscriptionComponent } from './security/subscription/subscription.component';
 
 import { BrowseComponent } from './browse/browse.component';
-import { AddLibraryComponent } from './Add-library/Add-library.component';
+import { AddLibraryComponent } from './developer/Add-library/Add-library.component';
 
 import { AllComponent } from './categories/all/all.component';
 import { MoviesComponent } from './categories/movies/movies.component';

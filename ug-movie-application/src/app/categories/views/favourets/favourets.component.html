@@ -4,7 +4,7 @@
 		<button type="button" (click)="cancel()" class="btn btn-primary">cancel</button>
 	</div>
 
-	<div *ngFor="let movie of movies" class="alert-dismissible fade show">
+	<div *ngFor="let movie of movies" class="alert-dismissible fade show" routerLink="/play/{{movie.ID}}">
 		<nav class="d-flex justify-content-between" *ngIf="alerts">
 			<div class="justify-content-start d-flex">
 				<img [src]="'../../../../../assets/films/'+ movie.File" [alt]="movie.Title" width="140">
@@ -16,7 +16,7 @@
 		</nav>
 	</div>
 
-	<div *ngFor="let movie of movies">
+	<div *ngFor="let movie of movies" routerLink="/play/{{movie.ID}}">
 		<nav class="d-flex justify-content-between" *ngIf="movie.Title == Title">
 			<div class="justify-content-start d-flex">
 				<img [src]="'../../../../../assets/films/'+ movie.File" [alt]="movie.Title" width="140">

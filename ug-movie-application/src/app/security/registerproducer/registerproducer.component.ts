@@ -30,7 +30,6 @@ export class RegisterproducerComponent implements OnInit {
 
   register (){
   	this.http.post<any>('http://localhost:8080/add/Producer', this.RegisterForm.value).subscribe(res => {
-      // console.log(res);
       this.RegisterForm.reset();
     });
   }

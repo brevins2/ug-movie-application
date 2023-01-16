@@ -16,8 +16,7 @@ export class SubscriptionComponent implements OnInit {
     Password: ['', Validators.required],
     CPassword: ['', Validators.required],
     Name: ['', Validators.required],
-    Username: ['', Validators.required],
-    File: ['', Validators.required],
+    Username: ['', Validators.required]
   });
 
   secondFormGroup = this.formBuilder.group({
@@ -31,7 +30,7 @@ export class SubscriptionComponent implements OnInit {
     render ({
       id: "#myPaypalButtons",
       currency: "USH",
-      value: "100.00",
+      value: "30000.00",
       onApprove: (details) => {
         alert("Transaction successful");
       }
@@ -42,7 +41,7 @@ export class SubscriptionComponent implements OnInit {
   }
 
   subscribe(){
-     this.http.post<any>('http://localhost:8080/add/Account', this.firstFormGroup.value).subscribe(res=>{
+    this.http.post<any>('http://localhost:8080/add/Account', this.firstFormGroup.value).subscribe(res=>{
       this.firstFormGroup.reset();
     });
   }
