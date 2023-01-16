@@ -34,6 +34,7 @@ import { DeleteMessageComponent } from './developer/delete-message/delete-messag
 import { SeriesComponent } from './categories/series/series.component';
 import { MovieOnlyComponent } from './categories/movie-only/movie-only.component';
 import { PlaySerieComponent } from './categories/play-serie/play-serie.component';
+import { AuthGuard } from 'src/app/services/auth.guard';
 
 const routes: Routes = [
   { path:'', redirectTo: 'cinema/browse', pathMatch: 'full' },
@@ -45,7 +46,7 @@ const routes: Routes = [
 
   { path:'subscribe', component: SubscriptionComponent },
 
-  { path:'cinema/all', component: AllComponent, children: [
+  { path:'cinema/all', component: AllComponent, canActivate: [AuthGuard], children: [
     { path:'', redirectTo: 'all', pathMatch: 'full' },
     { path:'all', component: MoviesComponent },
     { path:'series', component: SeriesComponent },

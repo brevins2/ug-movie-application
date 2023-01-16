@@ -1,17 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-
-export interface Customers{
-  ID: number,
-  Name: string,
-  Username: string,
-  Email: string,
-  File: string,
-  Password: string,
-  CPassword: string
-}
+import { AuthService } from 'src/app/services/auth.service';
+import { Login, User } from 'src/app/interface';
 
 @Component({
   selector: 'app-login',
@@ -20,19 +12,43 @@ export interface Customers{
 })
 export class LoginComponent implements OnInit {
 
+  authForm!: FormGroup;
+  isSubmitted = false;
   hide = true;
   alert = false;
   alerts = false;
-  customer: Customers[] = [];
+  customer: User[] = [];
+  // authForm =  this.formBuilder.group({
+  //   Email: ['', Validators.required],
+  //   Password: ['', Validators.required]
+  // });
+
   loginForm =  this.formBuilder.group({
     Email: ['', Validators.required],
     Password: ['', Validators.required]
   });
 
-  constructor(private route: Router, private router: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private authService: AuthService, private route: Router, private router: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.authForm = this.formBuilder.group({
+      Email: ['', Validators.required],
+      Password: ['', Validators.required]
+    });
     this.loginForm;
+  }
+
+  get formControls() {
+    return this.authForm.controls;
+  }
+
+  signIn() {
+    this.isSubmitted = true;
+    if(this.authForm.invalid) {
+      return;
+    }
+    this.authService.signIn(this.authForm.value);
+    this.route.navigateByUrl('/cinema/all');
   }
 
   closeAlert(){
@@ -48,7 +64,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.get<{data: Customers[]}>('http://localhost:8080/Accounts').subscribe(res=>{
+    this.http.get<{data: User[]}>('http://localhost:8080/Accounts').subscribe(res=>{
       this.customer = res.data
       const user = this.customer.findIndex((a: any)=>{
         return a.Email === this.loginForm.value.Email &&

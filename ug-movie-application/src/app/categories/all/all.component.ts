@@ -2,14 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
-
-export interface Producers {
-  ID: number,
-  Name: string,
-  Email: string,
-  Genre: string,
-  File: string
-}
+import { AuthService } from 'src/app/services/auth.service';
+import { Login, Producer } from 'src/app/interface';
 
 @Component({
   selector: 'app-all',
@@ -19,11 +13,11 @@ export interface Producers {
 export class AllComponent implements OnInit {
 
   showFiller = false;
-  producers: Producers[] = [];
+  producers: Producer[] = [];
   Title = "";
   alerts = true;
 
-  constructor(private route: Router, private router: ActivatedRoute, private service: ServeService) { }
+  constructor(private authService: AuthService, private route: Router, private router: ActivatedRoute, private service: ServeService) { }
 
   ngOnInit(): void {
     this.service.getAllProducers().subscribe(data =>{
@@ -38,11 +32,15 @@ export class AllComponent implements OnInit {
   search() {
     this.service.findByTitle(this.Title).subscribe(data => {
       this.producers = data.data;
-      // this.closeDangerAlert();
     });
   }
 
+  // logout() {
+  // 	this.route.navigate(['/login']);
+  // }
+
   logout() {
-  	this.route.navigate(['/login']);
+    this.authService.logout();
+    this.route.navigateByUrl('/login');
   }
 }

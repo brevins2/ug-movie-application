@@ -43,3 +43,8 @@ export interface Images {
   Name: string,
   URL: string
 }
+
+export interface Login {
+  Email: string,
+  Password: string
+}
