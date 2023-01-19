@@ -140,7 +140,6 @@ app.post('/add/Account', (req, res) => {
 });
 
 // put data/ update data
-
 app.put('/Accounts/:id', (req, res) => {
 
     console.log(req.body, 'data updated');
@@ -165,7 +164,6 @@ app.put('/Accounts/:id', (req, res) => {
 });
 
 // delete single data
-
 app.delete('/Accounts/:id', (req, res) => {
 
     let gID = req.params.id;
@@ -578,6 +576,68 @@ app.get('/files', (req, res) => {
             });
         }
     });
+});
+
+// get single data
+app.get('/files/:id', (req, res) => {
+
+    let gID = req.params.id;
+
+    let qr = `select * from images where ID = '${gID}'`;
+
+    db.query(qr, (err, result) => {
+
+        if (err) {
+            console.log(err);
+        }
+        if (result.length > 0) {
+            res.send({
+                Message: 'getting single data',
+                data: result
+            });
+        } else {
+            res.send({
+                message: 'data not found'
+            });
+        }
+    });
+});
+
+// put data/ update data
+app.put('/files/:id', (req, res) => {
+
+    console.log(req.body, 'data updated');
+
+    let gID = req.params.id;
+    let name = req.body.Name;
+    let url = req.body.URL;
+
+    let qr = `update user set Name = '${name}', URL = '${url}' where ID = '${gID}'`;
+
+    db.query(qr, (err, result) => {
+        if (err) { console.log(err); }
+
+        res.send({
+            message: 'data successfully updated'
+        });
+    });
+});
+
+// delete single data
+app.delete('/files/:id', (req, res) => {
+
+    let gID = req.params.id;
+
+    let qr = `delete from user where ID = '${gID}'`
+
+    db.query(qr, (err, result) => {
+        if (err) { console.log(err); }
+
+        res.send({
+            message: 'data delete successful'
+        });
+    });
+
 });
 
 

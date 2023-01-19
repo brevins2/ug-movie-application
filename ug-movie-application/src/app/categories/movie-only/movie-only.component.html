@@ -2,7 +2,7 @@
   <div class="d-flex first-div" *ngFor="let movie of movies">
     <mat-card class="movie-card" *ngIf="movie.Category == 'Movie'">
       <a routerLink="/play/{{movie.ID}}">
-        <video mat-card-image [src]="'../../../../../assets/filmz/'+ movie.File" width="200"  controlsList="nodownload" autoplay oncontextmenu="return false"></video>
+        <video [src]="'../../../../../assets/filmz/'+movie.File" controlsList="nodownload" oncontextmenu="return false"></video>
         {{movie.Title}}
         <mat-card-content>
           <p>

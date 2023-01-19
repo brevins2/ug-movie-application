@@ -8,6 +8,7 @@ import { User, Message, Movies, Producer, Genre, Images } from 'src/app/interfac
   const baseurlCustomer = "http://localhost:8080/Accounts";
   const baseurlMessages = "http://localhost:8080/Message";
   const Genres = "http://localhost:8080/Genre";
+  const baseurlFile = "http://localhost:8080/files";
   const uploadURL = "http://localhost:8080/add/Image";
 
 @Injectable({
@@ -15,49 +16,8 @@ import { User, Message, Movies, Producer, Genre, Images } from 'src/app/interfac
 })
 
 export class ServeService {
- // userData: Observable<firebase>;
 
-  URLAPI = 'http://localhost:8080/Accounts/login';
-  constructor(private http: HttpClient) {
-    // this.userData = angularFireAuth.authState;
-  }
-
-  getTypeRequest(url:any) {
-    return this.http.get(`${this.URLAPI}${url}`).pipe(map(res => {
-      return res;
-    }));
-  }
-
-  postTypeRequest(url: any, payload: any) {
-    return this.http.post(`${this.URLAPI}${url}`, payload).pipe(map(res => {
-      return res;
-    }));
-  }
-
-  putTypeRequest(url: any, payload: any) {
-    return this.http.post(`${this.URLAPI}${url}`, payload).pipe(map(res => {
-      return res;
-    }));
-  }
-
-
-  // login and logout authentications
-  getPublicContent(): Observable<any> {
-    return this.http.get(baseurlCustomer + 'all', { responseType: 'text' });
-  }
-
-  getUserBoard(): Observable<any> {
-    return this.http.get(baseurlCustomer + 'user', { responseType: 'text' });
-  }
-  
-  getModeratorBoard(): Observable<any> {
-    return this.http.get(baseurlCustomer + 'mod', { responseType: 'text' });
-  }
-
-  getAdminBoard(): Observable<any> {
-    return this.http.get(baseurlCustomer + 'admin', { responseType: 'text' });
-  }
-
+  constructor(private http: HttpClient) {}
 
   // for genre
   getAllGenres(): Observable<{data: Genre[]}> {
@@ -204,6 +164,18 @@ export class ServeService {
 
   getFiles(): Observable<{data: Images[]}>{
     return this.http.get<{data: Images[]}>('http://localhost:8080/files');
+  }
+
+  getFileWithID(id: number): Observable<{data: Images[]}> {
+    return this.http.get<{data: Images[]}>(`${baseurlFile}/${id}`);
+  }
+
+  updateFiles (id: any, data: any): Observable<any> {
+    return this.http.put(`${baseurlFile}/${id}`, data);
+  }
+
+  deleteFiles (id: any): Observable<any> {
+    return this.http.delete(`${baseurlFile}/${id}`);
   }
 
   findByFileName(name: any): Observable<{data: Images[]}> {

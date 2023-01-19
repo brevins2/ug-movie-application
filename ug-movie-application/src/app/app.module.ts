@@ -66,6 +66,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { ProfileComponent } from './security/profile/profile.component';
+import { EditLibraryComponent } from './developer/edit-library/edit-library.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { ProfileComponent } from './security/profile/profile.component';
     SeriesComponent,
     MovieOnlyComponent,
     PlaySerieComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditLibraryComponent
   ],
   imports: [
     BrowserModule,

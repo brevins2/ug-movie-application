@@ -30,6 +30,7 @@ import { EditMovieComponent } from './developer/edit-movie/edit-movie.component'
 import { EditCustomerComponent } from './developer/edit-customer/edit-customer.component';
 import { EditProducerComponent } from './developer/edit-producer/edit-producer.component';
 import { DeleteMessageComponent } from './developer/delete-message/delete-message.component';
+import { EditLibraryComponent } from './developer/edit-library/edit-library.component';
 
 import { SeriesComponent } from './categories/series/series.component';
 import { MovieOnlyComponent } from './categories/movie-only/movie-only.component';
@@ -68,6 +69,7 @@ const routes: Routes = [
   ]},
 
   { path: 'edit/movie/:id', component: EditMovieComponent },
+  { path: 'edit/library/:id', component: EditLibraryComponent },
   { path: 'edit/producer/:id', component: EditProducerComponent },
   { path: 'edit/customer/:id', component: EditCustomerComponent },
   { path: 'delete/message/:id', component: DeleteMessageComponent },

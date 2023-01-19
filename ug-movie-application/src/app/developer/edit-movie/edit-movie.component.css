@@ -56,3 +56,11 @@ ng-container {
 .btn-outline-danger {
   width: 50px;
 }
+
+.details,
+.file,
+.genre,
+.title,
+.producer {
+  padding: 3px;
+}

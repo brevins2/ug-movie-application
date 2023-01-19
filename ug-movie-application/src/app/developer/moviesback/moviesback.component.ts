@@ -14,7 +14,7 @@ export class MoviesbackComponent implements OnInit {
 
   movies: Movies[] = [];
   searched = "";
-  displayedColumns: string[] = ['ID', 'Title', 'File', 'Genre', 'Producer', 'Details', 'Category', 'Edit', 'Delete'];
+  displayedColumns: string[] = ['ID', 'Title', 'File', 'Genre', 'Producer', 'Details', 'Edit', 'Delete'];
     dataSource = this.movies;
   closeResult = '';
 

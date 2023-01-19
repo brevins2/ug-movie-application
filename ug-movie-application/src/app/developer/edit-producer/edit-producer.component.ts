@@ -55,6 +55,7 @@ export class EditProducerComponent implements OnInit {
   Delete() {
     this.serve.deleteProducer(this.router.snapshot.params['id']).subscribe((response)=> {
       this.producers = response.data;
+      this.close();
     });
   } 
 }

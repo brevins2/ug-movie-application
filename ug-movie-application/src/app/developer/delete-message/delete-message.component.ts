@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DeleteMessageComponent implements OnInit {
 
-  constructor(private serve: ServeService, private router: ActivatedRoute) { }
+  constructor(private serve: ServeService, private router: ActivatedRoute, private route: Router) { }
   message: Message[] = [];
   displayedColumns: string[] = ['ID', 'Name', 'Email', 'Message', 'Delete'];
     dataSource = this.message;
@@ -29,6 +29,11 @@ export class DeleteMessageComponent implements OnInit {
   Delete() {
     this.serve.deleteMessage(this.router.snapshot.params['id']).subscribe((response)=> {
       this.message = response.data;
+      this.back();
     });
+  }
+
+  back() {
+    this.route.navigate(['/developer/edits/messages']);
   }
 }

@@ -23,19 +23,6 @@ export class AllComponent implements OnInit {
     this.service.getAllProducers().subscribe(data =>{
       this.producers = data.data;
     });
-
-    this.service.getPublicContent().subscribe({
-      next: data => {
-        this.content = data;
-      },
-      error: err => {console.log(err)
-        if (err.error) {
-          this.content = JSON.parse(err.error).message;
-        } else {
-          this.content = "Error with status: " + err.status;
-        }
-      }
-    });
   }
 
   closeDangerAlert() {

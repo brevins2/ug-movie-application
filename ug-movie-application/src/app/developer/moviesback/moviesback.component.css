@@ -30,3 +30,13 @@ input {
 	margin-bottom: 1%;
 	width: 90%;
 }
+
+.genre,
+.details,
+.file {
+	padding: 3px;
+}
+
+.form-group {
+	margin-bottom: 1%;
+}
