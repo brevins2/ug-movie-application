@@ -89,7 +89,12 @@ a {
     width: 45%;
   }
 
+  a {
+    margin-top: 10px;
+  }
+
   img {
     width: 200px;
+    height: 120px;
   }
 }

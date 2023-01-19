@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { User, Message, Movies, Producer, Genre, Images } from 'src/app/interface';
-import { AngularFireAuth } from "@angular/fire/compat/auth";
 
   const baseurlMovies = "http://localhost:8080/Movies";
   const baseurlProducer = "http://localhost:8080/Producers";
@@ -18,32 +17,47 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 export class ServeService {
  // userData: Observable<firebase>;
 
-  constructor(private http: HttpClient, private angularFireAuth: AngularFireAuth) {
+  URLAPI = 'http://localhost:8080/Accounts/login';
+  constructor(private http: HttpClient) {
     // this.userData = angularFireAuth.authState;
   }
 
-  /* Sign up */
- SignUp(Email: string, Password: string) {
-   this.angularFireAuth.createUserWithEmailAndPassword(Email, Password).then((res: any) => {
-   console.log('You are Successfully signed up!', res);
-   }).catch((error: any) => {
-   console.log('Something is wrong:', error.message);
-   });
- }
- 
- /* Sign in */
- SignIn(Email: string, Password: string) {
-   this.angularFireAuth.signInWithEmailAndPassword(Email, Password).then((res: any) => {
-    console.log("You're in!");
-   }).catch((err: any) => {
-   console.log('Something went wrong:',err.message);
-   });
- }
- 
- /* Sign out */
- SignOut() {
-   this.angularFireAuth.signOut();
- }
+  getTypeRequest(url:any) {
+    return this.http.get(`${this.URLAPI}${url}`).pipe(map(res => {
+      return res;
+    }));
+  }
+
+  postTypeRequest(url: any, payload: any) {
+    return this.http.post(`${this.URLAPI}${url}`, payload).pipe(map(res => {
+      return res;
+    }));
+  }
+
+  putTypeRequest(url: any, payload: any) {
+    return this.http.post(`${this.URLAPI}${url}`, payload).pipe(map(res => {
+      return res;
+    }));
+  }
+
+
+  // login and logout authentications
+  getPublicContent(): Observable<any> {
+    return this.http.get(baseurlCustomer + 'all', { responseType: 'text' });
+  }
+
+  getUserBoard(): Observable<any> {
+    return this.http.get(baseurlCustomer + 'user', { responseType: 'text' });
+  }
+  
+  getModeratorBoard(): Observable<any> {
+    return this.http.get(baseurlCustomer + 'mod', { responseType: 'text' });
+  }
+
+  getAdminBoard(): Observable<any> {
+    return this.http.get(baseurlCustomer + 'admin', { responseType: 'text' });
+  }
+
 
   // for genre
   getAllGenres(): Observable<{data: Genre[]}> {
@@ -54,6 +68,10 @@ export class ServeService {
   getAllUsers(): Observable<{data: User[]}> {
     return this.http.get<{data: User[]}>('http://localhost:8080/Accounts');
   }
+
+  login(Email: string, Password: string): Observable<{data: User[]}> {
+    return this.http.get<{data: User[]}>('http://localhost:8080/Accounts');
+  }  
 
   getUserWithID(id: number): Observable<{data: User[]}> {
     return this.http.get<{data: User[]}>(`${baseurlCustomer}/${id}`);

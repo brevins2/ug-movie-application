@@ -65,6 +65,7 @@ import { PlaySerieComponent } from './categories/play-serie/play-serie.component
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ProfileComponent } from './security/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     DeleteMessageComponent,
     SeriesComponent,
     MovieOnlyComponent,
-    PlaySerieComponent
+    PlaySerieComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

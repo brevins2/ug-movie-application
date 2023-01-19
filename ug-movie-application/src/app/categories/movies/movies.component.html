@@ -10,7 +10,7 @@
   <body class="text-white d-flex flex-wrap">
     <mat-card class="example-card movie-card" *ngFor="let movie of movies">
       <a routerLink="/play/{{movie.ID}}">
-        <video [src]="+movie.File"></video>
+        <video [src]="'../../../../../assets/filmz/'+movie.File"></video>
         {{movie.Title}}
         <mat-card-content>
           <p>

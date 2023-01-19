@@ -34,7 +34,6 @@ import { DeleteMessageComponent } from './developer/delete-message/delete-messag
 import { SeriesComponent } from './categories/series/series.component';
 import { MovieOnlyComponent } from './categories/movie-only/movie-only.component';
 import { PlaySerieComponent } from './categories/play-serie/play-serie.component';
-import { AuthGuard } from 'src/app/services/auth.guard';
 
 const routes: Routes = [
   { path:'', redirectTo: 'cinema/browse', pathMatch: 'full' },
@@ -46,7 +45,7 @@ const routes: Routes = [
 
   { path:'subscribe', component: SubscriptionComponent },
 
-  { path:'cinema/all', component: AllComponent, canActivate: [AuthGuard], children: [
+  { path:'cinema/all', component: AllComponent, children: [
     { path:'', redirectTo: 'all', pathMatch: 'full' },
     { path:'all', component: MoviesComponent },
     { path:'series', component: SeriesComponent },
@@ -55,13 +54,11 @@ const routes: Routes = [
 
   { path:'cinema/all/views', component: MainsComponent, children: [
     { path:'', redirectTo: 'downloads', pathMatch: 'full' },
-    { path: 'downloads', component: DownloadsComponent },
-    { path: 'recents', component: RecentComponent},
     { path:'producers/:id', component: ProducerComponent }
   ]},
 
   { path: 'developer/edits', component: MainComponent, children: [
-    { path: '', redirectTo: 'admin', pathMatch: 'full' },
+    { path: '', redirectTo: 'moviesedits', pathMatch: 'full' },
     { path: 'moviesedits', component: MoviesbackComponent },
     { path: 'customers', component: CustomersComponent },
     { path: 'producers', component: ProducersComponent },

@@ -5,7 +5,7 @@
 
 	<body class="bg-black text-white text-center" *ngFor="let movie of movies">
 		<mat-card class="example-card bg-black text-white d-flex flex-column">
-			<video [src]="'../../../../../assets/films/'+ movie.File" width="100%" controls></video>
+			<video [src]="'../../../../../assets/filmz/'+ movie.File" width="100%" controlsList="nodownload" autoplay oncontextmenu="return false"></video>
 
 			<nav class="text-left">{{movie.Title}}</nav>
 			<mat-card-content class="text-left">

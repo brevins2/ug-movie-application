@@ -15,11 +15,16 @@
         </select>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" *ngFor="let movie of images">
       <span>Video</span>
       <select class="form-control" formControlName="File" required>
         <option></option>
-        <option *ngFor="let movie of images">{{movie.Name}}</option>
+        <option>{{movie.Name}}</option>
+      </select>
+
+      <select class="form-control" formControlName="URL" required>
+        <option></option>
+        <option>{{movie.URL}}</option>
       </select>
     </div>
 

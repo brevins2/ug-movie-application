@@ -4,6 +4,10 @@ html {
   height: auto;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 .fa-search {
   font-size: .9rem;
 }
@@ -15,6 +19,26 @@ html {
 
 a {
   cursor: pointer;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.horizontal-nav {
+  min-height: 100vh;
+}
+
+footer {
+  margin-bottom: auto !important;
+}
+
+.main-div {
+  min-height: 100vh;
+}
+
+mat-drawer-container {
+  min-height: 100vh !important;;
 }
 
 @media only screen and (max-width: 599px) {
@@ -480,7 +504,7 @@ a {
   }
 
   .profile-link h3 {
-    margin-top: 6%;
+    margin-top: 2%;
     position: fixed;
   }
 
@@ -491,21 +515,32 @@ a {
   }
 
   .profile-link div a {
-    margin-top: 10%;
+    margin-top: 6%;
     position: fixed;
     text-align: left !important;
   }
 
   .general-link h3 {
-    margin-top: 5%;
+    margin-top: 4%;
     position: fixed;
   }
 
-  .general-link img {
+  .general-link div {
+    height: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .general-link div a {
+    margin-top: 8%;
+    position: fixed;
+    text-align: left !important;
+  }
+
+  .general-link button {
     margin-top: 9%;
-    margin-left: 1%;
-    width: 43px;
-    border-radius: 18px;
+    margin-left: 2px;
+    width: 100px;
     position: fixed;
   }
 
@@ -523,6 +558,12 @@ a {
     color: whitesmoke;
     width: 100px;
     border-radius: 2px;
+  }
+
+  .horizontal-nav div div:hover,
+  .horizontal-nav div div:focus,
+  .horizontal-nav div div:active {
+    cursor: pointer;
   }
 
   .horizontal-nav div div a:hover,
@@ -546,7 +587,7 @@ a {
   body {
     width: 88%;
     height: auto%;
-    padding: 2% 0% 0% 2%;
+    padding: 2% 0% 0% 1%;
   }
 
   mat-toolbar {
@@ -581,7 +622,7 @@ a {
 
   .main-div {
     height: 100%;
-    width: 850px;
+    width: 100%;
   }
 
   .router-outlet-div {
@@ -618,8 +659,7 @@ a {
 
   mat-drawer-container {
     width: 100%;
-    /*border: 2px solid white;*/
-    /*opacity: .8;*/
+    min-height: 100%;
   }
 
   .vertical-nav {

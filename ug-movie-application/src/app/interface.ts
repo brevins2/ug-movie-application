@@ -2,6 +2,7 @@ export interface Movies {
   ID: number,
   Title: string,
   File: string,
+  URL: string,
   Genre: string,
   Producer: string,
   Details: string,
@@ -46,5 +47,6 @@ export interface Images {
 
 export interface Login {
   Email: string,
-  Password: string
+  Password: string,
+  roles: string[]
 }

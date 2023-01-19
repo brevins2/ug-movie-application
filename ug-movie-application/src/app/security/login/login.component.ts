@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { AuthService } from 'src/app/services/auth.service';
+import { ServeService } from 'src/app/Services/serve.service';
 import { Login, User } from 'src/app/interface';
 
 @Component({
@@ -18,37 +18,22 @@ export class LoginComponent implements OnInit {
   alert = false;
   alerts = false;
   customer: User[] = [];
-  // authForm =  this.formBuilder.group({
-  //   Email: ['', Validators.required],
-  //   Password: ['', Validators.required]
-  // });
 
   loginForm =  this.formBuilder.group({
     Email: ['', Validators.required],
     Password: ['', Validators.required]
   });
 
-  constructor(private authService: AuthService, private route: Router, private router: ActivatedRoute, private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private route: Router, private router: ActivatedRoute, 
+    private formBuilder: FormBuilder, private http: HttpClient, private serve: ServeService) { }
 
   ngOnInit(): void {
     this.authForm = this.formBuilder.group({
       Email: ['', Validators.required],
       Password: ['', Validators.required]
     });
+
     this.loginForm;
-  }
-
-  get formControls() {
-    return this.authForm.controls;
-  }
-
-  signIn() {
-    this.isSubmitted = true;
-    if(this.authForm.invalid) {
-      return;
-    }
-    this.authService.signIn(this.authForm.value);
-    this.route.navigateByUrl('/cinema/all');
   }
 
   closeAlert(){
@@ -64,26 +49,25 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.get<{data: User[]}>('http://localhost:8080/Accounts').subscribe(res=>{
+    this.http.get<{data: User[]}>('http://localhost:8080/Accounts/login').subscribe(res=>{
       this.customer = res.data
-      const user = this.customer.findIndex((a: any)=>{
-        return a.Email === this.loginForm.value.Email &&
-          a.Password === this.loginForm.value.Password;
 
-        return a.Email +' and '+ a.Password;
+      const user = this.customer.findIndex((a: any)=>{
+        return a.Email == this.loginForm.value.Email &&
+          a.Password == this.loginForm.value.Password;
       });
 
-      if ('admin@gmail.com' === this.loginForm.value.Email &&
-        'i83admin' === this.loginForm.value.Password) {
+      if (!user) {
         this.alert = true;
         this.loginForm.reset();
         this.route.navigate(['/developer/edits']);
       }
 
       else if(user){
+        console.log(user);
         this.alert = true;
         this.loginForm.reset();
-        this.route.navigate(['/cinema/all']);
+        this.route.navigate(['/cinema/all/all']);
       }
       else{
         this.alerts = true;
@@ -93,5 +77,4 @@ export class LoginComponent implements OnInit {
       this.alerts = true;
     });
   }
-
 }

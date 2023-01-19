@@ -15,6 +15,7 @@ export class MovieComponent implements OnInit {
 	RegisterForm = new FormGroup({
 		Title: new FormControl(''),
 		File: new FormControl(''),
+    URL: new FormControl(''),
 		Genre: new FormControl(''),
 		Producer: new FormControl(''),
 		Details: new FormControl(''),
@@ -23,7 +24,8 @@ export class MovieComponent implements OnInit {
   genres: Genre[] = [];
   producers: Producer[] = [];
   images: Images[] = [];
-  selectedFile!: File; 
+  selectedFile!: File;
+  File = '';
 
   constructor(private http: HttpClient, private serve: ServeService) {
   }

@@ -19,12 +19,6 @@
         <td mat-cell *matCellDef="let customer"> {{customer.Email}} </td>
       </ng-container>
 
-      <!-- File Column -->
-      <ng-container matColumnDef="File">
-        <th mat-header-cell *matHeaderCellDef> File </th>
-        <td mat-cell *matCellDef="let customer"> <a href="u">{{customer.File}}</a> </td>
-      </ng-container>
-
       <!-- Password Column -->
       <ng-container matColumnDef="Password">
         <th mat-header-cell *matHeaderCellDef> Password </th>
@@ -58,9 +52,6 @@
       <mat-label>Name</mat-label>
       <input matInput type="text" formControlName="Name" placeholder="Update Name" required>
     </mat-form-field>
-
-    <mat-label>File</mat-label>
-      <input type="file" formControlName="File" class="form-control" placeholder="Select File" required>
 
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>

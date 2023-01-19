@@ -15,7 +15,7 @@ export class CustomersComponent implements OnInit {
 
   searched = "";
   customer: User[] = [];
-  displayedColumns: string[] = ['ID', 'Name', 'Username', 'Email', 'File', 'Password', 'CPassword', 'Edit', 'Delete'];
+  displayedColumns: string[] = ['ID', 'Name', 'Username', 'Email', 'Password', 'CPassword', 'Edit', 'Delete'];
       dataSource = this.customer;
   closeResult = '';
 

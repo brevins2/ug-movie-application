@@ -8,7 +8,6 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-
 // database connection
 const db = mysql.createConnection({
     host: 'localhost',
@@ -124,11 +123,10 @@ app.post('/add/Account', (req, res) => {
     let password = req.body.Password;
     let confirmPassword = req.body.CPassword;
     let name = req.body.Name;
-    let file = req.body.File;
     let username = req.body.Username;
 
-    let qr = `INSERT INTO user(Name, Username, Email, File, Password, CPassword)
-                VALUES('${name}', '${username}', '${email}', '${file}', '${password}', '${confirmPassword}')`;
+    let qr = `INSERT INTO user(Name, Username, Email, Password, CPassword)
+                VALUES('${name}', '${username}', '${email}', '${password}', '${confirmPassword}')`;
 
     db.query(qr, (err, result) => {
 
@@ -152,11 +150,10 @@ app.put('/Accounts/:id', (req, res) => {
     let password = req.body.Password;
     let confirmPassword = req.body.CPassword;
     let name = req.body.Name;
-    let file = req.body.File;
     let username = req.body.Username;
 
-    let qr = `update user set Name = '${name}', Username = '${username}', Email = '${email}', File = '${file}',
-                Password = '${password}', CPassword = '${confirmPassword}' where ID = '${gID}'`;
+    let qr = `update user set Name = '${name}', Username = '${username}', Email = '${email}',
+    Password = '${password}', CPassword = '${confirmPassword}' where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -264,11 +261,12 @@ app.post('/add/Movie', (req, res) => {
     let genre = req.body.Genre;
     let producer = req.body.Producer;
     let file = req.body.File;
+    let url = req.body.URL;
     let details = req.body.Details;
     let category = req.body.Category;
 
-    let qr = `INSERT INTO movies(Title, File, Genre, Producer, Details, Category)
-                VALUES('${title}', '${file}','${genre}','${producer}', '${details}', '${category}')`;
+    let qr = `INSERT INTO movies(Title, File, URL, Genre, Producer, Details, Category)
+                VALUES('${title}', '${file}', '${url}', ${genre}','${producer}', '${details}', '${category}')`;
 
     db.query(qr, (err, result) => {
 
@@ -291,10 +289,11 @@ app.put('/Movies/:id', (req, res) => {
     let genre = req.body.Genre;
     let producer = req.body.Producer;
     let file = req.body.File;
+    let url = req.body.URL;
     let details = req.body.Details;
     let category = req.body.Category;
 
-    let qr = `update movies set Title = '${title}', File = '${file}', Genre = '${genre}',
+    let qr = `update movies set Title = '${title}', File = '${file}', URL = '${url}' Genre = '${genre}',
                 Producer = '${producer}', Details = '${details}', Category = '${category}'  where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
@@ -376,10 +375,9 @@ app.post('/add/Producer', (req, res) => {
     let name = req.body.Name;
     let email = req.body.Email;
     let genre = req.body.Genre;
-    let file = req.body.File;
 
-    let qr = `INSERT INTO producer(Name, Email, Genre, File)
-                VALUES('${name}', '${email}', '${genre}', '${file}')`;
+    let qr = `INSERT INTO producer(Name, Email, Genre)
+                VALUES('${name}', '${email}', '${genre}')`;
 
     db.query(qr, (err, result) => {
 
@@ -402,13 +400,9 @@ app.put('/Producers/:id', (req, res) => {
     let name = req.body.Name;
     let email = req.body.Email;
     let genre = req.body.Genre;
-    let file = req.body.File;
-    let password = req.body.Password;
-    let confirmPassword = req.body.CPassword;
 
     let qr = `update producer set Name = '${name}', Email = '${email}',
-                Genre = '${genre}', File = '${file}', Password = '${password}', CPassword = '${confirmPassword}'
-                where ID = '${gID}'`;
+                Genre = '${genre}', where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }

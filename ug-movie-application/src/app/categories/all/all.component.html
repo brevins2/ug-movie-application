@@ -20,18 +20,6 @@
           <i class="fa-solid fa-user"></i>&nbsp;&nbsp;<label>Producers</label>
         </a>
       </div>
-
-      <div>
-        <a class="text-left link" routerLink="movies">
-          <!-- <i class="fa-solid fa-video"></i>&nbsp;&nbsp;<label>Movies</label> -->
-        </a>
-      </div>
-
-      <div>
-        <a class="text-left link" routerLink="series">
-          <!-- <i class="fa-solid fa-video"></i>&nbsp;&nbsp;<label>Series</label> -->
-        </a>
-      </div>
     </div>
 
     <div class="profile-link">
@@ -60,12 +48,15 @@
     <div class="general-link"> 
       <h3 class="text-white">Account</h3>
 
-      <img src="../../../../../assets/icon/download.png" width="30" class="power" mat-button [matMenuTriggerFor]="menu3">
-      <mat-menu #menu3="matMenu" class="bg-black text-white">
-        <button mat-menu-item class="text-danger" (click)="logout()">
+      <div>
+        <a class="text-left link" routerLink="views/settings">
+          <i class="fa-solid fa-cog"></i>&nbsp;&nbsp;<label>Settings</label>
+        </a>
+      </div>
+
+      <button class="btn btn-danger" (click)="logout()">
           <i class="fa fa-power-off power"></i>Logout
         </button>
-      </mat-menu>
     </div>
   </nav>
 
@@ -104,7 +95,7 @@
         </div>
       </mat-toolbar>
 
-    <mat-drawer-container class="bg-black d-flex">
+    <mat-drawer-container class="bg-black">
 
       <div class="main-div float-left">
         <router-outlet></router-outlet>
@@ -121,7 +112,7 @@
             <div class="d-flex flex-wrap">
               <mat-chip-list *ngFor="let producer of producers" aria-label="Dog selection" class="alert-dismissible fade show">
                 <mat-chip routerLink="views/producers/{{producer.ID}}" *ngIf="alerts">
-                  <img matChipAvatar [src]="'../../../../../assets/films/'+ producer.File" [alt]="producer.Name"/>
+                  <img matChipAvatar [src]="'src/assets/produer/'+ producer.File" [alt]="producer.Name"/>
                   {{producer.Name}}
                 </mat-chip>
               </mat-chip-list>
@@ -141,8 +132,6 @@
         @ copyright reserved at
         <code class="text-red">Lutimbe</code><code class="text-white bg-black">Filmz</code>
       </footer>
-
     </mat-drawer-container>
-
   </body>
 </html>

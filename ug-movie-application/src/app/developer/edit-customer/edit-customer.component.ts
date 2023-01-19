@@ -15,14 +15,13 @@ export class EditCustomerComponent implements OnInit {
   constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) { }
 
   customer: User[] = [];
-  displayedColumns: string[] = ['Name', 'Username', 'Email', 'File', 'Password', 'CPassword', 'Delete'];
+  displayedColumns: string[] = ['Name', 'Username', 'Email', 'Password', 'CPassword', 'Delete'];
     dataSource = this.customer;
 
   UpdateCustomer = new FormGroup({
     Name: new FormControl(''),
     Username: new FormControl(''),
     Email: new FormControl(''),
-    File: new FormControl(''),
     Password: new FormControl(''),
     CPassword: new FormControl('')
   });
@@ -56,7 +55,7 @@ export class EditCustomerComponent implements OnInit {
   Delete() {
     this.serve.deleteUser(this.router.snapshot.params['id']).subscribe((response)=> {
       this.customer = response.data;
-      console.log(response); 
+      this.close();
     });
   }
 }

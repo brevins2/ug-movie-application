@@ -14,11 +14,15 @@ body {
   color: white;
 }
 
+.container-fluid {
+  background-image: url("src/assets/style-images/download.jfif") !important;
+}
+
 @media only screen and (max-width: 599px) {
   /* For mobile phones: */
   
   .container-fluid {
-    background-image: url("src/assets/style-images/Tech People.jpg");
+    background-image: url("src/assets/style-images/download.jfif");
     background-size: cover;
     background-repeat: no-repeat;
     opacity: .7;
@@ -195,9 +199,9 @@ body {
   /* For desktop: */
   .container-fluid {
     background-image: url("src/assets/style-images/Tech People.jpg");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    opacity: .7;
+    opacity: .8;
     padding: 0px;
     height: 740px;
   }
