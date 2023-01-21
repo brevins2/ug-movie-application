@@ -1,26 +1,28 @@
 body {
 	width: 100%;
+	height: auto;
 	margin-top: 2%;
+	margin-bottom: 2%;
 }
 
-input {
+.vid-div {
 	width: 100%;
+	padding-right: 20px;
+	padding-top: 0px;
+	margin-top: 8px;
 }
 
 nav {
-	height: 100px;
+	height: 120px;
 	width: 100%;
 	background-color: #6c757d !important;
-	margin-top: 1%;
+	margin-top: 2px;
+	border-radius: 4px;
 }
 
 nav:hover {
 	cursor: pointer;
 	opacity: .9;
-}
-
-img {
-	opacity: .5;
 }
 
 .description {

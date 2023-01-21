@@ -1,40 +1,48 @@
 body {
 	width: 100%;
-	height: auto;
+	min-height: 100hv !important;
 }
 
 a {
 	text-decoration: none;
 }
 
+.side-nav {
+	width: 16%;
+	height: 100hv;
+	padding-left: 10px;
+}
+
+.home-link {
+	position: fixed;
+	top: 12%;
+}
+
 .home-link h1 {
 	font-size: 1rem;
 }
 
-.side-nav {
-	width: 16%;
-}
-
-.side-nav a {
-	margin-top: 30px;
-}
-
 .vertical-buttons {
-	margin-top: 30px;
+	top: 20%;
+	position: fixed;
 }
 
 .vertical-buttons button {
 	margin-top: 10px;
 	font-size: .8rem;
+	height: 35px;
+	width: 110px;
+	text-align: left !important;
 }
 
 .main-body {
 	width: 100%;
+	min-height: 100hv !important;
 }
 
 .navigation {
 	width: 100%;
-	height: 90px;
+	height: 10% !important;
 	border-bottom: 1px solid #80808057;
 }
 
@@ -46,18 +54,8 @@ a {
 	margin: 4px;
 }
 
-.links {
-	padding-left: 4px;
-}
-
-.links a {
-	margin-right: 4px;
-	margin-left: 4px;
-}
-
 .body {
 	width: 100%;
-	height: auto;
 	padding: 1%;
 	background-color: #0093ff2b;
 }

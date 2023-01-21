@@ -4,10 +4,12 @@
 		<button type="button" (click)="cancel()" class="btn btn-primary">cancel</button>
 	</div>
 
-	<div *ngFor="let movie of movies" class="alert-dismissible fade show" routerLink="/play/{{movie.ID}}">
+	<div *ngFor="let movie of movies" class="vid-div alert-dismissible fade show" routerLink="/play/{{movie.ID}}">
 		<nav class="d-flex justify-content-between" *ngIf="alerts">
 			<div class="justify-content-start d-flex">
-				<img [src]="'../../../../../assets/films/'+ movie.File" [alt]="movie.Title" width="140">
+				<video width="140">
+					<source [src]="movie.URL+movie.File" type="video/mp4">
+				</video>
 				<div class="description text-white text-left">
 					{{movie.Details}} <br>
 					{{movie.Producer}}
@@ -16,10 +18,12 @@
 		</nav>
 	</div>
 
-	<div *ngFor="let movie of movies" routerLink="/play/{{movie.ID}}">
+	<div *ngFor="let movie of movies" class="vid-div" routerLink="/play/{{movie.ID}}">
 		<nav class="d-flex justify-content-between" *ngIf="movie.Title == Title">
 			<div class="justify-content-start d-flex">
-				<img [src]="'../../../../../assets/films/'+ movie.File" [alt]="movie.Title" width="140">
+				<video width="140">
+					<source [src]="movie.URL+movie.File" type="video/mp4">
+				</video>
 				<div class="description text-white text-left">
 					{{movie.Details}} <br>
 					{{movie.Producer}}
@@ -27,4 +31,9 @@
 			</div>
 		</nav>
 	</div>
+
+	<footer class="text-center text-black">
+        @ copyright reserved at
+        <img src="../assets/icon/lutimbefilmz.png" width="100px" alt="LutimbeFilmz.jpg">
+      </footer>
 </body>

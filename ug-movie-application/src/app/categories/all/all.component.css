@@ -24,7 +24,7 @@ a {
 img:hover {
   cursor: pointer;
 }
-
+home-link
 body {
   min-height: 100vh;
 }
@@ -470,11 +470,11 @@ mat-drawer-container {
     top: 4;
   }
 
-  .horizontal-nav a h1 {
-    width: 60%;
+  .horizontal-nav a img {
+    width: 100px;
     font-size: 1rem;
     position: fixed;
-    top: 3%;
+    top: 4%;
   }
 
   .horizontal-nav div {
