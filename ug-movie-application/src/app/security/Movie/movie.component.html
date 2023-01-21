@@ -1,51 +1,53 @@
 <div class="container-fluid bg-dark">
-  <form class="bg-white" [formGroup]="RegisterForm">
+  <form class="bg-white d-flex flex-column" [formGroup]="RegisterForm">
     <nav class="p-2">Add Movie</nav>
 
-    <div class="form-group">
-      <span>Title</span>
-        <input type="text" class="form-control" formControlName="Title" placeholder="enter title" required>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" formControlName="Title" placeholder="enter title" required>
+    </mat-form-field>
 
-    <div class="form-group">
-      <span>Genre</span>
-        <select class="form-control" formControlName="Genre" required>
-          <option></option>
-          <option *ngFor="let genre of genres">{{genre.Genre}}</option>
-        </select>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Genre</mat-label>
+      <mat-select formControlName="Genre" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let genre of genres" value="{{genre.Genre}}">{{genre.Genre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-    <div class="form-group" *ngFor="let movie of images">
-      <span>Video</span>
-      <select class="form-control" formControlName="File" required>
-        <option></option>
-        <option>{{movie.Name}}</option>
-      </select>
+    <mat-form-field appearance="outline">
+      <mat-label>Movie</mat-label>
+      <mat-select formControlName="File" [(ngModel)]="File" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let movie of images" value="{{movie.Name}}">{{movie.Name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <select class="form-control" formControlName="URL" required>
-        <option></option>
-        <option>{{movie.URL}}</option>
-      </select>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>URL</mat-label>
+      <mat-select formControlName="URL" [(ngModel)]="URL" id="URL" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let movie of images" value="{{movie.URL}}"><p *ngIf="File === movie.Name">{{movie.URL}}</p></mat-option>
+      </mat-select>
+    </mat-form-field>
 
-    <div class="form-group">
-      <span>Producer</span>
-      <select class="form-control" formControlName="Producer" required>
-        <option></option>
-        <option *ngFor="let producer of producers">{{producer.Name}}</option>
-      </select>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+      <input matInput type="text" formControlName="Category" placeholder="Enter Category" required>
+    </mat-form-field>
 
-    <div class="form-group">
-      <span>Category</span>
-        <input type="text" class="form-control" placeholder="enter Category" formControlName="Category" required>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Producer</mat-label>
+      <mat-select formControlName="Producer" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let producer of producers" value="{{producer.Name}}">{{producer.Name}}</mat-option>
+      </mat-select>
+    </mat-form-field> 
 
-    <div class="form-group passwords">
-      <span>Movie information</span>
-      <textarea class="form-control" formControlName="Details" placeholder="enter movie information" required cols="3" rows="5">
-      </textarea>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Movie information</mat-label>
+      <textarea matInput formControlName="Details" placeholder="enter movie information" required></textarea>
+    </mat-form-field>
 
     <button type="submit" class="btn btn-primary" (click)="save()">
       <i class="fa-solid fa-save"></i>

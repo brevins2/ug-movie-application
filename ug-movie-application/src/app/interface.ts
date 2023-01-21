@@ -14,7 +14,8 @@ export interface Producer {
   Name: string,
   Email: string,
   Genre: string,
-  File: string
+  File: string,
+  URL: string
 }
 
 export interface User {

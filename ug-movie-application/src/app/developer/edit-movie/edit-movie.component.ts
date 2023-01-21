@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ServeService } from 'src/app/Services/serve.service';
-import { Movies } from 'src/app/interface';
+import { Movies, Genre, Producer, Images } from 'src/app/interface';
 
 @Component({
   selector: 'app-edit-movie',
@@ -15,12 +15,19 @@ export class EditMovieComponent implements OnInit {
   UpdateMovie = new FormGroup({
     Title: new FormControl(''),
     File: new FormControl(''),
+    URL: new FormControl(''),
     Genre: new FormControl(''),
     Producer: new FormControl(''),
     Details: new FormControl(''),
     Category: new FormControl('')
   });
   movies: Movies[] = [];
+  genres: Genre[] = [];
+  producers: Producer[] = [];
+  images: Images[] = [];
+  File = '';
+  URL = '';
+
   displayedColumns: string[] = ['Title', 'File', 'Genre', 'Producer', 'Details', 'Delete'];
     dataSource = this.movies;
 
@@ -28,6 +35,18 @@ export class EditMovieComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentMovie();
+
+    this.serve.getAllGenres().subscribe(data => {
+      this.genres = data.data;
+    });
+
+    this.serve.getAllProducers().subscribe(data => {
+      this.producers = data.data;
+    });
+
+    this.serve.getFiles().subscribe(data => {
+      this.images = data.data;
+    });
   }
 
   getCurrentMovie() {

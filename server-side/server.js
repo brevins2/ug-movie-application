@@ -264,7 +264,7 @@ app.post('/add/Movie', (req, res) => {
     let category = req.body.Category;
 
     let qr = `INSERT INTO movies(Title, File, URL, Genre, Producer, Details, Category)
-                VALUES('${title}', '${file}', '${url}', ${genre}','${producer}', '${details}', '${category}')`;
+                VALUES('${title}', '${file}', '${url}', '${genre}', '${producer}', '${details}', '${category}')`;
 
     db.query(qr, (err, result) => {
 
@@ -291,7 +291,7 @@ app.put('/Movies/:id', (req, res) => {
     let details = req.body.Details;
     let category = req.body.Category;
 
-    let qr = `update movies set Title = '${title}', File = '${file}', URL = '${url}' Genre = '${genre}',
+    let qr = `update movies set Title = '${title}', File = '${file}', URL = '${url}', Genre = '${genre}',
                 Producer = '${producer}', Details = '${details}', Category = '${category}'  where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
@@ -398,9 +398,11 @@ app.put('/Producers/:id', (req, res) => {
     let name = req.body.Name;
     let email = req.body.Email;
     let genre = req.body.Genre;
+    let file = req.body.File;
+    let url = req.body.URL;
 
     let qr = `update producer set Name = '${name}', Email = '${email}',
-                Genre = '${genre}', where ID = '${gID}'`;
+                Genre = '${genre}', File = '${file}', URL = '${url}' where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }

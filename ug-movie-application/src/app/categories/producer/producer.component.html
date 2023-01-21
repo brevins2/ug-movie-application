@@ -4,7 +4,7 @@
         {{producer.Name}}
     </div>
     <mat-card-content class="d-flex">
-      <img mat-card-image [src]="'src/assets/produer/'+ producer.File" [alt]="producer.Name">
+      <img mat-card-image [src]="producer.URL+producer.File" [alt]="producer.Name">
       <div class="d-flex flex-column producer-details">
         <p class="big-name">
           {{producer.Name}}
@@ -23,7 +23,9 @@
       <div class="movie-main" *ngFor="let movie of movies">
         <mat-card class="d-flex bg-dark card-movies" *ngIf="movie.Producer == producer.Name">
           <div class="text-white d-flex flex-column" routerLink="/play/{{movie.ID}}">
-            <video [src]="'../../../../../assets/filmz/'+ movie.File" width="210" height="140" controls></video>
+            <video width="210" height="140" controlsList="nodownload">
+              <source [src]="movie.URL+movie.File" type="">
+            </video>
 
             <nav class="text-white">{{movie.Title}}</nav>
             <mat-card-content class="text-left card-details">

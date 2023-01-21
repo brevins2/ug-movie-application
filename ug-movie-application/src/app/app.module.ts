@@ -38,6 +38,7 @@ import { MatInputModule  } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from "@angular/material/menu";
+import { MatSelectModule } from '@angular/material/select';
 
 import { SubscriptionComponent } from './security/subscription/subscription.component';
 
@@ -137,6 +138,7 @@ import { EditLibraryComponent } from './developer/edit-library/edit-library.comp
     MatFormFieldModule,
     MatChipsModule,
     MatExpansionModule,
+    MatSelectModule,
     FormsModule,
     MatInputModule,
     ReactiveFormsModule

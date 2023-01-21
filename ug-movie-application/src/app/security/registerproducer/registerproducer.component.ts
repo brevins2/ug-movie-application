@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
-import { Genre, Producer } from 'src/app/interface';
+import { Genre, Producer, Images } from 'src/app/interface';
 
 @Component({
   selector: 'app-registerproducer',
@@ -18,13 +18,21 @@ export class RegisterproducerComponent implements OnInit {
     Name: new FormControl(''),
   	Email: new FormControl(''),
     Genre: new FormControl(''),
-    File: new FormControl('')
+    File: new FormControl(''),
+    URL: new FormControl('')
   });
   genres: Genre[] = [];
+  images: Images[] = [];
+  File = '';
+  selectedCities = {};
 
   ngOnInit(): void {
     this.serve.getAllGenres().subscribe(data => {
       this.genres = data.data;
+    });
+
+    this.serve.getFiles().subscribe(data => {
+      this.images = data.data;
     });
   }
 

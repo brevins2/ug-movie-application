@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { ServeService } from 'src/app/Services/serve.service';
 import { Genre, Producer, Images } from 'src/app/interface';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie',
@@ -26,8 +27,9 @@ export class MovieComponent implements OnInit {
   images: Images[] = [];
   selectedFile!: File;
   File = '';
+  URL = '';
 
-  constructor(private http: HttpClient, private serve: ServeService) {
+  constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) {
   }
 
   ngOnInit(): void {

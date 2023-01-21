@@ -10,7 +10,7 @@
       <!-- File Column -->
       <ng-container matColumnDef="File">
         <th mat-header-cell *matHeaderCellDef> File </th>
-        <td mat-cell *matCellDef="let movies" class="file"> <a href="u">{{movies.File}}</a> </td>
+        <td mat-cell *matCellDef="let movies" class="file"> <a href="{{movies.URL}}">{{movies.File}}</a> </td>
       </ng-container>
 
       <!-- Genre Column -->
@@ -50,32 +50,49 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Title</mat-label>
-      <input matInput type="text" formControlName="Title" placeholder="Update Title" required>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>File</mat-label>
-      <input matInput type="text" formControlName="File" placeholder="Update Title" required>
+      <input matInput type="text" formControlName="Title" placeholder="enter title" required>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Genre</mat-label>
-      <input matInput type="text" formControlName="Genre" placeholder="Update Genre" required>
+      <mat-select formControlName="Genre" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let genre of genres" value="{{genre.Genre}}">{{genre.Genre}}</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Producer</mat-label>
-      <input matInput type="text" formControlName="Producer" placeholder="Update Producer" required>
+      <mat-label>Movie</mat-label>
+      <mat-select formControlName="File" [(ngModel)]="File" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let movie of images" value="{{movie.Name}}">{{movie.Name}}</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Details</mat-label>
-      <textarea matInput class="form-control" formControlName="Details" type="text-area" cols="80" rows="6" required></textarea>
+      <mat-label>URL</mat-label>
+      <mat-select formControlName="URL" [(ngModel)]="URL" id="URL" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let movie of images" value="{{movie.URL}}"><p *ngIf="File === movie.Name">{{movie.URL}}</p></mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Category</mat-label>
-      <input type="text" matInput formControlName="Category" placeholder="Update Category" required>
+      <input matInput type="text" formControlName="Category" placeholder="Enter Category" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Producer</mat-label>
+      <mat-select formControlName="Producer" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let producer of producers" value="{{producer.Name}}">{{producer.Name}}</mat-option>
+      </mat-select>
+    </mat-form-field> 
+
+    <mat-form-field appearance="outline">
+      <mat-label>Movie information</mat-label>
+      <textarea matInput formControlName="Details" placeholder="enter movie information" required></textarea>
     </mat-form-field>
 
     <div class="d-flex buttons">

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
-import { Producer } from 'src/app/interface';
+import { Producer, Images, Genre } from 'src/app/interface';
 
 @Component({
   selector: 'app-edit-producer',
@@ -14,6 +14,10 @@ export class EditProducerComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) { }
   producers: Producer[] = [];
+  images: Images[] = [];
+  genres: Genre[] = [];
+  File = '';
+
   displayedColumns: string[] = ['Name', 'Email', 'Genre', 'File', 'Delete'];
     dataSource = this.producers;
 
@@ -22,12 +26,19 @@ export class EditProducerComponent implements OnInit {
     Email: new FormControl(''),
     Genre: new FormControl(''),
     File: new FormControl(''),
-    Password: new FormControl(''),
-    CPassword: new FormControl('')
+    URL: new FormControl('')
   });
 
   ngOnInit(): void {
     this.getCurrentProducer();
+
+    this.serve.getFiles().subscribe(data => {
+      this.images = data.data;
+    });
+
+    this.serve.getAllGenres().subscribe(data => {
+      this.genres = data.data;
+    });
   }
 
   getCurrentProducer() {

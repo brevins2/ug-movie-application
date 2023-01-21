@@ -1,29 +1,40 @@
 <div class="container-fluid bg-dark">
-  <form class="bg-white" [formGroup]="RegisterForm">
+  <form class="bg-white d-flex flex-column" [formGroup]="RegisterForm">
     <nav class="p-2">Register Produer</nav>
 
-    <div class="form-group">
-      <span>Name</span>
-        <input type="text" class="form-control" formControlName="Name" name="name" value="name" placeholder="enter username" required>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="Name" placeholder="enter name" required>
+    </mat-form-field>
 
-    <div class="form-group">
-      <span>Email</span>
-        <input type="email" class="form-control" formControlName="Email" name="email" value="email" placeholder="enter email" required>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="text" formControlName="Email" placeholder="enter email" required>
+    </mat-form-field>
 
-    <div class="form-group">
-      <span>Type of Genre</span><br>
-      <select class="form-control" formControlName="Genre" required>
-          <option></option>
-          <option *ngFor="let genre of genres">{{genre.Genre}}</option>
-        </select>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Type of Genre</mat-label>
+      <mat-select formControlName="Genre" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let genre of genres" value="{{genre.Genre}}">{{genre.Genre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-    <div class="form-group">
-      <span>Upload image</span>
-        <input type="File" class="form-control" formControlName="File" placeholder="enter email" required>
-    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Image</mat-label>
+      <mat-select formControlName="File" [(ngModel)]="File" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let movie of images" value="{{movie.Name}}">{{movie.Name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>URL</mat-label>
+      <mat-select formControlName="URL" required>
+        <mat-option></mat-option>
+        <mat-option *ngFor="let movie of images" value="{{movie.URL}}"><p *ngIf="File === movie.Name">{{movie.URL}}</p></mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <button type="submit" class="btn btn-primary" (click)="register()">
       <i class="fa-solid fa-save"></i>

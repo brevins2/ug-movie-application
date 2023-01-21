@@ -27,7 +27,7 @@ export class AddLibraryComponent implements OnInit {
   fileInfos?: Observable<any>;
   Name = "";
   alerts = false;
-  displayedColumns: string[] = ['ID', 'Name', 'Edit', 'Delete'];
+  displayedColumns: string[] = ['Name', 'Edit', 'Delete'];
   dataSource = this.images;
   constructor(private afStorage: AngularFireStorage, private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) {}
 

@@ -110,7 +110,7 @@
             <div class="d-flex flex-wrap">
               <mat-chip-list *ngFor="let producer of producers" aria-label="Dog selection" class="alert-dismissible fade show">
                 <mat-chip routerLink="views/producers/{{producer.ID}}" *ngIf="alerts">
-                  <img matChipAvatar [src]="'src/assets/produer/'+ producer.File" [alt]="producer.Name"/>
+                  <img matChipAvatar [src]="producer.URL+producer.File" [alt]="producer.Name"/>
                   {{producer.Name}}
                 </mat-chip>
               </mat-chip-list>

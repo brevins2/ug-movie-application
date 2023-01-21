@@ -5,7 +5,10 @@
 
 	<body class="bg-black text-white text-center" *ngFor="let movie of movies">
 		<mat-card class="example-card bg-black text-white d-flex flex-column">
-			<video [src]="'../../../../../assets/filmz/'+ movie.File" width="100%" controlsList="nodownload" controls oncontextmenu="return false"></video>
+			<video width="100%" controlsList="nodownload" controls oncontextmenu="return false">
+				<source [src]="movie.URL+movie.File" type="video/mp4">
+			</video> 
+			<!-- <video [src]="'../../../../../assets/filmz/'+ movie.File" width="100%" controlsList="nodownload" controls oncontextmenu="return false"></video> -->
 
 			<nav class="text-left">{{movie.Title}}</nav>
 			<mat-card-content class="text-left">

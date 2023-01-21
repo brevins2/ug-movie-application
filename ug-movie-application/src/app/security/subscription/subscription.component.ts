@@ -29,7 +29,7 @@ export class SubscriptionComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     render ({
       id: "#myPaypalButtons",
-      currency: "USH",
+      currency: "UGX",
       value: "30000.00",
       onApprove: (details) => {
         alert("Transaction successful");
