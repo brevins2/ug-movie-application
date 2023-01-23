@@ -49,6 +49,7 @@ export class MovieComponent implements OnInit {
   save() {
     this.http.post<any>('http://localhost:8080/add/Movie', this.RegisterForm.value).subscribe(res=>{
       this.RegisterForm.reset();
+      this.route.navigate(['/developer/edits/moviesedits']);
     });
   }
 }

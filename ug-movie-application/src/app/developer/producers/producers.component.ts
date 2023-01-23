@@ -13,6 +13,7 @@ import { Producer } from 'src/app/interface';
 export class ProducersComponent implements OnInit {
 
   producer: Producer[] = [];
+  producers: Producer[] = [];
   searched = "";
 	displayedColumns: string[] = ['ID', 'Name', 'Email', 'Genre', 'File', 'Edit', 'Delete'];
   	dataSource = this.producer;
@@ -32,7 +33,11 @@ export class ProducersComponent implements OnInit {
 
   search() {
     this.serve.findByNameProducers(this.searched).subscribe(data => {
-      this.producer = data.data;
+      this.producers = data.data;
     });
+  }
+
+  add() {
+    this.route.navigate(['/register/producer']);
   }
 }

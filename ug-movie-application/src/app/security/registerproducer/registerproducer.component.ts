@@ -12,7 +12,7 @@ import { Genre, Producer, Images } from 'src/app/interface';
 })
 export class RegisterproducerComponent implements OnInit {
 
-  constructor(private http: HttpClient, private serve: ServeService) { }
+  constructor(private http: HttpClient, private route: Router, private serve: ServeService) { }
 
   RegisterForm = new FormGroup({
     Name: new FormControl(''),
@@ -39,6 +39,7 @@ export class RegisterproducerComponent implements OnInit {
   register (){
   	this.http.post<any>('http://localhost:8080/add/Producer', this.RegisterForm.value).subscribe(res => {
       this.RegisterForm.reset();
+      this.route.navigate(['/developer/edits/producers']);
     });
   }
 }

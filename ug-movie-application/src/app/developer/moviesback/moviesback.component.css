@@ -3,6 +3,12 @@ body {
 	min-height: 100hv;
 }
 
+.add {
+	width: 120px !important;
+	margin-bottom: 5px;
+	font-size: .8rem !important;
+}
+
 table {
   width: 100%;
   margin-bottom: 2%;

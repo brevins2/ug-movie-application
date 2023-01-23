@@ -37,4 +37,8 @@ export class MoviesbackComponent implements OnInit {
       console.log(this.movies);
     });
   }
+
+  add() {
+    this.route.navigate(['/register/movie']);
+  }
 }

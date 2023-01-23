@@ -1,4 +1,9 @@
 <body>
+
+  <button class="btn btn-outline-primary add" (click)="add()">
+    <i class="fa fa-add"></i>Add producer
+  </button>
+
   <div class="d-flex form-group justify-content-between">
     <input type="search" placeholder="Search for users........" class="form-control justify-content-start" [(ngModel)]="searched">
     <button type="submit" class="btn btn-primary justify-content-end" (click)="search()">Search</button>

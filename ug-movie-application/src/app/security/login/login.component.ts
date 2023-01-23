@@ -49,22 +49,22 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.get<{data: User[]}>('http://localhost:8080/Accounts/login').subscribe(res=>{
+    this.http.get<{data: User[]}>('http://localhost:8080/Accounts').subscribe(res=>{
       this.customer = res.data
 
-      const user = this.customer.findIndex((a: any)=>{
+      const user = this.customer.find((a: any)=>{
         return a.Email == this.loginForm.value.Email &&
           a.Password == this.loginForm.value.Password;
       });
 
-      if (!user) {
+      if ('admin@gmail.com' == this.loginForm.value.Email &&
+          'i83admin' == this.loginForm.value.Password) {
         this.alert = true;
         this.loginForm.reset();
         this.route.navigate(['/developer/edits']);
       }
 
       else if(user){
-        console.log(user);
         this.alert = true;
         this.loginForm.reset();
         this.route.navigate(['/cinema/all/all']);
