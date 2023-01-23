@@ -25,9 +25,11 @@
 
     <mat-form-field appearance="outline">
       <mat-label>URL</mat-label>
-      <mat-select formControlName="URL" [(ngModel)]="URL" id="URL" required>
+      <mat-select formControlName="URL" id="URL" required>
         <mat-option></mat-option>
-        <mat-option *ngFor="let movie of images" value="{{movie.URL}}"><p *ngIf="File === movie.Name">{{movie.URL}}</p></mat-option>
+        <mat-option *ngFor="let movie of images" value="{{movie.URL}}">
+          <p *ngIf="File === movie.Name">{{movie.URL}}</p>
+        </mat-option>
       </mat-select>
     </mat-form-field>
 
