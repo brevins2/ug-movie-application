@@ -19,17 +19,14 @@ a:hover {
 
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 img:hover {
   cursor: pointer;
 }
-home-link
-body {
-  min-height: 100vh;
-}
 
-.horizontal-nav {
+body {
   min-height: 100vh;
 }
 
@@ -37,20 +34,12 @@ footer {
   margin-bottom: auto !important;
 }
 
-.main-div {
-  min-height: 100vh;
-}
-
-mat-drawer-container {
-  min-height: 100vh !important;;
-}
-
 @media only screen and (max-width: 599px) {
   /* For mobile phones: */
 
   html {
     width: 100% !important;
-    height: auto;
+    min-height: 100hv;
     display: block !important;
   }
 
@@ -58,32 +47,24 @@ mat-drawer-container {
   .horizontal-nav {
     width: 100%;
     height: 58px !important;
-    padding-left: 0px;
     display: flex !important;
     flex-direction: row !important;
     position: fixed !important;
+    padding: 1px !important;
     bottom: 0;
     left: 0;
     z-index: 1030;
   }
 
-  h3 {
-    display: none;
-  }
-
-  .horizontal-nav a h1 {
-    width: 50%;
-    font-size: .8rem;
-    position: fixed;
-    top: 3%;
-    display: none;
+  .horizontal-nav img {
+    display: none !important;
   }
 
   .horizontal-nav div {
     color: whitesmoke;
     display: flex !important;
-    padding-left: 0px;
-    width: 140px !important;
+    width: 32% !important;
+    margin-right: 1px !important;
   }
 
   .main-link,
@@ -91,26 +72,34 @@ mat-drawer-container {
   .general-link {
     display: flex !important;
     font-size: 1.5rem !important;
+    margin-left: 4px !important;
   }
 
   .horizontal-nav div div {
-    width: 42px !important;
-    padding-top: 10px;
+    width: 45px !important;
+    padding-top: 15px;
   }
 
   .main-link,
   .profile-link {
     font-size: 1rem !important;
+    margin-top: 10px;
   }
 
   .general-link {
     padding-left: 5px !important;
-    width: 172px !important;
+    width: 180px !important;
+  }
+
+  .general-link div {
+    margin-top: 10px !important;
   }
 
   .general-link button {
-    margin-left: 15px !important;
+    margin-left: 10px !important;
     width: 100px !important;
+    height: 40px;
+    font-size: .7rem;
   }
 
   .horizontal-nav div div:hover,
@@ -125,7 +114,6 @@ mat-drawer-container {
     font-size: 1rem;
     text-align: center;
     color: whitesmoke !important;
-    margin-left: 8px;
   }
 
   a {
@@ -216,6 +204,7 @@ mat-drawer-container {
   mat-drawer-container {
     width: 100%;
     opacity: 1;
+    margin-bottom: 15px;
   }
 
   .vertical-nav {
@@ -252,14 +241,14 @@ mat-drawer-container {
 
   html {
     width: 100%;
-    height: auto;
+    min-height: 100hv;
     display: block !important;
   }
 
   /* left navigation-bar styles */
   .horizontal-nav {
     width: 100%;
-    height: 60px;
+    height: 60px !important;
     padding-left: 2%;
     display: flex !important;
     position: fixed !important;
@@ -267,9 +256,10 @@ mat-drawer-container {
     bottom: 0;
     left: 0;
     z-index: 1030;
+    padding: 1px;
   }
 
-  .horizontal-nav a h1 {
+  .horizontal-nav img {
     width: 60%;
     font-size: 1rem;
     position: fixed;
@@ -285,7 +275,10 @@ mat-drawer-container {
     color: whitesmoke;
     display: flex !important;
     padding-left: 0px;
-    width: 32%;
+    width: 34%;
+    padding-right: 0px !important;
+    margin-right: 4px;
+    padding-top: 6px;
   }
 
   .main-link,
@@ -300,7 +293,7 @@ mat-drawer-container {
   }
 
   .horizontal-nav div div {
-    width: 80px !important;
+    width: 47% !important;
     padding-top: 10px;
   }
 
@@ -315,8 +308,9 @@ mat-drawer-container {
   }
 
   .general-link button {
-    margin-left: 15px !important;
+    margin-left: 5px !important;
     width: 100px !important;
+    height: 46px;
   }
 
   .horizontal-nav div div:hover,
@@ -346,7 +340,7 @@ mat-drawer-container {
   body {
     width: 100%;
     height: auto%;
-    padding: 2% 0% 2% 2%;
+    padding: 2% 0% 12% 2%;
   }
 
   mat-toolbar {
@@ -394,7 +388,8 @@ mat-drawer-container {
   }
 
   footer {
-    margin-bottom: 60px;
+    margin-bottom: 70px;
+    width: 100% !important;
   }
 
   /* right navigation-bar */
@@ -470,7 +465,7 @@ mat-drawer-container {
     top: 4;
   }
 
-  .horizontal-nav a img {
+  .horizontal-nav img {
     width: 100px;
     font-size: 1rem;
     position: fixed;

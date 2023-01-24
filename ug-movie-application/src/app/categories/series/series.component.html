@@ -1,4 +1,4 @@
-<div class="d-flex">
+<div class="d-flex main">
   <div class="d-flex" *ngFor="let movie of movies">
     <mat-card class="movie-card" *ngIf="movie.Category == 'Series'">
       <a routerLink="/play/{{movie.ID}}">

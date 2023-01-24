@@ -30,7 +30,7 @@ export class SubscriptionComponent implements OnInit {
     render ({
       id: "#myPaypalButtons",
       currency: "UGX",
-      value: "30000.00",
+      value: "10.00",
       onApprove: (details) => {
         alert("Transaction successful");
       }

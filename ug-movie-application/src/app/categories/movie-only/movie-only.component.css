@@ -1,7 +1,7 @@
-div {
+/*div {
   display: flex;
   background-color: #ffffff00;
-}
+}*/
 
 header {
   width: 100%;
@@ -15,9 +15,9 @@ a {
   /* For mobile phones: */
 
   .movie-card {
-    width: 100px;
+    width: 160px;
     height: 200px;
-    margin: .65%;
+    margin: 3px;
     font-size: .7rem;
   }
 
@@ -33,15 +33,20 @@ a {
     cursor: pointer;
     transition-duration: 100ms;
   }
+
+  mat-card-content,
+  mat-card-actions button {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 600px) {
   /* For tablets: */
 
   mat-card {
-    width: 23%;
-    height: 10%;
-    margin: .5%;
+    width: 160px;
+    height: 200px;
+    margin: 6px;
     padding: 2%;
   }
 
@@ -52,6 +57,11 @@ a {
     color: white;
     cursor: pointer;
     transition-duration: 2s;
+  }
+
+  mat-card-content,
+  mat-card-actions button {
+    display: none;
   }
 }
 
