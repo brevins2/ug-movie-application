@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.http.get<{data: User[]}>('http://localhost:8080/Accounts').subscribe(res=>{
-      this.customer = res.data
+      this.customer = res.data;
 
       const user = this.customer.find((a: any)=>{
         return a.Email == this.loginForm.value.Email &&
