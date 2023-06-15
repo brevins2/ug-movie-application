@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ServeService } from 'src/app/Services/serve.service';
+import { ServeService } from 'src/app/services/serve.service';
 import { HttpClient } from '@angular/common/http';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Movies } from 'src/app/interface';
 
 @Component({

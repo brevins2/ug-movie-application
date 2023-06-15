@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'src/app/interface';
-import { ServeService } from 'src/app/Services/serve.service';
+import { ServeService } from 'src/app/services/serve.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient, HttpEventType } from '@angular/common/http';
-import { ServeService } from 'src/app/Services/serve.service';
+import { ServeService } from 'src/app/services/serve.service';
 import { Genre, Producer, Images } from 'src/app/interface';
 import { ActivatedRoute, Router } from '@angular/router';
 

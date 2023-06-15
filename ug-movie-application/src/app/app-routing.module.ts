@@ -15,9 +15,7 @@ import { MoviesComponent } from './categories/movies/movies.component';
 import { ProducerComponent } from './categories/producer/producer.component';
 import { PlayMovieComponent } from './categories/play-movie/play-movie.component';
 
-import { DownloadsComponent } from './categories/views/downloads/downloads.component';
 import { FavouretsComponent } from './categories/views/favourets/favourets.component';
-import { RecentComponent } from './categories/views/recent/recent.component';
 import { MainsComponent } from './categories/views/mains/mains.component';
 
 import { MainComponent } from './developer/main/main.component';

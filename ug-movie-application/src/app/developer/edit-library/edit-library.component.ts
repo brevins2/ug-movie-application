@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Images } from 'src/app/interface';
-import { ServeService } from 'src/app/Services/serve.service';
+import { ServeService } from 'src/app/services/serve.service';
 
 @Component({
   selector: 'app-edit-library',

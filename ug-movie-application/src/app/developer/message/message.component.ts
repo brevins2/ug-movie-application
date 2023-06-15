@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServeService } from 'src/app/Services/serve.service';
+import { ServeService } from 'src/app/services/serve.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Message } from 'src/app/interface';

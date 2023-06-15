@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { ServeService } from 'src/app/Services/serve.service';
-import { Genre, Producer, Images } from 'src/app/interface';
+import { ServeService } from '../../services/serve.service'
+import { Genre, Images } from 'src/app/interface';
 
 @Component({
   selector: 'app-registerproducer',

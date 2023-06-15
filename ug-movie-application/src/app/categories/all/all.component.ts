@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ServeService } from 'src/app/Services/serve.service';
-import { Login, Producer } from 'src/app/interface';
+import { ServeService } from 'src/app/services/serve.service';
+import { Producer } from 'src/app/interface';
 
 @Component({
   selector: 'app-all',
