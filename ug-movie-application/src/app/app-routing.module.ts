@@ -41,7 +41,6 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'register/movie', component: MovieComponent },
   { path:'register/producer', component: RegisterproducerComponent },
-
   { path:'subscribe', component: SubscriptionComponent },
 
   { path:'cinema/all', component: AllComponent, children: [

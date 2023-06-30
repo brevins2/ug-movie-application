@@ -127,7 +127,7 @@ footer {
   /* body styles */
   body {
     width: 100%;
-    height: auto%;
+    height: auto;
     padding-bottom: 120px;
     margin: 0 auto;
   }
@@ -166,7 +166,8 @@ footer {
   .main-div {
     height: 100%;
     width: 100%;
-    padding-right: 2%;
+    margin-top: 2em;
+    padding-right: 2em;
   }
 
   .router-outlet-div {
@@ -339,7 +340,7 @@ footer {
   /* body styles */
   body {
     width: 100%;
-    height: auto%;
+    height: auto;
     padding: 2% 0% 12% 2%;
   }
 
@@ -585,7 +586,7 @@ footer {
   /* body styles */
   body {
     width: 88%;
-    height: auto%;
+    height: auto;
     padding: 2% 0% 0% 1%;
   }
 

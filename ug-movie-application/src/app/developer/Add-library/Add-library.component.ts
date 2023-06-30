@@ -73,11 +73,11 @@ export class AddLibraryComponent implements OnInit {
     this.formData.append('file', this.fileData);
 
     // Make a POST request to your backend API
-    this.serve.upload(this.formData).subscribe((response) => {
-        console.log('File uploaded successfully.', response);
-      }, (error) => {
-        console.error('Error uploading file.', error);
-      });
+    // this.serve.upload(this.formData).subscribe((response) => {
+    //     console.log('File uploaded successfully.', response);
+    //   }, (error) => {
+    //     console.error('Error uploading file.', error);
+    //   });
   }
 
   upload(): void {

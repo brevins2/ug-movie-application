@@ -1,4 +1,6 @@
 <html class="d-flex bg-black">
+
+  <!-- side navigation menu -->
   <nav class="horizontal-nav nav nav-link d-flex float-left bg-dark text-left">
     <img src="../assets/icon/lutimbefilmz.png" width="100px" routerLink="/cinema/browse" alt="LutimbeFilmz.jpg" contenteditable>
 
@@ -58,6 +60,7 @@
 
   <body class="d-flex flex-column bg-black">
       <mat-toolbar class="d-flex fixed-top justify-content-between position-sticky bg-black">
+        <!-- main navigation menu -->
         <nav class="float-left text-left d-flex flex">
           <a href="#" class="home2-link">
             <h1>
@@ -93,10 +96,12 @@
 
     <mat-drawer-container class="bg-black">
 
+      <!-- other imported section pages/routes -->
       <div class="main-div float-left">
         <router-outlet></router-outlet>
       </div>
 
+      <!-- Producer search section -->
       <mat-drawer #drawer class="example-sidenav float-right bg-dark text-white" position="end" mode="over">
         <nav class="vertical-nav nav nav-link d-flex flex-column float-left bg-dark text-left">
           <div class="input-group mb-4">
@@ -124,6 +129,7 @@
         </nav>
       </mat-drawer>
 
+      <!-- page footer -->
       <footer class="bg-black text-center text-white">
         @ copyright reserved at
         <img src="../assets/icon/lutimbefilmz.png" width="100px" alt="LutimbeFilmz.jpg">
