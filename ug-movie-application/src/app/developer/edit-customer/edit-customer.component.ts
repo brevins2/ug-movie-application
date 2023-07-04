@@ -15,8 +15,6 @@ export class EditCustomerComponent implements OnInit {
   constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) { }
 
   customer: User[] = [];
-  displayedColumns: string[] = ['Name', 'Username', 'Email', 'Password', 'CPassword', 'Delete'];
-    dataSource = this.customer;
 
   UpdateCustomer = new FormGroup({
     Name: new FormControl(''),
@@ -32,8 +30,16 @@ export class EditCustomerComponent implements OnInit {
 
   getCurrentCustomer() {
     this.serve.getUserWithID(this.router.snapshot.params['id']).subscribe((result: any) => {
-      this.customer = result.data;
-      this.dataSource = this.customer;
+      let x = result.data;
+      x.forEach((element: any) => {
+        this.UpdateCustomer = new FormGroup({
+          Name: new FormControl(element['Name']),
+          Username: new FormControl(element['Username']),
+          Email: new FormControl(element['Email']),
+          Password: new FormControl(element['Password']),
+          CPassword: new FormControl(element['CPassword'])
+        });
+      });
     });
   }
 

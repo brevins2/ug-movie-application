@@ -1,16 +1,12 @@
 body {
-	background: unset;
-	min-height: 100hv;
-}
-
-.add {
-	width: 120px !important;
-	margin-bottom: 5px;
-	font-size: .8rem !important;
+	width: 80vw;
+	height: 100vh;
+	background-color: unset;
 }
 
 table {
   width: 100%;
+  margin-top: 2%;
   margin-bottom: 2%;
 }
 
@@ -18,6 +14,16 @@ span {
 	text-align: center !important;
 	display: inline-block;
 	width: 100%;
+}
+
+td {
+	font-size: .7rem;
+}
+
+.add {
+	width: 120px !important;
+	margin-bottom: 5px;
+	font-size: .8rem !important;
 }
 
 .btn-outline-primary,
@@ -31,10 +37,6 @@ span {
 	font-size: .8rem;
 	margin-right: 5px;
 	margin-left: 10px;
-}
-
-td {
-	font-size: .7rem;
 }
 
 input {

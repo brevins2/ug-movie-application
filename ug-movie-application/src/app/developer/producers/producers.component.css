@@ -1,6 +1,7 @@
 body {
-	width: 830px;
-  background-color: unset;
+	width: 80vw;
+	height: 100vh;
+	background-color: unset;
 }
 
 table {
