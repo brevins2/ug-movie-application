@@ -18,9 +18,6 @@ export class EditProducerComponent implements OnInit {
   genres: Genre[] = [];
   File = '';
 
-  displayedColumns: string[] = ['Name', 'Email', 'Genre', 'File', 'Delete'];
-    dataSource = this.producers;
-
   UpdateProducer = new FormGroup({
     Name: new FormControl(''),
     Email: new FormControl(''),
@@ -43,8 +40,16 @@ export class EditProducerComponent implements OnInit {
 
   getCurrentProducer() {
     this.serve.getProducerWithID(this.router.snapshot.params['id']).subscribe((result: any) => {
-      this.producers = result.data;
-      this.dataSource = this.producers;
+      let x = result.data;
+      x.forEach((element: any) => {
+        this.UpdateProducer = new FormGroup({
+          Name: new FormControl(element['Name']),
+          Email: new FormControl(element['Email']),
+          Genre: new FormControl(element['Genre']),
+          File: new FormControl(element['File']),
+          URL: new FormControl(element['URL'])
+        });
+      });
     });
   }
 

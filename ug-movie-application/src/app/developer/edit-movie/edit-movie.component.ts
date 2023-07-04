@@ -28,9 +28,6 @@ export class EditMovieComponent implements OnInit {
   File = '';
   URL = '';
 
-  displayedColumns: string[] = ['Title', 'File', 'Genre', 'Producer', 'Details', 'Delete'];
-    dataSource = this.movies;
-
   constructor(private http: HttpClient, private router: ActivatedRoute, private route: Router, private serve: ServeService) { }
 
   ngOnInit(): void {
@@ -51,8 +48,18 @@ export class EditMovieComponent implements OnInit {
 
   getCurrentMovie() {
     this.serve.getWithID(this.router.snapshot.params['id']).subscribe((result: any) => {
-      this.movies = result.data;
-      this.dataSource = this.movies;
+      let x = result.data;
+      x.forEach((element: any) => {
+        this.UpdateMovie = new FormGroup({
+          Title: new FormControl(element['Title']),
+          File: new FormControl(element['File']),
+          URL: new FormControl(element['URL']),
+          Genre: new FormControl(element['Genre']),
+          Producer: new FormControl(element['Producer']),
+          Details: new FormControl(element['Details']),
+          Category: new FormControl(element['Category'])
+        });
+      });
     });
   }
 
